@@ -4,7 +4,7 @@
 # you may not use this file except in compliance with the License.
 #
 
-# SpaceUserBot - The Miri - Dadashzade
+# SiriUserBot - Erdem Bey - Midy
 
 from . import LANGUAGE, LOGS, bot, PLUGIN_CHANNEL_ID
 from json import loads, JSONDecodeError

@@ -80,7 +80,7 @@ def register(**args):
                     date = strftime("%Y-%m-%d %H:%M:%S", gmtime())
 
                     text = "**USERBOT XETA RAPORU**\n"
-                    link = "[Space Destek Qrupu](https://t.me/Spaceaid)"
+                    link = "[Siri Destek Qrupu](https://t.me/SiriSupport)"
                     text += "İstəsəniz, bunu bildirə bilərsiniz."
                     text += f"- sadəcə bu mesajı buraya göndərin {link}.\n"
                     text += "Xəta və Tarix xaricində heç bir şey qeyd edilməz\n"

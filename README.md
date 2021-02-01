@@ -2,7 +2,7 @@
 ----
 
 <div align="center">
-  <img src="https://imgyukle.com/i/HFhNoH.jpg" width="200" height="200">
+  <img src="https://ibb.co/sQn4QpH" width="200" height="200">
   <h1>Siri UserBot</h1>
 </div>
 <p align="center">

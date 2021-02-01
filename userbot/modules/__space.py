@@ -17,13 +17,13 @@ from userbot.events import register
 # ██████ LANGUAGE CONSTANTS ██████ #
 
 from userbot.language import get_value
-LANG = get_value("__asena")
+LANG = get_value("__siri")
 
 # ████████████████████████████████ #
 
-@register(outgoing=True, pattern="^.space(?: |$)(.*)")
-async def asena(event):
-    """ .space komutu için """
+@register(outgoing=True, pattern="^.siri(?: |$)(.*)")
+async def siri(event):
+    """ .siri komutu için """
     args = event.pattern_match.group(1).lower()
     if args:
         if args in CMD_HELP:

@@ -15,7 +15,7 @@ import requests
 from telethon.tl.types import InputMessagesFilterDocument
 from telethon.errors.rpcerrorlist import PhoneNumberInvalidError
 from telethon.tl.functions.channels import GetMessagesRequest
-from . import BRAIN_CHECKER, LOGS, bot, PLUGIN_CHANNEL_ID, CMD_HELP, LANGUAGE, SPACE_VERSION, PATTERNS
+from . import BRAIN_CHECKER, LOGS, bot, PLUGIN_CHANNEL_ID, CMD_HELP, LANGUAGE, SIRI_VERSION, PATTERNS
 from .modules import ALL_MODULES
 import userbot.modules.sql_helper.mesaj_sql as MSJ_SQL
 import userbot.modules.sql_helper.galeri_sql as GALERI_SQL
@@ -66,7 +66,7 @@ AFKSTR = [
     "Şu an burada değilim....\nama öyleysem ...\n\nbu harika olmaz mıydı?",
 ]
 
-UNAPPROVED_MSG = ("`👨‍🚀 Hey,` {mention} `! Bu bir [botdur](https://t.me/spaceuserbot) . Narahat olma.\n\n`"
+UNAPPROVED_MSG = ("`👨‍🚀 Hey,` {mention} `! Bu bir [botdur](https://t.me/siriuserbot) . Narahat olma.\n\n`"
                   "`Sahibim sənə PM yazma icazəsi verməyib. `"
                   "`Zəhmət olmasa sahibimin aktiv olmasını gözləyin, o bəzən PM yazmağa icazə verər.\n\n`"
                   "`Bildiyim qədəri ilə o beynini itirmiş insanlara PM icasi vermir.`")
@@ -145,8 +145,8 @@ def extractCommands(file):
 try:
     bot.start()
     idim = bot.get_me().id
-    asenabl = requests.get('https://gitlab.com/whomiri/space/-/raw/master/blacklist.json').json()
-    if idim in asenabl:
+    siribl = requests.get('http://gitlab.com/ErdemBey1/siri/-/raw/master/blacklist.json').json()
+    if idim in siribl:
         bot.disconnect()
 
     # ChromeDriver'ı Ayarlayalım #
@@ -160,7 +160,7 @@ try:
 
     # PLUGIN MESAJLARI AYARLIYORUZ
     PLUGIN_MESAJLAR = {}
-    ORJ_PLUGIN_MESAJLAR = {"alive": "`🧑‍🚀 Space working...`", "afk": f"`{str(choice(AFKSTR))}`", "kickme": "`Bye Bye mən gedirəm `🚪", "pm": UNAPPROVED_MSG, "dızcı": str(choice(DIZCILIK_STR)), "ban": "{mention}`, Banlandı!!`", "mute": "{mention}`, səssizə alındı!`", "approve": "{mention}`, hey sən artığ mənə mesaj göndərə bilərsən!`", "disapprove": "{mention}`, artığ mənə mesaj göndərə bilmərsən!`", "block": "{mention}`, səni blockladım!`"}
+    ORJ_PLUGIN_MESAJLAR = {"alive": "`🧑‍🚀 Siri working...`", "afk": f"`{str(choice(AFKSTR))}`", "kickme": "`Bye Bye mən gedirəm `🚪", "pm": UNAPPROVED_MSG, "dızcı": str(choice(DIZCILIK_STR)), "ban": "{mention}`, Banlandı!!`", "mute": "{mention}`, səssizə alındı!`", "approve": "{mention}`, hey sən artığ mənə mesaj göndərə bilərsən!`", "disapprove": "{mention}`, artığ mənə mesaj göndərə bilmərsən!`", "block": "{mention}`, səni blockladım!`"}
 
     PLUGIN_MESAJLAR_TURLER = ["alive", "afk", "kickme", "pm", "dızcı", "ban", "mute", "approve", "disapprove", "block"]
     for mesaj in PLUGIN_MESAJLAR_TURLER:
@@ -237,8 +237,8 @@ for module_name in ALL_MODULES:
     imported_module = import_module("userbot.modules." + module_name)
 
 LOGS.info("Botunuz işləyir! Herhansısa bir söhbete .alive yazarağ Test edin."
-          " Köməyə ehtiyacınız varsa, Destek grubumuza gelin t.me/SpaceAİD")
-LOGS.info(f"Bot versiyanız: Space {SPACE_VERSION}")
+          " Köməyə ehtiyacınız varsa, Destek grubumuza gelin t.me/SiriSupport")
+LOGS.info(f"Bot versiyanız: Siri {SIRI_VERSION}")
 
 """
 if len(argv) not in (1, 3, 4):

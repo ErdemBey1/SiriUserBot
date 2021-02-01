@@ -64,7 +64,7 @@ if not LANGUAGE in ["EN", "TR", "AZ", "UZ", "DEFAULT"]:
     LANGUAGE = "DEFAULT"
     
 # Siri versiasi
-SIRI_VERSION = "v3.0.7"
+SİRİ_VERSION = "v3.0.7"
 
 # Telegram API KEY ve HASH
 API_KEY = os.environ.get("API_KEY", None)
@@ -98,10 +98,10 @@ UPSTREAM_REPO_URL = os.environ.get(
 CONSOLE_LOGGER_VERBOSE = sb(os.environ.get("CONSOLE_LOGGER_VERBOSE", "False"))
 
 # SQL Veritabanı
-DB_URI = os.environ.get("DATABASE_URL", "sqlite:///siri.db")
+DB_URI = os.environ.get("DATABASE_URL", "sqlite:///asena.db")
 
 # OCR API key
-OCR_SIRI_API_KEY = os.environ.get("OCR_SIRI_API_KEY", None)
+OCR_SİRİ_API_KEY = os.environ.get("OCR_SİRİ_API_KEY", None)
 
 # remove.bg API key
 REM_BG_API_KEY = os.environ.get("REM_BG_API_KEY", None)

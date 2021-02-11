@@ -151,32 +151,32 @@ async def memeyap(event):
         if reply.photo:
             Resim = await reply.download_media()
         elif reply.sticker and reply.file.ext == ".webp":
-            if os.path.exists("./SpaceSticker.png"):
-                os.remove("./SpaceSticker.png")
+            if os.path.exists("./SiriSticker.png"):
+                os.remove("./SiriSticker.png")
 
             foto = await reply.download_media()
             im = Image.open(foto).convert("RGB")
-            im.save("SpaceSticker.png", "png")
-            Resim = "SpaceSticker.png"
+            im.save("SiriSticker.png", "png")
+            Resim = "SiriSticker.png"
         elif reply.sticker and reply.file.ext == ".tgs":
             sticker = await reply.download_media()
-            os.system(f"lottie_convert.py --frame 0 -if lottie -of png '{sticker}' SpaceSticker.png")
+            os.system(f"lottie_convert.py --frame 0 -if lottie -of png '{sticker}' SiriSticker.png")
             os.remove(sticker)
-            Resim = "SpaceSticker.png"
+            Resim = "SiriSticker.png"
         elif reply.media:
             Resim = await reply.download_media()
             Sure = os.system("ffmpeg -i '"+Resim+"' 2>&1 | grep Duration | awk '{print $2}' | tr -d , | awk -F ':' '{print ($3+$2*60+$1*3600)/2}'``")
-            os.system(f"ffmpeg -i '{Resim}' -vcodec mjpeg -vframes 1 -an -f rawvideo -ss {Sure} AsenaThumb.jpg")
+            os.system(f"ffmpeg -i '{Resim}' -vcodec mjpeg -vframes 1 -an -f rawvideo -ss {Sure} SiriThumb.jpg")
             os.remove(Resim)
-            Resim = 'SpaceThumb.jpg'
+            Resim = 'SiriThumb.jpg'
         else:
             return await event.edit(LANG['REPLY_TO_MEME'])
             
-        if os.path.exists("./spacememe.png"):
-            os.remove("./spacememe.png")
+        if os.path.exists("./sirimeme.png"):
+            os.remove("./sirimeme.png")
 
         MemeYap(Resim, Text, font, Bottom, BottomText)
-        await event.client.send_file(event.chat_id, "./asenameme.png", reply_to=reply)
+        await event.client.send_file(event.chat_id, "./sirimeme.png", reply_to=reply)
         await event.delete()
         os.remove(Resim)
     else:

@@ -83,7 +83,7 @@ async def bot_ver(event):
                          "`")
     else:
         await event.edit(
-            "Tanrı Türk'ü Korusun 🐺"
+            "Siri Dinlemede!!!"
         )
 
 

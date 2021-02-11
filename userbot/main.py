@@ -27,6 +27,13 @@ import chromedriver_autoinstaller
 from json import loads, JSONDecodeError
 import re
 import userbot.cmdhelp
+ALIVE_STR = [
+    "Merhaba bağyan nasılsın?",
+    "Şimdi mi aklına geldik aq çocu",
+    "Çalışıyorum hocam merak etme burası bende",
+    "Anan giller nasıl",
+    "Çalışıyorum aq ne viyanayı zorlayan osmanlı gibi zorluyorsun?"
+]
 
 DIZCILIK_STR = [
     "Stikeri oğurlayıram...",
@@ -160,7 +167,7 @@ try:
 
     # PLUGIN MESAJLARI AYARLIYORUZ
     PLUGIN_MESAJLAR = {}
-    ORJ_PLUGIN_MESAJLAR = {"alive": "`🧑‍🚀 Siri working...`", "afk": f"`{str(choice(AFKSTR))}`", "kickme": "`Bye Bye mən gedirəm `🚪", "pm": UNAPPROVED_MSG, "dızcı": str(choice(DIZCILIK_STR)), "ban": "{mention}`, Banlandı!!`", "mute": "{mention}`, səssizə alındı!`", "approve": "{mention}`, hey sən artığ mənə mesaj göndərə bilərsən!`", "disapprove": "{mention}`, artığ mənə mesaj göndərə bilmərsən!`", "block": "{mention}`, səni blockladım!`"}
+    ORJ_PLUGIN_MESAJLAR = {"alive": "`✴ {}`".format(choice(ALIVE_STR)), "afk": f"`{str(choice(AFKSTR))}`", "kickme": "`Bye Bye mən gedirəm `🚪", "pm": UNAPPROVED_MSG, "dızcı": str(choice(DIZCILIK_STR)), "ban": "{mention}`, Banlandı!!`", "mute": "{mention}`, səssizə alındı!`", "approve": "{mention}`, hey sən artığ mənə mesaj göndərə bilərsən!`", "disapprove": "{mention}`, artığ mənə mesaj göndərə bilmərsən!`", "block": "{mention}`, səni blockladım!`"}
 
     PLUGIN_MESAJLAR_TURLER = ["alive", "afk", "kickme", "pm", "dızcı", "ban", "mute", "approve", "disapprove", "block"]
     for mesaj in PLUGIN_MESAJLAR_TURLER:

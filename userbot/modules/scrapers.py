@@ -219,8 +219,8 @@ async def haber(event):
 @register(outgoing=True, pattern="^.karbon ?(.*)")
 async def karbon(e):
     cmd = e.pattern_match.group(1)
-    if os.path.exists("@AsenaUserBot-Karbon.jpg"):
-        os.remove("@AsenaUserBot-Karbon.jpg")
+    if os.path.exists("@SiriUserBot-Karbon.jpg"):
+        os.remove("@SiriUserBot-Karbon.jpg")
 
     if len(cmd) < 1:
         await e.edit("Kullanım: .karbon mesaj")    
@@ -231,10 +231,10 @@ async def karbon(e):
 
     r = get(f"https://carbonnowsh.herokuapp.com/?code={cmd}")
 
-    with open("@AsenaUserBot-Karbon.jpg", 'wb') as f:
+    with open("@SiriUserBot-Karbon.jpg", 'wb') as f:
         f.write(r.content)    
 
-    await e.client.send_file(e.chat_id, file="@AsenaUserBot-Karbon.jpg", force_document=True, caption="[AsenaUserBot](https://t.me/asenauserbot) ile oluşturuldu.")
+    await e.client.send_file(e.chat_id, file="@SiriUserBot-Karbon.jpg", force_document=True, caption="[SiriUserBot](https://t.me/siriuserbot) ile oluşturuldu.")
     await e.delete()
 
 @register(outgoing=True, pattern="^.crblang (.*)")
@@ -405,14 +405,14 @@ async def gsearch(q_event):
             msg += f"[{title}]({link})\n`{desc}`\n\n"
         except IndexError:
             break
-    await q_event.edit("**Axtarış sorğusu:**\n`" + match + "`\n\n**Nəticələr:**\n" +
+    await q_event.edit("**Aradığın Şey:**\n`" + match + "`\n\n**Bulduğun Şey:**\n" +
                        msg,
                        link_preview=False)
 
     if BOTLOG:
         await q_event.client.send_message(
             BOTLOG_CHATID,
-            match + "`sözcüyü uğurla Google'da axtarıldı!`",
+            match + "`Sözcük başarıyla Google'da aratıldı!`",
         )
 
 
@@ -692,12 +692,12 @@ async def _(event):
     if event.fwd_from:
         return
     fin = event.pattern_match.group(1)
-    stark_result = await event.edit("`Axtarıram...`")
+    stark_result = await event.edit("`Araştırıyorum...`")
     results = YoutubeSearch(f"{fin}", max_results=5).to_dict()
-    noob = "<b>YOUTUBE Axtarışı</b> \n\n"
+    noob = "<b>YOUTUBE Arayışı</b> \n\n"
     for moon in results:
-      themiri = moon["id"]
-      kek = f"https://www.youtube.com/watch?v={themiri}"
+      ytsorgusu = moon["id"]
+      kek = f"https://www.youtube.com/watch?v={ytsorgusu}"
       stark_name = moon["title"]
       stark_chnnl = moon["channel"]
       total_stark = moon["duration"]
@@ -717,7 +717,7 @@ async def download_video(v_url):
     url = v_url.pattern_match.group(2)
     type = v_url.pattern_match.group(1).lower()
 
-    await v_url.edit("`Yuklenme hazirlanir...`")
+    await v_url.edit("`Yükleme Hazırlanıyor...`")
 
     if type == "a":
         opts = {
@@ -779,40 +779,40 @@ async def download_video(v_url):
         video = True
 
     try:
-        await v_url.edit("`Lazımlı məlumatlar çəkilir...`")
+        await v_url.edit("`Gerekli Kütüphaneler Yükleniyor...`")
         with YoutubeDL(opts) as rip:
             rip_data = rip.extract_info(url)
     except DownloadError as DE:
         await v_url.edit(f"`{str(DE)}`")
         return
     except ContentTooShortError:
-        await v_url.edit("`Yüklənəcək içərik çox qısadır`")
+        await v_url.edit("`Yüklenecek içerik çok kısadır`")
         return
     except GeoRestrictedError:
         await v_url.edit(
-            "`Maalesef coğrafi kısıtlamalar sebebiyle bu videoyla işlem yapamazsın.`")
+            "`Malesef coğrafi kısıtlamalar yüzünden işlem yapamazsın`")
         return
     except MaxDownloadsReached:
-        await v_url.edit("`Maksimum yüklənmə limiti aşıldı.`")
+        await v_url.edit("`Maksimum yüklenme limiti aşıldı.`")
         return
     except PostProcessingError:
-        await v_url.edit("`İstək sırasında bir xəta baş verdi.`")
+        await v_url.edit("`İstek sırasında bir hata baş verdi.`")
         return
     except UnavailableVideoError:
-        await v_url.edit("`Error UnavialableVideoError |//\\| Bu mesajı görürsənsə böyük ehtimal userbotunda _youtube_ modulu xəta verdi bu mesajı @SpaceAid grupuna gonder`")
+        await v_url.edit("`Error UnavialableVideoError |//\\| Bu mesajı görürsen büyük ihtimal ile userbotunda _youtube_ modülü hata verdi bu mesajı @SiriSupport grubuna gönder`")
         return
     except XAttrMetadataError as XAME:
         await v_url.edit(f"`{XAME.code}: {XAME.msg}\n{XAME.reason}`")
         return
     except ExtractorError:
-        await v_url.edit("`Melumatlar alinanda xeta bas verdi.`")
+        await v_url.edit("`Kütüphaneler yüklenirken hata alındı.`")
         return
     except Exception as e:
         await v_url.edit(f"{str(type(e)): {str(e)}}")
         return
     c_time = time.time()
     if song:
-        await v_url.edit(f"`Mahnı yüklənməyə hazırlanır:`\
+        await v_url.edit(f"`Şarkı yüklenmeye hazırlanıyor:`\
         \n**{rip_data['title']}**\
         \nby *{rip_data['uploader']}*")
         await v_url.client.send_file(
@@ -826,12 +826,12 @@ async def download_video(v_url):
             ],
             progress_callback=lambda d, t: asyncio.get_event_loop(
             ).create_task(
-                progress(d, t, v_url, c_time, "Qarşıya yüklenir...",
+                progress(d, t, v_url, c_time, "Karşıya yükleniyor...",
                          f"{rip_data['title']}.mp3")))
         os.remove(f"{rip_data['id']}.mp3")
         await v_url.delete()
     elif video:
-        await v_url.edit(f"`Mahnı yüklənməyə hazırlanır:`\
+        await v_url.edit(f"`Şarkı yüklenmeye hazırlanıyor:`\
         \n**{rip_data['title']}**\
         \nby *{rip_data['uploader']}*")
         await v_url.client.send_file(
@@ -841,7 +841,7 @@ async def download_video(v_url):
             caption=rip_data['title'],
             progress_callback=lambda d, t: asyncio.get_event_loop(
             ).create_task(
-                progress(d, t, v_url, c_time, "Qarşıya yüklenir...",
+                progress(d, t, v_url, c_time, "Karşıya yükleniyor...",
                          f"{rip_data['title']}.mp4")))
         os.remove(f"{rip_data['id']}.mp4")
         await v_url.delete()
@@ -852,17 +852,17 @@ def deEmojify(inputString):
     return get_emoji_regexp().sub(u'', inputString)
 
 CmdHelp('scrapers').add_command(
-    'img', '<dəyər> <söz>', 'Google üstündə sürətli bir foto axtarışı edir. Dəyər yazmazsanız 5 dənə foto gətirir.', 'img10 şirin pişiklər'
+    'img', '<değer> <söz>', 'Google üstünde hızlı bir fotoğraf arar eğer değer belirtmez iseniz 5 tane atar', 'img10 şirin kediler'
 ).add_command(
-    'currency', '<miqdar> <məzənnə> <dönüşecek məzənnə>', 'Yusufun Türk Lirası Botu kimi, ama boş qalanda qızlara yazmır.'
+    'currency', '<miktar> <birim> <dönüşecek birim>', 'Yusufun Türk Lirası Botu gibi, ama boş kaldığında kızlara yazmıyor.'
 ).add_command(
-    'carbon', '<mətn>', 'carbon.now.sh sitenı istifadə edərək şəkilərinizə carbon editi uyğulayar.'
+    'carbon', '<metin>', 'carbon.now.sh sitesini kullanarak mesajınıza carbon editi uygular.'
 ).add_command(
-    'crblang', '<dil>', 'Carbon üçün dil ayarlar.'
+    'crblang', '<dil>', 'Carbon için dil ayarlar.'
 ).add_command(
-    'karbon', '<mətn>', 'Carbon ile eynidi ama daha sürətlidir.'
+    'karbon', '<metin>', 'Carbon ile aynı ama daha hızlı.'
 ).add_command(
-    'google', '<kəlimə>', 'Googledan axtarış etməyinizə yarayan userbot modulu.'
+    'google', '<kelime>', 'Googledan arama yapmanıza yarayan userbot modülü.'
 ).add_command(
     'wiki', '<term>', '.'
 ).add_command(
@@ -876,7 +876,7 @@ CmdHelp('scrapers').add_command(
 ).add_command(
     'trt', '<metin>', 'Basit bir çeviri modülü.'
 ).add_command(
-    'yt', '<metin>', 'YouTube üzerinde bir axtaris yapar.'
+    'yt', '<metin>', 'YouTube üzerinde bir arayış yapar.'
 ).add_command(
     'haber', '<guncel/magazin/spor/ekonomi/politika/dunya>', 'Son dakika haberler.'
 ).add_command(

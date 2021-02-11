@@ -72,5 +72,5 @@ async def capture(url):
                                    reply_to=message_id)
 
 CmdHelp('ss').add_command(
-    'ss', '<url>', 'Belirtilen web sitesinden bir ekran görüntüsü alır ve gönderir.', 'ss https://fusuf.codes'
+    'ss', '<url>', 'Belirtilen web sitesinden bir ekran görüntüsü alır ve gönderir.', 'ss https://instagram.com'
 ).add()

@@ -131,7 +131,7 @@ async def kang(event):
                     await event.edit(
                         f"`Sticker {number}{'(animasyonlu)' if is_anim else ''} sayılı pakete eklendi, "
                         f"{emoji} emojisi ile birlikte! "
-                        f"Paket `[burada](t.me/addstickers/{packname})`tapıla bilər`",
+                        f"Paket `[burada](t.me/addstickers/{packname})` Ulaşılabilir...`",
                         parse_mode='md')
                     return
 
@@ -184,7 +184,7 @@ async def kang(event):
     await event.edit(
         f"`Sticker {number}{'(animasyonlu)' if is_anim else ''} sayılı pakete eklendi, "
         f"{emoji} emojisi ile birlikte! "
-        f"Paket `[burada](t.me/addstickers/{packname})` tapıla bilər.`",
+        f"Paket `[burada](t.me/addstickers/{packname})` Ulaşılabilir...`",
         parse_mode='md')
 
 

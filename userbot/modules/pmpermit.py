@@ -401,15 +401,15 @@ async def unblockpm(unblock):
         )
 
 CmdHelp('pmpermit').add_command(
-    'approve', None, 'Cavab verilən istifadəçiyə PM yazma icazəsi verilir.', 
+    'approve', None, 'Cevap verilen kişiye PM yazma yetkisi verilir.', 
 ).add_command(
-    'disapprove', None, 'Cavab verilən istifadəçinin PM icasəsini alar.'
+    'disapprove', None, 'Cevap verilen kişiden PM yetkisini alır.'
 ).add_command(
-    'block', '<istifadəçi adı/cavablama>', 'İstifadəçini blok edər.'
+    'block', '<kişi adı/yanıt>', 'Kişiyi Engeller.'
 ).add_command(
-    'unblock', '<istifadəçi adş/cavablama>', 'İstifadəçini blokdar çıxarar.'
+    'unblock', '<kişi adı/yanıt>', 'Kişinin engelini kaldırır.'
 ).add_command(
-    'notifoff', None, 'İcazə verilmiş şəxsi mesajların bildirimlərini təmizləyər ya da deaktiv edər.'
+    'notifoff', None, 'İzin verilmiş sohbetleri siler veya temizler.'
 ).add_command(
-    'notifon', None, 'İcazə verilmiş şəxsi mesajların bildirim göndərməsinə icazə verər.'
+    'notifon', None, 'İzin verilmiş sohbetlerin görünmesini sağlar.'
 ).add()

@@ -66,10 +66,10 @@ async def sinstall(event):
     try:
         plugin = int(plugin)
     except:
-        return await event.edit('** Siri Plugin Mağazası**\n__Versiyon 1.0__\n\n**⚠️ Hata:** `Lütfen Sadece Say Yazınız .sinstall pluginid`')
+        return await event.edit('**Siri Plugin Mağazası**\n__Versiyon 1.0__\n\n**⚠️ Hata:** `Lütfen Sadece Say Yazınız .sinstall pluginid`')
     
     await event.edit('**Siri Plugin Mağazası**\n__Versiyon 1.0__\n\n`🔎 Plugin\'i Getiriyorum...`')
-    plugin = await event.client.get_messages('@asenaplugin', ids=plugin)
+    plugin = await event.client.get_messages('@siriplugin', ids=plugin)
     await event.edit(f'**Siri Plugin Mağazası**\n__Versiyon 1.0__\n\n`✅ {plugin.file.name} Plugini Getirildi!`\n`⬇️ Plugini Yüklüyorum... Bekleyin.`')
     dosya = await plugin.download_media('./userbot/modules/')
     await event.edit(f'**Siri Plugin Mağazası**\n__Versiyon 1.0__\n\n`✅ {plugin.file.name} indirme başarılı!`\n`⬇️ Plugini Yüklüyorum... Bekleyin.`')

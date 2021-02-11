@@ -2,7 +2,7 @@
     "__SIRIJSON__": true,
     "LANGUAGE": "Türkçe",
     "LANGCODE": "tr",
-    "AUTHOR": "Siri Ekibi / TDU",
+    "AUTHOR": "Siri Ekibi / MESR",
     "STRINGS": {
         "__plugin": {
             "REPLY_FOR_PORT": "`Plugin-Port için lütfen bir dosyaya yanıt verin.`",
@@ -34,7 +34,7 @@
         },
         
         "__siri": {
-            "NEED_PLUGIN": "Lütfen bir Asena modülü adı belirtin.",
+            "NEED_PLUGIN": "Lütfen bir Siri modülü adı belirtin.",
             "NEED_MODULE": "Lütfen hangi Siri modülü için yardım istediğinizi belirtin !!\nKullanım: .siri <modül adı>"
         },
 
@@ -363,8 +363,8 @@
             "GOODMORNIN_YALL": "`Günaydın!`",
             "GOODBYE_MFRS": "`Görüşürüz... *Windows XP kapanma sesi*`",
             "RESTARTING": "`Bot yeniden başlatılıyor...`",
-            "SUPPORT_GROUP": "[Buradan](http://t.me/AsenaSupport) destek grubumuza ulaşabilirsiniz.",
-            "CREATOR": "Bu bot \n[Yusuf Usta](https://t.me/Fusuf) tarafından geliştirilmiştir. \n",
+            "SUPPORT_GROUP": "[Buradan](http://t.me/SiriSupport) destek grubumuza ulaşabilirsiniz.",
+            "CREATOR": "Bu bot \n[Erdem Üveyik](https://t.me/orgutsahibi) ve [Burak Felek](https://t.me/ixelizm) tarafından geliştirilmiştir. \n",
             "README": "[Siri README.md](https://github.com/ErdemBey1/SiriUserBot/blob/master/README.md)",
             "REPO": "[Siri Repo](https://github.com/ErdemBey1/siriuserbot)",
             "CHECK_LOGS": "`Çözülmüş mesaj için userbot loglarını kontrol et!`"
@@ -527,7 +527,7 @@
             "SEARCHING": "`Şarkı aranıyor...`",
             "BLOCKED_DEEZER": "`Mmmh sanırım` @DeezerMusicBot `engellemişsin. Lütfen engeli aç.",
             "NOT_FOUND": "`Aradığınız şarkı bulunamadı! Üzgünüm.`",
-            "UPLOADED_WITH": "@AsenaUserBot ile yüklendi.",
+            "UPLOADED_WITH": "@SiriUserBot ile yüklendi.",
             "USAGE": "`Kullanım:` `.song şarkı ismi/youtube url/spotify url`",
             "SEARCHING_SPOT": "`Şarkı aranıyor ve indiriliyor lütfen bekleyin!",
             "DOWNLOADED": "`İndirme işlemi başarılı lütfen bekleyiniz.`",
@@ -587,7 +587,7 @@
             "NOT_FOUND": "klasörü bulunamadı.",
             "GIT_ERROR": "Git hatası!",
             "NOT_GIT": "klasörü bir git reposu gibi görünmüyor. \nFakat bu sorunu .update now komutuyla botu zorla güncelleyerek çözebilirsin.",
-            "INVALID_BRANCH": "**[UPDATER]:**` Galiba Asena botunu modifiye ettin ve kendi branşını kullanıyorsun.\nBu durum güncelleyicinin kafasını karıştırıyor,\nGüncelleme nereden çekilecek?\nLütfen Asena botunu resmi repodan kullan.`",
+            "INVALID_BRANCH": "**[UPDATER]:**` Galiba Siri botunu modifiye ettin ve kendi branşını kullanıyorsun.\nBu durum güncelleyicinin kafasını karıştırıyor,\nGüncelleme nereden çekilecek?\nLütfen Asena botunu resmi repodan kullan.`",
             "UPDATE": "\n`Botun` **tamamen güncel!** `Branch:` **{}**\n",
             "WAS_UPDATE": "**{} için yeni güncelleme mevcut!\n\nDeğişiklikler:**\n`{}`",
             "BIG": "`Değişiklik listesi çok büyük, dosya olarak görüntülemelisin.`",

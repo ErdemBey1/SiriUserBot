@@ -323,7 +323,7 @@ async def blockpm(block):
         replied_user = await block.client.get_entity(reply.from_id)
         if replied_user.id in BRAIN_CHECKER or replied_user.id in WHITELIST:
             await block.edit(
-                "`Oups, Xəta! Bağışla amma bunu SpaceAI'də səlahiyyətli birinə edə bilmərəm 👨‍🚀!!`"
+                "`Oups, Hata! Beni Bağışla Ama Bunu SiriUserBot Yetkilisine Yapamam!!`"
             )
             return
 
@@ -347,7 +347,7 @@ async def blockpm(block):
     else:
         if block.chat_id in BRAIN_CHECKER:
             await block.edit(
-                "`Oups, Xəta! Bağışla amma bunu SpaceAI Sahibinə edə bilmərəm 👨‍🚀!!`"
+                "`Oups, Hata! Beni Bağışla Ama Bunu SiriUserBot Yetkilisine Yapamam!!`"
             )
             return
 

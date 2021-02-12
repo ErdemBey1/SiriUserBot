@@ -37,10 +37,10 @@ async def variable(var):
     exe = var.pattern_match.group(1)
     if app is None:
         await var.edit("`[HEROKU]"
-                       "\n**HEROKU_APPNAME** quraşdırın.")
+                       "\n**HEROKU_APPNAME** Yükleyin.")
         return False
     if exe == "get":
-        await var.edit("`Heroku Məlumatları Gətirilir..`")
+        await var.edit("`Heroku Bilgileri Getiriliyor..`")
         variable = var.pattern_match.group(2)
         if variable != '':
             if variable in heroku_var:
@@ -167,12 +167,12 @@ async def dyno_usage(dyno):
     await asyncio.sleep(1.5)
 
     return await dyno.edit("**Dyno**:\n\n"
-                           f" ➤ `İstifadə etdiyiniz dyno saatı`  **({HEROKU_APPNAME})**:\n"
-                           f"     •  `{AppHours}` **saat**  `{AppMinutes}` **dəqiqə**  "
+                           f" ➤ `Kullanılan Dyno Saati`  **({HEROKU_APPNAME})**:\n"
+                           f"     •  `{AppHours}` **saat**  `{AppMinutes}` **dakika**  "
                            f"**|**  [`{AppPercentage}` **%**]"
                            "\n"
-                           " ➤ `Bu ay üçün qalan dyno saatı`:\n"
-                           f"     •  `{hours}` **saat**  `{minutes}` **dəqiqə**  "
+                           " ➤ `Bu ay için kalan dyno saati`:\n"
+                           f"     •  `{hours}` **saat**  `{minutes}` **dakika**  "
                            f"**|**  [`{percentage}` **%**]"
                            )
 

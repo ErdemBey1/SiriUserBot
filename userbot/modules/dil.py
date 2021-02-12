@@ -21,18 +21,18 @@ async def dil(event):
 
     komut = event.pattern_match.group(1)
     if search(r"y[uü]kle|install", komut):
-        await event.edit("`Dil dosyası yüklenir...`")
+        await event.edit("`Dil dosyası yükleniyor...`")
         if event.is_reply:
             reply = await event.get_reply_message()
             dosya = await reply.download_media()
 
-            if ((len(reply.file.name.split(".")) >= 2) and (not reply.file.name.split(".")[1] == "spacejson")):
-                return await event.edit("`Lütfen geçerli bir` **SpaceJSON** `dosyası verin!`")
+            if ((len(reply.file.name.split(".")) >= 2) and (not reply.file.name.split(".")[1] == "sirijson")):
+                return await event.edit("`Lütfen geçerli bir` **SiriJSON** `dosyası verin!`")
 
             try:
                 dosya = loads(open(dosya, "r").read())
             except JSONDecodeError:
-                return await event.edit("`Lütfen geçerli bir` **SpaceJSON** `dosyası verin!`")
+                return await event.edit("`Lütfen geçerli bir` **SiriJSON** `dosyası verin!`")
 
             await event.edit(f"`{dosya['LANGUAGE']}` `dili yükleniyor...`")
             pchannel = await event.client.get_entity(PLUGIN_CHANNEL_ID)
@@ -49,22 +49,22 @@ async def dil(event):
         await event.edit("`Dil dosyası bilgileri getiriliyor... Lütfen bekleyiniz.`")
         if event.is_reply:
             reply = await event.get_reply_message()
-            if ((len(reply.file.name.split(".")) >= 1) and (not reply.file.name.split(".")[1] == "spacejson")):
-                return await event.edit("`Lütfen geçerli bir` **SpaceJSON** `dosyası verin!`")
+            if ((len(reply.file.name.split(".")) >= 1) and (not reply.file.name.split(".")[1] == "sirijson")):
+                return await event.edit("`Lütfen geçerli bir` **SiriJSON** `dosyası verin!`")
 
             dosya = await reply.download_media()
 
             try:
                 dosya = loads(open(dosya, "r").read())
             except JSONDecodeError:
-                return await event.edit("`Lütfen geçerli bir` **SpaceJSON** `dosyası verin!`")
+                return await event.edit("`Lütfen geçerli bir` **SiriJSON** `dosyası verin!`")
 
             await event.edit(
                 f"**Dil: **`{dosya['LANGUAGE']}`\n"
                 f"**Dil Kodu: **`{dosya['LANGCODE']}`\n"
                 f"**Çevirmen: **`{dosya['AUTHOR']}`\n"
 
-                f"\n\n`Dil dosyasını yüklemek üçün` `.dil yükle` `yazın`"
+                f"\n\n`Dil dosyasını yüklemek için` `.dil yükle` `yazın`"
             )
         else:
             await event.edit("**Lütfen bir dil dosyasına yanıt verin!**")
@@ -74,7 +74,7 @@ async def dil(event):
             f"**Dil Kodu: **`{LANGUAGE_JSON['LANGCODE']}`\n"
             f"**Çeviren: **`{LANGUAGE_JSON ['AUTHOR']}`\n"
 
-            f"\n\nDiger diller üçün @SpaceDil kanalına baxın"
+            f"\n\nDiğer diller üçün @SiriLanguage kanalına bakın"
         )
 
 CmdHelp('dil').add_command(

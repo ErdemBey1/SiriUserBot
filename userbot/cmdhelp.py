@@ -4,7 +4,7 @@
 # you may not use this file except in compliance with the License.
 #
 
-# SpaceUserBot - The Miri - Dadashzade
+# Asena UserBot - Yusuf Usta
 from userbot import PATTERNS, CMD_HELP, CMD_HELP_BOT
 
 class CmdHelp:
@@ -59,7 +59,7 @@ class CmdHelp:
         Sonuç getirir.
         """
 
-        result = f"**📗 Fayl:** `{self.FILE}`\n"
+        result = f"**📗 Dosya:** `{self.FILE}`\n"
         if self.WARNING == '' and self.INFO == '':
             result += f"**⬇️ Official:** {'✅' if self.IS_OFFICIAL else '❌'}\n\n"
         else:
@@ -67,24 +67,24 @@ class CmdHelp:
             
             if self.INFO == '':
                 if not self.WARNING == '':
-                    result += f"**⚠️ Xəbərdarlıq:** {self.WARNING}\n\n"
+                    result += f"**⚠️ Uyarı:** {self.WARNING}\n\n"
             else:
                 if not self.WARNING == '':
-                    result += f"**⚠️ Xəbərdarlıq:** {self.WARNING}\n"
+                    result += f"**⚠️ Uyarı:** {self.WARNING}\n"
                 result += f"**ℹ️ Info:** {self.INFO}\n\n"
                      
         for command in self.COMMANDS:
             command = self.COMMANDS[command]
             if command['params'] == None:
-                result += f"**🛠 Əmr:** `{PATTERNS[:1]}{command['command']}`\n"
+                result += f"**🛠 Komut:** `{PATTERNS[:1]}{command['command']}`\n"
             else:
-                result += f"**🛠 Əmr:** `{PATTERNS[:1]}{command['command']} {command['params']}`\n"
+                result += f"**🛠 Komut:** `{PATTERNS[:1]}{command['command']} {command['params']}`\n"
                 
             if command['example'] == None:
-                result += f"**💬 Açıqlama:** `{command['usage']}`\n\n"
+                result += f"**💬 Açıklama:** `{command['usage']}`\n\n"
             else:
-                result += f"**💬 Açıqlama:** `{command['usage']}`\n"
-                result += f"**⌨️ Misal:** `{PATTERNS[:1]}{command['example']}`\n\n"
+                result += f"**💬 Açıklama:** `{command['usage']}`\n"
+                result += f"**⌨️ Örnek:** `{PATTERNS[:1]}{command['example']}`\n\n"
         return result
 
     def add(self):
@@ -97,9 +97,8 @@ class CmdHelp:
     
     def getText(self, text : str):
         if text == 'REPLY_OR_USERNAME':
-            return '<istifadeçi adı> <istifadeçi adı/reply>'
+            return '<kullanıcı adı> <kullanıcı adı/yanıtlama>'
         elif text == 'OR':
             return 'veya'
         elif text == 'USERNAMES':
-            return '<istifadeçi ad(lar)ı>'
-        
+            return '<kullanıcı ad(lar)ı>'

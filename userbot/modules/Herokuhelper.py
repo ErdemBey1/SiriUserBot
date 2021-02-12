@@ -176,7 +176,7 @@ async def dyno_usage(dyno):
                            f"**|**  [`{percentage}` **%**]"
                            )
 
-@register(outgoing=True, pattern=r"^\.lo[gq]")
+@register(outgoing=True, pattern=r"^\.herokulog")
 async def _(dyno):
     try:
         Heroku = heroku3.from_key(HEROKU_APIKEY)

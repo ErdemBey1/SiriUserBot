@@ -1,5 +1,3 @@
-m7
-
 # Copyright (C) 2020 Yusuf Usta.
 #
 # Licensed under the GPL-3.0 License;

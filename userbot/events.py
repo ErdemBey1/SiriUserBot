@@ -64,7 +64,7 @@ def register(**args):
                 return
              
             if groups_only and not check.is_group:
-                await check.respond("`Bunun bir qrup olduğunu düşünmürəm.`")
+                await check.respond("`Bunun bir grup olduğunu sanmıyorum.`")
                 return
 
             try:
@@ -79,11 +79,11 @@ def register(**args):
                 if not disable_errors:
                     date = strftime("%Y-%m-%d %H:%M:%S", gmtime())
 
-                    text = "**USERBOT XETA RAPORU**\n"
-                    link = "[Siri Destek Qrupu](https://t.me/SiriSupport)"
-                    text += "İstəsəniz, bunu bildirə bilərsiniz."
-                    text += f"- sadəcə bu mesajı buraya göndərin {link}.\n"
-                    text += "Xəta və Tarix xaricində heç bir şey qeyd edilməz\n"
+                    text = "**USERBOT HATA RAPORU**\n"
+                    link = "[Siri Destek Grubu](https://t.me/SiriSupport)"
+                    text += "İsterseniz, bunu bildirebilirsiniz."
+                    text += f"- sadece bu mesajı buraya gönderin {link}.\n"
+                    text += "hata ve Tarih haricinde hiç bir şey kayıt edilmez\n"
 
                     ftext = "========== UYARI =========="
                     ftext += "\nBu dosya sadece burada yüklendi,"

@@ -201,7 +201,7 @@ try:
 
                     spec.loader.exec_module(mod)
                 except Exception as e:
-                    LOGS.info(f"`Yükləmədə problem! Plugin xətalı.\n\nXəta: {e}`")
+                    LOGS.info(f"`Yükleme Başarısız! Plugin Hatalı!!\n\nHata: {e}`")
 
                     try:
                         plugin.delete()
@@ -236,9 +236,9 @@ async def FotoDegistir (foto):
 for module_name in ALL_MODULES:
     imported_module = import_module("userbot.modules." + module_name)
 
-LOGS.info("Botunuz işləyir! Herhansısa bir söhbete .alive yazarağ Test edin."
-          " Köməyə ehtiyacınız varsa, Destek grubumuza gelin t.me/SiriSupport")
-LOGS.info(f"Bot versiyanız: Siri {SIRI_VERSION}")
+LOGS.info("Botunuz çalışıyor! Herhangi bir sohbete .alive yazarak Test edin."
+          " Yardıma İhtiycınız varsa, Destek grubumuza gelin t.me/SiriSupport")
+LOGS.info(f"Bot versiyonunuz: Siri {SIRI_VERSION}")
 
 """
 if len(argv) not in (1, 3, 4):

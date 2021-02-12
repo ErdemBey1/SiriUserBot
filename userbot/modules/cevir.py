@@ -45,7 +45,7 @@ async def cevir(event):
 
         im = Image.open(foto).convert("RGB")
         im.save("sticker.png", "png")
-        await event.client.send_file(event.chat_id, "sticker.png", reply_to=rep_msg, caption="@SpaceUserBot `ilə şəkilə çevirildi 👨‍🚀`")
+        await event.client.send_file(event.chat_id, "sticker.png", reply_to=rep_msg, caption="@SiriUserBot `ile Fotoğrafa çevirildi`")
 
         await event.delete()
         os.remove("sticker.png")
@@ -70,7 +70,7 @@ async def cevir(event):
             indir = await rep_msg.download_media()
             ses = await asyncio.create_subprocess_shell(f"ffmpeg -i '{indir}' {KOMUT[efekt]} output.mp3")
             await ses.communicate()
-            await event.client.send_file(event.chat_id, "output.mp3", reply_to=rep_msg, caption="@SpaceUserBot `ile efekt uygulandı.`")
+            await event.client.send_file(event.chat_id, "output.mp3", reply_to=rep_msg, caption="@SiriUserBot `ile efekt uygulandı.`")
             
             await event.delete()
             os.remove(indir)
@@ -111,16 +111,16 @@ async def cevir(event):
         if not event.is_reply or not rep_msg.video:
             await event.edit(LANG['NEED_VIDEO'])
             return
-        await event.edit('`Səsə çevrilir...`')
+        await event.edit('`Sese çevriliyor...`')
         video = io.BytesIO()
         video = await event.client.download_media(rep_msg.video)
         gif = await asyncio.create_subprocess_shell(
             f"ffmpeg -y -i '{video}' -vn -b:a 128k -c:a libmp3lame out.mp3")
         await gif.communicate()
-        await event.edit('`Səs yüklənir...`')
+        await event.edit('`Ses yükleniyor...`')
         
         try:
-            await event.client.send_file(event.chat_id, "out.mp3",reply_to=rep_msg, caption='@SpaceUserBot ilə səsə çevrildi.')
+            await event.client.send_file(event.chat_id, "out.mp3",reply_to=rep_msg, caption='@SiriUserBot ile sese çevrildi.')
         except:
             os.remove(video)
             return await event.edit('`Sese çevirilemedi!`')
@@ -133,11 +133,11 @@ async def cevir(event):
         return
 
 CmdHelp('cevir').add_command(
-    'çevir foto', '<cavab>', 'Stiikeri şəkilə çevirər.'
+    'çevir foto', '<yanıt>', 'Stickeri fotoğrafa çevirir.'
 ).add_command(
-    'çevir gif', '<cavab>', 'Videoyu gifə çevirər.'
+    'çevir gif', '<yanıt>', 'Videoyu gife çevirir.'
 ).add_command(
-    'çevir ses', '<çocuk/robot/earrape/hızlı/parazit/yankı>', 'Səsə effekt verər.'
+    'çevir ses', '<çocuk/robot/earrape/hızlı/parazit/yankı>', 'Sese efekt uygular.'
 ).add_command(
-    'çevir mp3', '<cavab>', 'Cavab verdiyiniz videonu mp3 edər.'
+    'çevir mp3', '<yanıt>', 'yanıtladığınız videoyu mp3\'e çevirir.'
 ).add()

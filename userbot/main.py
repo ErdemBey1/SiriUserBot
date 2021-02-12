@@ -29,16 +29,16 @@ import re
 import userbot.cmdhelp
 
 DIZCILIK_STR = [
-    "Stikeri oğurlayıram...",
-    "Bu stikeri çox bəyəndimmm...",
-    "Bu stikeri öz paketimə əlavə edirəm...",
-    "Bunu oğurlamalıyamm...",
-    "Hey bu əla stikerdir!\nElə indi oğurlayıram..",
-    "Stikerini oğurladım\nhahaha.",
-    "Hey bura bax. (☉｡☉)!→\nMən bunu oğurlayarkən...",
-    "Bu stikeri paketimə əlavə edirəm...",
-    "Stiker paketə əlavə edilir...",
-    "Stikeri öz paketimə əlavə edirəm... ",
+    "Çıkartmayı dızlıyorum...",
+    "Yaşasın dızcılık...",
+    "Bu çıkartmayı kendi paketime davet ediyorum...",
+    "Bunu dızlamam lazım...",
+    "Hey bu güzel bir çıkartma!\nHemen dızlıyorum..",
+    "Çıkartmanı dızlıyorum\nhahaha.",
+    "Hey şuraya bak. (☉｡☉)!→\nBen bunu dızlarken...",
+    "Güller kırmızı menekşeler mavi, bu çıkartmayı paketime dızlayarak havalı olacağım...",
+    "Çıkartma hapsediliyor...",
+    "Bay dızcı bu çıkartmayı dızlıyor... ",
 ]
 
 AFKSTR = [
@@ -66,10 +66,10 @@ AFKSTR = [
     "Şu an burada değilim....\nama öyleysem ...\n\nbu harika olmaz mıydı?",
 ]
 
-UNAPPROVED_MSG = ("`👨‍🚀 Hey,` {mention} `! Bu bir [botdur](https://t.me/siriuserbot) . Narahat olma.\n\n`"
-                  "`Sahibim sənə PM yazma icazəsi verməyib. `"
-                  "`Zəhmət olmasa sahibimin aktiv olmasını gözləyin, o bəzən PM yazmağa icazə verər.\n\n`"
-                  "`Bildiyim qədəri ilə o beynini itirmiş insanlara PM icasi vermir.`")
+UNAPPROVED_MSG = ("`Hey,` {mention}`! Bu bir bot. Endişelenme.\n\n`"
+                  "`Sahibim sana PM atma izni vermedi. `"
+                  "`Lütfen sahibimin aktif olmasını bekleyin, o genellikle PM'leri onaylar.\n\n`"
+                  "`Bildiğim kadarıyla o kafayı yemiş insanlara PM izni vermiyor.`")
 
 DB = connect("learning-data-root.check")
 CURSOR = DB.cursor()

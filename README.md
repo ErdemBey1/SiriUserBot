@@ -28,7 +28,7 @@
 **Windows 10:** [Python](https://www.microsoft.com/en-us/p/python-38/9mssztt1n39l#activetab=pivot:overviewtab) indirin ardından PowerShell bu kodu yapıştırın: `Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://kutt.it/aYTzCx')`
 
 ### Basit Yöntem
-Eğer botu kurma hakkında fikriniz yoksa burayı okuyunuz: [Kurulum Rehberi](https://github.com/Quiec/AsenaUserBot/wiki/Kurulum/)
+Eğer botu kurma hakkında fikriniz yoksa burayı okuyunuz: [Kurulum Rehberi](https://t.me/sirisupport)
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/ErdemBey1/SiriUserBot)
 ### Zor Yöntem
@@ -55,18 +55,18 @@ Help.add_command('deneme', # Komut
     'Gerçekten deneme yapıyor!', # Komut açıklaması
     'deneme' # Örnek kullanım.
     )
-Help.add_info('@Fusuf tarafından yapılmıştır.') # Bilgi ekleyebilirsiniz.
+Help.add_info('@Erdembey1 tarafından yapılmıştır.') # Bilgi ekleyebilirsiniz.
 # Ya da uyarı --> Help.add_warning('KULLANMA!')
 Help.add() # Ve Ekleyelim.
 ```
 
 ## Bilgilendirme
-Herhangi bir istek & şikâyet & öneri varsa [destek grubuna](https://t.me/AsenaSupport) ulaşabilirsiniz.
+Herhangi bir istek & şikâyet & öneri varsa [destek grubuna](https://t.me/SiriSupport) ulaşabilirsiniz.
 
 ```
     Userbottan dolayı; Telegram hesabınız yasaklanabilir.
-    Bu bir açık kaynaklı projedir, yaptığınız her işlemden kendiniz sorumlusunuz. Kesinlikle Asena yöneticileri sorumluluk kabul etmemektedir.
-    Asenayı kurarak bu sorumlulukları kabul etmiş sayılırsınız.
+    Bu bir açık kaynaklı projedir, yaptığınız her işlemden kendiniz sorumlusunuz. Kesinlikle Siri yöneticileri sorumluluk kabul etmemektedir.
+    Siriyi kurarak bu sorumlulukları kabul etmiş sayılırsınız.
 ```
 
 ## Credit

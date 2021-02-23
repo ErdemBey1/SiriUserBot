@@ -4,7 +4,7 @@
 # you may not use this file except in compliance with the License.
 #
 
-# SpaceUserBot - The Miri - Dadashzade
+# SiriUserBot - ErdemBey - Midy
 
 """ Olayları yönetmek için UserBot modülü.
  UserBot'un ana bileşenlerinden biri. """

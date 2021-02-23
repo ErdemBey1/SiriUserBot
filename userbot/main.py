@@ -4,7 +4,7 @@
 # you may not use this file except in compliance with the License.
 #
 
-# Space UserBot - The Miri - Dadashzade
+# Siri UserBot - ErdemBey - Midy
 
 """ UserBot başlangıç noktası """
 import importlib

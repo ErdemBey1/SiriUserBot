@@ -21,11 +21,13 @@
 ### Çok Basit Yöntem
 [Youtube Videosu](https://www.youtube.com/watch?v=mUUQ53TYqI0) ![YouTube Video Views](https://img.shields.io/youtube/views/mUUQ53TYqI0?style=flat-square)
 
-**Android:** Termuxu açın ve bu kodu yapıştırın: `bash <(curl -L https://kutt.it/88I5KA)`
+**Android:** Termuxu açın ve bu kodu yapıştırın:
 
-**iOS:** iSH açın ve bu kodu yapıştırın: `apk update && apk add bash && apk add curl && curl -L -o siri_installer.sh https://t.ly/vATX && chmod +x siri_installer.sh && bash siri_installer.sh`
+` bash <(curl -L https://bit.ly/3tUBVha) `
 
-**Windows 10:** [Python](https://www.microsoft.com/en-us/p/python-38/9mssztt1n39l#activetab=pivot:overviewtab) indirin ardından PowerShell bu kodu yapıştırın: `Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://kutt.it/aYTzCx')`
+**iOS:**  YAKINDA
+
+**Windows 10:** YAKINDA
 
 ### Basit Yöntem
 Eğer botu kurma hakkında fikriniz yoksa burayı okuyunuz: [Kurulum Rehberi](https://t.me/sirisupport)

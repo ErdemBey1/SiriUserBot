@@ -4,7 +4,7 @@
 # you may not use this file except in compliance with the License.
 #
 
-# Asena UserBot - Yusuf Usta
+# Si UserBot - 
 
 
 """ İnsanlarla eğlenmek için yapılmış olan UserBot modülü. """
@@ -485,7 +485,7 @@ async def slap(replied_user, event):
     hit = choice(HIT)
     throw = choice(THROW)
 
-    caption = "Asena " + temp.format(
+    caption = "Siri " + temp.format(
         victim=slapped, item=item, hits=hit, throws=throw)
 
     return caption

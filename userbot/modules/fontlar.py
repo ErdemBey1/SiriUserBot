@@ -339,6 +339,64 @@ f11font = [
     "𝚈",
     "𝚉",
 ]
+f12font = [
+    "ꋬ",
+    "ꃳ",
+    "ꉔ",
+    "꒯",
+    "ꏂ",
+    "ꊰ",
+    "ꍌ",
+    "ꁝ",
+    "꒐",
+    "꒻",
+    "ꀘ",
+    "꒒",
+    "ꂵ",
+    "ꋊ",
+    "ꄲ",
+    "ꉣ",
+    "ꆰ",
+    "ꋪ",
+    "ꇙ",
+    "꓄",
+    "꒤",
+    "꒦",
+    "ꅐ",
+    "ꉧ",
+    "ꌦ",
+    "ꁴ",
+]
+f13font = [
+    "𝔸",
+    "𝔹",
+    "ℂ",
+    "𝔻",
+    "𝔼",
+    "𝔽",
+    "𝔾",
+    "ℍ",
+    "𝕀",
+    "𝕁",
+    "𝕂",
+    "𝕃",
+    "𝕄",
+    "ℕ",
+    "𝕆",
+    "ℙ",
+    "ℚ",
+    "ℝ",
+    "𝕊",
+    "𝕋",
+    "𝕌",
+    "𝕍",
+    "𝕎",
+    "𝕏",
+    "𝕐",
+    "ℤ",
+]
+
+
 @register(outgoing=True, pattern="^.font1(?: |$)(.*)")
 async def fonta(event):
 
@@ -535,26 +593,69 @@ async def fontl(event):
             string = string.replace(normiecharacter, f11character)
     await event.edit(string)
 
+
+@register(outgoing=True, pattern="^.font12(?: |$)(.*)")
+async def fontq(event):
+
+    args = event.pattern_match.group(1)
+    if not args:
+        get = await event.get_reply_message()
+        args = get.text
+    if not args:
+        await event.edit("`Hey, metni çeviremiyorum. Bir mesaja yanıt olarak kullanın`")
+        return
+    string = "  ".join(args).lower()
+    for normiecharacter in string:
+        if normiecharacter in normiefont:
+            f12character = f12font[normiefont.index(normiecharacter)]
+            string = string.replace(normiecharacter, f12character)
+    await event.edit(string)
+
+
+
+@register(outgoing=True, pattern="^.font13(?: |$)(.*)")
+async def fontz(event):
+
+    args = event.pattern_match.group(1)
+    if not args:
+        get = await event.get_reply_message()
+        args = get.text
+    if not args:
+        await event.edit("`Hey, metni çeviremiyorum. Bir mesaja yanıt olarak kullanın`")
+        return
+    string = "  ".join(args).lower()
+    for normiecharacter in string:
+        if normiecharacter in normiefont:
+            f13character = f13font[normiefont.index(normiecharacter)]
+            string = string.replace(normiecharacter, f13character)
+    await event.edit(string)
+
+
+
 CmdHelp('fontlar').add_command(
-    'font1', None, ' .font1 yazı'
+    '千ㄖ几ㄒ 1', None, ' .font1 yazı'
 ).add_command(
-    'font2', None, ' .font2 yazı'
+    '🅕🅞🅝🅣 2', None, ' .font2 yazı'
 ).add_command(
-    'font3', None, ' .font3 yazı'
+    '𝔉𝔒𝔑𝔗 3', None, ' .font3 yazı'
 ).add_command(
-    'font4', None, ' .font4 yazı'
+    'ϝⲟⲛⲧ 4', None, ' .font4 yazı'
 ).add_command(
-    'font5', None, ' .font5 yazı'
+    '🄵🄾🄽🅃 5', None, ' .font5 yazı'
 ).add_command(
     'font6', None, ' .font6 yazı'
 ).add_command(
-    'font7', None, ' .font7 yazı'
+    'ғᴏɴᴛ 7', None, ' .font7 yazı'
 ).add_command(
-    'font8', None, ' .font8 yazı'
+    '𝐅𝐎𝐍𝐓 8', None, ' .font8 yazı'
 ).add_command(
-    'font9', None, ' .font9 yazı'
+    '𝓕𝓞𝓝𝓣 9', None, ' .font9 yazı'
 ).add_command(
-    'font10', None, ' .font10 yazı'
+    '𝙁𝙊𝙉𝙏 10', None, ' .font10 yazı'
 ).add_command(
-    'font11', None, ' .font11 yazı'
+    '𝙵𝙾𝙽𝚃 11', None, ' .font11 yazı'
+).add_command(
+    'ꊰꄲꋊ꓄ 12', None, ' .font12 yazı'
+).add_command(
+    '𝔽𝕆ℕ𝕋 13', None, ' .font13 yazı'
 ).add()

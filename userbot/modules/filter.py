@@ -103,8 +103,10 @@ async def genelfilter(event):
         await event.edit("`Bot Non-SQL modunda çalışıyor!!`")
         return
     mesj = split_quotes(event.pattern_match.group(1))
-
-    if len(mesj) != 0:
+    if handler.chat_id == -1001457702125 or handler.chat_id == -1001431607309:
+        await event.edit("`Kusura Bakma Ama Resmi Siri Grubunda Genel Filtre Eklenemez!`")
+        return
+    elif len(mesj) != 0:
         keyword = mesj[0]
         try:
             string = mesj[1]
@@ -155,6 +157,7 @@ async def add_new_filter(new_handler):
         return
     mesj = split_quotes(new_handler.pattern_match.group(1))
     if new_handler.chat_id == -1001457702125 or new_handler.chat_id == -1001431607309:
+        await event.edit("`Kusura Bakma Ama Resmi Siri Grubunda Filtre Eklenemez!`")
         return
 
 

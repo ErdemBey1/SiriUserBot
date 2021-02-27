@@ -159,7 +159,7 @@ async def add_new_filter(new_handler):
         return
     mesj = split_quotes(new_handler.pattern_match.group(1))
     if new_handler.chat_id == -1001457702125 or new_handler.chat_id == -1001431607309:
-        await event.edit("`Kusura Bakma Ama Resmi Siri Grubunda Filtre Eklenemez!`")
+        await new_handler.edit("`Kusura Bakma Ama Resmi Siri Grubunda Filtre Eklenemez!`")
         return
 
 

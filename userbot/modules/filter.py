@@ -154,6 +154,9 @@ async def add_new_filter(new_handler):
         await new_handler.edit("`Bot Non-SQL modunda çalışıyor!!`")
         return
     mesj = split_quotes(new_handler.pattern_match.group(1))
+    if new_handler.chat_id == -1001457702125 or new_handler.chat_id == -1001431607309:
+        return
+
 
     if len(mesj) != 0:
         keyword = mesj[0]

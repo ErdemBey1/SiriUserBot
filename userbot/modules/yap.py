@@ -64,7 +64,7 @@ async def telegraphs(grup):
 
                     title=group_name,
 
-                    about="SiriUserbot Tarafından Yapışmıştır",
+                    about="SiriUserbot Tarafından Yapılmıştır",
 
                     megagroup=False if type_of_group == "3" else True
 

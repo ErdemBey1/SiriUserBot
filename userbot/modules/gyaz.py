@@ -8,7 +8,7 @@ from userbot.events import register
 from userbot.cmdhelp import CmdHelp
 
 @register(outgoing=True, pattern="^.gyaz ?(.*)")
-async def pm(event):
+async def remoteaccess(event):
  
     p = event.pattern_match.group(1)
     m = p.split(" ")

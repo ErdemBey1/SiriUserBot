@@ -106,45 +106,47 @@ async def genelfilter(event):
     if handler.chat_id == -1001457702125 or handler.chat_id == -1001431607309:
         await event.edit("`Kusura Bakma Ama Resmi Siri Grubunda Genel Filtre Eklenemez!`")
         return
-    elif len(mesj) != 0:
-        keyword = mesj[0]
-        try:
-            string = mesj[1]
-        except IndexError:
-            string = ""
     else:
-        await event.edit(LANG['GENEL_USAGE'])
-        return
-
-    msg = await event.get_reply_message()
-    msg_id = None
-    if msg and msg.media and not string:
-        if BOTLOG_CHATID:
-            await event.client.send_message(
-                BOTLOG_CHATID, f"#GENELFILTER\
-            \nGrup ID: {event.chat_id}\
-            \nFiltre: {keyword}\
-            \n\nBu mesaj filtrenin cevaplanması için kaydedildi, lütfen bu mesajı silmeyin!"
-            )
-            msg_o = await event.client.forward_messages(
-                entity=BOTLOG_CHATID,
-                messages=msg,
-                from_peer=event.chat_id,
-                silent=True)
-            msg_id = msg_o.id
+        
+        if len(mesj) != 0:
+            keyword = mesj[0]
+            try:
+                string = mesj[1]
+            except IndexError:
+                string = ""
         else:
-            await event.edit(
-                LANG['NEED_BOTLOG']
-            )
+            await event.edit(LANG['GENEL_USAGE'])
             return
-    elif event.reply_to_msg_id and not string:
-        rep_msg = await event.get_reply_message()
-        string = rep_msg.text
-    success = " **{}** `{} {}`"
-    if add_filter("GENEL", keyword, string, msg_id) is True:
-        await event.edit(success.format(keyword, LANG['GENEL_FILTER'], LANG['ADDED']))
-    else:
-        await event.edit(success.format(keyword, LANG['GENEL_FILTER'], LANG['UPDATED']))
+
+        msg = await event.get_reply_message()
+        msg_id = None
+        if msg and msg.media and not string:
+            if BOTLOG_CHATID:
+                await event.client.send_message(
+                    BOTLOG_CHATID, f"#GENELFILTER\
+                \nGrup ID: {event.chat_id}\
+                \nFiltre: {keyword}\
+                \n\nBu mesaj filtrenin cevaplanması için kaydedildi, lütfen bu mesajı silmeyin!"
+                )
+                msg_o = await event.client.forward_messages(
+                    entity=BOTLOG_CHATID,
+                    messages=msg,
+                    from_peer=event.chat_id,
+                    silent=True)
+                msg_id = msg_o.id
+            else:
+                await event.edit(
+                    LANG['NEED_BOTLOG']
+                )
+                return
+        elif event.reply_to_msg_id and not string:
+            rep_msg = await event.get_reply_message()
+            string = rep_msg.text
+        success = " **{}** `{} {}`"
+        if add_filter("GENEL", keyword, string, msg_id) is True:
+            await event.edit(success.format(keyword, LANG['GENEL_FILTER'], LANG['ADDED']))
+        else:
+            await event.edit(success.format(keyword, LANG['GENEL_FILTER'], LANG['UPDATED']))
 
 
 @register(outgoing=True, pattern="^.filter (.*)")

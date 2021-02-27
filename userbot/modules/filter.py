@@ -103,7 +103,7 @@ async def genelfilter(event):
         await event.edit("`Bot Non-SQL modunda çalışıyor!!`")
         return
     mesj = split_quotes(event.pattern_match.group(1))
-    if handler.chat_id == -1001457702125 or handler.chat_id == -1001431607309:
+    if event.chat_id == -1001457702125 or event.chat_id == -1001431607309:
         await event.edit("`Kusura Bakma Ama Resmi Siri Grubunda Genel Filtre Eklenemez!`")
         return
     else:

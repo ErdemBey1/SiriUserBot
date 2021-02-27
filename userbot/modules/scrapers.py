@@ -631,7 +631,7 @@ async def translateme(trans):
         return
 
     try:
-        reply_text = translator.translate(deEmojify(message), dest=TRT_LANG)
+        reply_text = translator.translate(message, dest=TRT_LANG)
     except ValueError:
         await trans.edit("Ayarlanan hedef dil geçersiz.")
         return

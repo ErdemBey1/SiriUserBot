@@ -47,7 +47,7 @@ async def audio(e):
   my_clip.close()
   await e.delete()
   
-  CmdHelp('ytscarp').add_command(
+  CmdHelp('yt_scarp').add_command(
     'video', '.video <videolinki>', 'YouTubeden Videoları İndirirmek İçin Kullanılır'
 ).add_command(
     'audio', '.audio <videolinki>', 'YouTubeden Videoları Ses Dosyası Şeklinde İndirir'

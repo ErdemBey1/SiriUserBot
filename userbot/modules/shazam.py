@@ -4,10 +4,7 @@
 # you may not use this file except in compliance with the License.
 #
 
-# Asena UserBot - Yusuf Usta
-# Telegram @Fusuf
-
-# Coded by @Fusuf
+# SiriUserBot - ErdemBey - Midy
 
 from pydub import AudioSegment
 from json import dumps

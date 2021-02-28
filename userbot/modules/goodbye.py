@@ -4,7 +4,8 @@
 # you may not use this file except in compliance with the License.
 #
 
-# Asena UserBot - Yusuf Usta
+# 
+# 
 
 
 from userbot.events import register

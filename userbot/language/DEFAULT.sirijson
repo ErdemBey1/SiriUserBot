@@ -638,6 +638,10 @@
             "SUNSET": "Günbatımı"
         },
 
+        "klon": {
+            "WLKLON": "`Siri yöneticileri klonlanmayı sevmiyor.`"
+        },
+
         "whois": {
             "GETTING_DATA": "`Verileri çalıyorum... Lütfen bekleyiniz...`",
             "FAILED_GETTING_DATA": "`Bu kullanıcının bilgilerini getiremedim.`",

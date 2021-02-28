@@ -1,4 +1,4 @@
-# GNU LICENCE / @SPACEUSERBOT
+# GNU LICENCE / SiriUserBot - ErdemBey - Midy
 
 import codecs
 import heroku3

@@ -4,7 +4,7 @@
 # you may not use this file except in compliance with the License.
 #
 
-# Si UserBot - 
+# SiriUserBot - ErdemBey - Midy
 
 
 """ İnsanlarla eğlenmek için yapılmış olan UserBot modülü. """

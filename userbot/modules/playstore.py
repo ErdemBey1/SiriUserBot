@@ -1,4 +1,4 @@
-# SİRİserBot # ERDEMBEY
+# SiriUserBot - ErdemBey - Midy
 
 import bs4
 import requests

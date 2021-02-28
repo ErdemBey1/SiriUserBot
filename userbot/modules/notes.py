@@ -4,8 +4,7 @@
 # you may not use this file except in compliance with the License.
 #
 
-# Asena UserBot - Yusuf Usta
-
+# SiriUserBot - ErdemBey - Midy
 
 """ Not tutma komutlarını içeren UserBot modülüdür. """
 

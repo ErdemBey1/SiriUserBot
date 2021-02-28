@@ -1,4 +1,5 @@
-#Translated&Updated by @Erdme#
+# SiriUserBot - ErdemBey - Midy
+# Translated&Updated by @Erdme
 """Hesabınızın istatistiklerini gösterir"""
 import logging
 import time

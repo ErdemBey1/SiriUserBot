@@ -28,6 +28,16 @@ from json import loads, JSONDecodeError
 import re
 import userbot.cmdhelp
 
+ALIVE_MSG = [
+    "Siri çalışıyor ve sana bişey demek istiyor.. Seni seviyorum sahibim ❤️",
+    "🎆 Endişelenme! Seni yanlız bırakmam, Siri çalışıyor",
+    "⛈️ Elimden gelenin en iyisini yapmaya hazırım :3",
+    "✨ Siri sahibinin emirlerine hazır...",
+    "😔 Gitmez dediğiniz insanlar bile gidiyor olmalı ki alive yazarak beni kontrol ediyorsun! Ben dynom bitene kadar sahibimi bırakmam!",
+    "Şuan en gelişmiş userbotun düzenlediği mesajı okuyor olmalısın.",
+    "Hokus Pokus 🔮! Ee şey sanırım büyücülükle pek aram yok:(",
+]
+
 DIZCILIK_STR = [
     "Çıkartmayı dızlıyorum...",
     "Yaşasın dızcılık...",
@@ -39,13 +49,14 @@ DIZCILIK_STR = [
     "Güller kırmızı menekşeler mavi, bu çıkartmayı paketime dızlayarak havalı olacağım...",
     "Çıkartma hapsediliyor...",
     "Bay dızcı bu çıkartmayı dızlıyor... ",
+    "Bu güzel çıkartma neden benim paketimde de olmasın🤭",
 ]
 
 AFKSTR = [
     "Şu an acele işim var, daha sonra mesaj atsan olmaz mı? Zaten yine geleceğim.",
     "Aradığınız kişi şu anda telefona cevap veremiyor. Sinyal sesinden sonra kendi tarifeniz üzerinden mesajınızı bırakabilirsiniz. Mesaj ücreti 49 kuruştur. \n`biiiiiiiiiiiiiiiiiiiiiiiiiiiiip`!",
     "Birkaç dakika içinde geleceğim. Fakat gelmezsem...\ndaha fazla bekle.",
-    "Şu an burada değilim, muhtemelen başka bir yerdeyim.",
+    "Şu an burada değilim, ama muhtemelen başka bir yerdeyim.",
     "Güller kırmızı\nMenekşeler mavi\nBana bir mesaj bırak\nVe sana döneceğim.",
     "Bazen hayattaki en iyi şeyler beklemeye değer…\nHemen dönerim.",
     "Hemen dönerim,\nama eğer geri dönmezsem,\ndaha sonra dönerim.",
@@ -64,10 +75,20 @@ AFKSTR = [
     "Bahse girerim bir mesaj bekliyordun!",
     "Hayat çok kısa, yapacak çok şey var...\nOnlardan birini yapıyorum...",
     "Şu an burada değilim....\nama öyleysem ...\n\nbu harika olmaz mıydı?",
+    "Beni hatırladığına sevindim ama şuanda klavye bana çok uzak",
 ]
 
-UNAPPROVED_MSG = ("`Hey,` {mention}`! Bu bir bot. Endişelenme.\n\n`"
-                  "`Sahibim sana PM atma izni vermedi. `"
+KICKME_MSG = [
+    "Güle güle ben gidiyorum 👋🏻",
+    "Sessizce çıkıyorum 🥴",
+    "Haberin olmadan çıkarsam bir gün benim grupta olmadığı farkedeceksin.. O yüzden bu mesajı bırakıyorum🚪",
+    "Hemen burayı terk etmeliyim🤭",
+    "7 deniz ve 7 ülke,\n7 su ve 7 kıta,\n7 dağ ve 7 tepe,\n7 ovala ve 7 höyük,\n7 havuz ve 7 göl,\n7 bahar ve 7 çayır,\n7 şehir ve 7 mahalle,\n7 blok ve 7 ev...\n\nKısaca bu gruptan uzak bi yere..!",
+]
+
+
+UNAPPROVED_MSG = ("`Hey,` {mention}`!👨‍💻 Ben Siri. Endişelenme!\n\n`"
+                  "`Sahibim sana mesaj atma izni vermedi o yüzden sahibim seni onaylayana kadar bu mesajı alacaksın.. `"
                   "`Lütfen sahibimin aktif olmasını bekleyin, o genellikle PM'leri onaylar.\n\n`"
                   "`Bildiğim kadarıyla o kafayı yemiş insanlara PM izni vermiyor.`")
 
@@ -160,7 +181,7 @@ try:
 
     # PLUGIN MESAJLARI AYARLIYORUZ
     PLUGIN_MESAJLAR = {}
-    ORJ_PLUGIN_MESAJLAR = {"alive": f"`Sizin İçin Buradayım Efendim`", "afk": f"`{str(choice(AFKSTR))}`", "kickme": "`Bye Bye Ben Gidiyorum...`🚪", "pm": UNAPPROVED_MSG, "dızcı": str(choice(DIZCILIK_STR)), "ban": "{mention}`, Banlandı!!`", "mute": "{mention}`, sessize alındı!`", "approve": "`Merhaba` {mention}`, artık bana mesaj gönderebilirsin!`", "disapprove": "{mention}`, artık bana mesaj gönderemezsin!`", "block": "{mention}`, seni Engelledim!`"}
+    ORJ_PLUGIN_MESAJLAR = {"alive": f"`{str(choice(ALIVE_MSG))}`", "afk": f"`{str(choice(AFKSTR))}`", "kickme": "`{str(choice(KICKME_MSG))}`", "pm": UNAPPROVED_MSG, "dızcı": str(choice(DIZCILIK_STR)), "ban": "🌀 {mention}`, Banlandı!!`", "mute": "🌀 {mention}`, sessize alındı!`", "approve": "`Merhaba` {mention}`, artık bana mesaj gönderebilirsin!`", "disapprove": "{mention}`, artık bana mesaj gönderemezsin!`", "block": "{mention}`, bunu bana mecbur bıraktın! Seni engelledim!`"}
 
     PLUGIN_MESAJLAR_TURLER = ["alive", "afk", "kickme", "pm", "dızcı", "ban", "mute", "approve", "disapprove", "block"]
     for mesaj in PLUGIN_MESAJLAR_TURLER:
@@ -176,7 +197,7 @@ try:
             else:
                 PLUGIN_MESAJLAR[mesaj] = dmsj
     if not PLUGIN_CHANNEL_ID == None:
-        LOGS.info("Pluginler Yüklenir")
+        LOGS.info("🔄 Pluginler Yükleniyor..")
         try:
             KanalId = bot.get_entity(PLUGIN_CHANNEL_ID)
         except:
@@ -237,7 +258,7 @@ for module_name in ALL_MODULES:
     imported_module = import_module("userbot.modules." + module_name)
 
 LOGS.info("Botunuz çalışıyor! Herhangi bir sohbete .alive yazarak Test edin."
-          " Yardıma İhtiycınız varsa, Destek grubumuza gelin t.me/SiriSupport")
+          " Yardıma İhtiyacınız varsa, Destek grubumuza gelin t.me/SiriSupport")
 LOGS.info(f"Bot versiyonunuz: Siri {SIRI_VERSION}")
 
 """

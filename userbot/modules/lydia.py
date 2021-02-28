@@ -4,7 +4,7 @@
 # you may not use this file except in compliance with the License.
 #
 
-# Asena UserBot - Yusuf Usta
+# SiriUserBot - ErdemBey - Midy
 
 # credit goes to @snapdragon and @devpatel_73 for making it work on this userbot.
 #

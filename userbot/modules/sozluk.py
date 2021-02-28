@@ -4,7 +4,7 @@
 # you may not use this file except in compliance with the License.
 #
 
-# Asena UserBot - Yusuf Usta
+# SiriUserBot - ErdemBey - Midy
 
 # Turkish word meaning. Only Turkish. Coded @By_Azade, Asena uyarlaması @qulec
 #

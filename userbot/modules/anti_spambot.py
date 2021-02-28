@@ -4,7 +4,7 @@
 # you may not use this file except in compliance with the License.
 #
 
-# SpaceUserBot - The Miri - Dadashzade
+# SiriUserBot - ErdemBey - Midy
 #
 
 ''' Gruba katılan spamcıları banlamada yardımcı olan modüldür. '''

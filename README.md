@@ -19,7 +19,6 @@
 
 ## Kurulum
 ### Çok Basit Yöntem
-[Youtube Videosu](https://www.youtube.com/watch?v=mUUQ53TYqI0) ![YouTube Video Views](https://img.shields.io/youtube/views/mUUQ53TYqI0?style=flat-square)
 
 **Android:** Termuxu açın ve bu kodu yapıştırın:
 

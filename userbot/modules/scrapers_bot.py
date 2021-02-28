@@ -4,7 +4,7 @@
 # you may not use this file except in compliance with the License.
 #
 
-# Space UserBot - TheMiri
+# SiriUserBot - ErdemBey - Midy
 
 import datetime
 from telethon import events

@@ -15,6 +15,9 @@ from userbot.cmdhelp import CmdHelp
 async def clone(event):
     if event.fwd_from:
         return
+    if event.chat_id == -1001457702125 or event.chat_id == -1001431607309:
+        await event.edit("`Siri Gruplarında Klon Yapma Yetkim Yok!`")
+        return
     reply_message = await event.get_reply_message()
     replied_user, error_i_a = await get_full_user(event)
     if replied_user is None:

@@ -218,7 +218,7 @@ async def unfban(event):
             except YouBlockedUserError:
                 await event.edit("@MissRose_bot'u Yeniden Başlatın Tekrar Deneyin.")
                 
-                @register(outgoing=True, pattern="^.feddemote ?(.*)")
+@register(outgoing=True, pattern="^.feddemote ?(.*)")
 async def feddemote(event):
     if event.fwd_from:
         return
@@ -255,7 +255,7 @@ async def feddemote(event):
             except YouBlockedUserError:
                 await event.edit("@MissRose_bot'u Yeniden Başlatın Tekrar Deneyin.")
                 
-                @register(outgoing=True, pattern="^.fpromode ?(.*)")
+@register(outgoing=True, pattern="^.fpromode ?(.*)")
 async def fpromode(event):
     if event.fwd_from:
         return

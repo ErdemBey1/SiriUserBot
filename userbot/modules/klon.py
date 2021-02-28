@@ -8,8 +8,14 @@ from telethon.tl.types import MessageEntityMentionName
 from telethon.utils import get_input_location
 from userbot.events import register
 from telethon.tl import functions
-from userbot import TEMP_DOWNLOAD_DIRECTORY
+from userbot import TEMP_DOWNLOAD_DIRECTORY, BRAIN_CHECKER, WHITELIST
 from userbot.cmdhelp import CmdHelp
+
+from userbot.language import get_value
+LANG = get_value("klon")
+
+# ████████████████████████████████ #
+
 
 @register(outgoing=True, pattern="^.klon ?(.*)")
 async def clone(event):
@@ -18,6 +24,11 @@ async def clone(event):
     if event.chat_id == -1001457702125 or event.chat_id == -1001431607309:
         await event.edit("`Siri Gruplarında Klon Yapma Yetkim Yok!`")
         return
+# Eğer kullanıcı sudo ise 
+    if user.id in BRAIN_CHECKER or user.id in WHITELIST:
+        await gspdr.edit(LANG['WLKLON'])
+        return
+
 
     reply_message = await event.get_reply_message()
     replied_user, error_i_a = await get_full_user(event)

@@ -87,9 +87,28 @@ async def fetch_info(chat, event):
         location = str(e)
     
     #this is some spaghetti I need to change
+    description = chat.full_chat.about
+    members = chat.full_chat.participants_count if hasattr(chat.full_chat, "participants_count") else chat_obj_info.participants_count
+    admins = chat.full_chat.admins_count if hasattr(chat.full_chat, "admins_count") else None
+    banned_users = chat.full_chat.kicked_count if hasattr(chat.full_chat, "kicked_count") else None
+    restrcited_users = chat.full_chat.banned_count if hasattr(chat.full_chat, "banned_count") else None
+    members_online = chat.full_chat.online_count if hasattr(chat.full_chat, "online_count") else 0
+    group_stickers = chat.full_chat.stickerset.title if hasattr(chat.full_chat, "stickerset") and chat.full_chat.stickerset else None
     messages_viewable = msg_info.count if msg_info else None
     messages_sent = chat.full_chat.read_inbox_max_id if hasattr(chat.full_chat, "read_inbox_max_id") else None
     messages_sent_alt = chat.full_chat.read_outbox_max_id if hasattr(chat.full_chat, "read_outbox_max_id") else None
+    exp_count = chat.full_chat.pts if hasattr(chat.full_chat, "pts") else None
+    username = chat_obj_info.username if hasattr(chat_obj_info, "username") else None
+    bots_list = chat.full_chat.bot_info  # this is a list
+    bots = 0
+    supergroup = "<b>Evet</b>" if hasattr(chat_obj_info, "megagroup") and chat_obj_info.megagroup else "No"
+    slowmode = "<b>Evet</b>" if hasattr(chat_obj_info, "slowmode_enabled") and chat_obj_info.slowmode_enabled else "No"
+    slowmode_time = chat.full_chat.slowmode_seconds if hasattr(chat_obj_info, "slowmode_enabled") and chat_obj_info.slowmode_enabled else None
+    restricted = "<b>Evet</b>" if hasattr(chat_obj_info, "restricted") and chat_obj_info.restricted else "No"
+    verified = "<b>Evet</b>" if hasattr(chat_obj_info, "verified") and chat_obj_info.verified else "No"
+    username = "@{}".format(username) if username else None
+    creator_username = "@{}".format(creator_username) if creator_username else None
+    #end of spaghetti block
     
     if admins is None:
         # use this alternative way if chat.full_chat.admins_count is None, works even without being an admin

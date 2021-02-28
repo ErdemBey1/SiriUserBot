@@ -4,7 +4,7 @@
 # you may not use this file except in compliance with the License.
 #
 
-# Asena UserBot - Yusuf Usta
+# SiriUserBot - ErdemBey - Midy
 
 
 """ Telegram'daki herhangi bir kullanıcı hakkında bilgi almak için UserBot modülü (sizde dahil!). """

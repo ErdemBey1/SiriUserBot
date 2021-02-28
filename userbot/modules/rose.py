@@ -217,6 +217,80 @@ async def unfban(event):
                 await event.delete()
             except YouBlockedUserError:
                 await event.edit("@MissRose_bot'u Yeniden Başlatın Tekrar Deneyin.")
+                
+                @register(outgoing=True, pattern="^.feddemote ?(.*)")
+async def feddemote(event):
+    if event.fwd_from:
+        return
+    if event.pattern_match.group(1):
+        siri = event.pattern_match.group(1)
+        
+    else:
+        siri = ""
+    if event.reply_to_msg_id:
+        previous_message = await event.get_reply_message()
+        replied_user = await event.client(
+            GetFullUserRequest(previous_message.sender_id)
+        )
+        kullanıcı = str(replied_user.user.id)
+        async with event.client.conversation(chat) as conv:
+            try:
+                await conv.send_message("/start")
+                await conv.get_response()
+                await conv.send_message("/feddemode " + kullanıcı)
+                audio = await conv.get_response()
+                await event.client.forward_messages(event.chat_id, audio)
+                await event.delete()
+            except YouBlockedUserError:
+                await event.edit("@MissRose_bot'u Yeniden Başlatın Tekrar Deneyin.")
+    else:
+        async with event.client.conversation(chat) as conv:
+            try:
+                await conv.send_message("/start")
+                await conv.get_response()
+                await conv.send_message("/unfban " + siri)
+                audio = await conv.get_response()
+                await event.client.forward_messages(event.chat_id, audio)
+                await event.delete()
+            except YouBlockedUserError:
+                await event.edit("@MissRose_bot'u Yeniden Başlatın Tekrar Deneyin.")
+                
+                @register(outgoing=True, pattern="^.fpromode ?(.*)")
+async def fpromode(event):
+    if event.fwd_from:
+        return
+    if event.pattern_match.group(1):
+        siri = event.pattern_match.group(1)
+        
+    else:
+        siri = ""
+    if event.reply_to_msg_id:
+        previous_message = await event.get_reply_message()
+        replied_user = await event.client(
+            GetFullUserRequest(previous_message.sender_id)
+        )
+        kullanıcı = str(replied_user.user.id)
+        async with event.client.conversation(chat) as conv:
+            try:
+                await conv.send_message("/start")
+                await conv.get_response()
+                await conv.send_message("/fpromode " + kullanıcı)
+                audio = await conv.get_response()
+                await event.client.forward_messages(event.chat_id, audio)
+                await event.delete()
+            except YouBlockedUserError:
+                await event.edit("@MissRose_bot'u Yeniden Başlatın Tekrar Deneyin.")
+    else:
+        async with event.client.conversation(chat) as conv:
+            try:
+                await conv.send_message("/start")
+                await conv.get_response()
+                await conv.send_message("/fpromode " + siri)
+                audio = await conv.get_response()
+                await event.client.forward_messages(event.chat_id, audio)
+                await event.delete()
+            except YouBlockedUserError:
+                await event.edit("@MissRose_bot'u Yeniden Başlatın Tekrar Deneyin.")
             
 CmdHelp('rose').add_command(
     'fstat', '<tag/id>', 'Sadece .fstat Yazarsanız Kendiniz İçin Fban Listesini Verir. \n ID veya @KULLANICI ADI Verirseniz O Kişinin Fban Listesini Verir '
@@ -230,5 +304,9 @@ CmdHelp('rose').add_command(
     'fban', '<tag/id>', 'Bunu Federasyon Sahipleri Kullana Bilir.\n Bulunduğunuz Gruptaki Kişiye Kendi Federasyonunuzdan Fban atabilirsiniz. '
 ).add_command(
     'unfban', '<tag/id>', ' Bunu Federasyon Sahipleri Kullana Bilir.\n Bulunduğunuz Gruptaki Kişiye Kendi Federasyonunuzdan Fbanını Açabilirsiniz. '
+).add_command(
+    'fpromote', '<tag/id>', ' Bunu Federasyon Sahipleri Kullana Bilir.\n Bulunduğunuz Gruptaki Kişiye Kendi Federasyonunuzdan Fban Yetkisi Verebilirsiniz. '
+).add_command(
+    'feddemote', '<tag/id>', ' Bunu Federasyon Sahipleri Kullana Bilir.\n Bulunduğunuz Gruptaki Kişiye Kendi Federasyonunuzdan Fban yetkisini Alabilirsiniz. \n NOT: BU KOMUTLAR HER YERDE ÇALIŞMAKTADIR ÖZEL MESAJLARDA VER HANGİ BİR GRUPTA KULLANA BİLİRSİNİZ @SiriUserBot '
     
 ).add()

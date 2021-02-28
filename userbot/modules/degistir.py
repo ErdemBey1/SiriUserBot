@@ -4,7 +4,7 @@
 # you may not use this file except in compliance with the License.
 #
 
-# SpaceUserBot - The Miri - Dadashzade
+# SiriUserBot - ErdemBey - Midy
 
 import re
 import userbot.modules.sql_helper.mesaj_sql as sql

@@ -4,7 +4,7 @@
 # you may not use this file except in compliance with the License.
 #
 
-# Asena UserBot - Yusuf Usta
+# SiriUserBot - ErdemBey - Midy
 
 from asyncio import sleep
 from json import loads

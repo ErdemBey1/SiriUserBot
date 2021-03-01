@@ -26,10 +26,16 @@
 
 **iOS:**  YAKINDA
 
-**Windows 10:** Windows 10: [Python](https://www.microsoft.com/en-us/p/python-38/9mssztt1n39l?activetab=pivot:overviewtab) indirin ardından PowerShell bu kodu yapıştırın: `Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://kutt.it/l6LR90')`
+
+**Online Installer**
+
+[Olnine Install Linki](www.repl.it.com/@ErdemBey1/siriinstaller)
+
+**Windows 10:** Windows 10: [Python](https://www.microsoft.com/en-us/p/python-38/9mssztt1n39l?activetab=pivot:overviewtab) indirin ardından PowerShell bu kodu yapıştırın:
+`Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://kutt.it/l6LR90')`
 
 ### Basit Yöntem
-Eğer botu kurma hakkında fikriniz yoksa burayı okuyunuz: [Kurulum Rehberi](https://t.me/sirisupport)
+Eğer botu kurma hakkında fikriniz yoksa buradan Yardım Alabilirsiniz: [Kurulum Rehberi](https://t.me/sirisupport)
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/ErdemBey1/SiriUserBot)
 ### Zor Yöntem

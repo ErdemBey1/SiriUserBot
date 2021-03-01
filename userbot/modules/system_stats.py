@@ -140,14 +140,14 @@ async def amialive(e):
         await e.edit(PLUGIN_MESAJLAR['alive'].format(
             telethon=version.__version__,
             python=python_version(),
-            asena=SIRI_VERSION,
+            siri=SIRI_VERSION,
             plugin=len(CMD_HELP),
             id=me.id,
             username='@' + me.username if me.username else f'[{me.first_name}](tg://user?id={me.id})',
             first_name=me.first_name,
             last_name=me.last_name if me.last_name else '',
             mention=f'[{me.first_name}](tg://user?id={me.id})'
-            sahip = DEFAULTNAME
+            sirisahip = DEFAULTNAME
         ))
     else:
         await e.delete()
@@ -155,14 +155,14 @@ async def amialive(e):
             PLUGIN_MESAJLAR['alive'].text = PLUGIN_MESAJLAR['alive'].text.format(
                 telethon=version.__version__,
                 python=python_version(),
-                asena=SIRI_VERSION,
+                siri=SIRI_VERSION,
                 plugin=len(CMD_HELP),
                 id=me.id,
                 username='@' + me.username if me.username else f'[{me.first_name}](tg://user?id={me.id})',
                 first_name=me.first_name,
                 last_name=me.last_name if me.last_name else '',
                 mention=f'[{me.first_name}](tg://user?id={me.id})'
-                sahip = DEFAULTNAME
+                sirisahip = DEFAULTNAME
             )
         if e.is_reply:
             await e.respond(PLUGIN_MESAJLAR['alive'], reply_to=e.message.reply_to_msg_id)

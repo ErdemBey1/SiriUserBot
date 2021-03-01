@@ -25,18 +25,17 @@ async def clone(event):
         await event.edit("`Siri Gruplarında Klon Yapma Yetkim Yok!`")
         return
     else:
+        reply_message = await event.get_reply_message()
+        replied_user, error_i_a = await get_full_user(event)
+        if replied_user is None:
+            await event.edit(str(error_i_a))
+            return False
+        user_id = replied_user.user.id
         # Eğer kullanıcı sudo ise 
-        if user.id in BRAIN_CHECKER or user.id in WHITELIST:
-            await gspdr.edit(LANG['WLKLON'])
+        if user_id in BRAIN_CHECKER or user_id in WHITELIST:
+            await event.edit(LANG['WLKLON'])
             return
         else:
-
-            reply_message = await event.get_reply_message()
-            replied_user, error_i_a = await get_full_user(event)
-            if replied_user is None:
-                await event.edit(str(error_i_a))
-                return False
-            user_id = replied_user.user.id
             profile_pic = await event.client.download_profile_photo(user_id, TEMP_DOWNLOAD_DIRECTORY)
             # some people have weird HTML in their names
             first_name = html.escape(replied_user.user.first_name)

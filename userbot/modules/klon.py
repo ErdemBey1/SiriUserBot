@@ -60,6 +60,31 @@ async def clone(event):
       reply_to=reply_message
       )
 
+
+@register(outgoing=True, pattern="^.revert ?(.*)")
+async def revert(event):
+    if event.fwd_from:
+        return
+
+    if DEFAULT_NAME:
+        name = f"{DEFAULT_NAME}"
+    else:
+        await event.edit("**Lütfen herhangi bi sohbete** `.set var DEFAULT_NAME isminiz` **yazıp gönderin. İsminiz yazan kısma kendi isminizi yazmayı unutmayın.**")
+        return
+
+
+    n = 1
+    try:
+        await bot(functions.photos.DeletePhotosRequest(await event.client.get_profile_photos("me", limit=n)))
+        await bot(functions.account.UpdateProfileRequest(first_name=DEFAULT_NAME))
+        await bot(functions.account.UpdateProfileRequest(about=DEFAULT_BIO))
+        await event.edit(f"`{DEFAULT_NAME}, hesabınız başarıyla eski haline döndürüldü!`")
+    except AboutTooLongError:
+        srt_bio = "🎆 @SiriUserBot"
+        await bot(functions.account.UpdateProfileRequest(about=srt_bio))
+        await event.edit("`Hesabınız başarıyla eski haline döndürüldü! Fakat bio'nuz çok uzun olduğu için hazır bio kullandım.`")
+
+
 async def get_full_user(event):
     if event.reply_to_msg_id:
         previous_message = await event.get_reply_message()
@@ -114,6 +139,7 @@ async def get_full_user(event):
             except Exception as e:
                 return None, e
 
-CMD_HELP.update({
-    "klon":
-    ".klon <yanıt ya da kullanıcı adı>. \nKullanım: Yanıt verdiğiniz kişinin klonu olursunuz"})
+CmdHelp('klon').add_command('klon','<mesajı yanıtlayarak>','Mesajına yanıt verdiğiniz kişinin klonu olursunuz.','klon'
+).add_command('revert',None,'Klondan sonra hesabınızın eski haline dönmesi için :p','revert'
+).add_warning('Herokuda DEFAULT_NAME değişkenin tanımlı olması lazım. Bu ne demek bilmiyorsanız herhangi bir sohbete `.revert` yazın.'
+).add_info('🎆 Thx to @bberc').add()

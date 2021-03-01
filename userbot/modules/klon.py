@@ -8,69 +8,59 @@ from telethon.tl.types import MessageEntityMentionName
 from telethon.utils import get_input_location
 from userbot.events import register
 from telethon.tl import functions
-from userbot import TEMP_DOWNLOAD_DIRECTORY, BRAIN_CHECKER, WHITELIST
+from userbot import TEMP_DOWNLOAD_DIRECTORY
 from userbot.cmdhelp import CmdHelp
-
-from userbot.language import get_value
-LANG = get_value("klon")
-
-# ████████████████████████████████ #
-
 
 @register(outgoing=True, pattern="^.klon ?(.*)")
 async def clone(event):
     if event.fwd_from:
         return
-    if event.chat_id == -1001457702125 or event.chat_id == -1001431607309:
-        await event.edit("`Siri Gruplarında Klon Yapma Yetkim Yok!`")
-        return
-    else:
-        reply_message = await event.get_reply_message()
-        replied_user, error_i_a = await get_full_user(event)
-        if replied_user is None:
-            await event.edit(str(error_i_a))
-            return False
-        user_id = replied_user.user.id
-        profile_pic = await event.client.download_profile_photo(user_id, TEMP_DOWNLOAD_DIRECTORY)
-        # some people have weird HTML in their names
-        first_name = html.escape(replied_user.user.first_name)
-        # https://stackoverflow.com/a/5072031/4723940
-        # some Deleted Accounts do not have first_name
-        if first_name is not None:
+    reply_message = await event.get_reply_message()
+    replied_user, error_i_a = await get_full_user(event)
+    if replied_user is None:
+        await event.edit(str(error_i_a))
+        return False
+    user_id = replied_user.user.id
+    profile_pic = await event.client.download_profile_photo(user_id, TEMP_DOWNLOAD_DIRECTORY)
+    # some people have weird HTML in their names
+    first_name = html.escape(replied_user.user.first_name)
+    # https://stackoverflow.com/a/5072031/4723940
+    # some Deleted Accounts do not have first_name
+    if first_name is not None:
         # some weird people (like me) have more than 4096 characters in their names
-            first_name = first_name.replace("\u2060", "")
-            last_name = replied_user.user.last_name
-        # last_name is not Manadatory in @Telegram
-        if last_name is not None:
-            last_name = html.escape(last_name)
-            last_name = last_name.replace("\u2060", "")
-        if last_name is None:
-            last_name = "⁪⁬⁮⁮⁮⁮ ‌‌‌‌"
-        # inspired by https://telegram.dog/afsaI181
-        user_bio = replied_user.about
-        if user_bio is not None:
-            user_bio = html.escape(replied_user.about)
-        await event.client(functions.account.UpdateProfileRequest(
-            first_name=first_name
-        ))
-        await event.client(functions.account.UpdateProfileRequest(
-            last_name=last_name
-        ))
-        await event.client(functions.account.UpdateProfileRequest(
-            about=user_bio
-        ))
-        n = 1
-        pfile = await event.client.upload_file(profile_pic)
-        await event.client(functions.photos.UploadProfilePhotoRequest(  # pylint:disable=E0602
-            pfile
-        ))
+        first_name = first_name.replace("\u2060", "")
+    last_name = replied_user.user.last_name
+    # last_name is not Manadatory in @Telegram
+    if last_name is not None:
+        last_name = html.escape(last_name)
+        last_name = last_name.replace("\u2060", "")
+    if last_name is None:
+      last_name = "⁪⁬⁮⁮⁮⁮ ‌‌‌‌"
+    # inspired by https://telegram.dog/afsaI181
+    user_bio = replied_user.about
+    if user_bio is not None:
+        user_bio = html.escape(replied_user.about)
+    await event.client(functions.account.UpdateProfileRequest(
+        first_name=first_name
+    ))
+    await event.client(functions.account.UpdateProfileRequest(
+        last_name=last_name
+    ))
+    await event.client(functions.account.UpdateProfileRequest(
+        about=user_bio
+    ))
+    n = 1
+    pfile = await event.client.upload_file(profile_pic)
+    await event.client(functions.photos.UploadProfilePhotoRequest(  # pylint:disable=E0602
+        pfile
+    ))
 
-        await event.delete()
-        await event.client.send_message(
-            event.chat_id,
-            "`Hey Siri Profilini Klonladı WLDIEJDJDK 😜.`",
-            reply_to=reply_message
-            )
+    await event.delete()
+    await event.client.send_message(
+      event.chat_id,
+      "`Hey Siri Profilini Klonladı WLDIEJDJDK 😜.`",
+      reply_to=reply_message
+      )
 
 async def get_full_user(event):
     if event.reply_to_msg_id:

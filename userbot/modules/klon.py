@@ -8,8 +8,8 @@ from telethon.utils import get_input_location
 from userbot.events import register
 from telethon.tl import functions
 from userbot import TEMP_DOWNLOAD_DIRECTORY, CMD_HELP, bot, DEFAULT_BIO,DEFAULT_NAME
-from userbot.cmdhelp import CmdHelp
-
+#from userbot.cmdhelp import CmdHelp
+import userbot.cmdhelp
 
 @register(outgoing=True, pattern="^.klon ?(.*)")
 async def clone(event):
@@ -140,8 +140,7 @@ async def get_full_user(event):
                 return replied_user, None
             except Exception as e:
                 return None, e
-help = CmdHelp()
-help('klon').add_command('klon','<mesajı yanıtlayarak>','Mesajına yanıt verdiğiniz kişinin klonu olursunuz.','klon'
+userbot.cmdhelp.CmdHelp('klon').add_command('klon','<mesajı yanıtlayarak>','Mesajına yanıt verdiğiniz kişinin klonu olursunuz.','klon'
 ).add_command('revert',None,'Klondan sonra hesabınızın eski haline dönmesi için :p','revert'
 ).add_warning('Herokuda DEFAULT_NAME değişkenin tanımlı olması lazım. Bu ne demek bilmiyorsanız herhangi bir sohbete `.revert` yazın.'
 ).add_info('🎆 Thx to @bberc').add()

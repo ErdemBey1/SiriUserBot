@@ -216,7 +216,7 @@ async def psend(event):
         return
 
     if os.path.isfile(f"./userbot/modules/{modul}.py"):
-        await event.client.send_file(event.chat_id, f"./userbot/modules/{modul}.py", caption=LANG['ASENA_PLUGIN_CAPTION'])
+        await event.client.send_file(event.chat_id, f"./userbot/modules/{modul}.py", caption=LANG['SIRI_PLUGIN_CAPTION'])
         await event.delete()
     else:
         await event.edit(LANG['NOT_FOUND_PLUGIN'])

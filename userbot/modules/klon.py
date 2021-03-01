@@ -7,7 +7,7 @@ from telethon.tl.types import MessageEntityMentionName
 from telethon.utils import get_input_location
 from userbot.events import register
 from telethon.tl import functions
-from userbot import TEMP_DOWNLOAD_DIRECTORY, CMD_HELP
+from userbot import TEMP_DOWNLOAD_DIRECTORY, CMD_HELP, bot, DEFAULT_BIO,DEFAULT_NAME
 from userbot.cmdhelp import CmdHelp
 
 

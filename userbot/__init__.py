@@ -176,6 +176,10 @@ GDRIVE_FOLDER_ID = os.environ.get("GDRIVE_FOLDER_ID", None)
 TEMP_DOWNLOAD_DIRECTORY = os.environ.get("TMP_DOWNLOAD_DIRECTORY",
                                          "./downloads")
 
+#Revert yani Klondan Sonra hesabın eski haline dönmesi
+DEFAULT_NAME = os.environ.get("DEFAULT_NAME", None)
+
+
 # Inline bot çalışması için
 BOT_TOKEN = os.environ.get("BOT_TOKEN", None)
 BOT_USERNAME = os.environ.get("BOT_USERNAME", None)

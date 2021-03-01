@@ -10,6 +10,7 @@ from telethon.tl import functions
 from userbot import TEMP_DOWNLOAD_DIRECTORY, bot, DEFAULT_BIO,DEFAULT_NAME
 from userbot.cmdhelp import CmdHelp
 
+
 @register(outgoing=True, pattern="^.klon ?(.*)")
 async def clone(event):
     if event.fwd_from:

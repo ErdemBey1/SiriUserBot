@@ -87,7 +87,7 @@
       "required": false
     },
     "BOTLOG": {
-      "description": "# DOKUNMA #",
+      "description": "Botla yaptığınız işlemi kaydetmek için bir grup ve bazı pluginleri çalışması için gerekli",
       "value": "False"
     },
     "BOT_USERNAME": {
@@ -175,6 +175,9 @@
       "description": "Last.FM Modülü Biyografi için önek.",
       "required": false
     },
+    "DEFAULT_NAME": {
+      "description": "Klon plugininden sonra hesabınızın eski haline dönmesi için Telegram isminiz",
+      "required": false
     "DEFAULT_BIO": {
       "description": "Varsayılan profil biyografisi.",
       "value": "@SiriUserBot",

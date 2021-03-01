@@ -30,7 +30,7 @@
             "ALREADY_DELETED": "`Plugin dosyası zaten silinmiş.`",
             "NOT_FOUND_PLUGIN": "`Böyle bir plugin belki vardı, belki de yoktu. Ama şu an olmadığı kesin.`",
             "PLUG_DELETED": "`Plugin başarıyla silindi!` **İşlemlerin uygulanabilmesi için yeniden başlatmanız gerekmetedir.**",
-            "ASENA_PLUGIN_CAPTION": "Bu bir [Siri](https://t.me/SiriUserBot) pluginidir."
+            "SIRI_PLUGIN_CAPTION": "Bu bir [Siri](https://t.me/SiriUserBot) pluginidir."
         },
         
         "__siri": {

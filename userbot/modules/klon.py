@@ -56,7 +56,7 @@ async def clone(event):
     await event.delete()
     await event.client.send_message(
       event.chat_id,
-      "`Profilini kopyaladım hahaha 😜.`",
+      "`Hahah Siri İle Profilini kopyaladım 😜.`",
       reply_to=reply_message
       )
 

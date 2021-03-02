@@ -29,14 +29,14 @@ import re
 import userbot.cmdhelp
 
 ALIVE_MSG = [
-    "Userbotunuz çalışıyor ve sana bişey demek istiyor.. Seni seviyorum {sirisahip} ❤️",
-    "🎆 Endişelenme! Seni yanlız bırakmam {sirisahip}, userbot çalışıyor",
-    "⛈️ Elimden gelenin en iyisini yapmaya hazırım, {sirisahip}:3",
-    "✨ Siri sahibinin emirlerine hazır...",
-    "😔 Gitmez dediğiniz insanlar bile gidiyor olmalı ki alive yazarak beni kontrol ediyorsun! Ben dynom bitene kadar {sirisahip}'i bırakmam!",
-    "Şuan en gelişmiş userbotun düzenlediği mesajı okuyor olmalısın {sirisahip}.",
-    "Huh! {sirisahip} beni çağırıyor 🍰 yiyordum ee şey en azından yemiş gibi yapıyorum..",
-    "Hokus Pokus 🔮! Ee şey sanırım büyücülükle pek aram yok ama özelliklerime {sirisahip} düşüyor..",
+    "`Userbotunuz çalışıyor ve sana bişey demek istiyor.. Seni seviyorum` **{sirisahip}** ❤️",
+    "🎆 `Endişelenme! Seni yanlız bırakmam.` **{sirisahip}**, `userbot çalışıyor.`",
+    "`⛈️ Elimden gelenin en iyisini yapmaya hazırım`, **{sirisahip}:3**",
+    "✨ `Siri sahibinin emirlerine hazır...`",
+    "😔 `Gitmez dediğiniz insanlar bile gidiyor olmalı ki alive yazarak beni kontrol ediyorsun! Ben dynom bitene kadar` **{sirisahip}'i** `bırakmam!`",
+    "`Şuan en gelişmiş userbotun düzenlediği mesajı okuyor olmalısın` **{sirisahip}**.",
+    "`Huh!` "*{sirisahip}** `beni çağırıyor 🍰 yiyordum ee şey en azından yemiş gibi yapıyorum..`",
+    "`Hokus Pokus 🔮! Ee şey sanırım büyücülükle pek aram yok ama özelliklerime` **{sirisahip}** `düşüyor..`",
 ]
 
 DIZCILIK_STR = [
@@ -88,10 +88,13 @@ KICKME_MSG = [
 ]
 
 
-UNAPPROVED_MSG = ("`Hey,` {mention}`!👨‍💻 Ben Siri. Endişelenme!\n\n`"
-                  "`Sahibim sana mesaj atma izni vermedi o yüzden sahibim seni onaylayana kadar bu mesajı alacaksın.. `"
-                  "`Lütfen sahibimin aktif olmasını bekleyin, o genellikle PM'leri onaylar.\n\n`"
-                  "`Bildiğim kadarıyla o kafayı yemiş insanlara PM izni vermiyor.`")
+UNAPPROVED_MSG = [
+    "`Hey,` {mention}`!👨‍💻 Ben Siri. Endişelenme!\n\n` **{sirisahip}** `gelene kadar seninle ben ilgileneceğim..`",
+    "{username}, `sanırım` {sirisahip} 'e `mesaj göndermek istiyorsun 🤭. Sen onu tanıyor olmalısın ama` {sirisahip} `onaylayana kadar ona mesaj göndermene izin vermeyeceğim!`",
+    "`Onu çok seviyorum....❤️\n Aa` {mention} `Merhaba!!\nKimi mi seviyorum? Tabiki {sirisahip}. O izin vermeden yabancılardan gelen mesajları karşılacağıma söz verdim.`",
+    "`Hey sen!👮🏻‍♂️ Bir mesaj atıyım daha deme!`\n **{sirisahip}** , `izin verene kadar olduğun yerde kal!`",
+]
+
 
 DB = connect("learning-data-root.check")
 CURSOR = DB.cursor()
@@ -182,7 +185,7 @@ try:
 
     # PLUGIN MESAJLARI AYARLIYORUZ
     PLUGIN_MESAJLAR = {}
-    ORJ_PLUGIN_MESAJLAR = {"alive": f"`{str(choice(ALIVE_MSG))}`", "afk": f"`{str(choice(AFKSTR))}`", "kickme": "`{str(choice(KICKME_MSG))}`", "pm": UNAPPROVED_MSG, "dızcı": str(choice(DIZCILIK_STR)), "ban": "🌀 {mention}`, Banlandı!!`", "mute": "🌀 {mention}`, sessize alındı!`", "approve": "`Merhaba` {mention}`, artık bana mesaj gönderebilirsin!`", "disapprove": "{mention}`, artık bana mesaj gönderemezsin!`", "block": "{mention}`, bunu bana mecbur bıraktın! Seni engelledim!`"}
+    ORJ_PLUGIN_MESAJLAR = {"alive": f"{str(choice(ALIVE_MSG))}", "afk": f"`{str(choice(AFKSTR))}`", "kickme": "`{str(choice(KICKME_MSG))}`", "pm": f"{str(choice(UNAPPROVED_MSG))}", "dızcı": str(choice(DIZCILIK_STR)), "ban": "🌀 {mention}`, Banlandı!!`", "mute": "🌀 {mention}`, sessize alındı!`", "approve": "`Merhaba` {mention}`, artık bana mesaj gönderebilirsin!`", "disapprove": "{mention}`, artık bana mesaj gönderemezsin!`", "block": "{mention}`, bunu bana mecbur bıraktın! Seni engelledim!`"}
 
     PLUGIN_MESAJLAR_TURLER = ["alive", "afk", "kickme", "pm", "dızcı", "ban", "mute", "approve", "disapprove", "block"]
     for mesaj in PLUGIN_MESAJLAR_TURLER:

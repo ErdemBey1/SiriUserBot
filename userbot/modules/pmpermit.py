@@ -196,7 +196,7 @@ async def auto_accept(event):
                                     id=id,
                                     username=username,
                                     mention=mention,
-                                    sirisahip=siri_sahip
+                                    sirisahip=siri_sahip,
                                     first_name=first_name,
                                     last_name=last_name
                                 ) and message.from_id == self_user.id:

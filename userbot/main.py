@@ -35,7 +35,7 @@ ALIVE_MSG = [
     "✨ `Siri sahibinin emirlerine hazır...`",
     "😔 `Gitmez dediğiniz insanlar bile gidiyor olmalı ki alive yazarak beni kontrol ediyorsun! Ben dynom bitene kadar` **{sirisahip}'i** `bırakmam!`",
     "`Şuan en gelişmiş userbotun düzenlediği mesajı okuyor olmalısın` **{sirisahip}**.",
-    "`Huh!` "*{sirisahip}** `beni çağırıyor 🍰 yiyordum ee şey en azından yemiş gibi yapıyorum..`",
+    "`Huh!` **{sirisahip}** `beni çağırıyor 🍰 yiyordum ee şey en azından yemiş gibi yapıyorum..`",
     "`Hokus Pokus 🔮! Ee şey sanırım büyücülükle pek aram yok ama özelliklerime` **{sirisahip}** `düşüyor..`",
 ]
 

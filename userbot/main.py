@@ -29,13 +29,14 @@ import re
 import userbot.cmdhelp
 
 ALIVE_MSG = [
-    "Siri çalışıyor ve sana bişey demek istiyor.. Seni seviyorum sahibim ❤️",
-    "🎆 Endişelenme! Seni yanlız bırakmam, Siri çalışıyor",
-    "⛈️ Elimden gelenin en iyisini yapmaya hazırım :3",
+    "Userbotunuz çalışıyor ve sana bişey demek istiyor.. Seni seviyorum {sirisahip} ❤️",
+    "🎆 Endişelenme! Seni yanlız bırakmam {sirisahip}, userbot çalışıyor",
+    "⛈️ Elimden gelenin en iyisini yapmaya hazırım, {sirisahip}:3",
     "✨ Siri sahibinin emirlerine hazır...",
-    "😔 Gitmez dediğiniz insanlar bile gidiyor olmalı ki alive yazarak beni kontrol ediyorsun! Ben dynom bitene kadar sahibimi bırakmam!",
-    "Şuan en gelişmiş userbotun düzenlediği mesajı okuyor olmalısın.",
-    "Hokus Pokus 🔮! Ee şey sanırım büyücülükle pek aram yok:(",
+    "😔 Gitmez dediğiniz insanlar bile gidiyor olmalı ki alive yazarak beni kontrol ediyorsun! Ben dynom bitene kadar {sirisahip}'i bırakmam!",
+    "Şuan en gelişmiş userbotun düzenlediği mesajı okuyor olmalısın {sirisahip}.",
+    "Huh! {sirisahip} beni çağırıyor 🍰 yiyordum ee şey en azından yemiş gibi yapıyorum..",
+    "Hokus Pokus 🔮! Ee şey sanırım büyücülükle pek aram yok ama özelliklerime {sirisahip} düşüyor..",
 ]
 
 DIZCILIK_STR = [

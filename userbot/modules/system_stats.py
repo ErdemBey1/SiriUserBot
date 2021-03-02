@@ -132,9 +132,9 @@ async def pipcheck(pip):
 @register(outgoing=True, pattern="^.alive$")
 async def amialive(e):
     if DEFAULT_NAME:
-        DEFAULTNAME = f"{DEFAULT_NAME}"
+        sahipp = f"{DEFAULT_NAME}"
     else:
-        DEFAULTNAME = "**Sir**"
+        sahipp = "**Sir**"
     me = await e.client.get_me()
     if type(PLUGIN_MESAJLAR['alive']) == str:
         await e.edit(PLUGIN_MESAJLAR['alive'].format(
@@ -146,8 +146,8 @@ async def amialive(e):
             username='@' + me.username if me.username else f'[{me.first_name}](tg://user?id={me.id})',
             first_name=me.first_name,
             last_name=me.last_name if me.last_name else '',
-            mention=f'[{me.first_name}](tg://user?id={me.id})'
-            sirisahip = DEFAULTNAME
+            mention=f'[{me.first_name}](tg://user?id={me.id})',
+            sirisahip = sahipp
         ))
     else:
         await e.delete()
@@ -161,8 +161,8 @@ async def amialive(e):
                 username='@' + me.username if me.username else f'[{me.first_name}](tg://user?id={me.id})',
                 first_name=me.first_name,
                 last_name=me.last_name if me.last_name else '',
-                mention=f'[{me.first_name}](tg://user?id={me.id})'
-                sirisahip = DEFAULTNAME
+                mention=f'[{me.first_name}](tg://user?id={me.id})',
+                sirisahip = sahipp
             )
         if e.is_reply:
             await e.respond(PLUGIN_MESAJLAR['alive'], reply_to=e.message.reply_to_msg_id)

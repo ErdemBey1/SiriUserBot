@@ -14,7 +14,7 @@ from telethon.tl.functions.messages import ReportSpamRequest
 from telethon.tl.types import User
 from sqlalchemy.exc import IntegrityError
 
-from userbot import (COUNT_PM, CMD_HELP, BOTLOG, BOTLOG_CHATID,
+from userbot import (COUNT_PM, CMD_HELP, BOTLOG, BOTLOG_CHATID, DEFAULT_NAME,
                      PM_AUTO_BAN, PM_AUTO_BAN_LIMIT, LASTMSG, LOGS, BRAIN_CHECKER, WHITELIST)
 from userbot.events import register
 from userbot.main import PLUGIN_MESAJLAR
@@ -43,6 +43,10 @@ async def permitpm(event):
             apprv = is_approved(event.chat_id)
             notifsoff = gvarstatus("NOTIF_OFF")
 
+            if DEFAULT_NAME:
+                siri_sahip = f"{DEFAULT_NAME}"
+            else:
+                siri_sahip = "Sahibim"
             reply_user = await event.get_sender()
             id = reply_user.id
             first_name = str(reply_user.first_name)
@@ -71,7 +75,8 @@ async def permitpm(event):
                                     username=username,
                                     mention=first_name,
                                     first_name=first_name,
-                                    last_name=last_name
+                                    last_name=last_name,
+                                    sirisahip=siri_sahip
                                 )
                             ):
                                 await message.delete()
@@ -80,7 +85,8 @@ async def permitpm(event):
                                 username=username,
                                 mention=mention,
                                 first_name=first_name,
-                                last_name=last_name
+                                last_name=last_name,
+                                sirisahip=siri_sahip
                             ))
                         else:
                             async for message in event.client.iter_messages(
@@ -94,7 +100,8 @@ async def permitpm(event):
                                     username=username,
                                     mention=mention,
                                     first_name=first_name,
-                                    last_name=last_name
+                                    last_name=last_name,
+                                    sirisahip=siri_sahip
                                 )
 
                             await event.reply(PLUGIN_MESAJLAR['pm'])
@@ -105,7 +112,8 @@ async def permitpm(event):
                                     username=username,
                                     mention=mention,
                                     first_name=first_name,
-                                    last_name=last_name
+                                    last_name=last_name,
+                                    sirisahip=siri_sahip
                                 ))
                     LASTMSG.update({event.chat_id: event.text})
 
@@ -161,8 +169,13 @@ async def auto_accept(event):
         except AttributeError:
             return
 
+
         chat = await event.get_chat()
         id = chat.id
+        if DEFAULT_NAME:
+            siri_sahip = f"{DEFAULT_NAME}"
+        else:
+            siri_sahip = "Sahibim"
         first_name = str(chat.first_name)
         if chat.last_name:
             last_name = str(chat.last_name)
@@ -183,6 +196,7 @@ async def auto_accept(event):
                                     id=id,
                                     username=username,
                                     mention=mention,
+                                    sirisahip=siri_sahip
                                     first_name=first_name,
                                     last_name=last_name
                                 ) and message.from_id == self_user.id:

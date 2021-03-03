@@ -259,6 +259,11 @@ async def approvepm(apprvpm):
     else:
         reply_user = await apprvpm.client.get_entity(apprvpm.chat_id)
 
+    if DEFAULT_NAME:
+        siri_sahip = f"{DEFAULT_NAME}"
+    else:
+        siri_sahip = "Sahibim"
+
     id = reply_user.id
     first_name = str(reply_user.first_name)
     if reply_user.last_name:
@@ -279,6 +284,7 @@ async def approvepm(apprvpm):
         id=id,
         username=username,
         mention=mention,
+        sirisahip=siri_sahip,
         first_name=first_name,
         last_name=last_name
     ))
@@ -288,6 +294,7 @@ async def approvepm(apprvpm):
         id=id,
         username=username,
         mention=first_name,
+        sirisahip=siri_sahip,
         first_name=first_name,
         last_name=last_name
     )):
@@ -423,7 +430,7 @@ CmdHelp('pmpermit').add_command(
 ).add_command(
     'unblock', '<kişi adı/yanıt>', 'Kişinin engelini kaldırır.'
 ).add_command(
-    'notifoff', None, 'İzin verilmiş sohbetleri siler veya temizler.'
+    'notifoff', None, 'Pm atmasına izin vermediğiniz kişilerden bildirim almanızı kapatır.'
 ).add_command(
-    'notifon', None, 'İzin verilmiş sohbetlerin görünmesini sağlar.'
+    'notifon', None, 'Pm atmasına izin vermediğiniz kişilerden bildirim almanızı açar.'
 ).add()

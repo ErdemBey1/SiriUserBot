@@ -79,8 +79,8 @@ Herhangi bir istek & şikâyet & öneri varsa [destek grubuna](https://t.me/Siri
 ## Credit
 Thanks for;
 
-[Seden UserBot](https://github.com/TeamDerUntergang/Telegram-UserBot)
+[Asena UserBot](https://github.com/YusufUsta/AsenaUserBot)
 
-[Userge](https://github.com/UsergeTeam/Userge)
+## ~Emeği Geçen Herkese Teşekkür Ederiz~
 
-[Spechide](https://github.com/Spechide)
+

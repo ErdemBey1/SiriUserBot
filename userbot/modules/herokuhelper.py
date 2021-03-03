@@ -56,7 +56,7 @@ async def variable(var):
                     await var.edit("`Lütfen BOTLOG grubu ayarlayınız...`")
                     return False
             else:
-                await var.edit("`Error ith Noİnfo`")
+                await var.edit("`Hata:` **NoInfo.**")
                 return True
         else:
             configvars = heroku_var.to_dict()
@@ -106,19 +106,19 @@ async def set_var(var):
                 "**ConfigVar Değişikliği**:\n"
                 f"`{variable}` = `{value}`"
             )
-        await var.edit("`Veriler Herokuya Yazılır...`")
+        await var.edit("`Veriler Herokuya Yazılıyor....`")
     else:
         if BOTLOG:
             await var.client.send_message(
                 BOTLOG_CHATID, "#ADDCONFIGVAR\n\n"
-                "**ConfigVar Əlavə**:\n"
+                "**Yeni ConfigVar Eklendi**:\n"
                 f"`{variable}` = `{value}`"
             )
         await var.edit("`Veriler Yazıldı!`")
     heroku_var[variable] = value
 
 
-"""Hesabınızdakı dynonu yoxlamağa yarayan userbot modulu"""
+"""Hesabınızdakı dynosuna bakmanızı yarayan userbot modulu"""
 
 
 @register(outgoing=True, pattern=r"^.dyno(?: |$)")

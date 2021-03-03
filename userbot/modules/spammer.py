@@ -104,6 +104,40 @@ async def delayspammer(e):
                 "DelaySpam başarıyla gerçekleştirildi"
                 )
 
+@register(outgoing=True, pattern="^.mspam(?: |$)(.*)")
+async def media_spam(event):
+    if event.fwd_from:
+        return
+    
+    cmd = event.pattern_match.group(1)
+    if len(cmd) < 1:
+        await event.edit("`Lütfen bir sayı belirtin! Örnek: .mspam 10`") 
+        return
+    elif not cmd.isdigit():
+        await event.edit("`Lütfen sadece sayı belirtin! Örnek: .mspam 10`") 
+        return
+    replymsg = await event.get_reply_message()
+    if not event.reply_to_msg_id or not replymsg.media:
+        await event.edit("`Lütfen bir medyaya yanıt verin. Bu ses, müzik, fotoğraf, sticker, gif, video olabilir.`") 
+        return
+    
+    i = 0
+    await event.delete()
+    while i < int(cmd):
+        await event.respond(replymsg)
+        await asyncio.sleep(0.1)
+        i += 1
+    if BOTLOG:
+        await e.client.send_message(
+            BOTLOG_CHATID,
+            "#MedyaSPAM \n\n"
+            "MedyaSpam başarıyla gerçekleştirildi"
+            )
+
+
+
+
+
 CmdHelp('spammer').add_command(
     'tspam', '<metin>', 'Verilen mesajı tek tek göndererek spam yapar.'
 ).add_command(
@@ -112,6 +146,8 @@ CmdHelp('spammer').add_command(
     'bigspam', '<miktar> <metin>', 'Verilen miktarda spam gönderir.'
 ).add_command(
     'picspam', '<miktar> <link>', 'Verilen miktarda resimli spam gönderir.'
+).add_command(
+    'mspam', '<miktar> <yanıtladığınız medya>', 'Verilen miktar kadar yanıt verdiğiniz fotoğraf/müzik/ses/video spamı yapar.'
 ).add_command(
     'delayspam', '<gecikme> <miktar> <metin>', 'Verilen miktar ve verilen gecikme ile gecikmeli spam yapar.'
 ).add_warning(

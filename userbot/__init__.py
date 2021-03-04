@@ -290,9 +290,7 @@ with bot:
         try:
             bot(JoinChannelRequest("@SiriUserBot"))
             bot(JoinChannelRequest("@SiriSupport"))
-            bot(JoinChannelRequest("@SiriSohbet"))
-            bot(JoinChannelRequest("@SiriPlugin"))
-            
+
         except:
             pass
 

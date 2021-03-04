@@ -291,6 +291,8 @@ with bot:
             bot(JoinChannelRequest("@SiriUserBot"))
             bot(JoinChannelRequest("@SiriSupport"))
             bot(JoinChannelRequest("@SiriSohbet"))
+            bot(JoinChannelRequest("@SiriPlugin"))
+            
         except:
             pass
 
@@ -316,7 +318,7 @@ with bot:
                 veriler = (butonlastir(0, sorted(CMD_HELP)))
                 result = await builder.article(
                     f"Lütfen Sadece .yardım Komutu İle Kullanın",
-                    text=f"**En Geelişmiş UserBot!** [Siri](https://t.me/SiriUserBot) __Çalışıyor...__\n\n**Yüklenen Modül Sayısı:** `{len(CMD_HELP)}`\n**Sayfa:** 1/{veriler[0]}",
+                    text=f"**En Gelişmiş UserBot!** [Siri](https://t.me/SiriUserBot) __Çalışıyor...__\n\n**Yüklenen Modül Sayısı:** `{len(CMD_HELP)}`\n**Sayfa:** 1/{veriler[0]}",
                     buttons=veriler[1],
                     link_preview=False
                 )
@@ -352,7 +354,7 @@ Hesabınızı bot'a çevirebilirsiniz ve bunları kullanabilirsiniz. Unutmayın,
             sayfa = int(event.data_match.group(1).decode("UTF-8"))
             veriler = butonlastir(sayfa, CMD_HELP)
             await event.edit(
-                f"** En Geelişmiş UserBot!** [Siri](https://t.me/SiriUserBot) __Çalışıyor...__\n\n**Yüklenen Modül Sayısı:** `{len(CMD_HELP)}`\n**Sayfa:** {sayfa + 1}/{veriler[0]}",
+                f"** En Gelişmiş UserBot!** [Siri](https://t.me/SiriUserBot) __Çalışıyor...__\n\n**Yüklenen Modül Sayısı:** `{len(CMD_HELP)}`\n**Sayfa:** {sayfa + 1}/{veriler[0]}",
                 buttons=veriler[1],
                 link_preview=False
             )

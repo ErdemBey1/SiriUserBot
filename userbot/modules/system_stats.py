@@ -173,7 +173,7 @@ async def amialive(e):
 async def wwwwailve(event):
     if event.fwd_from:
         return
-    elif message.is_reply:
+    elif event.is_reply:
         await event.reply("`Yöneticim çalışıp çalışmadığımı kontrol ediyor! Endişelenmeyin..`")
 
 CmdHelp('system_stats').add_command(

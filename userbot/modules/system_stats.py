@@ -130,7 +130,6 @@ async def pipcheck(pip):
         await pip.edit(LANG['EXAMPLE'])
 
 @register(outgoing=True, pattern="^.alive$")
-@register(incoming=True, from_users=WHITELIST, pattern="^.walive$")
 async def amialive(e):
     if DEFAULT_NAME:
         sahipp = f"{DEFAULT_NAME}"
@@ -170,6 +169,11 @@ async def amialive(e):
         else:
             await e.respond(PLUGIN_MESAJLAR['alive'])
 
+@register(incoming=True, from_users=WHITELIST, pattern="^.walive$")
+async def wwwwailve(event):
+    if event.fwd_from:
+        return
+    await event.reply("`Yöneticim çalışıp çalışmadığımı kontrol ediyor! Endişelenmeyin..`")
 
 CmdHelp('system_stats').add_command(
     'sysd', None, 'Neofetch modülünü kullanarak sistem bilgisi gösterir.'

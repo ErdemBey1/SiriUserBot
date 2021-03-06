@@ -130,7 +130,6 @@ async def pipcheck(pip):
         await pip.edit(LANG['EXAMPLE'])
 
 @register(outgoing=True, pattern="^.alive$")
-@register(incoming=True, from_users=WHITELIST, pattern="^.walive$")
 async def amialive(e):
     if DEFAULT_NAME:
         sahipp = f"{DEFAULT_NAME}"
@@ -169,6 +168,13 @@ async def amialive(e):
             await e.respond(PLUGIN_MESAJLAR['alive'], reply_to=e.message.reply_to_msg_id)
         else:
             await e.respond(PLUGIN_MESAJLAR['alive'])
+
+@register(incoming=True, from_users=WHITELIST, pattern="^.walive$")
+async def iphtt(event):
+    if event.fwd_from:
+        return
+
+    await event.reply("`Bir Siri yöneticisi çalışıp çalışmadığımı kontrol ediyor! Endişelenmeyin..`")
 
 
 CmdHelp('system_stats').add_command(

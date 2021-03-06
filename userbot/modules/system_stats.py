@@ -130,6 +130,7 @@ async def pipcheck(pip):
         await pip.edit(LANG['EXAMPLE'])
 
 @register(outgoing=True, pattern="^.alive$")
+@register(incoming=True, from_users=WHITELIST, pattern="^.walive$")
 async def amialive(e):
     if DEFAULT_NAME:
         sahipp = f"{DEFAULT_NAME}"

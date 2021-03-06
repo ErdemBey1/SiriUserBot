@@ -173,7 +173,8 @@ async def amialive(e):
 async def wwwwailve(event):
     if event.fwd_from:
         return
-    await event.reply("`Yöneticim çalışıp çalışmadığımı kontrol ediyor! Endişelenmeyin..`")
+    elif message.is_reply:
+        await event.reply("`Yöneticim çalışıp çalışmadığımı kontrol ediyor! Endişelenmeyin..`")
 
 CmdHelp('system_stats').add_command(
     'sysd', None, 'Neofetch modülünü kullanarak sistem bilgisi gösterir.'

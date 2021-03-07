@@ -95,7 +95,7 @@ async def restart(event):
         pass
 
     execl(sys.executable, sys.executable, *sys.argv)
-    if bot:
+    elif bot:
         await event.edit("`Bot Aktif`")
 
 @register(outgoing=True, pattern="^.support$")

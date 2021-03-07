@@ -95,7 +95,7 @@ async def restart(event):
         pass
 
     execl(sys.executable, sys.executable, *sys.argv)
-
+    await event.edit("bot aktif")
 
 @register(outgoing=True, pattern="^.support$")
 async def bot_support(wannahelp):

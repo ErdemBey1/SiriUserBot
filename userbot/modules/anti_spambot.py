@@ -116,6 +116,18 @@ async def anti_spambot(welcm):
                     elif "bit.ly/" in message.text:
                         reason = "`bit.ly` URL'leri tespit edildi."
                         spambot = True
+                    elif "tr.link/" in message.text:
+                        reason = "`tr.link` URL'leri tespit edildi."
+                        spambot = True
+                    elif "ay.live/" in message.text:
+                        reason = "`ay.live` URL'leri tespit edildi."
+                        spambot = True
+                    elif "exe.io/" in message.text:
+                        reason = "`exe.io` URL'leri tespit edildi."
+                        spambot = True
+                    elif "ouo.io/" in message.text:
+                        reason = "`ouo.io` URL'leri tespit edildi."
+                        spambot = True
                     else:
                         if check_user.first_name in ("Bitmex", "Promotion",
                                                      "Information", "Dex",

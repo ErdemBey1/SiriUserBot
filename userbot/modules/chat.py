@@ -86,7 +86,7 @@ async def log(log_text):
 @register(outgoing=True, pattern="^.kickme ?(.*)")
 async def kickme(leave):
     """ .kickme komutu gruptan çıkmaya yarar """
-    sebep = event.pattern_match.group(1)
+    sebep = leave.pattern_match.group(1)
     chat = await leave.get_chat()
     if sebep:
         await leave.edit(f"{PLUGIN_MESAJLAR['kickme']}\n **Reason:** `{sebep}`".format(

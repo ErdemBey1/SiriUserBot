@@ -91,12 +91,12 @@ async def restart(event):
 
     try:
         await bot.disconnect()
-        await event.edit("bot aktif")
     except:
         pass
 
     execl(sys.executable, sys.executable, *sys.argv)
-    
+    if bot:
+        await event.edit("`Bot Aktif`")
 
 @register(outgoing=True, pattern="^.support$")
 async def bot_support(wannahelp):

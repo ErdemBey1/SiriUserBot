@@ -63,8 +63,8 @@ if not LANGUAGE in ["EN", "TR", "AZ", "UZ", "DEFAULT"]:
     LOGS.info("Bilinmeyen bir dil yazdınız. Bundan dolayı DEFAULT kullanılıyor.")
     LANGUAGE = "DEFAULT"
     
-# Siri versiasi
-SIRI_VERSION = "v1.4"
+# Siri versiyon
+SIRI_VERSION = "v1.5"
 
 # Telegram API KEY ve HASH
 API_KEY = os.environ.get("API_KEY", None)

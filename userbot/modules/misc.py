@@ -94,7 +94,7 @@ async def restart(event):
     except:
         pass
 
-    execl(sys.executable, sys.executable, *sys.arg)
+    execl(sys.executable, sys.executable, *sys.argv)
 
 @register(outgoing=True, pattern="^.support$")
 async def bot_support(wannahelp):

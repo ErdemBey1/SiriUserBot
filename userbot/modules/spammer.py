@@ -128,7 +128,7 @@ async def media_spam(event):
         await asyncio.sleep(0.1)
         i += 1
     if BOTLOG:
-        await e.client.send_message(
+        await event.client.send_message(
             BOTLOG_CHATID,
             "#MedyaSPAM \n\n"
             "MedyaSpam başarıyla gerçekleştirildi"

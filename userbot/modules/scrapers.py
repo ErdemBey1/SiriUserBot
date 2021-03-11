@@ -44,7 +44,7 @@ from youtube_dl.utils import (DownloadError, ContentTooShortError,
                               MaxDownloadsReached, PostProcessingError,
                               UnavailableVideoError, XAttrMetadataError)
 from asyncio import sleep
-from userbot import CMD_HELP, BOTLOG, BOTLOG_CHATID, YOUTUBE_API_KEY, CHROME_DRIVER, GOOGLE_CHROME_BIN
+from userbot import CMD_HELP, BOTLOG, bot, BOTLOG_CHATID, YOUTUBE_API_KEY, CHROME_DRIVER, GOOGLE_CHROME_BIN
 from userbot.events import register
 from telethon.tl.types import DocumentAttributeAudio
 from userbot.modules.upload_download import progress, humanbytes, time_formatter
@@ -52,6 +52,10 @@ from ImageDown import ImageDown
 import base64, binascii
 import random
 from userbot.cmdhelp import CmdHelp
+from telethon.errors.rpcerrorlist import YouBlockedUserError
+from telethon.tl.types import DocumentAttributeAudio
+from telethon import events
+
 
 CARBONLANG = "auto"
 TTS_LANG = "tr"
@@ -491,46 +495,43 @@ async def urban_dict(ud_e):
 @register(outgoing=True, pattern=r"^.tts(?: |$)([\s\S]*)")
 async def text_to_speech(query):
     """ .tts komutu ile Google'ın metinden yazıya dönüştürme servisi kullanılabilir. """
-    textx = await query.get_reply_message()
-    message = query.pattern_match.group(1)
-    if message:
-        pass
-    elif textx:
-        message = textx.text
-    else:
-        await query.edit(
-            "`Yazıdan sese çevirmek için bir metin gir.`")
+    if event.fwd_from:
         return
+    ttss = event.pattern_match.group(1)
+    rep_msg = None
+    if event.is_reply:
+        rep_msg = await event.get_reply_message()
+    if len(ttss) < 1:
+        if event.is_reply:
+            sarki = rep_msg.text
+        else:
+            await event.edit("`Sese çevirmem için komutun yanında bir mesaj yazmalısın.`")
+            return
 
-    try:
-        gTTS(message, lang=TTS_LANG)
-    except AssertionError:
-        await query.edit(
-            'Metin boş.\n'
-            'Ön işleme, tokenizasyon ve temizlikten sonra konuşacak hiçbir şey kalmadı.'
-        )
-        return
-    except ValueError:
-        await query.edit('Bu dil henüz desteklenmiyor.')
-        return
-    except RuntimeError:
-        await query.edit('Dilin sözlüğünü görüntülemede bir hata gerçekleşti.')
-        return
-    tts = gTTS(message, lang=TTS_LANG)
-    tts.save("h.mp3")
-    with open("h.mp3", "rb") as audio:
-        linelist = list(audio)
-        linecount = len(linelist)
-    if linecount == 1:
-        tts = gTTS(message, lang=TTS_LANG)
-        tts.save("h.mp3")
-    with open("h.mp3", "r"):
-        await query.client.send_file(query.chat_id, "h.mp3", voice_note=True)
-        os.remove("h.mp3")
+    await event.edit(f"__Metniniz sese çevriliyor...__")
+    chat = "@MrTTSbot"
+    async with bot.conversation(chat) as conv:
+        try:     
+            await conv.send_message(f"/tomp3 {ttss}")
+        except YouBlockedUserError:
+            await event.reply(f"`Mmmh sanırım` {chat} `engellemişsin. Lütfen engeli aç.`")
+            return
+        ses = await conv.wait_event(events.NewMessage(incoming=True,from_users=1678833172))
+        await event.client.send_read_acknowledge(conv.chat_id)
+        indir = await ses.download_media()
+        voice = await asyncio.create_subprocess_shell(f"ffmpeg -i '{indir}' -c:a libopus 'MrTTSbot.ogg'")
+        await voice.communicate()
+        if os.path.isfile("MrTTSbot.ogg"):
+            await event.client.send_file(event.chat_id, file="MrTTSbot.ogg", voice_note=True, reply_to=rep_msg)
+            await event.delete()
+            os.remove("MrTTSbot.ogg")
+        else:
+            await event.edit("`Bir hata meydana geldi!`")
+
+
         if BOTLOG:
             await query.client.send_message(
                 BOTLOG_CHATID, "Metin başarıyla sese dönüştürüldü!")
-        await query.delete()
 
 
 @register(outgoing=True, pattern="^.imdb (.*)")

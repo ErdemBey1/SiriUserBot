@@ -493,7 +493,7 @@ async def urban_dict(ud_e):
 
 
 @register(outgoing=True, pattern=r"^.tts(?: |$)([\s\S]*)")
-async def text_to_speech(query):
+async def text_to_speech(event):
     """ .tts komutu ile Google'ın metinden yazıya dönüştürme servisi kullanılabilir. """
     if event.fwd_from:
         return

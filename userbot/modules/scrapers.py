@@ -22,6 +22,7 @@ from re import findall
 from selenium import webdriver
 from urllib.parse import quote_plus
 from urllib.error import HTTPError
+from google_trans_new import LANGUAGES, google_translator
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
@@ -34,7 +35,7 @@ from requests import get
 from search_engine_parser import GoogleSearch
 from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
-from googletrans import LANGUAGES, Translator
+from google_trans_new import LANGUAGES, google_translator
 from gtts import gTTS
 from gtts.lang import tts_langs
 from emoji import get_emoji_regexp
@@ -60,6 +61,9 @@ from telethon import events
 CARBONLANG = "auto"
 TTS_LANG = "tr"
 TRT_LANG = "tr"
+LAN = {"Diller":
+      [{"Türkçe":"tr",
+       "İngilizce" : "en"}]}
 
 
 from telethon import events
@@ -530,7 +534,7 @@ async def text_to_speech(event):
 
 
         if BOTLOG:
-            await query.client.send_message(
+            await event.client.send_message(
                 BOTLOG_CHATID, "Metin başarıyla sese dönüştürüldü!")
 
 
@@ -620,33 +624,43 @@ async def imdb(e):
 @register(outgoing=True, pattern=r"^.trt(?: |$)([\s\S]*)")
 async def translateme(trans):
     """ .trt komutu verilen metni Google Çeviri kullanarak çevirir. """
-    translator = Translator()
-    textx = await trans.get_reply_message()
-    message = trans.pattern_match.group(1)
-    if message:
-        pass
-    elif textx:
-        message = textx.text
-    else:
-        await trans.edit("`Bana çevirilecek bir metin wer!`")
+    if trans.fwd_from:
         return
+
+    if trans.is_reply and not trans.pattern_match.group(1):
+        message = await trans.get_reply_message()
+        message = str(message.message)
+    else:
+        message = str(trans.pattern_match.group(1))
+
+    if not message:
+        return await trans.edit(
+            "`Bana Metin Ver!`")
+
+    await trans.edit("**Tercüme ediyorum...**")
+    translator = google_translator()
+    try:
+        reply_text = translator.translate(deEmojify(message),
+                                          lang_tgt=TRT_LANG)
+    except ValueError:
+        return await trans.edit(
+            "**hatalı dil kodu, düzgün dil kodu seçin **`.lang tts/trt <dil kodu>`**.**"
+        )
 
     try:
-        reply_text = translator.translate(message, dest=TRT_LANG)
-    except ValueError:
-        await trans.edit("Ayarlanan hedef dil geçersiz.")
-        return
+        source_lan = translator.detect(deEmojify(message))[1].title()
+    except:
+        source_lan = "(Google bu mesajı çeviremedi)"
 
-    source_lan = LANGUAGES[f'{reply_text.src.lower()}']
-    transl_lan = LANGUAGES[f'{reply_text.dest.lower()}']
-    reply_text = f"Şu dilden:**{source_lan.title()}**\nŞu dile:**{transl_lan.title()}:**\n\n{reply_text.text}"
+    reply_text = f"Bu dilden: **{source_lan}**\nBu dile: **{LANGUAGES.get(TRT_LANG).title()}**\n\n{reply_text}"
 
     await trans.edit(reply_text)
+    
     if BOTLOG:
         await trans.client.send_message(
             BOTLOG_CHATID,
-            f"Biraz {source_lan.title()} kelime az önce {transl_lan.title()} diline çevirildi.",
-        )
+            f"`{message} kelimesi çeviri modülü ile {reply_text} 'e çevirildi.`")
+
 
 
 @register(pattern=".lang (trt|tts) (.*)", outgoing=True)

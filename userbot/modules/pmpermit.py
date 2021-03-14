@@ -192,7 +192,7 @@ async def auto_accept(event):
                                                             reverse=True,
                                                             limit=1):
                 if type(PLUGIN_MESAJLAR['afk']) is str:
-                    if message.message is not PLUGIN_MESAJLAR['pm'].format(
+                    if message.message is not PLUGIN_MESAJLAR['afk'].format(
                                     id=id,
                                     username=username,
                                     mention=mention,

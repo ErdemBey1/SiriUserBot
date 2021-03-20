@@ -6,7 +6,7 @@
 
 # SiriUserBot - ErdemBey - Midy
 
-# Turkish word meaning. Only Turkish. Coded @By_Azade, Asena uyarlaması @qulec
+# Turkish word meaning. Only Turkish. Coded @By_Azade, Siri uyarlaması @orgutsahibi
 #
 
 import requests

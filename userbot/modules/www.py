@@ -4,7 +4,7 @@
 # you may not use this file except in compliance with the License.
 #
 
-# Asena UserBot - Yusuf Usta
+# SiriUserBot - ErdemBey - Midy
 
 
 """ Internet ile alakalı bilgileri edinmek için kullanılan UserBot modülüdür. """
@@ -51,7 +51,7 @@ async def speedtst(spd):
 
 def speed_convert(size):
     """
-    Merhaba Asena, baytları okuyamıyor musun?
+    Merhaba Siri, baytları okuyamıyor musun?
     """
     power = 2**10
     zero = 0

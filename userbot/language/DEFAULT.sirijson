@@ -6,6 +6,7 @@
     "STRINGS": {
         "__plugin": {
             "REPLY_FOR_PORT": "`Plugin-Port için lütfen bir dosyaya yanıt verin.`",
+            "ALREADY_INSTALLED": "Bu plugini zaten daha önceden indirmişsiniz! İndirme işlemini iptal ediyorum!",
             "DOWNLOADING": "`Dosya indiriliyor...`",
             "UNIBORG": "`1. Tip UniBorg tespit edildi...`",
             "TOO_MANY_PLUGIN": "`Bu dosyanın içinde birden fazla plugin var, bunu portlayamam!`",

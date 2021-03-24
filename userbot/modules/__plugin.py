@@ -124,7 +124,7 @@ async def plist(event):
                 continue
 
             if dosyaismi == "py":
-                yuklenen += f"▶️ {plugin.file.name}\n"
+                yuklenen += f"🔻 {plugin.file.name}\n"
         await event.edit(yuklenen)
     else:
         await event.edit(LANG["TEMP_PLUGIN"])
@@ -138,8 +138,14 @@ async def pins(event):
         return
 
     await event.edit(LANG["DOWNLOADING"])
+    edizin = f".userbot/modules/{reply_message.file.name}"
+
+    if os.path.exists(edizin):
+        await event.edit(LANG["ALREADY_INSTALLED"]
+        return
+
     dosya = await event.client.download_media(reply_message, "./userbot/modules/")
-    
+
     try:
         spec = importlib.util.spec_from_file_location(dosya, dosya)
         mod = importlib.util.module_from_spec(spec)

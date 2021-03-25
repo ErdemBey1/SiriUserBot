@@ -141,7 +141,7 @@ async def pins(event):
     edizin = f".userbot/modules/{reply_message.file.name}"
 
     if os.path.exists(edizin):
-        await event.edit(LANG["ALREADY_INSTALLED"]
+        await event.edit(LANG["ALREADY_INSTALLED"])
         return
 
     dosya = await event.client.download_media(reply_message, "./userbot/modules/")

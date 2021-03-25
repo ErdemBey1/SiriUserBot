@@ -6,6 +6,7 @@
     "STRINGS": {
         "__plugin": {
             "REPLY_FOR_PORT": "`Plugin-Port için lütfen bir dosyaya yanıt verin.`",
+            "ALREADY_INSTALLED": "Bu plugini zaten daha önceden indirmişsiniz! İndirme işlemini iptal ediyorum!",
             "DOWNLOADING": "`Dosya indiriliyor...`",
             "UNIBORG": "`1. Tip UniBorg tespit edildi...`",
             "TOO_MANY_PLUGIN": "`Bu dosyanın içinde birden fazla plugin var, bunu portlayamam!`",
@@ -29,7 +30,7 @@
             "PREMOVE_DELETING": "`Plugin Siliniyor...`",
             "ALREADY_DELETED": "`Plugin dosyası zaten silinmiş.`",
             "NOT_FOUND_PLUGIN": "`Böyle bir plugin belki vardı, belki de yoktu. Ama şu an olmadığı kesin.`",
-            "PLUG_DELETED": "`Plugin başarıyla silindi!` **İşlemlerin uygulanabilmesi için yeniden başlatmanız gerekmetedir.**",
+            "PLUG_DELETED": "`Plugin başarıyla silindi!` **Yeniden başlatılıyor**",
             "SIRI_PLUGIN_CAPTION": "Bu bir [Siri](https://t.me/SiriUserBot) pluginidir."
         },
         

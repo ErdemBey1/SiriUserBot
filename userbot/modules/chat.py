@@ -83,15 +83,23 @@ async def log(log_text):
     await log_text.delete()
 
 
-@register(outgoing=True, pattern="^.kickme$")
+@register(outgoing=True, pattern="^.kickme ?(.*)")
 async def kickme(leave):
     """ .kickme komutu gruptan çıkmaya yarar """
+    sebep = leave.pattern_match.group(1)
     chat = await leave.get_chat()
-    await leave.edit(f"{PLUGIN_MESAJLAR['kickme']}".format(
-        id=chat.id,
-        title=chat.title,
-        member_count="Bilinmiyor" if chat.participants_count == None else (chat.participants_count - 1)
-    ))
+    if sebep:
+        await leave.edit(f"{PLUGIN_MESAJLAR['kickme']}\n **Reason:** `{sebep}`".format(
+            id=chat.id,
+            title=chat.title,
+            member_count="Bilinmiyor" if chat.participants_count == None else (chat.participants_count - 1)
+        ))
+    else:
+        await leave.edit(f"{PLUGIN_MESAJLAR['kickme']}".format(
+            id=chat.id,
+            title=chat.title,
+            member_count="Bilinmiyor" if chat.participants_count == None else (chat.participants_count - 1)
+        ))
     await leave.client.kick_participant(leave.chat_id, 'me')
 
 

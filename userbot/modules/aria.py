@@ -21,7 +21,7 @@ trackers_list = get(
 ).text.replace('\n\n', ',')
 trackers = f"[{trackers_list}]"
 
-cmd = f"aria2c \
+cmd = f"aria2p \
 --enable-rpc \
 --rpc-listen-all=false \
 --rpc-listen-port 6800 \

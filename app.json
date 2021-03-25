@@ -174,10 +174,11 @@
     "BIO_PREFIX": {
       "description": "Last.FM Modülü Biyografi için önek.",
       "required": false
-    },
+    }, 
     "DEFAULT_NAME": {
       "description": "Klon plugininden sonra hesabınızın eski haline dönmesi için Telegram isminiz",
       "required": false
+    }, 
     "DEFAULT_BIO": {
       "description": "Varsayılan profil biyografisi.",
       "value": "@SiriUserBot",

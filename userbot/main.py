@@ -145,11 +145,11 @@ def extractCommands(file):
                             KomutStr = Command
                         Komutlar.append(KomutStr)
 
-            # AsenaPY
-            Asenapy = re.search('\"\"\"ASENAPY(.*)\"\"\"', FileRead, re.DOTALL)
-            if not Asenapy == None:
-                Asenapy = Asenapy.group(0)
-                for Satir in Asenapy.splitlines():
+            # 😎 SIRIPY
+            Siripy = re.search('\"\"\"SIRIPY(.*)\"\"\"', FileRead, re.DOTALL)
+            if not Siripy == None:
+                Siripy = Siripy.group(0)
+                for Satir in Siripy.splitlines():
                     if (not '"""' in Satir) and (':' in Satir):
                         Satir = Satir.split(':')
                         Isim = Satir[0]

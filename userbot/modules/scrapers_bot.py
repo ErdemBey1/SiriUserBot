@@ -86,7 +86,7 @@ def MemeYap (Resim, Text, FontS = 40, Bottom = False, BottomText = None):
                 drawTextWithOutline(Bottom_Satirlar[i], x, y)
                 lastY = y
 
-    Foto.save("spacememe.png")
+    Foto.save("bercmeme.png")
 
 @register(outgoing=True, pattern="^.sangmata(?: |$)(.*)")
 async def sangmata(event):
@@ -172,11 +172,11 @@ async def memeyap(event):
         else:
             return await event.edit(LANG['REPLY_TO_MEME'])
             
-        if os.path.exists("./sirimeme.png"):
-            os.remove("./sirimeme.png")
+        if os.path.exists("./bercmeme.png"):
+            os.remove("./bercmeme.png")
 
         MemeYap(Resim, Text, font, Bottom, BottomText)
-        await event.client.send_file(event.chat_id, "./sirimeme.png", reply_to=reply)
+        await event.client.send_file(event.chat_id, "./bercmeme.png", reply_to=reply)
         await event.delete()
         os.remove(Resim)
     else:

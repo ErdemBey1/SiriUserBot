@@ -13,7 +13,7 @@ import importlib
 import time
 import traceback
 
-from userbot import CMD_HELP, bot, tgbot, PLUGIN_CHANNEL_ID, PATTERNS
+from userbot import CMD_HELP, bot, tgbot, PLUGIN_CHANNEL_ID, PATTERNS, BOTLOG, BOTLOG_CHATID
 from userbot.events import register
 from userbot.main import extractCommands
 import userbot.cmdhelp
@@ -22,6 +22,7 @@ import userbot.cmdhelp
 
 from userbot.language import get_value
 LANG = get_value("__plugin")
+LANGG = get_value("misc")
 
 # ████████████████████████████████ #
 
@@ -123,7 +124,7 @@ async def plist(event):
                 continue
 
             if dosyaismi == "py":
-                yuklenen += f"▶️ {plugin.file.name}\n"
+                yuklenen += f"🔻 {plugin.file.name}\n"
         await event.edit(yuklenen)
     else:
         await event.edit(LANG["TEMP_PLUGIN"])
@@ -137,8 +138,14 @@ async def pins(event):
         return
 
     await event.edit(LANG["DOWNLOADING"])
+    edizin = f".userbot/modules/{reply_message.file.name}"
+
+    if os.path.exists(edizin):
+        await event.edit(LANG["ALREADY_INSTALLED"])
+        return
+
     dosya = await event.client.download_media(reply_message, "./userbot/modules/")
-    
+
     try:
         spec = importlib.util.spec_from_file_location(dosya, dosya)
         mod = importlib.util.module_from_spec(spec)
@@ -207,6 +214,16 @@ async def premove(event):
         await event.edit(LANG['NOT_FOUND_PLUGIN'])
     else:
         await event.edit(LANG['PLUG_DELETED'])
+        time.sleep(2) 
+        await event.edit(LANGG['RESTARTING'])
+        try: 
+            if BOTLOG:
+                await event.client.send_message(BOTLOG_CHATID, "#OTORESTART \n"
+                                        "Plugin silme sonrası bot yeniden başlatıldı.")
+
+            await bot.disconnect()
+        except:
+            pass
 
 @register(outgoing=True, pattern="^.psend ?(.*)")
 async def psend(event):

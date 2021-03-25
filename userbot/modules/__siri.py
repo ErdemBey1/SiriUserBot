@@ -21,7 +21,7 @@ LANG = get_value("__siri")
 
 # ████████████████████████████████ #
 
-@register(outgoing=True, pattern="^.siri(?: |$)(.*)")
+@register(outgoing=True, pattern="^.[Ss]iri(?: |$)(.*)")
 async def siri(event):
     """ .siri komutun """
     args = event.pattern_match.group(1).lower()
@@ -35,7 +35,7 @@ async def siri(event):
         sayfa = [sorted(list(CMD_HELP))[i:i + 5] for i in range(0, len(sorted(list(CMD_HELP))), 5)]
         
         for i in sayfa:
-            string += f'`✨ `'
+            string += f'`🔻⇝ `'
             for sira, a in enumerate(i):
                 string += "`" + str(a)
                 if sira == i.index(i[-1]):

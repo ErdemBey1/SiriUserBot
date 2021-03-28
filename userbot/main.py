@@ -111,6 +111,8 @@ for i in ALL_ROWS:
     BRAIN_CHECKER.append(i[0])
 connect("learning-data-root.check").close()
 
+BRAIN_CHECKER = BRAIN_CHECKER[0]
+
 def extractCommands(file):
     FileRead = open(file, 'r').read()
     

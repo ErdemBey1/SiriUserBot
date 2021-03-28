@@ -883,7 +883,7 @@ CmdHelp('scrapers').add_command(
 ).add_command(
     'ud', '<terim>', 'Urban Dictionary araması yapmanın kolay yolu?'
 ).add_command(
-    'tts', '<metin>', 'Metni sese dönüştürür.'
+    'tts', '<metin>', 'Metni sese dönüştürür.` **Yavaş ses için tts nin yanına #s koyun.** `.tts #s deneme', 'tts deneme'
 ).add_command(
     'lang', '<dil>', 'tts ve trt için dil ayarlayın.'
 ).add_command(

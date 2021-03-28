@@ -56,6 +56,7 @@ lottie
 git+https://github.com/Joeclinton1/google-images-download.git
 eksipy
 pydub
+geopy
 emoji-country-flag
 cairosvg
 imagedown

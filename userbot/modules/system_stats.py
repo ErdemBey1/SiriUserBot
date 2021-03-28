@@ -182,7 +182,7 @@ async def wwwwailve(event):
         reply_user = await event.client.get_entity(reply.from_id)
         ren = reply_user.id
         if ren == MYID:
-            await event.reply("🥵 Oh! Şey yanlış zamanda beni çağırdın yöneticim 乁( •_• )ㄏ")
+            await event.reply("__🥵 Oh! Şey yanlış zamanda beni çağırdın yöneticim 乁( •_• )ㄏ__")
 
 
 

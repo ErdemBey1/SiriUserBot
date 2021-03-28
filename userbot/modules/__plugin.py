@@ -8,6 +8,7 @@
 
 import re
 import os
+import sys
 from telethon.tl.types import DocumentAttributeFilename, InputMessagesFilterDocument
 import importlib
 import time
@@ -224,6 +225,8 @@ async def premove(event):
             await bot.disconnect()
         except:
             pass
+        os.execl(sys.executable, sys.executable, *sys.argv)
+
 
 @register(outgoing=True, pattern="^.psend ?(.*)")
 async def psend(event):

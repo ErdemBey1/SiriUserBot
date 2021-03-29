@@ -11,10 +11,11 @@
 
 from asyncio import create_subprocess_shell as asyncrunapp
 from asyncio.subprocess import PIPE as asyncPIPE
+from asyncio import sleep
 from platform import uname
 from shutil import which
 from os import remove
-from userbot import CMD_HELP, SIRI_VERSION, DEFAULT_NAME, WHITELIST, MYID
+from userbot import CMD_HELP, SIRI_VERSION, DEFAULT_NAME, WHITELIST, MYID, ForceVer, bot
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
 from userbot.events import register
@@ -135,28 +136,19 @@ async def pipcheck(pip):
 
 @register(outgoing=True, pattern="^.alive$")
 async def amialive(e):
-    if DEFAULT_NAME:
-        sahipp = f"{DEFAULT_NAME}"
+    Siri = SIRI_VERSION
+    SiriVer = str(Siri.replace("v",""))
+    if str(ForceVer) > SiriVer:
+        await e.edit(f"`[ Force Update ]` \n 📻 `Upss!! Şuanki bot versiyonunuz {SiriVer} , güncel versiyondan ({ForceVer}) düşük kaldığı için bu işlemi yapmıyorum!!` _Sorunu çözmek için_ `.update now` _yazın._"
+        await sleep(4)
     else:
-        sahipp = "Sir"
-    me = await e.client.get_me()
-    if type(PLUGIN_MESAJLAR['alive']) == str:
-        await e.edit(PLUGIN_MESAJLAR['alive'].format(
-            telethon=version.__version__,
-            python=python_version(),
-            siri=SIRI_VERSION,
-            plugin=len(CMD_HELP),
-            id=me.id,
-            username='@' + me.username if me.username else f'[{me.first_name}](tg://user?id={me.id})',
-            first_name=me.first_name,
-            last_name=me.last_name if me.last_name else '',
-            mention=f'[{me.first_name}](tg://user?id={me.id})',
-            sirisahip = sahipp
-        ))
-    else:
-        await e.delete()
-        if not PLUGIN_MESAJLAR['alive'].text == '':
-            PLUGIN_MESAJLAR['alive'].text = PLUGIN_MESAJLAR['alive'].text.format(
+        if DEFAULT_NAME:
+            sahipp = f"{DEFAULT_NAME}"
+        else:
+            sahipp = "Sir"
+        me = await e.client.get_me()
+        if type(PLUGIN_MESAJLAR['alive']) == str:
+            await e.edit(PLUGIN_MESAJLAR['alive'].format(
                 telethon=version.__version__,
                 python=python_version(),
                 siri=SIRI_VERSION,
@@ -167,11 +159,26 @@ async def amialive(e):
                 last_name=me.last_name if me.last_name else '',
                 mention=f'[{me.first_name}](tg://user?id={me.id})',
                 sirisahip = sahipp
-            )
-        if e.is_reply:
-            await e.respond(PLUGIN_MESAJLAR['alive'], reply_to=e.message.reply_to_msg_id)
+            ))
         else:
-            await e.respond(PLUGIN_MESAJLAR['alive'])
+            await e.delete()
+            if not PLUGIN_MESAJLAR['alive'].text == '':
+                PLUGIN_MESAJLAR['alive'].text = PLUGIN_MESAJLAR['alive'].text.format(
+                    telethon=version.__version__,
+                    python=python_version(),
+                    siri=SIRI_VERSION,
+                    plugin=len(CMD_HELP),
+                    id=me.id,
+                    username='@' + me.username if me.username else f'[{me.first_name}](tg://user?id={me.id})',
+                    first_name=me.first_name,
+                    last_name=me.last_name if me.last_name else '',
+                    mention=f'[{me.first_name}](tg://user?id={me.id})',
+                    sirisahip = sahipp
+                )
+            if e.is_reply:
+                await e.respond(PLUGIN_MESAJLAR['alive'], reply_to=e.message.reply_to_msg_id)
+            else:
+                await e.respond(PLUGIN_MESAJLAR['alive'])
 
 @register(incoming=True, from_users=WHITELIST, pattern="^.wlive$")
 async def wwwwailve(event):

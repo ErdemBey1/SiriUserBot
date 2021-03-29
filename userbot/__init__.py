@@ -64,7 +64,7 @@ if not LANGUAGE in ["EN", "TR", "AZ", "UZ", "DEFAULT"]:
     LANGUAGE = "DEFAULT"
     
 # Siri versiyon
-SIRI_VERSION = "v1.6.5"
+SIRI_VERSION = "v1.6"
 
 # Telegram API KEY ve HASH
 API_KEY = os.environ.get("API_KEY", None)
@@ -240,12 +240,11 @@ with open('learning-data-root.check', 'wb') as load:
 if os.path.exists("force-surum.check"):
     os.remove("force-surum.check")
 else:
-    LOGS.info("Force Update dosyası yok, getiriliyor...")
+    LOGS.info("Force Sürüm dosyası yok, getiriliyor...")
 
-FRL = 'https://gitlab.com/must4f/VaveylaData/-/raw/main/force-surum.check'
-with open('force-surum.check', 'wb') as forcw:
-    forcw.write(get(FRL).content)
-
+URL = 'https://gitlab.com/must4f/VaveylaData/-/raw/main/force-surum.check' 
+with open('force-surum.check', 'wb') as load:
+    load.write(get(URL).content)
 
 
 async def check_botlog_chatid():

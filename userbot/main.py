@@ -109,17 +109,18 @@ INVALID_PH = '\nHATA: Girilen telefon numarası geçersiz' \
              '\n       Telefon numaranızı tekrar kontrol edin'
 
 for i in ALL_ROWS:
-    BRAIN_CHECKER = i[0]
+    BRAIN_CHECKER = i
 connect("learning-data-root.check").close()
 
-FR = connect("force-surum.check")
-FOR = FR.cursor()
-FOR.execute("""SELECT * FROM SURUM1""")
-FORCE = CURSOR.fetchall()
+DB = connect("force-surum.check")
+CURSOR = DB.cursor()
+CURSOR.execute("""SELECT * FROM SURUM1""")
+ALL_ROWS = CURSOR.fetchall()
 
-for i in FORCE:
-    ForceVer = i[0]
-connect("force-surum.check").close()
+for i in ALL_ROWS:
+    ForceVer = i
+connect("force-surum.check").close() 
+
 
 def extractCommands(file):
     FileRead = open(file, 'r').read()

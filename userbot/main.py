@@ -42,6 +42,7 @@ ALIVE_MSG = [
 
 DIZCILIK_STR = [
     "Çıkartmayı dızlıyorum...",
+    "Çaldım Gitti Geçmiş Olsun 🤭",
     "Yaşasın dızcılık...",
     "Bu çıkartmayı kendi paketime davet ediyorum...",
     "Bunu dızlamam lazım...",

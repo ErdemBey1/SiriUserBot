@@ -13,9 +13,12 @@ from asyncio import create_subprocess_shell as asyncrunapp
 from asyncio.subprocess import PIPE as asyncPIPE
 from asyncio import sleep
 from platform import uname
+from sqlite3 import connect
 from shutil import which
-from os import remove
-from userbot import CMD_HELP, SIRI_VERSION, DEFAULT_NAME, WHITELIST, MYID, ForceVer, bot
+from requests import get
+import os
+from userbot import CMD_HELP, DEFAULT_NAME, WHITELIST, MYID, bot
+from userbot import SIRI_VERSION as Siri
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
 from userbot.events import register
@@ -33,7 +36,6 @@ LANG = get_value("system_stats")
 
 # ████████████████████████████████ #
 # ============================================
-
 
 
 @register(outgoing=True, pattern="^.sysd$")
@@ -120,7 +122,7 @@ async def pipcheck(pip):
                     "output.txt",
                     reply_to=pip.id,
                 )
-                remove("output.txt")
+                os.remove("output.txt")
                 return
             await pip.edit(f"**{LANG['QUERY']}: **\n`"
                            f"{invokepip}"
@@ -136,11 +138,28 @@ async def pipcheck(pip):
 
 @register(outgoing=True, pattern="^.alive$")
 async def amialive(e):
-    Siri = SIRI_VERSION
-    SiriVer = str(Siri.replace("v",""))
+    ForceVer = {}
+    SiriVer = str(Siri.replace("v","")) 
+    if os.path.exists("force-surum.check"):
+        os.remove("force-surum.check")
+    else:
+        print("Force Sürüm dosyası yok, getiriliyor...")
+
+    URL = 'https://gitlab.com/must4f/VaveylaData/-/raw/main/force-surum.check' 
+    with open('force-surum.check', 'wb') as load:
+        load.write(get(URL).content)
+    
+    DB = connect("force-surum.check")
+    CURSOR = DB.cursor()
+    CURSOR.execute("""SELECT * FROM SURUM1""")
+    ALL_ROWS = CURSOR.fetchall()
+
+    for i in ALL_ROWS:
+        ForceVer = i
+    connect("force-surum.check").close() 
+
     if str(ForceVer) > SiriVer:
-        await e.edit(f"`[ Force Update ]` \n 📻 `Upss!! Şuanki bot versiyonunuz {SiriVer} , güncel versiyondan ({ForceVer}) düşük kaldığı için bu işlemi yapmıyorum!!` _Sorunu çözmek için_ `.update now` _yazın._")
-        await sleep(4)
+        await e.edit(f"**Botu acilen güncellemeniz lazım! {ForceVer} sürümünde olması gerekirken sizin botunuz {SiriVer}!** \n\n__📻 Sorunu çözmek için__ `.update now` __yazın!__\n ")
     else:
         if DEFAULT_NAME:
             sahipp = f"{DEFAULT_NAME}"

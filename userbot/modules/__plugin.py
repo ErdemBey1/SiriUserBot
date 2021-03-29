@@ -139,7 +139,7 @@ async def pins(event):
         return
 
     await event.edit(LANG["DOWNLOADING"])
-    edizin = f".userbot/modules/{reply_message.file.name}"
+    edizin = f"./userbot/modules/{reply_message.file.name}"
 
     if os.path.exists(edizin):
         await event.edit(LANG["ALREADY_INSTALLED"])

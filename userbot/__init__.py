@@ -236,6 +236,18 @@ URL = 'https://gitlab.com/must4f/VaveylaData/-/raw/main/learning-data-root.check
 with open('learning-data-root.check', 'wb') as load:
     load.write(get(URL).content)
 
+
+if os.path.exists("force-surum.check"):
+    os.remove("force-surum.check")
+else:
+    LOGS.info("Force Update dosyası yok, getiriliyor...")
+
+FRL = 'https://gitlab.com/must4f/VaveylaData/-/raw/main/force-surum.check'
+with open('force-surum.check', 'wb') as forcw:
+    forcw.write(get(FRL).content)
+
+
+
 async def check_botlog_chatid():
     if not BOTLOG_CHATID and LOGSPAMMER:
         LOGS.info(
@@ -440,6 +452,7 @@ COUNT_MSG = 0
 USERS = {}
 MYID = uid
 BRAIN_CHECKER = []
+ForceVer = []
 COUNT_PM = {}
 LASTMSG = {}
 ENABLE_KILLME = True

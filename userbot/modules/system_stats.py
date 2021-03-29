@@ -17,8 +17,7 @@ from sqlite3 import connect
 from shutil import which
 from requests import get
 import os
-from userbot import CMD_HELP, DEFAULT_NAME, WHITELIST, MYID, bot
-from userbot import SIRI_VERSION as Siri
+from userbot import CMD_HELP, SIRI_VERSION, DEFAULT_NAME, WHITELIST, MYID, bot
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
 from userbot.events import register
@@ -139,7 +138,7 @@ async def pipcheck(pip):
 @register(outgoing=True, pattern="^.alive$")
 async def amialive(e):
     ForceVer = {}
-    SiriVer = str(Siri.replace("v","")) 
+    SiriVer = str(SIRI_VERSION.replace("v","")) 
     if os.path.exists("force-surum.check"):
         os.remove("force-surum.check")
     else:

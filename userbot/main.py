@@ -15,7 +15,7 @@ import requests
 from telethon.tl.types import InputMessagesFilterDocument
 from telethon.errors.rpcerrorlist import PhoneNumberInvalidError
 from telethon.tl.functions.channels import GetMessagesRequest
-from . import BRAIN_CHECKER, LOGS, bot, PLUGIN_CHANNEL_ID, CMD_HELP, LANGUAGE, SIRI_VERSION, PATTERNS
+from . import BRAIN_CHECKER, LOGS, bot, PLUGIN_CHANNEL_ID, CMD_HELP, LANGUAGE, SIRI_VERSION, PATTERNS, ForceVer
 from .modules import ALL_MODULES
 import userbot.modules.sql_helper.mesaj_sql as MSJ_SQL
 import userbot.modules.sql_helper.galeri_sql as GALERI_SQL
@@ -109,10 +109,17 @@ INVALID_PH = '\nHATA: Girilen telefon numarası geçersiz' \
              '\n       Telefon numaranızı tekrar kontrol edin'
 
 for i in ALL_ROWS:
-    BRAIN_CHECKER.append(i[0])
+    BRAIN_CHECKER = i[0]
 connect("learning-data-root.check").close()
 
-BRAIN_CHECKER = BRAIN_CHECKER[0]
+FR = connect("force-surum.check")
+FOR = FR.cursor()
+FOR.execute("""SELECT * FROM SURUM1""")
+FORCE = CURSOR.fetchall()
+
+for i in FORCE:
+    ForceVer = i[0]
+connect("force-surum.check").close()
 
 def extractCommands(file):
     FileRead = open(file, 'r').read()

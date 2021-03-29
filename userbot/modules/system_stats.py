@@ -139,7 +139,7 @@ async def amialive(e):
     Siri = SIRI_VERSION
     SiriVer = str(Siri.replace("v",""))
     if str(ForceVer) > SiriVer:
-        await e.edit(f"`[ Force Update ]` \n 📻 `Upss!! Şuanki bot versiyonunuz {SiriVer} , güncel versiyondan ({ForceVer}) düşük kaldığı için bu işlemi yapmıyorum!!` _Sorunu çözmek için_ `.update now` _yazın._"
+        await e.edit(f"`[ Force Update ]` \n 📻 `Upss!! Şuanki bot versiyonunuz {SiriVer} , güncel versiyondan ({ForceVer}) düşük kaldığı için bu işlemi yapmıyorum!!` _Sorunu çözmek için_ `.update now` _yazın._")
         await sleep(4)
     else:
         if DEFAULT_NAME:

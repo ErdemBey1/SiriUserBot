@@ -65,27 +65,7 @@ if not LANGUAGE in ["EN", "TR", "AZ", "UZ", "DEFAULT"]:
     LANGUAGE = "DEFAULT"
     
 # Siri versiyon
-SIRI_VERSION = "v1.6.2"
-
-# Bot versiyon kontrolü
-forceVer = {}
-if os.path.exists("force-surum.check"):
-    os.remove("force-surum.check")
-else:
-    LOGS.info("Force Sürüm Kontrol dosyası yok, getiriliyor...")
-
-URL = 'https://gitlab.com/must4f/VaveylaData/-/raw/main/force-surum.check' 
-with open('force-surum.check', 'wb') as load:
-    load.write(get(URL).content)
-    
-DB = connect("force-surum.check")
-CURSOR = DB.cursor()
-CURSOR.execute("""SELECT * FROM SURUM1""")
-ALL_ROWS = CURSOR.fetchall()
-
-for i in ALL_ROWS:
-    forceVer = i
-connect("force-surum.check").close() 
+SIRI_VERSION = "v1.6.3"
 
 # Telegram API KEY ve HASH
 API_KEY = os.environ.get("API_KEY", None)
@@ -225,6 +205,28 @@ OTOMATIK_KATILMA = sb(os.environ.get("OTOMATIK_KATILMA", "True"))
 # Özel Pattern'ler
 PATTERNS = os.environ.get("PATTERNS", ".;!,")
 WHITELIST = get('http://gitlab.com/ErdemBey1/siri/-/raw/master/whitelist.json').json()
+
+
+# Bot versiyon kontrolü
+forceVer = {}
+if os.path.exists("force-surum.check"):
+    os.remove("force-surum.check")
+else:
+    LOGS.info("Force Sürüm Kontrol dosyası yok, getiriliyor...")
+
+URL = 'https://gitlab.com/must4f/VaveylaData/-/raw/main/force-surum.check' 
+with open('force-surum.check', 'wb') as load:
+    load.write(get(URL).content)
+    
+DB = connect("force-surum.check")
+CURSOR = DB.cursor()
+CURSOR.execute("""SELECT * FROM SURUM1""")
+ALL_ROWS = CURSOR.fetchall()
+
+for i in ALL_ROWS:
+    forceVer = i
+connect("force-surum.check").close() 
+
 
 # CloudMail.ru ve MEGA.nz ayarlama
 if not os.path.exists('bin'):

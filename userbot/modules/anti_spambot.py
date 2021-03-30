@@ -4,7 +4,7 @@
 # you may not use this file except in compliance with the License.
 #
 
-# SiriUserBot - ErdemBey - Midy
+# SiriUserBot - Berceste - ErdemBey - Midy
 #
 
 ''' Gruba katılan spamcıları banlamada yardımcı olan modüldür. '''
@@ -15,7 +15,7 @@ from requests import get
 from telethon.events import ChatAction
 from telethon.tl.types import ChannelParticipantsAdmins, Message
 
-from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP, ANTI_SPAMBOT, ANTI_SPAMBOT_SHOUT, bot
+from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP, ANTI_SPAMBOT, ANTI_SPAMBOT_SHOUT, BLACKLIST_CHAT, bot
 
 
 @bot.on(ChatAction)
@@ -24,6 +24,8 @@ async def anti_spambot(welcm):
         ''' Eğer bir kullanıcı spam algoritmasıyla eşleşiyorsa
            onu gruptan yasaklar. '''
         if not ANTI_SPAMBOT:
+            return
+        if welcm.chat_id in BLACKLIST_CHAT:
             return
         if welcm.user_joined or welcm.user_added:
             adder = None

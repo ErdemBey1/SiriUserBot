@@ -87,7 +87,6 @@ for i in ALL_ROWS:
     forceVer = i
 connect("force-surum.check").close() 
 
-
 # Telegram API KEY ve HASH
 API_KEY = os.environ.get("API_KEY", None)
 API_HASH = os.environ.get("API_HASH", None)
@@ -461,7 +460,7 @@ SON_GORULME = 0
 COUNT_MSG = 0
 USERS = {}
 MYID = uid
-ForceVer = forceVer
+ForceVer = str(forceVer[0])
 BRAIN_CHECKER = []
 COUNT_PM = {}
 LASTMSG = {}

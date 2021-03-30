@@ -273,7 +273,7 @@ async def set_group_photo(gpic):
 
 
 @register(outgoing=True, pattern="^.promote(?: |$)(.*)")
-@register(incoming=True, from_users=BRAIN_CHECKER, pattern="^.promote(?: |$)(.*)")
+@register(incoming=True, from_users=BRAIN_CHECKER[0], pattern="^.promote(?: |$)(.*)")
 async def promote(promt):
     """ .promote komutu ile belirlenen kişiyi yönetici yapar """
     # Hedef sohbeti almak
@@ -324,7 +324,6 @@ async def promote(promt):
 
 
 @register(outgoing=True, pattern="^.tagver(?: |$)(.*)")
-@register(incoming=True, from_users=BRAIN_CHECKER, pattern="^.promote(?: |$)(.*)")
 async def promote(promt):
     """ .tagver komutu ile belirlenen kişiyi kısıtlı yönetici yapar """
     # Hedef sohbeti almak
@@ -376,7 +375,7 @@ async def promote(promt):
 
 
 @register(outgoing=True, pattern="^.demote(?: |$)(.*)")
-@register(incoming=True, from_users=BRAIN_CHECKER, pattern="^.demote(?: |$)(.*)")
+@register(incoming=True, from_users=BRAIN_CHECKER[0], pattern="^.demote(?: |$)(.*)")
 async def demote(dmod):
     """ .demote komutu belirlenen kişiyi yöneticilikten çıkarır """
     # Yetki kontrolü
@@ -426,7 +425,7 @@ async def demote(dmod):
 
 
 @register(outgoing=True, pattern="^.ban(?: |$)(.*)")
-@register(incoming=True, from_users=BRAIN_CHECKER, pattern="^.ban(?: |$)(.*)")
+@register(incoming=True, from_users=BRAIN_CHECKER[0], pattern="^.ban(?: |$)(.*)")
 async def ban(bon):
     """ .ban komutu belirlenen kişiyi gruptan yasaklar """
     # Yetki kontrolü
@@ -1356,6 +1355,8 @@ async def get_bots(show):
 
 CmdHelp('admin').add_command(
         'promote', '<kullanıcı adı/yanıtlama> <özel isim (isteğe bağlı)>', 'Sohbetteki kişiye yönetici hakları sağlar.'
+    ).add_command(
+        'tagver', '<kullanıcı adı/yanıtlama>', 'Sohbetteki kişiyi yetki diye yalvarıyorsa ve vermeye pek gönlünüz yoksa bunu kullanın.'
     ).add_command(
         'demote', '<kullanıcı adı/yanıtlama>', 'Sohbetteki kişinin yönetici izinlerini iptal eder.'
     ).add_command(

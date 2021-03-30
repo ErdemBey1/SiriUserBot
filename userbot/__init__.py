@@ -65,7 +65,7 @@ if not LANGUAGE in ["EN", "TR", "AZ", "UZ", "DEFAULT"]:
     LANGUAGE = "DEFAULT"
     
 # Siri versiyon
-SIRI_VERSION = "v1.6.1"
+SIRI_VERSION = "v1.6.2"
 
 # Bot versiyon kontrolü
 forceVer = {}

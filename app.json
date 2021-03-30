@@ -33,7 +33,7 @@
     },
     "BLACKLIST_CHAT": {
       "description": "Userbotun kapatılacağı gruplar, boşlukla ayırın! -0000 -1111 tarzı bilmiyorsanız veya userbot heryerde çalışsın istiyorsanız ELLEMEYİN!",
-      "value": "False"
+      "value": "False",
       "required": false
     },
     "SPOTIFY_KEY": {

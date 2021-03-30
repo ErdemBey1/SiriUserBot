@@ -31,6 +31,11 @@
       "description": "Spotify bio için gerekli olan anahtar",
       "required": false
     },
+    "BLACKLIST_CHAT": {
+      "description": "Userbotun kapatılacağı gruplar, boşlukla ayırın! -0000 -1111 tarzı bilmiyorsanız veya userbot heryerde çalışsın istiyorsanız ELLEMEYİN!",
+      "value": "False"
+      "required": false
+    },
     "SPOTIFY_KEY": {
       "description": "Spotify bio için gerekli olan anahtar",
       "required": false

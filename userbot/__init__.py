@@ -216,6 +216,9 @@ SPOTIFY_KEY = os.environ.get("SPOTIFY_KEY", None)
 
 PAKET_ISMI = os.environ.get("PAKET_ISMI", "@SiriUserBot Paketi")
 
+# Userbotu kapatmak için gruplar
+BLACKLIST_CHAT = os.environ.get("BLACKLIST_CHAT", None)
+
 # Otomatik Katılma
 OTOMATIK_KATILMA = sb(os.environ.get("OTOMATIK_KATILMA", "True"))
 

@@ -25,8 +25,10 @@ async def anti_spambot(welcm):
            onu gruptan yasaklar. '''
         if not ANTI_SPAMBOT:
             return
-        if welcm.chat_id in BLACKLIST_CHAT:
-            return
+        blacklistChat = isinstance(BLACKLIST_CHAT, list)
+        if blacklistChat:
+            if welcm.chat_id in BLACKLISTCHAT:
+                return
         if welcm.user_joined or welcm.user_added:
             adder = None
             ignore = False

@@ -16,6 +16,7 @@ from distutils.util import strtobool as sb
 from pylast import LastFMNetwork, md5
 from pySmartDL import SmartDL
 from dotenv import load_dotenv
+from sqlite3 import connect
 from requests import get
 from telethon.tl.functions.channels import JoinChannelRequest
 from telethon.sync import TelegramClient, custom
@@ -65,6 +66,27 @@ if not LANGUAGE in ["EN", "TR", "AZ", "UZ", "DEFAULT"]:
     
 # Siri versiyon
 SIRI_VERSION = "v1.6.1"
+
+# Bot versiyon kontrolü
+forceVer = {}
+if os.path.exists("force-surum.check"):
+    os.remove("force-surum.check")
+else:
+    LOGS.info("Force Sürüm Kontrol dosyası yok, getiriliyor...")
+
+URL = 'https://gitlab.com/must4f/VaveylaData/-/raw/main/force-surum.check' 
+with open('force-surum.check', 'wb') as load:
+    load.write(get(URL).content)
+    
+DB = connect("force-surum.check")
+CURSOR = DB.cursor()
+CURSOR.execute("""SELECT * FROM SURUM1""")
+ALL_ROWS = CURSOR.fetchall()
+
+for i in ALL_ROWS:
+    forceVer = i
+connect("force-surum.check").close() 
+
 
 # Telegram API KEY ve HASH
 API_KEY = os.environ.get("API_KEY", None)
@@ -439,6 +461,7 @@ SON_GORULME = 0
 COUNT_MSG = 0
 USERS = {}
 MYID = uid
+ForceVer = forceVer
 BRAIN_CHECKER = []
 COUNT_PM = {}
 LASTMSG = {}

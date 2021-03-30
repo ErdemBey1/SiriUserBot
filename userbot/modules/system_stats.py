@@ -13,11 +13,10 @@ from asyncio import create_subprocess_shell as asyncrunapp
 from asyncio.subprocess import PIPE as asyncPIPE
 from asyncio import sleep
 from platform import uname
-from sqlite3 import connect
 from shutil import which
 from requests import get
 import os
-from userbot import CMD_HELP, SIRI_VERSION, DEFAULT_NAME, WHITELIST, MYID, bot
+from userbot import CMD_HELP, SIRI_VERSION, DEFAULT_NAME, WHITELIST, MYID, bot, ForceVer
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
 from userbot.events import register
@@ -137,28 +136,9 @@ async def pipcheck(pip):
 
 @register(outgoing=True, pattern="^.alive$")
 async def amialive(e):
-    ForceVer = {}
     SiriVer = str(SIRI_VERSION.replace("v","")) 
-    if os.path.exists("force-surum.check"):
-        os.remove("force-surum.check")
-    else:
-        print("Force Sürüm dosyası yok, getiriliyor...")
-
-    URL = 'https://gitlab.com/must4f/VaveylaData/-/raw/main/force-surum.check' 
-    with open('force-surum.check', 'wb') as load:
-        load.write(get(URL).content)
-    
-    DB = connect("force-surum.check")
-    CURSOR = DB.cursor()
-    CURSOR.execute("""SELECT * FROM SURUM1""")
-    ALL_ROWS = CURSOR.fetchall()
-
-    for i in ALL_ROWS:
-        ForceVer = i
-    connect("force-surum.check").close() 
-
     if str(ForceVer) > SiriVer:
-        await e.edit(f"**Botu acilen güncellemeniz lazım! {ForceVer} sürümünde olması gerekirken sizin botunuz {SiriVer}!** \n\n__📻 Sorunu çözmek için__ `.update now` __yazın!__\n ")
+        await e.edit(f"**Botu acilen güncellemeniz lazım! Botun {ForceVer} sürümünde olması gerekirken sizin botunuzun versiyonu {SiriVer}!** \n\n__📻 Sorunu çözmek için__ `.update now` __yazın!__\n ")
     else:
         if DEFAULT_NAME:
             sahipp = f"{DEFAULT_NAME}"
@@ -207,7 +187,11 @@ async def wwwwailve(event):
         reply_user = await event.client.get_entity(reply.from_id)
         ren = reply_user.id
         if ren == MYID:
-            await event.reply("__🥵 Oh! Şey yanlış zamanda beni çağırdın yöneticim 乁( •_• )ㄏ__")
+            SiriVer = str(SIRI_VERSION.replace("v","")) 
+            if str(ForceVer) > SiriVer:
+                await e.edit(f"**🥵 Botu acilen güncellemeniz lazım! Botun {ForceVer} sürümünde olması gerekirken sizin botunuz {SiriVer}!** \n\n__📻 Sorunu çözmek için__ `.update now` __yazın!__\n ")
+            else:
+                await event.reply("__🥵 Oh! Şey yanlış zamanda beni çağırdın yöneticim 乁( •_• )ㄏ__")
 
 
 

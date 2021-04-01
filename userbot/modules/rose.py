@@ -237,7 +237,7 @@ async def feddemote(event):
             try:
                 await conv.send_message("/start")
                 await conv.get_response()
-                await conv.send_message("/feddemode " + kullanıcı)
+                await conv.send_message("/feddemote " + kullanıcı)
                 audio = await conv.get_response()
                 await event.client.forward_messages(event.chat_id, audio)
                 await event.delete()

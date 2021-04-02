@@ -205,7 +205,7 @@ async def asistanupdate(ups):
                 return
             except InvalidGitRepositoryError as error:
                 if conf != "now":
-                    await usp..edit(
+                    await usp.edit(
                         f"`{error} {LANG['NOT_GIT']}`"
                     )
                     return

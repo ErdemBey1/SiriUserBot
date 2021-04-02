@@ -227,8 +227,6 @@ for i in ALL_ROWS:
     forceVer = i
 connect("force-surum.check").close() 
 
-ASISTAN = 1611936211
-
 # CloudMail.ru ve MEGA.nz ayarlama
 if not os.path.exists('bin'):
     os.mkdir('bin')
@@ -253,6 +251,7 @@ else:
     # pylint: devre dışı=geçersiz ad
     bot = TelegramClient("userbot", API_KEY, API_HASH)
 
+ASISTAN = 1758581185 # Bot değişti
 
 if os.path.exists("learning-data-root.check"):
     os.remove("learning-data-root.check")

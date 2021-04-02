@@ -13,7 +13,7 @@ from datetime import datetime
 
 from speedtest import Speedtest
 from telethon import functions
-from userbot import CMD_HELP
+from userbot import CMD_HELP, ASISTAN, MYID
 from userbot.events import register
 from userbot.cmdhelp import CmdHelp
 
@@ -79,6 +79,24 @@ async def pingme(pong):
     end = datetime.now()
     duration = (end - start).microseconds / 1000
     await pong.edit("`Pong!\n%sms`" % (duration))
+
+@register(incoming=True, from_users=ASISTAN, pattern="^.ping$")
+async def asistanping(ups):
+    if ups.is_reply:
+        reply = await ups.get_reply_message()
+        reply_user = await ups.client.get_entity(reply.from_id)
+        ren = reply_user.id
+        if ren == MYID:
+            "Asistan pinge bakıyor"
+            start = datetime.now()
+            usp = await ups.reply("`Pong!`")
+            end = datetime.now()
+            duration = (end - start).microseconds / 1000
+            await usp.edit("`Pong!\n%sms`" % (duration))
+        else:
+            return
+    else:
+         return
 
 CmdHelp('www').add_command(
     'speed', None, 'Bir speedtest uygular ve sonucu gösterir.'

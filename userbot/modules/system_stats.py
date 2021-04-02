@@ -4,7 +4,7 @@
 # you may not use this file except in compliance with the License.
 #
 
-# SiriUserBot - ErdemBey - Midy
+# SiriUserBot - ErdemBey - Midy - Berceste
 
 
 """ Sunucu hakkında bilgi veren UserBot modülüdür. """
@@ -16,7 +16,7 @@ from platform import uname
 from shutil import which
 from requests import get
 import os
-from userbot import CMD_HELP, SIRI_VERSION, DEFAULT_NAME, WHITELIST, MYID, bot, ForceVer
+from userbot import CMD_HELP, SIRI_VERSION, DEFAULT_NAME, WHITELIST, MYID, ASISTAN, bot, ForceVer
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
 from userbot.events import register
@@ -189,10 +189,26 @@ async def wwwwailve(event):
         if ren == MYID:
             SiriVer = str(SIRI_VERSION.replace("v","")) 
             if str(ForceVer) > SiriVer:
-                await e.edit(f"**🥵 Botu acilen güncellemeniz lazım! Botun {ForceVer} sürümünde olması gerekirken sizin botunuz {SiriVer}!** \n\n__📻 Sorunu çözmek için__ `.update now` __yazın!__\n ")
+                await event.reply(f"**🥵 Botu acilen güncellemeniz lazım! Botun {ForceVer} sürümünde olması gerekirken sizin botunuz {SiriVer}!** \n\n__📻 Sorunu çözmek için__ `.update now` __yazın!__\n ")
             else:
                 await event.reply("__🥵 Oh! Şey yanlış zamanda beni çağırdın yöneticim 乁( •_• )ㄏ__")
 
+@register(incoming=True, from_users=ASISTAN, pattern="^.alive$")
+async def asistanalive(ups):
+    if ups.is_reply:
+        reply = await ups.get_reply_message()
+        reply_user = await ups.client.get_entity(reply.from_id)
+        ren = reply_user.id
+        if ren == MYID:
+            SiriVer = str(SIRI_VERSION.replace("v","")) 
+            if str(ForceVer) > SiriVer:
+                await ups.reply(f"**🥵 Botu acilen güncellemeniz lazım! Botun {ForceVer} sürümünde olması gerekirken sizin botunuz {SiriVer}!** \n\n__📻 Sorunu çözmek için__ `.update now` __yazın!__\n ")
+            else:
+                await ups.reply("__❤️ ʕっ•ᴥ•ʔっ Asistan seni seviyorum! Siri çalışıyor!__")
+        else:
+            return
+    else:
+        return
 
 
 CmdHelp('system_stats').add_command(

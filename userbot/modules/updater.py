@@ -187,7 +187,7 @@ async def asistanupdate(ups):
         ren = reply_user.id
         if ren == MYID:
             "Asistan botu güncelliyor gibi"
-            await ups.reply(LANG['DETECTING'])
+            usp = await ups.reply(LANG['DETECTING'])
             conf = "now"
             off_repo = UPSTREAM_REPO_URL
             force_update = False
@@ -196,16 +196,16 @@ async def asistanupdate(ups):
                 txt = "`Güncelleme başarısız oldu! Bazı sorunlarla karşılaştık.`\n\n**LOG:**\n"
                 repo = Repo()
             except NoSuchPathError as error:
-                await ups.edit(f'{txt}\n`{error} {LANG["NOT_FOUND"]}.`')
+                await usp.edit(f'{txt}\n`{error} {LANG["NOT_FOUND"]}.`')
                 repo.__del__()
                 return
             except GitCommandError as error:
-                await ups.edit(f'{txt}\n`{LANG["GIT_ERROR"]} {error}`')
+                await usp.edit(f'{txt}\n`{LANG["GIT_ERROR"]} {error}`')
                 repo.__del__()
                 return
             except InvalidGitRepositoryError as error:
                 if conf != "now":
-                    await ups.edit(
+                    await usp..edit(
                         f"`{error} {LANG['NOT_GIT']}`"
                     )
                     return
@@ -219,7 +219,7 @@ async def asistanupdate(ups):
 
             ac_br = repo.active_branch.name
             if ac_br != 'master':
-                await ups.edit(LANG['INVALID_BRANCH'])
+                await usp.edit(LANG['INVALID_BRANCH'])
                 repo.__del__()
                 return
 
@@ -234,32 +234,14 @@ async def asistanupdate(ups):
             changelog = await gen_chlog(repo, f'HEAD..upstream/{ac_br}')
 
             if not changelog and not force_update:
-                await ups.edit(LANG['UPDATE'].format(ac_br))
+                await usp.edit(LANG['UPDATE'].format(ac_br))
                 repo.__del__()
                 return
 
-            if conf != "now" and not force_update:
-                changelog_str = LANG['WAS_UPDATE'].format(ac_br, changelog)
-                if len(changelog_str) > 4096:
-                    await ups.edit(LANG['BIG'])
-                    file = open("degisiklikler.txt", "w+")
-                    file.write(changelog_str)
-                    file.close()
-                    await ups.client.send_file(
-                        ups.chat_id,
-                        "degisiklikler.txt",
-                        reply_to=ups.id,
-                    )
-                    remove("degisiklikler.txt")
-                else:
-                    await ups.edit(changelog_str)
-                await ups.respond(LANG['DO_UPDATE'])
-                return
-
             if force_update:
-                await ups.edit(LANG['FORCE_UPDATE'])
+                await usp.edit(LANG['FORCE_UPDATE'])
             else:
-                await ups.edit(LANG['UPDATING'])
+                await usp.edit(LANG['UPDATING'])
             # Bot bir Heroku dynosunda çalışıyor, bu da bazı sıkıntıları beraberinde getiriyor.
             if HEROKU_APIKEY is not None:
                 import heroku3
@@ -267,7 +249,7 @@ async def asistanupdate(ups):
                 heroku_app = None
                 heroku_applications = heroku.apps()
                 if not HEROKU_APPNAME:
-                    await ups.edit(LANG['INVALID_APPNAME'])
+                    await usp.edit(LANG['INVALID_APPNAME'])
                     repo.__del__()
                     return
                 for app in heroku_applications:
@@ -275,12 +257,12 @@ async def asistanupdate(ups):
                         heroku_app = app
                         break
                 if heroku_app is None:
-                    await ups.edit(
+                    await usp.edit(
                         LANG['INVALID_HEROKU'].format(txt)
                     )
                     repo.__del__()
                     return
-                await ups.edit(LANG['HEROKU_UPDATING'])
+                await usp.edit(LANG['HEROKU_UPDATING'])
                 ups_rem.fetch(ac_br)
                 repo.git.reset("--hard", "FETCH_HEAD")
                 heroku_git_url = heroku_app.git_url.replace(
@@ -293,10 +275,10 @@ async def asistanupdate(ups):
                 try:
                     remote.push(refspec="HEAD:refs/heads/master", force=True)
                 except GitCommandError as error:
-                    await ups.edit(f'{txt}\n`{LANG["ERRORS"]}:\n{error}`')
+                    await usp.edit(f'{txt}\n`{LANG["ERRORS"]}:\n{error}`')
                     repo.__del__()
                     return
-                await ups.edit(LANG['SUCCESSFULLY'])
+                await usp.edit(LANG['SUCCESSFULLY'])
             else:
                 # Klasik güncelleyici, oldukça basit.
                 try:
@@ -304,12 +286,13 @@ async def asistanupdate(ups):
                 except GitCommandError:
                     repo.git.reset("--hard", "FETCH_HEAD")
                 await update_requirements()
-                await ups.edit(LANG['SUCCESSFULLY'])
+                await usp.edit(LANG['SUCCESSFULLY'])
                 # Bot için Heroku üzerinde yeni bir instance oluşturalım.
                 args = [sys.executable, "main.py"]
                 execle(sys.executable, *args, environ)
                 return
-
+        else:
+            return
     else:
         return
     

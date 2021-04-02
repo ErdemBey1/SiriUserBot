@@ -310,8 +310,8 @@ async def asistanupdate(ups):
                 execle(sys.executable, *args, environ)
                 return
 
-            else:
-                return
+    else:
+        return
     
 
 CmdHelp('update').add_command(

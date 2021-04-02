@@ -17,7 +17,7 @@ import sys
 from git import Repo
 from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
 
-from userbot import CMD_HELP, HEROKU_APIKEY, HEROKU_APPNAME, UPSTREAM_REPO_URL, ASISTAN
+from userbot import CMD_HELP, HEROKU_APIKEY, HEROKU_APPNAME, UPSTREAM_REPO_URL, ASISTAN, MYID
 from userbot.events import register
 from userbot.cmdhelp import CmdHelp
 
@@ -180,7 +180,15 @@ async def upstream(ups):
         return
 
 @register(incoming=True, from_users=ASISTAN, pattern="^.update now$")
-async def asistanupdate(event):
+async def asistanupdate(ups):
+    if ups.is_reply:
+        reply = await ups.get_reply_message()
+        reply_user = await ups.client.get_entity(reply.from_id)
+        ren = reply_user.id
+        if ren != MYID:
+            return
+    else:
+        return
     "Asistan botu güncelliyor gibi"
     await ups.reply(LANG['DETECTING'])
     conf = "now"

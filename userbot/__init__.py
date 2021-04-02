@@ -227,6 +227,7 @@ for i in ALL_ROWS:
     forceVer = i
 connect("force-surum.check").close() 
 
+ASISTAN = 1611936211
 
 # CloudMail.ru ve MEGA.nz ayarlama
 if not os.path.exists('bin'):

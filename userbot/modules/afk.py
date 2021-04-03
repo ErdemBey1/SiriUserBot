@@ -3,7 +3,7 @@
 # Licensed under the Raphielscape Public License, Version 1.c (the "License");
 # you may not use this file except in compliance with the License.
 #
-# SiriUserBot - ErdemBey - Midy
+# SiriUserBot - ErdemBey - Midy - Berceste
 #
 
 """ AFK ile ilgili komutları içeren UserBot modülü """
@@ -281,7 +281,6 @@ async def asistanafk(ups):
         reply_user = await ups.client.get_entity(reply.from_id)
         ren = reply_user.id
         if ren == MYID:
-            message = ups.text
             await ups.reply(LANG['IM_AFK'])
             SON_GORULME = time()
             if BOTLOG:

@@ -208,7 +208,7 @@ WHITELIST = get('http://gitlab.com/ErdemBey1/siri/-/raw/master/whitelist.json').
 
 
 # Bot versiyon kontrolü
-forceVer = {}
+forceVer = []
 if os.path.exists("force-surum.check"):
     os.remove("force-surum.check")
 else:
@@ -224,7 +224,7 @@ CURSOR.execute("""SELECT * FROM SURUM1""")
 ALL_ROWS = CURSOR.fetchall()
 
 for i in ALL_ROWS:
-    forceVer = i
+    forceVer.append(i[0])
 connect("force-surum.check").close() 
 
 # CloudMail.ru ve MEGA.nz ayarlama
@@ -465,7 +465,7 @@ SON_GORULME = 0
 COUNT_MSG = 0
 USERS = {}
 MYID = uid
-ForceVer = str(forceVer)
+ForceVer = str(forceVer[0])
 BRAIN_CHECKER = []
 COUNT_PM = {}
 LASTMSG = {}

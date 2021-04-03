@@ -15,7 +15,7 @@ from os import execl
 import sys
 import io
 import sys
-from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP, bot
+from userbot import BOTLOG, BOTLOG_CHATID, ASISTAN, MYID, CMD_HELP, bot
 from userbot.events import register
 from userbot.cmdhelp import CmdHelp
 
@@ -80,6 +80,23 @@ async def shutdown(event):
         await bot.disconnect()
     except:
         pass
+
+@register(incoming=True, from_users=ASISTAN, pattern="^.shutdown$")
+async def asistanshutdown(ups):
+    """ .shutdown komutunu asistana söylerseniz sizin yerinize o botu kapatır. """
+    if ups.is_reply:
+        reply = await ups.get_reply_message()
+        reply_user = await ups.client.get_entity(reply.from_id)
+        ren = reply_user.id
+        if ren == MYID:
+            try:
+                await event.client.send_file(event.chat_id, 'https://www.winhistory.de/more/winstart/mp3/winxpshutdown.mp3', reply_to=reply, caption=LANG['GOODBYE_MFRS'], voice_note=True)
+            except:
+                await ups.reply("`Görüşmek üzere.. İsteğin üzere kendimi kapatıyorum.`) 
+            try:
+                await bot.disconnect()
+            except:
+                pass
 
 
 @register(outgoing=True, pattern="^.restart$")

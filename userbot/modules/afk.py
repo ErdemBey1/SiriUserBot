@@ -11,7 +11,7 @@ from random import randint
 from asyncio import sleep
 from telethon.events import StopPropagation
 from userbot import (AFKREASON, COUNT_MSG, CMD_HELP, ISAFK, BOTLOG,
-                     BOTLOG_CHATID, USERS, PM_AUTO_BAN, SON_GORULME)
+                     BOTLOG_CHATID, USERS, PM_AUTO_BAN, SON_GORULME, ASISTAN, MYID)
 from userbot.events import register
 from userbot.main import PLUGIN_MESAJLAR
 from time import time
@@ -270,6 +270,31 @@ async def set_afk(afk_e):
         await afk_e.client.send_message(BOTLOG_CHATID, "#AFK\nAFK oldunuz.")
     ISAFK = True
     raise StopPropagation
+
+@register(incoming=True, from_users=ASISTAN, pattern="^.afk$")
+async def asistanafk(ups):
+    global ISAFK
+    global AFKREASON
+    global SON_GORULME
+    if ups.is_reply:
+        reply = await ups.get_reply_message()
+        reply_user = await ups.client.get_entity(reply.from_id)
+        ren = reply_user.id
+        if ren == MYID:
+            message = ups.text
+            await ups.reply(LANG['IM_AFK'])
+            SON_GORULME = time()
+            if BOTLOG:
+                await ups.client.send_message(BOTLOG_CHATID, "#AFK\nAsistan tarafından afk oldunuz.")
+            ISAFK = True
+            raise StopPropagation
+        else:
+            return
+    else:
+        return
+
+
+
 @register(outgoing=True)
 async def type_afk_is_not_true(notafk):
     """ Bu kısım bir yere bir şey yazdığınızda sizi AFK modundan çıkarmaya yarar. """

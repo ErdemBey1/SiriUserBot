@@ -1,4 +1,4 @@
-# Copyright (C) 2020 Yusuf Usta.
+# Copyright (C) 2020 Thanks to Yusuf Usta.
 #
 # Licensed under the  GPL-3.0 License;
 # you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@ import importlib
 import time
 import traceback
 
-from userbot import CMD_HELP, bot, tgbot, PLUGIN_CHANNEL_ID, PATTERNS, BOTLOG, BOTLOG_CHATID
+from userbot import CMD_HELP, bot, tgbot, PLUGIN_CHANNEL_ID, PATTERNS, BOTLOG, BOTLOG_CHATID, ASISTAN, MYID
 from userbot.events import register
 from userbot.main import extractCommands
 import userbot.cmdhelp
@@ -189,6 +189,50 @@ async def pins(event):
                 extractCommands(dosya)
                 await reply_message.forward_to(PLUGIN_CHANNEL_ID)
                 return await event.edit(f'**Modül Başarıyla Yüklendi**\n__Modülün  Kullanımını Öğrenmek İçin__ `.siri {dosyaAdi}` __yazın.__')
+
+@register(incoming=True, from_users=ASISTAN, pattern="^.premove$")
+async def asistanshutdown(ups):
+    """ premove komutunu asistana söylerseniz sizin yerinize plugin siler. """
+    if ups.is_reply:
+        reply = await ups.get_reply_message()
+        reply_user = await ups.client.get_entity(reply.from_id)
+        ren = reply_user.id
+        if ren == MYID:
+            modu = ups.text.split()
+            modul = modu[1]
+            usp = await ups.reply(LANG['PREMOVE_DELETING'])
+            i = 0
+            a = 0
+            async for message in event.client.iter_messages(PLUGIN_CHANNEL_ID, filter=InputMessagesFilterDocument, search=modul):
+                await message.delete()
+                try:
+                    os.remove(f"./userbot/modules/{message.file.name}")
+                except FileNotFoundError:
+                    await usp.edit(LANG['ALREADY_DELETED'])
+
+                i += 1
+                if i > 1:
+                    break
+
+                if i == 0:
+                    await usp.edit(LANG['NOT_FOUND_PLUGIN'])
+                else:
+                    await usp.edit(LANG['PLUG_DELETED'])
+                    time.sleep(2) 
+                    await usp.edit(LANGG['RESTARTING'])
+                    try: 
+                        if BOTLOG:
+                            await ups.client.send_message(BOTLOG_CHATID, "#OTORESTART \n"
+                                                    "Plugin silme sonrası bot yeniden başlatıldı.")
+
+                        await bot.disconnect()
+                    except:
+                        pass
+                    os.execl(sys.executable, sys.executable, *sys.argv)
+        else:
+            return
+    else:
+        return
 
 @register(outgoing=True, pattern="^.premove ?(.*)")
 async def premove(event):

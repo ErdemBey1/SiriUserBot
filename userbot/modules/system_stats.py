@@ -80,7 +80,8 @@ async def bot_ver(event):
         revout = str(stdout.decode().strip()) \
             + str(stderr.decode().strip())
 
-        await event.edit(f"`{LANG['VERSION']}: "
+        await event.edit(f"=== {SIRI_VERSION} === "
+                         f"`{LANG['VERSION']}: "
                          f"{verout}"
                          "` \n"
                          f"`{LANG['REVOUT']}: "
@@ -197,9 +198,10 @@ async def wwwwailve(event):
 async def asistanalive(ups):
     if ups.is_reply:
         reply = await ups.get_reply_message()
+        replytext = reply.text
         reply_user = await ups.client.get_entity(reply.from_id)
         ren = reply_user.id
-        if ren == MYID:
+        if ren == MYID or MYID in replytext:
             SiriVer = str(SIRI_VERSION.replace("v","")) 
             if str(ForceVer) > SiriVer:
                 await ups.reply(f"**🥵 Botu acilen güncellemeniz lazım! Botun {ForceVer} sürümünde olması gerekirken sizin botunuz {SiriVer}!** \n\n__📻 Sorunu çözmek için__ `.update now` __yazın!__\n ")

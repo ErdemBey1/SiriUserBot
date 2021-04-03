@@ -92,7 +92,7 @@ async def asistanshutdown(ups):
             try:
                 await event.client.send_file(event.chat_id, 'https://www.winhistory.de/more/winstart/mp3/winxpshutdown.mp3', reply_to=reply, caption=LANG['GOODBYE_MFRS'], voice_note=True)
             except:
-                await ups.reply("`Görüşmek üzere.. İsteğin üzere kendimi kapatıyorum.`) 
+                await ups.reply("`Görüşmek üzere.. İsteğin üzere kendimi kapatıyorum.`") 
             try:
                 await bot.disconnect()
             except:

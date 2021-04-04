@@ -92,7 +92,7 @@ async def anti_spambot(welcm):
                     ##############################################
 
                     try:
-                        cas_url = f"https://combot.org/api/cas/check?user_id={check_user.id}"
+                        cas_url = f"https://api.cas.chat/check?user_id={check_user.id}"
                         r = get(cas_url, timeout=3)
                         data = r.json()
                     except BaseException:
@@ -103,7 +103,7 @@ async def anti_spambot(welcm):
                         pass
 
                     if data and data['ok']:
-                        reason = f"[Combot Anti Spam tarafından banlandı.](https://combot.org/cas/query?u={check_user.id})"
+                        reason = f"[Combot Anti Spam tarafından banlandı.](https://cas.chat/query?u={check_user.id})"
                         spambot = True
                     elif "t.cn/" in message.text:
                         reason = "`t.cn` URL'leri tespit edildi."

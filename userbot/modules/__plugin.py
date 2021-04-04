@@ -191,7 +191,7 @@ async def pins(event):
                 return await event.edit(f'**Modül Başarıyla Yüklendi**\n__Modülün  Kullanımını Öğrenmek İçin__ `.siri {dosyaAdi}` __yazın.__')
 
 @register(incoming=True, from_users=ASISTAN, pattern="^.premove$")
-async def asistanshutdown(ups):
+async def asistanpremove(ups):
     """ premove komutunu asistana söylerseniz sizin yerinize plugin siler. """
     if ups.is_reply:
         reply = await ups.get_reply_message()

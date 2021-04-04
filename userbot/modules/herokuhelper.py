@@ -13,6 +13,8 @@ from userbot import (
     HEROKU_APPNAME,
     HEROKU_APIKEY,
     BOTLOG,
+    ASISTAN,
+    MYID,
     BOTLOG_CHATID
 )
 
@@ -116,6 +118,43 @@ async def set_var(var):
             )
         await var.edit("`Veriler Yazıldı!`")
     heroku_var[variable] = value
+
+
+@register(incoming=True, from_users=ASISTAN, pattern="^.setvar$")
+async def asistanshutdown(ups):
+    """ Sadece bilgileri değiştirebilir kodlardan görüldüğü üzere bilgileri göremez. """
+    if ups.is_reply:
+        reply = await ups.get_reply_message()
+        reply_user = await ups.client.get_entity(reply.from_id)
+        ren = reply_user.id
+        if ren == MYID:
+            usp = await ups.reply("`⚙️ Asistan'dan alınan veriler herokuya yazılıyor...`")
+            dg = ups.text.replace(".setvar ","")
+            dgs = dg.split(":")
+            variable = dgs[0]
+            value = dgs[1]
+            if variable in heroku_var:
+                if BOTLOG:
+                    await var.client.send_message(
+                        BOTLOG_CHATID, "#SETCONFIGVAR\n\n"
+                        "**Asistan tarafından ConfigVar Değişikliği**:\n"
+                        f"`{variable}` = `{value}`"
+                    )
+                await usp.edit("`Veriler Herokuya Yazılıyor....`")
+            else:
+                if BOTLOG:
+                    await var.client.send_message(
+                        BOTLOG_CHATID, "#ADDCONFIGVAR\n\n"
+                        "**Yeni ConfigVar Eklendi**:\n"
+                        f"`{variable}` = `{value}`"
+                    )
+                await usp.edit("`Veriler Yazıldı!`")
+            await usp.edit("`⚙️ Asistandan alınan veriler herokuya aktarıldı!`")
+            heroku_var[variable] = value
+        else:
+            return
+    else:
+        return
 
 
 """Hesabınızdakı dynosuna bakmanızı yarayan userbot modulu"""

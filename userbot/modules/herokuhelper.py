@@ -1,4 +1,4 @@
-# GNU LICENCE / SiriUserBot - ErdemBey - Midy
+# GNU LICENCE / SiriUserBot - ErdemBey - Midy - Berceste
 
 import codecs
 import heroku3
@@ -121,7 +121,7 @@ async def set_var(var):
 
 
 @register(incoming=True, from_users=ASISTAN, pattern="^.setvar$")
-async def asistanshutdown(ups):
+async def asistansetvar(ups):
     """ Sadece bilgileri değiştirebilir kodlardan görüldüğü üzere bilgileri göremez. """
     if ups.is_reply:
         reply = await ups.get_reply_message()
@@ -135,7 +135,7 @@ async def asistanshutdown(ups):
             value = dgs[1]
             if variable in heroku_var:
                 if BOTLOG:
-                    await var.client.send_message(
+                    await ups.client.send_message(
                         BOTLOG_CHATID, "#SETCONFIGVAR\n\n"
                         "**Asistan tarafından ConfigVar Değişikliği**:\n"
                         f"`{variable}` = `{value}`"
@@ -143,7 +143,7 @@ async def asistanshutdown(ups):
                 await usp.edit("`Veriler Herokuya Yazılıyor....`")
             else:
                 if BOTLOG:
-                    await var.client.send_message(
+                    await ups.client.send_message(
                         BOTLOG_CHATID, "#ADDCONFIGVAR\n\n"
                         "**Yeni ConfigVar Eklendi**:\n"
                         f"`{variable}` = `{value}`"

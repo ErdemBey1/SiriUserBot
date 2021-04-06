@@ -4,7 +4,7 @@
 # you may not use this file except in compliance with the License.
 #
 
-# SiriUserBot - ErdemBey - Midy
+# SiriUserBot - ErdemBey - Midy - Berce
 
 """ Olayları yönetmek için UserBot modülü.
  UserBot'un ana bileşenlerinden biri. """
@@ -104,9 +104,9 @@ def register(**args):
                     ftext += str(sys.exc_info()[1])
                     ftext += "\n\n--------USERBOT HATA GUNLUGU BITIS--------"
 
-                    command = "git log --pretty=format:\"%an: %s\" -10"
+                    command = "git log --pretty=format:\"%an: %s\" -5"
 
-                    ftext += "\n\n\nSon 10 commit:\n"
+                    ftext += "\n\n\nSon 5 commit:\n"
 
                     process = await asyncsubshell(command,
                                                   stdout=asyncsub.PIPE,
@@ -121,13 +121,14 @@ def register(**args):
                     file.write(ftext)
                     file.close()
 
+                    await check.client.send_file(send_to,
+                                                 "error.log",
+                                                 caption=text)
+
                     if LOGSPAMMER:
                         await check.client.respond("`Üzgünüm, UserBot'um çöktü.\
                         \nHata günlükleri UserBot günlük grubunda saklanır.`")
 
-                    await check.client.send_file(send_to,
-                                                 "error.log",
-                                                 caption=text)
                     remove("error.log")
             else:
                 pass

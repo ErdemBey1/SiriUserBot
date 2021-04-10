@@ -18,7 +18,7 @@ from traceback import format_exc
 
 from telethon import events
 
-from userbot import bot, BOTLOG_CHATID, LOGSPAMMER, PATTERNS
+from userbot import bot, BOTLOG_CHATID, LOGSPAMMER, PATTERNS, SIRI_VERSION
 
 
 def register(**args):
@@ -79,18 +79,23 @@ def register(**args):
                 if not disable_errors:
                     date = strftime("%Y-%m-%d %H:%M:%S", gmtime())
 
-                    text = "**USERBOT HATA RAPORU**\n"
-                    link = "[Siri Destek Grubu](https://t.me/SiriSupport)"
-                    text += "İsterseniz, bunu bildirebilirsiniz."
-                    text += f"- sadece bu mesajı buraya gönderin {link}.\n"
-                    text += "hata ve Tarih haricinde hiç bir şey kayıt edilmez\n"
+                    eventtext = str(check.text)
+                    text = "**==USERBOT HATA RAPORU==**\n"
+                    link = "[Siri Destek Grubuna](https://t.me/SiriSupport)"
+                    if len(eventtext)<10:
+                        text += f"**🗒️ Şu yüzden:** {eventtext}\n"
+                    text += "ℹ️ İsterseniz, bunu bildirebilirsiniz."
+                    text += f"- sadece bu mesajı {link} gönderin.\n"
+                    text += "Hata ve tarih haricinde hiçbir şey kayıt edilmez.\n"
 
                     ftext = "========== UYARI =========="
                     ftext += "\nBu dosya sadece burada yüklendi,"
-                    ftext += "\nsadece hata ve tarih kısmını kaydettik,"
-                    ftext += "\ngizliliğinize saygı duyuyoruz,"
-                    ftext += "\nburada herhangi bir gizli veri varsa"
-                    ftext += "\nbu hata raporu olmayabilir, kimse verilerinize ulaşamaz.\n"
+                    ftext += "\nSadece hata ve tarih kısmını kaydettik,"
+                    ftext += "\nGizliliğinize saygı duyuyoruz,"
+                    ftext += "\nBurada herhangi bir gizli veri varsa"
+                    ftext += "\nBu hata raporu olmayabilir, kimse verilerinize ulaşamaz.\n"
+                    ftext += "================================\n\n"
+                    ftext += f"====== BOTVER : {SIRI_VERSION} ======\n"
                     ftext += "================================\n\n"
                     ftext += "--------USERBOT HATA GUNLUGU--------\n"
                     ftext += "\nTarih: " + date
@@ -121,13 +126,11 @@ def register(**args):
                     file.write(ftext)
                     file.close()
 
+                    if LOGSPAMMER:
+                        await check.client.send_message(event.chat_id,"`❕ Üzgünüm, UserBot'um çöktü.\n ℹ️ Hata günlükleri UserBot günlük grubunda saklanır.`")
                     await check.client.send_file(send_to,
                                                  "error.log",
                                                  caption=text)
-
-                    if LOGSPAMMER:
-                        await check.client.respond("`Üzgünüm, UserBot'um çöktü.\
-                        \nHata günlükleri UserBot günlük grubunda saklanır.`")
 
                     remove("error.log")
             else:

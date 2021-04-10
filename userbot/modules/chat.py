@@ -21,7 +21,7 @@ from userbot.events import register
 from userbot.modules.admin import get_user_from_event
 from userbot.main import PLUGIN_MESAJLAR
 
-@register(outgoing=True, pattern="^.userid$")
+@register(outgoing=True, pattern="^.id$")
 async def useridgetter(target):
     """ .userid komutu belirlenen kullanıcının ID numarasını verir """
     message = await target.get_reply_message()
@@ -182,7 +182,7 @@ CMD_HELP.update({
     "chat":
     ".chatid\
 \nKullanım: Belirlenen grubun ID numarasını verir\
-\n\n.userid\
+\n\n.id\
 \nKullanım: Belirlenen kullanıcının ID numarasını verir.\
 \n\n.log\
 \nKullanım: Yanıtlanan mesajı günlük grubuna gönderir.\

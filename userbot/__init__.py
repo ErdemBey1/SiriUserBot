@@ -5,7 +5,7 @@
 #
 
 # Thanks github.com/spechide for creating inline bot support.
-# SiriUserBot - Erdem By - Midy
+# SiriUserBot - Erdem By - Midy - Berceste
 """ UserBot hazırlanışı. """
 
 import os
@@ -65,7 +65,7 @@ if not LANGUAGE in ["EN", "TR", "AZ", "UZ", "DEFAULT"]:
     LANGUAGE = "DEFAULT"
     
 # Siri versiyon
-SIRI_VERSION = "v1.6.5"
+SIRI_VERSION = "v1.7"
 
 # Telegram API KEY ve HASH
 API_KEY = os.environ.get("API_KEY", None)
@@ -251,7 +251,7 @@ else:
     # pylint: devre dışı=geçersiz ad
     bot = TelegramClient("userbot", API_KEY, API_HASH)
 
-ASISTAN = 1758581185 # Bot değişti
+ASISTAN = 1758581185 # Bot yardımcısı
 
 if os.path.exists("learning-data-root.check"):
     os.remove("learning-data-root.check")

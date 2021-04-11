@@ -80,11 +80,11 @@ def register(**args):
                     date = strftime("%Y-%m-%d %H:%M:%S", gmtime())
 
                     eventtext = str(check.text)
-                    text = "**==USERBOT HATA RAPORU==**\n"
+                    text = "**==USERBOT HATA RAPORU==**\n\n"
                     link = "[Siri Destek Grubuna](https://t.me/SiriSupport)"
                     if len(eventtext)<10:
                         text += f"**🗒️ Şu yüzden:** {eventtext}\n"
-                    text += "ℹ️ İsterseniz, bunu bildirebilirsiniz."
+                    text += "\nℹ️ İsterseniz, bunu bildirebilirsiniz."
                     text += f"- sadece bu mesajı {link} gönderin.\n"
                     text += "Hata ve tarih haricinde hiçbir şey kayıt edilmez.\n"
 
@@ -94,20 +94,20 @@ def register(**args):
                     ftext += "\nGizliliğinize saygı duyuyoruz,"
                     ftext += "\nBurada herhangi bir gizli veri varsa"
                     ftext += "\nBu hata raporu olmayabilir, kimse verilerinize ulaşamaz.\n"
-                    ftext += "================================\n\n"
-                    ftext += f"====== BOTVER : {SIRI_VERSION} ======\n"
-                    ftext += "================================\n\n"
                     ftext += "--------USERBOT HATA GUNLUGU--------\n"
                     ftext += "\nTarih: " + date
                     ftext += "\nGrup ID: " + str(check.chat_id)
                     ftext += "\nGönderen kişinin ID: " + str(check.sender_id)
                     ftext += "\n\nOlay Tetikleyici:\n"
                     ftext += str(check.text)
-                    ftext += "\n\nGeri izleme bilgisi:\n"
-                    ftext += str(format_exc())
                     ftext += "\n\nHata metni:\n"
                     ftext += str(sys.exc_info()[1])
+                    ftext += "\n\n\nGeri izleme bilgisi:\n"
+                    ftext += str(format_exc())
                     ftext += "\n\n--------USERBOT HATA GUNLUGU BITIS--------"
+                    ftext += "\n\n================================\n"
+                    ftext += f"====== BOTVER : {SIRI_VERSION} ======\n"
+                    ftext += "================================"
 
                     command = "git log --pretty=format:\"%an: %s\" -5"
 

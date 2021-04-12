@@ -36,7 +36,7 @@ async def play_store(message):
         app_details += "\n<code>Puan :</code> " + app_rating.replace(
             "Rated ", "").replace(" out of ", "/").replace(
                 " stars", "", 1).replace(" stars", "⭐️").replace("five", "5")
-        app_details += "\n<code>Özellikler :</code> <a href='" + app_link + "'>Google Play'da göstər</a>"
+        app_details += "\n<code>Özellikler :</code> <a href='" + app_link + "'>Google Play'da göster</a>"
         await message.edit(app_details, parse_mode='html')
     except IndexError:
-        await message.edit("`Verdiğiniz Programk Bulamadım`")
+        await message.edit("`Verdiğiniz Programı Bulamadım!`")

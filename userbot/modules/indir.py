@@ -18,7 +18,7 @@ async def sirinsta(event):
     chat = "@SaveAsbot"
     reply_message.sender
     if reply_message.sender.bot:
-        await event.edit("Siri İndiremedi Bazı Hatalar Nedeniyle Başka Link Dene Be Tatlım")
+        await event.edit("`Siri İndiremedi Bazı Hatalar Nedeniyle Başka Link Dene Be Tatlım ✓`")
         return
     asc = await event.edit("`Siri Yüklüyor Sabırlı Ol...`")
     async with event.client.conversation(chat) as conv:
@@ -33,7 +33,11 @@ async def sirinsta(event):
             return
         if response.text.startswith("Forward"):
             await event.edit(
-                "Gizlilik ayarlarınızdakı ileti kismini düzeltin."
+                "`Gizlilik ayarlarınızdakı ileti kismini düzeltin.`"
+            )
+        elif "Что поддерживается?" in response.text:
+            await event.edit(
+                "⛔️ `Bu linkin ne olduğu hakkında bir fikrim yok!`"
             )
         else:
             await event.delete()

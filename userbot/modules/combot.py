@@ -21,7 +21,7 @@ async def info(event):
         await event.edit(caption, parse_mode="html")
     except Exception as e:
         print("Exception:", e)
-        await event.edit("`An unexpected error has occurred.`")
+        await event.edit(f"`Gerçekleşen Hata: {e}`")
     return
     
     
@@ -132,5 +132,6 @@ async def fetch_info(chat, event):
         caption += f"Gönderilen mesajlar: <code>{messages_sent}</code>\n"
     elif messages_sent_alt:
         caption += f"Gönderilen mesajlar: <code>{messages_sent_alt}</code> {warn_emoji}\n"
+    return caption
     
 CmdHelp('combot').add_command('combot', None, 'Mesaj istatistikleri (combot gibi).').add()

@@ -11,7 +11,7 @@
 
 from asyncio import sleep
 import re
-from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP
+from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP, BLACKLIST_CHAT
 from userbot.events import register
 from userbot.cmdhelp import CmdHelp
 
@@ -67,6 +67,9 @@ def split_quotes(text: str):
 @register(incoming=True, disable_edited=True, disable_errors=True)
 async def filter_incoming_handler(handler):
     """ Gelen mesajın filtre tetikleyicisi içerip içermediğini kontrol eder """
+    if isinstance(BLACKLIST_CHAT, list):
+        if handler.chat_id in BLACKLISTCHAT:
+            return
     try:
         if not (await handler.get_sender()).bot:
             try:

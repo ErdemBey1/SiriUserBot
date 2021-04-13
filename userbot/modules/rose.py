@@ -1,5 +1,4 @@
 # SİRİ USERBOT - PLUGİN
-# Kodlar ErdemBey'e Aittir TG/@orgutsahibi
 
 import os
 from telethon.errors import ChatAdminRequiredError
@@ -26,8 +25,6 @@ async def fstat(event):
         kullanıcı = str(replied_user.user.id)
         async with event.client.conversation(chat) as conv:
             try:
-                await conv.send_message("/start")
-                await conv.get_response()
                 await conv.send_message("/fedstat " + kullanıcı + " " + siri)
                 fedstat = await conv.get_response()
                 if "file" in fedstat.text:
@@ -37,13 +34,12 @@ async def fstat(event):
                 else:
                     await event.client.send_message(event.chat_id, fedstat)
                 await event.delete()
+                await event.client.send_read_acknowledge(conv.chat_id)
             except YouBlockedUserError:
                 await event.edit("@MissRose_bot'u Engellenmiş Yeniden Başlatın Tekrar deneyin.")
     else:
         async with event.client.conversation(chat) as conv:
             try:
-                await conv.send_message("/start")
-                await conv.get_response()
                 await conv.send_message("/fedstat " + siri)
                 fedstat = await conv.get_response()
                 if "file" in fedstat.text:
@@ -53,6 +49,7 @@ async def fstat(event):
                 else:
                     await event.client.send_message(event.chat_id, fedstat)
                 await event.delete()
+                await event.client.send_read_acknowledge(conv.chat_id)
             except YouBlockedUserError:
                 await event.edit("@MissRose_bot'u Engellenmiş Başlatın Tekrar Deneyin.")
 
@@ -74,23 +71,21 @@ async def info(event):
         kullanıcı = str(replied_user.user.id)
         async with event.client.conversation(chat) as conv:
             try:
-                await conv.send_message("/start")
-                await conv.get_response()
                 await conv.send_message("/info " + kullanıcı)
                 audio = await conv.get_response()
                 await event.client.forward_messages(event.chat_id, audio)
                 await event.delete()
+                await event.client.send_read_acknowledge(conv.chat_id)
             except YouBlockedUserError:
                 await event.edit("@MissRose_bot'u Yeniden Başlatın Tekrar Deneyin.")
     else:
         async with event.client.conversation(chat) as conv:
             try:
-                await conv.send_message("/start")
-                await conv.get_response()
                 await conv.send_message("/info " + siri)
                 audio = await conv.get_response()
                 await event.client.forward_messages(event.chat_id, audio)
                 await event.delete()
+                await event.client.send_read_acknowledge(conv.chat_id)
             except YouBlockedUserError:
                 await event.edit("@MissRose_bot'u Yeniden Başlatın Tekrar Deneyin.")
 
@@ -103,23 +98,21 @@ async def fedinfo(event):
     if siri == "" and not event.reply_to_msg_id:
         async with event.client.conversation(chat) as conv:
             try:
-                await conv.send_message("/start")
-                await conv.get_response()
                 await conv.send_message("/fedinfo")
                 fedinfo = await conv.get_response()
                 await event.client.forward_messages(event.chat_id, fedinfo)
                 await event.delete()
+                await event.client.send_read_acknowledge(conv.chat_id)
             except YouBlockedUserError:
                 await event.edit("@MissRose_bot'u Yeniden Başlatın Tekrar Deneyin.")
     else:
         async with event.client.conversation(chat) as conv:
             try:
-                await conv.send_message("/start")
-                await conv.get_response()
                 await conv.send_message("/fedinfo " + siri)
                 fedinfo = await conv.get_response()
                 await event.client.forward_messages(event.chat_id, fedinfo)
                 await event.delete()
+                await event.client.send_read_acknowledge(conv.chat_id)
             except YouBlockedUserError:
                 await event.edit("@MissRose_bot'u Yeniden Başlatın Tekrar Deneyin.")
 
@@ -130,8 +123,6 @@ async def myfeds(event):
         return
     async with event.client.conversation(chat) as conv:
         try:
-            await conv.send_message("/start")
-            await conv.get_response()
             await conv.send_message("/myfeds")
             myfed = await conv.get_response()
             if "file" in myfed.text:
@@ -141,6 +132,7 @@ async def myfeds(event):
             else:
                 await event.client.send_message(event.chat_id, myfed)
                 await event.delete()
+            await event.client.send_read_acknowledge(conv.chat_id)
         except YouBlockedUserError:
             await event.edit("@MissRose_bot'u Yeniden Başlatın Tekrar Deneyin.")
             
@@ -161,23 +153,21 @@ async def fban(event):
         kullanıcı = str(replied_user.user.id)
         async with event.client.conversation(chat) as conv:
             try:
-                await conv.send_message("/start")
-                await conv.get_response()
                 await conv.send_message("/fban " + kullanıcı)
                 audio = await conv.get_response()
                 await event.client.forward_messages(event.chat_id, audio)
                 await event.delete()
+                await event.client.send_read_acknowledge(conv.chat_id)
             except YouBlockedUserError:
                 await event.edit("@MissRose_bot'u Yeniden Başlatın Tekrar Deneyin.")
     else:
         async with event.client.conversation(chat) as conv:
             try:
-                await conv.send_message("/start")
-                await conv.get_response()
                 await conv.send_message("/fban " + siri)
                 audio = await conv.get_response()
                 await event.client.forward_messages(event.chat_id, audio)
                 await event.delete()
+                await event.client.send_read_acknowledge(conv.chat_id)
             except YouBlockedUserError:
                 await event.edit("@MissRose_bot'u Yeniden Başlatın Tekrar Deneyin.")
                 
@@ -198,23 +188,21 @@ async def unfban(event):
         kullanıcı = str(replied_user.user.id)
         async with event.client.conversation(chat) as conv:
             try:
-                await conv.send_message("/start")
-                await conv.get_response()
                 await conv.send_message("/unfban " + kullanıcı)
                 audio = await conv.get_response()
                 await event.client.forward_messages(event.chat_id, audio)
                 await event.delete()
+                await event.client.send_read_acknowledge(conv.chat_id)
             except YouBlockedUserError:
                 await event.edit("@MissRose_bot'u Yeniden Başlatın Tekrar Deneyin.")
     else:
         async with event.client.conversation(chat) as conv:
             try:
-                await conv.send_message("/start")
-                await conv.get_response()
                 await conv.send_message("/unfban " + siri)
                 audio = await conv.get_response()
                 await event.client.forward_messages(event.chat_id, audio)
                 await event.delete()
+                await event.client.send_read_acknowledge(conv.chat_id)
             except YouBlockedUserError:
                 await event.edit("@MissRose_bot'u Yeniden Başlatın Tekrar Deneyin.")
                 
@@ -235,23 +223,21 @@ async def feddemote(event):
         kullanıcı = str(replied_user.user.id)
         async with event.client.conversation(chat) as conv:
             try:
-                await conv.send_message("/start")
-                await conv.get_response()
                 await conv.send_message("/feddemote " + kullanıcı)
                 audio = await conv.get_response()
                 await event.client.forward_messages(event.chat_id, audio)
                 await event.delete()
+                await event.client.send_read_acknowledge(conv.chat_id)
             except YouBlockedUserError:
                 await event.edit("@MissRose_bot'u Yeniden Başlatın Tekrar Deneyin.")
     else:
         async with event.client.conversation(chat) as conv:
             try:
-                await conv.send_message("/start")
-                await conv.get_response()
                 await conv.send_message("/unfban " + siri)
                 audio = await conv.get_response()
                 await event.client.forward_messages(event.chat_id, audio)
                 await event.delete()
+                await event.client.send_read_acknowledge(conv.chat_id)
             except YouBlockedUserError:
                 await event.edit("@MissRose_bot'u Yeniden Başlatın Tekrar Deneyin.")
                 
@@ -272,23 +258,21 @@ async def fpromode(event):
         kullanıcı = str(replied_user.user.id)
         async with event.client.conversation(chat) as conv:
             try:
-                await conv.send_message("/start")
-                await conv.get_response()
                 await conv.send_message("/fpromode " + kullanıcı)
                 audio = await conv.get_response()
                 await event.client.forward_messages(event.chat_id, audio)
                 await event.delete()
+                await event.client.send_read_acknowledge(conv.chat_id)
             except YouBlockedUserError:
                 await event.edit("@MissRose_bot'u Yeniden Başlatın Tekrar Deneyin.")
     else:
         async with event.client.conversation(chat) as conv:
             try:
-                await conv.send_message("/start")
-                await conv.get_response()
                 await conv.send_message("/fpromode " + siri)
                 audio = await conv.get_response()
                 await event.client.forward_messages(event.chat_id, audio)
                 await event.delete()
+                await event.client.send_read_acknowledge(conv.chat_id)
             except YouBlockedUserError:
                 await event.edit("@MissRose_bot'u Yeniden Başlatın Tekrar Deneyin.")
             

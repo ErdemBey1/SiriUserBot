@@ -50,5 +50,5 @@ async def sirinsta(event):
             
 
 CmdHelp('indir').add_command(
-    'indir', 'Linki Yanıtlayın .indir Komutu İle\nİnstagramdan IGTV-Hikaye-Video-Fotoğraf\nTikToktan Video\nPinterestten Video-Fotoğraf'
+    'indir', None, 'Linki Yanıtlayın .indir Komutu İle\nİnstagramdan IGTV-Hikaye-Video-Fotoğraf\nTikToktan Video\nPinterestten Video-Fotoğraf'
 ).add()

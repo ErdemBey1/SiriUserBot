@@ -65,7 +65,7 @@ if not LANGUAGE in ["EN", "TR", "AZ", "UZ", "DEFAULT"]:
     LANGUAGE = "DEFAULT"
     
 # Siri versiyon
-SIRI_VERSION = "v1.7"
+SIRI_VERSION = "v1.7.2"
 
 # Telegram API KEY ve HASH
 API_KEY = os.environ.get("API_KEY", None)
@@ -140,7 +140,7 @@ LYDIA_API_KEY = os.environ.get("LYDIA_API_KEY", None)
 
 # Anti Spambot
 ANTI_SPAMBOT = sb(os.environ.get("ANTI_SPAMBOT", "False"))
-ANTI_SPAMBOT_SHOUT = sb(os.environ.get("ANTI_SPAMBOT_SHOUT", "False"))
+ANTI_SPAMBOT_SHOUT = sb(os.environ.get("ANTI_SPAMBOT_SHOUT", "True"))
 
 # Youtube API key
 YOUTUBE_API_KEY = os.environ.get("YOUTUBE_API_KEY", None)
@@ -180,27 +180,36 @@ TEMP_DOWNLOAD_DIRECTORY = os.environ.get("TMP_DOWNLOAD_DIRECTORY",
 #Revert yani Klondan Sonra hesabın eski haline dönmesi
 DEFAULT_NAME = os.environ.get("DEFAULT_NAME", None)
 
+# Bazı pluginler için doğrulama
+USERBOT_ = True
 
-# Inline bot çalışması için
+# Inline yardımın çalışması için
 BOT_TOKEN = os.environ.get("BOT_TOKEN", None)
 BOT_USERNAME = os.environ.get("BOT_USERNAME", None)
 
 # Genius modülünün çalışması için buradan değeri alın https://genius.com/developers her ikisi de aynı değerlere sahiptir
 GENIUS = os.environ.get("GENIUS", None)
+
 CMD_HELP = {}
 CMD_HELP_BOT = {}
+
 PM_AUTO_BAN_LIMIT = int(os.environ.get("PM_AUTO_BAN_LIMIT", 4))
 
 SPOTIFY_DC = os.environ.get("SPOTIFY_DC", None)
 SPOTIFY_KEY = os.environ.get("SPOTIFY_KEY", None)
 
-PAKET_ISMI = os.environ.get("PAKET_ISMI", "@SiriUserBot Paketi")
+PAKET_ISMI = os.environ.get("PAKET_ISMI", "🌃 @SiriUserBot Paketi")
 
 # Userbotu kapatmak için gruplar
 BLACKLIST_CHAT = os.environ.get("BLACKLIST_CHAT", None)
 
-# Otomatik Katılma
+if not BLACKLIST_CHAT: #Eğer ayarlanmamışsa Siri Support grubu eklenir.
+    BLACKLIST_CHAT = [-1001457702125,-1001168760410]
+
+# Otomatik Katılma ve güncellemeler
 OTOMATIK_KATILMA = sb(os.environ.get("OTOMATIK_KATILMA", "True"))
+AUTO_UPDATE =  sb(os.environ.get("AUTO_UPDATE", "True"))
+
 
 # Özel Pattern'ler
 PATTERNS = os.environ.get("PATTERNS", ".;!,")
@@ -315,8 +324,12 @@ with bot:
     if OTOMATIK_KATILMA:
         try:
             bot(JoinChannelRequest("@SiriUserBot"))
+        except:
+            pass
+    else: # Bot güncellemelerini kaçırmamak için artık sadece support grubu isteğe bağlıdır.
+        try:
+            bot(JoinChannelRequest("@SiriUserBot"))
             bot(JoinChannelRequest("@SiriSupport"))
-
         except:
             pass
 

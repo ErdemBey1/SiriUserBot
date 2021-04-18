@@ -67,9 +67,6 @@ def split_quotes(text: str):
 @register(incoming=True, disable_edited=True, disable_errors=True)
 async def filter_incoming_handler(handler):
     """ Gelen mesajın filtre tetikleyicisi içerip içermediğini kontrol eder """
-    if isinstance(BLACKLIST_CHAT, list):
-        if handler.chat_id in BLACKLISTCHAT:
-            return
     try:
         if not (await handler.get_sender()).bot:
             try:
@@ -79,6 +76,8 @@ async def filter_incoming_handler(handler):
                 return
             name = handler.raw_text
             if handler.chat_id == -1001457702125 or handler.chat_id == -1001431607309:
+                return
+            elif handler.chat_id in BLACKLIST_CHAT:
                 return
 
             filters = get_filters(handler.chat_id)

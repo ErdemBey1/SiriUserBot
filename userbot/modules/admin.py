@@ -293,8 +293,10 @@ async def promote(promt):
                                  ban_users=True,
                                  delete_messages=True,
                                  pin_messages=True)
-
-    await promt.edit(LANG['PROMOTING'])
+    try:
+        await promt.edit(LANG['PROMOTING'])
+    except:
+        await promt.reply(LANG['PROMOTING'])
     user, rank = await get_user_from_event(promt)
     if not rank:
         rank = "Yönetici"  # Her ihtimale karşı.
@@ -344,7 +346,10 @@ async def promote(promt):
                                  delete_messages=True,
                                  pin_messages=True)
 
-    await promt.edit(LANG['PROMOTING'])
+    try:
+        await promt.edit(LANG['PROMOTING'])
+    except:
+        await promt.reply(LANG['PROMOTING'])
     user, rank = await get_user_from_event(promt)
     if not rank:
         rank = "ᴛᴀɢ"  # Her ihtimale karşı.
@@ -388,7 +393,10 @@ async def demote(dmod):
         return
 
     # Eğer başarılı olursa, yetki düşürüleceğini beyan edelim
-    await dmod.edit(LANG['UNPROMOTING'])
+    try:
+        await dmod.edit(LANG['UNPROMOTING'])
+    except:
+        await dmod.reply(LANG['UNPROMOTING'])
     rank = "admeme"  # Burayı öylesine yazdım
     user = await get_user_from_event(dmod)
     user = user[0]
@@ -451,7 +459,10 @@ async def ban(bon):
         return
 
     # Hedefi yasaklayacağınızı duyurun
-    await bon.edit(LANG['BANNING'])
+    try:
+        await bon.edit(LANG['BANNING'])
+    except:
+        await bon.reply(LANG['BANNING'])
 
     try:
         await bon.client(EditBannedRequest(bon.chat_id, user.id,
@@ -490,6 +501,65 @@ async def ban(bon):
             BOTLOG_CHATID, "#BAN\n"
             f"KULLANICI: [{user.first_name}](tg://user?id={user.id})\n"
             f"GRUP: {bon.chat.title}(`{bon.chat_id}`)")
+
+@register(outgoing=True, pattern="^.sban(?: |$)(.*)")
+@register(incoming=True, from_users=BRAIN_CHECKER[0], pattern="^.sban(?: |$)(.*)")
+async def ban(bon):
+    """ .ban komutu belirlenen kişiyi gruptan sessizce yasaklar """
+    # Yetki kontrolü
+    chat = await bon.get_chat()
+    admin = chat.admin_rights
+    creator = chat.creator
+
+    if not admin and not creator:
+        await bon.edit(NO_ADMIN)
+        return
+
+    user, reason = await get_user_from_event(bon)
+    if user:
+        pass
+    else:
+        return
+
+    # Eğer kullanıcı sudo ise
+    if user.id in BRAIN_CHECKER or user.id in WHITELIST:
+        await bon.edit(
+            LANG['BRAIN']
+        )
+        return
+
+    # Hedefi yasaklayacağınızı duyurun
+    try:
+        await bon.edit(LANG['BANNING'])
+    except:
+        await bon.reply(LANG['BANNING'])
+
+    try:
+        await bon.client(EditBannedRequest(bon.chat_id, user.id,
+                                           BANNED_RIGHTS))
+    except:
+        await bon.edit(NO_PERM)
+        return
+    # Spamcılar için
+    try:
+        reply = await bon.get_reply_message()
+        if reply:
+            await reply.delete()
+    except:
+        await bon.edit(
+            LANG['NO_PERM_BUT_BANNED'])
+        return
+
+    # Yasaklama işlemini günlüğe belirtelim
+    if BOTLOG:
+        await bon.client.send_message(
+            BOTLOG_CHATID, "#BAN\n"
+            f"KULLANICI: [{user.first_name}](tg://user?id={user.id})\n"
+            f"GRUP: {bon.chat.title}(`{bon.chat_id}`)")
+    # Mesajı silin ve
+    # hiçbirşey olmamış gibi devam edin.     
+    await bon.delete()
+
 
 
 @register(outgoing=True, pattern="^.unban(?: |$)(.*)")

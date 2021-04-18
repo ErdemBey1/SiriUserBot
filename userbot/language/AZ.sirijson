@@ -2,7 +2,7 @@
     "__SIRIJSON__": true,
     "LANGUAGE": "Azərbaycanca",
     "LANGCODE": "az",
-    "AUTHOR": "wSpace",
+    "AUTHOR": "wSiri",
     "STRINGS": {
         "__plugin": {
             "REPLY_FOR_PORT": "`Zəhmət olmasa Plugin-Port üçün bir fayla cavab yazın`",
@@ -35,7 +35,7 @@
         
         "__siri": {
             "NEED_PLUGIN": "Zəhmət olmasa bir Siri modulu adı yazın.",
-            "NEED_MODULE": "Zəhmət olmasa hansı Siri modulu üçün kömək istədiyinizi qeyd edin !!\nİstifadəsi: .space <modul adı>"
+            "NEED_MODULE": "Zəhmət olmasa hansı Siri modulu üçün kömək istədiyinizi qeyd edin !!\nİstifadəsi: .siri <modul adı>"
         },
 
         "__helpme": {
@@ -271,7 +271,7 @@
 
         "galeri": {
             "ADDED_LIST": "`Şəkil növbəyə əlavə edildi.`",
-            "INVALID_URL": "`Səhf bir şəkil URL'i yazdınız. İstifadəsi haqqında bir fikriniz yoxdursa, ` `.space galeri` `yazın.`",
+            "INVALID_URL": "`Səhf bir şəkil URL'i yazdınız. İstifadəsi haqqında bir fikriniz yoxdursa, ` `.siri galeri` `yazın.`",
             "EXAMPLE": "`Zəhmət olmasa bir şəkil adressi yazın. Nümunə olaraq: ` `.galeri ekle https://i.resimyukle.xyz/7Qbbc9.jpeg`",
             "LIST": "Növbəyə əlavə etdiyiniz şəkillər",
             "REMOVED": "**Növbədəki şəkil uğurla silindi**",
@@ -279,7 +279,7 @@
             "NEED_NUMBER": "Zəhmət olmasa şəklin sırasını qeyd edin. Nümunə:",
             "WORKING": "`Hal-hazırda Qalareya işləyir.`",
             "STARTED": "`Qalareya işləməyə başladı.`",
-            "NEED_PHOTO": "Qalereya işi üçün fotoşəkillər əlavə etməlisiniz. Əlavə etməyi bilmirsinizsə, .space galeri ilə istifadəsini öyrənə bilərsiniz.",
+            "NEED_PHOTO": "Qalereya işi üçün fotoşəkillər əlavə etməlisiniz. Əlavə etməyi bilmirsinizsə, .siri galeri ilə istifadəsini öyrənə bilərsiniz.",
             "STOPPED": "`Qalereya dayandı!`",
             "ALREADY_STOP": "`Qalareya onsuzda işləmir.`",
             "INVALID": "**Bilinməyən komanda** İstifadəsi:\n\nQalareyaya şəkil əlavə etmək: `.galeri ekle https://i.resimyukle.xyz/7Qbbc9.jpeg`\nQalareya siyahısını görmək: `.galeri liste`\nSıradan bir şəkil silmək: `.galeri sil <sıra sayı>`"
@@ -357,16 +357,16 @@
             "REPLY_TO_FILE": "`Bir fayla cavab verin.`",
             "QUERY": "Sorğu",
             "RESULT": "Nəticə",
-            "NEED_MUCH_DATA_FOR_RANDOM": "`2 və ya daha çox məhsul tələb olunur. Daha çox məlumat üçün .space təsadüfi əmrini daxil edin.`",
+            "NEED_MUCH_DATA_FOR_RANDOM": "`2 və ya daha çox məhsul tələb olunur. Daha çox məlumat üçün .siri təsadüfi əmrini daxil edin.`",
             "SLEEP_DESC": "İstifadə qaydası: `.sleep [saniyə]`",
             "SLEEPING": "`Xoruldayaraq yatıram...`",
             "GOODMORNIN_YALL": "`Sabahınız xeyir!`",
             "GOODBYE_MFRS": "`Görüşənədək... *Windows XP söndürlmə səsi*`",
             "RESTARTING": "`Bot yenidən qoşulur..`",
-            "SUPPORT_GROUP": "[Buradan](http://t.me/spaceaid) Dəstək qrupumuza çata bilərsiniz.",
-            "CREATOR": "Bu bot \n[The Miri](https://t.me/TheMiri) tərəfindən hazırlanmışdır. \n",
-            "README": "[Space README.md](https://github.com/whomiri/SpaceUserBot/blob/master/README.md)",
-            "REPO": "[Space Repo](https://github.com/whomiri/spaceuserbot)",
+            "SUPPORT_GROUP": "[Buradan](http://t.me/sirisupport) Dəstək qrupumuza çata bilərsiniz.",
+            "CREATOR": "Bu bot \n@orgutsahibi , @bberc ve @ixelizm tərəfindən hazırlanmışdır. \n",
+            "README": "[Siri README.md](https://github.com/erdembey1/SiriUserBot/blob/master/README.md)",
+            "REPO": "[Siri Repo](https://github.com/erdembey1/siriuserbot)",
             "CHECK_LOGS": "`Tapılmış Mesaj üçün istifadəçi qeydlərini yoxlayın!`"
         },
 
@@ -565,7 +565,7 @@
             "QUERY": "Sorğu",
             "RESULT": "Nəticə",
             "NOT_FOUND": "Heçnə tapılmadı",
-            "EXAMPLE": "`Bir nümunə görmək üçün .space pip əmrindən istifadə edin.`"
+            "EXAMPLE": "`Bir nümunə görmək üçün .siri pip əmrindən istifadə edin.`"
 
         },
 
@@ -587,7 +587,7 @@
             "NOT_FOUND": "qovluğu tapa bilmədi",
             "GIT_ERROR": "Git xətası!",
             "NOT_GIT": "qovluğlu bir git reposu kimi görünmür. \nAncaq botu .update now əmri ilə zorla yeniləməklə bu problemi həll edə bilərsiniz.",
-            "INVALID_BRANCH": "**[UPDATER]:**` Düşünürəm ki, Space botunuzu dəyişdirdiniz və öz filialınızdan istifadə edirsiniz.\nBu vəziyyət yenilənməni edənin başını qarışdırır,\nGüncəllənmə haradan çəkiləcək?\nXahiş edirəm rəsmi repodan Space Botunu istifadə edin.`",
+            "INVALID_BRANCH": "**[UPDATER]:**` Düşünürəm ki, Siri botunuzu dəyişdirdiniz və öz filialınızdan istifadə edirsiniz.\nBu vəziyyət yenilənməni edənin başını qarışdırır,\nGüncəllənmə haradan çəkiləcək?\nXahiş edirəm rəsmi repodan Siri Botunu istifadə edin.`",
             "UPDATE": "\n`Botun` **Ən güncəl versiyadadır!** `Branch:` **{}**\n",
             "WAS_UPDATE": "**{} üçün yeni güncəlləmə mövcuddur!\n\nDəyişikliklər:**\n`{}`",
             "BIG": "`Dəyişikliklərin siyahısı çox böyükdür, ona bir fayl kimi baxmalısınız.`",

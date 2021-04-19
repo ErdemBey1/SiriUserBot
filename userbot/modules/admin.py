@@ -4,7 +4,7 @@
 # you may not use this file except in compliance with the License.
 #
 
-# SiriUserBot - ErdemBey - Midy
+# SiriUserBot - ErdemBey - Berceste - Midy
 #
 
 """
@@ -32,6 +32,7 @@ from userbot import BOTLOG, BOTLOG_CHATID, BRAIN_CHECKER, CMD_HELP, bot, WARN_MO
 from userbot.events import register
 from userbot.main import PLUGIN_MESAJLAR
 from userbot.cmdhelp import CmdHelp
+from time import sleep
 import datetime
 
 # =================== CONSTANT ===================
@@ -273,7 +274,7 @@ async def set_group_photo(gpic):
 
 
 @register(outgoing=True, pattern="^.promote(?: |$)(.*)")
-@register(incoming=True, from_users=BRAIN_CHECKER[0], pattern="^.promote(?: |$)(.*)")
+@register(incoming=True, from_users=BRAIN_CHECKER[0], pattern="^.promote(?: |$)(.*)", disable_errors=True)
 async def promote(promt):
     """ .promote komutu ile belirlenen kişiyi yönetici yapar """
     # Hedef sohbeti almak
@@ -326,7 +327,7 @@ async def promote(promt):
 
 
 @register(outgoing=True, pattern="^.tagver(?: |$)(.*)")
-async def promote(promt):
+async def tagver(promt):
     """ .tagver komutu ile belirlenen kişiyi kısıtlı yönetici yapar """
     # Hedef sohbeti almak
     chat = await promt.get_chat()
@@ -380,7 +381,7 @@ async def promote(promt):
 
 
 @register(outgoing=True, pattern="^.demote(?: |$)(.*)")
-@register(incoming=True, from_users=BRAIN_CHECKER[0], pattern="^.demote(?: |$)(.*)")
+@register(incoming=True, from_users=BRAIN_CHECKER[0], pattern="^.demote(?: |$)(.*)", disable_errors=True)
 async def demote(dmod):
     """ .demote komutu belirlenen kişiyi yöneticilikten çıkarır """
     # Yetki kontrolü
@@ -433,7 +434,7 @@ async def demote(dmod):
 
 
 @register(outgoing=True, pattern="^.ban(?: |$)(.*)")
-@register(incoming=True, from_users=BRAIN_CHECKER[0], pattern="^.ban(?: |$)(.*)")
+@register(incoming=True, from_users=BRAIN_CHECKER[0], pattern="^.ban(?: |$)(.*)", disable_errors=True)
 async def ban(bon):
     """ .ban komutu belirlenen kişiyi gruptan yasaklar """
     # Yetki kontrolü
@@ -503,7 +504,7 @@ async def ban(bon):
             f"GRUP: {bon.chat.title}(`{bon.chat_id}`)")
 
 @register(outgoing=True, pattern="^.sban(?: |$)(.*)")
-@register(incoming=True, from_users=BRAIN_CHECKER[0], pattern="^.sban(?: |$)(.*)")
+@register(incoming=True, from_users=BRAIN_CHECKER[0], pattern="^.sban(?: |$)(.*)", disable_errors=True)
 async def ban(bon):
     """ .ban komutu belirlenen kişiyi gruptan sessizce yasaklar """
     # Yetki kontrolü
@@ -528,7 +529,7 @@ async def ban(bon):
         )
         return
 
-    # Hedefi yasaklayacağınızı duyurun
+    # Hedefi yasaklamadan önce bi yoklayalım
     try:
         await bon.edit(LANG['BANNING'])
     except:
@@ -687,6 +688,91 @@ async def mutmsg(spdr, user, reason, chat):
             BOTLOG_CHATID, "#MUTE\n"
             f"KULLANICI: [{user.first_name}](tg://user?id={user.id})\n"
             f"GRUP: {spdr.chat.title}(`{spdr.chat_id}`)")
+
+@register(outgoing=True, pattern="^.smute(?: |$)(.*)")
+@register(incoming=True, from_users=BRAIN_CHECKER[0], pattern="^.smute(?: |$)(.*)", disable_errors=True)
+async def sspider(spdr):
+    """
+    Bu fonksiyon temelde susturmaya yarar ama susturduğunxu sohbette söylemez.
+    """
+    # Fonksiyonun SQL modu altında çalışıp çalışmadığını kontrol et
+    try:
+        from userbot.modules.sql_helper.spam_mute_sql import mute
+    except:
+        await spdr.edit(NO_SQL)
+        return
+
+    # Yetki kontrolü
+    chat = await spdr.get_chat()
+    admin = chat.admin_rights
+    creator = chat.creator
+
+    # Yönetici değil ise geri dön
+    if not admin and not creator:
+        await spdr.edit(NO_ADMIN)
+        return
+
+    user, reason = await get_user_from_event(spdr)
+    if user:
+        pass
+    else:
+        return
+
+    # Eğer kullanıcı sudo ise
+    if user.id in BRAIN_CHECKER or user.id in WHITELIST:
+        await spdr.reply(
+            LANG['BRAIN']
+        )
+        return
+
+    self_user = await spdr.client.get_me()
+
+    if user.id == self_user.id:
+        await spdr.edit(
+            LANG['NO_MUTE_ME'])
+        sleep(2)
+        return await spdr.delete()
+
+    if mute(spdr.chat_id, user.id) is False:
+        await spdr.edit(LANG['ALREADY_MUTED'])
+        sleep(2)
+        return await spdr.delete()
+    else:
+        try:
+            await spdr.client(
+                EditBannedRequest(spdr.chat_id, user.id, MUTE_RIGHTS))
+
+            await smutmsg(spdr, user, reason, chat)
+            sleep(2)
+            return await spdr.delete()
+        except UserAdminInvalidError:
+            await smutmsg(spdr, user, reason, chat)
+            sleep(2)
+            return await spdr.delete()
+        except:
+            await spdr.edit(LANG['WTF_MUTE'])
+            sleep(2)
+            return await spdr.delete()
+
+
+async def smutmsg(spdr, user, reason, chat):
+    # Fonksiyonun yapıldığını duyurun
+    SONMESAJ = PLUGIN_MESAJLAR['mute'].format(
+            id = user.id,
+            username = '@' + user.username if user.username else f"[{user.first_name}](tg://user?id={user.id})",
+            first_name = user.first_name,
+            last_name = '' if not user.last_name else user.last_name,
+            mention = f"[{user.first_name}](tg://user?id={user.id})",
+            date = datetime.datetime.strftime(datetime.datetime.now(), '%c'),
+            count = (chat.participants_count) if chat.participants_count else 'Bilinmiyor'
+        )
+    try:
+        if reason:
+            await spdr.edit(f"{SONMESAJ}\n{LANG['REASON']}: {reason}")
+        else:
+            await spdr.edit(f"{SONMESAJ}")
+    except:
+        pass
 
 
 @register(outgoing=True, pattern="^.unmute(?: |$)(.*)")

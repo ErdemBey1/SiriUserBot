@@ -1,4 +1,4 @@
-# @jokerpluginn / @slmbenjok
+# ERDEM-BEY / SİRİUSERBOT
 
 import os
 from datetime import datetime

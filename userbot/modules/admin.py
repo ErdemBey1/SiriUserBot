@@ -907,8 +907,9 @@ async def ungmoot(un_gmute):
         await un_gmute.edit(LANG['NO_GMUTE'])
     else:
         # Başarı olursa bilgi ver
-        await un_gmute.edit(LANG['UNMUTED'])
-
+        await un_gmute.edit(LANG['UNMUTED'].format(
+            username = '@' + user.username if user.username else f"[{user.first_name}](tg://user?id={user.id})"
+        ))
         if BOTLOG:
             await un_gmute.client.send_message(
                 BOTLOG_CHATID, "#UNGMUTE\n"
@@ -956,7 +957,9 @@ async def gspider(gspdr):
         if reason:
             await gspdr.edit(f"{LANG['GMUTED']} {LANG['REASON']}: {reason}")
         else:
-            await gspdr.edit(LANG['GMUTED'])
+            await gspdr.edit(LANG['GGMUTED'].format(
+                mention = f"[{user.first_name}](tg://user?id={user.id})",
+            ))
 
         if BOTLOG:
             await gspdr.client.send_message(

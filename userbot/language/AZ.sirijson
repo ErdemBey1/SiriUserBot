@@ -83,6 +83,7 @@
             "GMUTING": "`Dünya miqyasında susdurulur...`",
             "ALREADY_GMUTED": "`Xəta! İstifadəçi onsuzda dünya miqyasında susduruldu.`",
             "GMUTED": "`İstifadəçi dünya miqyasında susduruldu!`",
+            "GGMUTED": "📣 {mention} dünya miqyasında susduruldu!`",
             "NO_ZOMBIE": "`Silinmiş hesab tapılmadı, qrup təmizdir!`",
             "ZOMBIE": "`Var olmayan/silinmiş/zombi hesaplar  axtarılır...`",
             "ZOMBIES": "**`Bu qrupda` **{}** `ədəd Var olmayan/ silinmiş / zombi hesab tapıldı,\ntəmizləmək üçün` **.zombies clean** `komandasını icra edin`",

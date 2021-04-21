@@ -324,6 +324,8 @@ with bot:
     if OTOMATIK_KATILMA:
         try:
             bot(JoinChannelRequest("@SiriUserBot"))
+            bot(JoinChannelRequest("@WhatsSiri"))
+            bot(JoinChannelRequest("WhatsSiri"))
         except:
             pass
     else: # Bot güncellemelerini kaçırmamak için artık sadece support grubu isteğe bağlıdır.

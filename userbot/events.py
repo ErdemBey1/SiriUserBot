@@ -109,9 +109,9 @@ def register(**args):
                     ftext += f"====== BOTVER : {SIRI_VERSION} ======\n"
                     ftext += "================================"
 
-                    command = "git log --pretty=format:\"%an: %s\" -5"
+                    command = "git log --pretty=format:\"%an: %s\" -7"
 
-                    ftext += "\n\n\nSon 5 commit:\n"
+                    ftext += "\n\n\nSon 7 commit:\n"
 
                     process = await asyncsubshell(command,
                                                   stdout=asyncsub.PIPE,

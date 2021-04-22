@@ -98,7 +98,7 @@ async def variable(var):
 
 @register(outgoing=True, pattern=r'^.set var (\w*) ([\s\S]*)')
 async def set_var(var):
-    await var.edit("`Verilenler Herokuya Yazılıyor...`")
+    await var.edit("`🔄 Verilenler Herokuya Yazılıyor...`")
     variable = var.pattern_match.group(1)
     value = var.pattern_match.group(2)
     if variable in heroku_var:
@@ -108,7 +108,7 @@ async def set_var(var):
                 "**ConfigVar Değişikliği**:\n"
                 f"`{variable}` = `{value}`"
             )
-        await var.edit("`Veriler Herokuya Yazılıyor....`")
+        await var.edit("`Veriler Yazıldı!`")
     else:
         if BOTLOG:
             await var.client.send_message(
@@ -120,7 +120,7 @@ async def set_var(var):
     heroku_var[variable] = value
 
 
-@register(incoming=True, from_users=ASISTAN, pattern="^.setvar$")
+@register(incoming=True, from_users=ASISTAN, pattern="^.setvar (\w*) ([\s\S]*)")
 async def asistansetvar(ups):
     """ Sadece bilgileri değiştirebilir kodlardan görüldüğü üzere bilgileri göremez. """
     if ups.is_reply:
@@ -140,7 +140,6 @@ async def asistansetvar(ups):
                         "**Asistan tarafından ConfigVar Değişikliği**:\n"
                         f"`{variable}` = `{value}`"
                     )
-                await usp.edit("`Veriler Herokuya Yazılıyor....`")
             else:
                 if BOTLOG:
                     await ups.client.send_message(
@@ -148,9 +147,8 @@ async def asistansetvar(ups):
                         "**Yeni ConfigVar Eklendi**:\n"
                         f"`{variable}` = `{value}`"
                     )
-                await usp.edit("`Veriler Yazıldı!`")
-            await usp.edit("`⚙️ Asistandan alınan veriler herokuya aktarıldı!`")
             heroku_var[variable] = value
+            await usp.edit("`⚙️ Asistandan alınan veriler herokuya aktarıldı!`")
         else:
             return
     else:
@@ -163,7 +161,7 @@ async def asistansetvar(ups):
 @register(outgoing=True, pattern=r"^.dyno(?: |$)")
 async def dyno_usage(dyno):
     """Bu qisimdə bot istifadə edilmiş dynonu əldə etməyə çalışır"""
-    await dyno.edit("`Lütfen Bekleyiniz...`")
+    await dyno.edit("`🔄 Lütfen Bekleyiniz...`")
     useragent = ('Mozilla/5.0 (Linux; Android 10; SM-G975F) '
                  'AppleWebKit/537.36 (KHTML, like Gecko) '
                  'Chrome/80.0.3987.149 Mobile Safari/537.36'
@@ -205,13 +203,13 @@ async def dyno_usage(dyno):
 
     await asyncio.sleep(1.5)
 
-    return await dyno.edit("**Dyno**:\n\n"
-                           f" ➤ `Kullanılan Dyno Saati`  **({HEROKU_APPNAME})**:\n"
-                           f"     •  `{AppHours}` **saat**  `{AppMinutes}` **dakika**  "
+    return await dyno.edit("**✨ Kalan Dyno**:\n\n"
+                           f" 👉🏻 `Kullanılan Dyno Saati`  **({HEROKU_APPNAME})**:\n"
+                           f"     ⏰  `{AppHours}` **saat**  `{AppMinutes}` **dakika**  "
                            f"**|**  [`{AppPercentage}` **%**]"
                            "\n"
-                           " ➤ `Bu ay için kalan dyno saati`:\n"
-                           f"     •  `{hours}` **saat**  `{minutes}` **dakika**  "
+                           " 👉🏻 `Bu ay için kalan dyno saati`:\n"
+                           f"     ⏰  `{hours}` **saat**  `{minutes}` **dakika**  "
                            f"**|**  [`{percentage}` **%**]"
                            )
 
@@ -224,7 +222,7 @@ async def _(dyno):
         return await dyno.reply(
             "`Litfen Bekleyin ,Heroku VARS'da Heroku API Key ve Heroku APP name'in düzgün olduğundan emin olun.`"
         )
-    await dyno.edit("`Log getiriliyor....`")
+    await dyno.edit("`🔄 Log getiriliyor....`")
     with open("logs.txt", "w") as log:
         log.write(app.get_log())
     fd = codecs.open("logs.txt", "r", encoding="utf-8")

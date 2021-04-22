@@ -16,7 +16,7 @@ from platform import uname
 from shutil import which
 from requests import get
 import os
-from userbot import CMD_HELP, SIRI_VERSION, DEFAULT_NAME, WHITELIST, MYID, ASISTAN, bot, ForceVer
+from userbot import (CMD_HELP, SIRI_VERSION, DEFAULT_NAME, WHITELIST, MYID, ASISTAN, bot, ForceVer, SEVGILI) # Yakında
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
 from userbot.events import register
@@ -180,33 +180,25 @@ async def amialive(e):
                 await e.respond(PLUGIN_MESAJLAR['alive'])
 
 @register(incoming=True, from_users=WHITELIST, pattern="^.wlive$")
-async def wwwwailve(event):
-    if event.fwd_from:
-        return
-    if event.is_reply:
-        reply = await event.get_reply_message()
-        reply_user = await event.client.get_entity(reply.from_id)
-        ren = reply_user.id
-        if ren == MYID:
-            SiriVer = str(SIRI_VERSION.replace("v","")) 
-            if str(ForceVer) > SiriVer:
-                await event.reply(f"**🥵 Botu acilen güncellemeniz lazım! Botun {ForceVer} sürümünde olması gerekirken sizin botunuz {SiriVer}!** \n\n__📻 Sorunu çözmek için__ `.update now` __yazın!__\n ")
-            else:
-                await event.reply("__🥵 Oh! Şey yanlış zamanda beni çağırdın yöneticim 乁( •_• )ㄏ__")
-
 @register(incoming=True, from_users=ASISTAN, pattern="^.alive$")
 async def asistanalive(ups):
+    if event.fwd_from:
+        return
     if ups.is_reply:
         reply = await ups.get_reply_message()
         replytext = reply.text
         reply_user = await ups.client.get_entity(reply.from_id)
         ren = reply_user.id
+        if ups.sender_id == 1758581185:
+            hitap = "❤️ ʕっ•ᴥ•ʔっ Asistan"
+        else:
+            hitap = "❤️ 💪🏻(･–･) \(･◡･)/ Yöneticim"
         if ren == MYID or MYID in replytext:
             SiriVer = str(SIRI_VERSION.replace("v","")) 
             if str(ForceVer) > SiriVer:
                 await ups.reply(f"**🥵 Botu acilen güncellemeniz lazım! Botun {ForceVer} sürümünde olması gerekirken sizin botunuz {SiriVer}!** \n\n__📻 Sorunu çözmek için__ `.update now` __yazın!__\n ")
             else:
-                await ups.reply("__❤️ ʕっ•ᴥ•ʔっ Asistan seni seviyorum! Siri çalışıyor!__")
+                await ups.reply(f"__{hitap} seni seviyorum! Siri çalışıyor!__")
         else:
             return
     else:

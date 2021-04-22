@@ -24,8 +24,9 @@
 
 ` bash <(curl -L https://bit.ly/3tUBVha) `
 
-**iOS:**  YAKINDA
+**iOS:**  
 
+'apk update && apk add bash && apk add curl && curl -L -o siri_installer.sh https://bit.ly/3ayPGdk && chmod +x siri_installer.sh && bash siri_installer.sh'
 
 **Online Kurulum**
 

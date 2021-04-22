@@ -173,7 +173,7 @@ async def raw(event):
             caption="`Çözülen mesaj`")
 
 CmdHelp('misc').add_command(
-    'random', '<eşya1> <eşya2> ... <eşyaN>', 'Eşya listesinden rastgele bir eşya seçer', 'random asena uniborg userge'
+    'random', '<eşya1> <eşya2> ... <eşyaN>', 'Eşya listesinden rastgele bir eşya seçer', 'random siri uniborg userge'
 ).add_command(
     'sleep', '<süre>', 'Siri de bir insan, o da yoruluyor. Ara sıra biraz uyumasına izin ver.', 'sleep 30'
 ).add_command(

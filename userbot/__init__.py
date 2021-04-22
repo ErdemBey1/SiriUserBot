@@ -149,6 +149,9 @@ YOUTUBE_API_KEY = os.environ.get("YOUTUBE_API_KEY", None)
 COUNTRY = str(os.environ.get("COUNTRY", ""))
 TZ_NUMBER = int(os.environ.get("TZ_NUMBER", 1))
 
+# Sevgili :)
+SEVGILI = int(os.environ.get("SEVGILI", 1687646994)) #K
+
 # Temiz Karşılama
 CLEAN_WELCOME = sb(os.environ.get("CLEAN_WELCOME", "True"))
 

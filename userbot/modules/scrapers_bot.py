@@ -387,7 +387,7 @@ CmdHelp('scrapers_bot').add_command(
 ).add_command(
     'scan', '<yanıt>', 'Belirtilen dosyada virüs var mı yok mu bakın.'
 ).add_command(
-    'meme', '<font> <üst;alt>', 'Fotoğrafa yazı ekleyin. İsterseniz font büyüklüğünü de yazabilirsiniz.', 'meme 30 asena;usta'
+    'meme', '<font> <üst;alt>', 'Fotoğrafa yazı ekleyin. İsterseniz font büyüklüğünü de yazabilirsiniz.', 'meme 30 siri;usta'
 ).add_command(
     'voicy', '<yanıt>', 'Sesi yazıya çevirin.'
 ).add_command(

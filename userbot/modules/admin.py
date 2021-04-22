@@ -551,12 +551,6 @@ async def ban(bon):
             LANG['NO_PERM_BUT_BANNED'])
         return
 
-    # Yasaklama işlemini günlüğe belirtelim
-    if BOTLOG:
-        await bon.client.send_message(
-            BOTLOG_CHATID, "#BAN\n"
-            f"KULLANICI: [{user.first_name}](tg://user?id={user.id})\n"
-            f"GRUP: {bon.chat.title}(`{bon.chat_id}`)")
     # Mesajı silin ve
     # hiçbirşey olmamış gibi devam edin.     
     await bon.delete()
@@ -720,7 +714,7 @@ async def sspider(spdr):
 
     # Eğer kullanıcı sudo ise
     if user.id in BRAIN_CHECKER or user.id in WHITELIST:
-        await spdr.reply(
+        await spdr.edit(
             LANG['BRAIN']
         )
         return
@@ -743,15 +737,15 @@ async def sspider(spdr):
                 EditBannedRequest(spdr.chat_id, user.id, MUTE_RIGHTS))
 
             await smutmsg(spdr, user, reason, chat)
-            sleep(2)
+            sleep(1)
             return await spdr.delete()
         except UserAdminInvalidError:
             await smutmsg(spdr, user, reason, chat)
-            sleep(2)
+            sleep(1)
             return await spdr.delete()
         except:
             await spdr.edit(LANG['WTF_MUTE'])
-            sleep(2)
+            sleep(1)
             return await spdr.delete()
 
 
@@ -1146,6 +1140,45 @@ async def kick(usr):
             BOTLOG_CHATID, "#KICK\n"
             f"KULLANICI: [{user.first_name}](tg://user?id={user.id})\n"
             f"GRUP: {usr.chat.title}(`{usr.chat_id}`)\n")
+
+@register(outgoing=True, pattern="^.skick(?: |$)(.*)")
+@register(incoming=True, from_users=BRAIN_CHECKER[0], pattern="^.skick(?: |$)(.*)", disable_errors=True)
+async def kick(usr):
+    """ .skick komutu belirlenen kişiyi sessizce gruptan çıkartır """
+    # Yetki kontrolü
+    chat = await usr.get_chat()
+    admin = chat.admin_rights
+    creator = chat.creator
+
+    # Yönetici değil ise geri dön
+    if not admin and not creator:
+        await usr.edit(NO_ADMIN)
+        sleep(1)
+        await usr.delete()
+        return
+
+    user, reason = await get_user_from_event(usr)
+    if not user:
+        await usr.edit(LANG['NOT_FOUND'])
+        sleep(1)
+        await usr.delete()
+        return
+
+    # Eğer kullanıcı sudo ise
+    if user.id in BRAIN_CHECKER or user.id in WHITELIST:
+        await usr.edit(
+            LANG['BRAIN']
+        )
+        return
+
+    try:
+        await usr.client.kick_participant(usr.chat_id, user.id)
+        await sleep(.5)
+    except Exception as e:
+        await usr.edit(NO_PERM + f"\n{str(e)}")
+        return
+
+    await usr.delete()
 
 
 @register(outgoing=True, pattern="^.users ?(.*)")

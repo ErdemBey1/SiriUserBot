@@ -155,8 +155,8 @@
             "EFECTING": "`Efekt uygulanıyor...`",
             "NOT_FOUND_EFECT": "**Belirttiğiniz efekt bulunamadı! **`Kullanılabileceğiniz efektler: ``çocuk/robot/earrape/hızlı/parazit/yankı`",
             "NEED_VIDEO": "`Lütfen bir videoya yanıt verin!`",
-            "WITH_ASENA":"@SiriUserBot `ile efekt uygulandı.`",
-            "WITH_ASENA_GIF": "@SiriUserBot `ile Gif'e çevirildi.`",
+            "WITH_SIRI":"@SiriUserBot `ile efekt uygulandı.`",
+            "WITH_SIRI_GIF": "@SiriUserBot `ile Gif'e çevirildi.`",
             "CONVERTING_TO_GIF": "Gif'e çeviriliyor...",
             "UPLOADING_GIF": "`Gif yükleniyor...`",
             "ERROR": "Gif'e çeviremedim :/"

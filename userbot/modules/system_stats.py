@@ -182,7 +182,7 @@ async def amialive(e):
 @register(incoming=True, from_users=WHITELIST, pattern="^.wlive$")
 @register(incoming=True, from_users=ASISTAN, pattern="^.alive$")
 async def asistanalive(ups):
-    if event.fwd_from:
+    if ups.fwd_from:
         return
     if ups.is_reply:
         reply = await ups.get_reply_message()

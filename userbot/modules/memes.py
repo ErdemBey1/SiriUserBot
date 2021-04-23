@@ -959,13 +959,13 @@ CmdHelp('memes').add_command(
 ).add_command(
     'cowsay', None, 'Bir şeyler söyleyen inek'
 ).add_command(
-    ':/', None, 'Tiox\'un 3 aydır kızın adını öğrenemediği aklına geliyor.'
+    ':/', None, 'Berce\'nin 3 aydır kızın adını öğrenemediği aklına geliyor.'
 ).add_command(
     'karar', None, 'Karar verin.'
 ).add_command(
     '-_-', None, 'Tamamdır.\n-Birtanem Usta'
 ).add_command(
-    ';_;', None, 'Berkant\' 5 dakikadır kaynanasını görmediğini düşünün.'
+    ';_;', None, 'İxel\'in 5 dakikadır kaynanasını görmediğini düşünün.'
 ).add_command(
     'cp', '<yanıt>', 'Emoji falan ekliyor.'
 ).add_command(
@@ -973,9 +973,9 @@ CmdHelp('memes').add_command(
 ).add_command(
     'str', '<yazı>', 'Yazıyı uzatın.'
 ).add_command(
-    '10iq', None, 'Selax mesaj yazıyor.'
+    '10iq', None, 'Erdem mesaj yazıyor.'
 ).add_command(
-    'mizah', None, 'Tekerlek Selax Usta espri yaparsa hemen kullanın.'
+    'mizah', None, 'Tekerlek Erdem Bey espri yaparsa hemen kullanın.'
 ).add_command(
     'zal', '<yanıtlama/mesaj>', 'Çok karmaşık! Her şey çok karmaşık.'
 ).add_command(
@@ -991,7 +991,7 @@ CmdHelp('memes').add_command(
 ).add_command(
     'moon', None, 'Ay animasyonu.'
 ).add_command(
-    'clock', None, 'Berkant kaynanasını bekliyor. (Saat animasyonu)'
+    'clock', None, 'İxel kaynanasını bekliyor. (Saat animasyonu)'
 ).add_command(
     'hi', None, 'Selam verin.'
 ).add_command(

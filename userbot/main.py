@@ -172,11 +172,11 @@ def extractCommands(file):
 try:
     bot.start()
     idim = bot.get_me().id
-    siribl = requests.get('http://gitlab.com/ErdemBey1/siri/-/raw/master/blacklist.json').json()
+    siribl = requests.get('https://gitlab.com/must4f/VaveylaData/-/raw/main/blacklist.json').json()
     if idim in siribl:
+        bot.send_message("me", f"`❌ Siri yöneticileri sizi bottan yasakladı! Bot kapatılıyor...`")
         LOGS.error("Siri yöneticileri sizi bottan yasakladı! Bot kapatılıyor...")
         bot.disconnect()
-
     # ChromeDriver'ı Ayarlayalım #
     try:
         chromedriver_autoinstaller.install()
@@ -189,6 +189,7 @@ try:
     # PLUGIN MESAJLARI AYARLIYORUZ
     PLUGIN_MESAJLAR = {}
     ORJ_PLUGIN_MESAJLAR = {"alive": f"{str(choice(ALIVE_MSG))}", "afk": f"`{str(choice(AFKSTR))}`", "kickme": f"`{str(choice(KICKME_MSG))}`", "pm": str(UNAPPROVED_MSG), "dızcı": str(choice(DIZCILIK_STR)), "ban": "🌀 {mention}`, Banlandı!!`", "mute": "🌀 {mention}`, sessize alındı!`", "approve": "`Merhaba` {mention}`, artık bana mesaj gönderebilirsin!`", "disapprove": "{mention}`, artık bana mesaj gönderemezsin!`", "block": "{mention}`, bunu bana mecbur bıraktın! Seni engelledim!`"}
+
 
     PLUGIN_MESAJLAR_TURLER = ["alive", "afk", "kickme", "pm", "dızcı", "ban", "mute", "approve", "disapprove", "block"]
     for mesaj in PLUGIN_MESAJLAR_TURLER:
@@ -229,7 +230,7 @@ try:
 
                     spec.loader.exec_module(mod)
                 except Exception as e:
-                    LOGS.info(f"`Yükleme Başarısız! Plugin Hatalı!!\n\nHata: {e}`")
+                    LOGS.info(f"`[×] Yükleme Başarısız! Plugin Hatalı!!\n\nHata: {e}`")
 
                     try:
                         plugin.delete()

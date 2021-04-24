@@ -9,6 +9,7 @@
 """ UserBot hazırlanışı. """
 
 import os
+import time
 from re import compile
 from sys import version_info
 from logging import basicConfig, getLogger, INFO, DEBUG
@@ -123,6 +124,9 @@ GALERI_SURE = int(os.environ.get("GALERI_SURE", 60))
 # Chrome sürücüsü ve Google Chrome dosyaları
 CHROME_DRIVER = os.environ.get("CHROME_DRIVER", None)
 GOOGLE_CHROME_BIN = os.environ.get("GOOGLE_CHROME_BIN", None)
+
+#Time
+WORKTIME = time.time()
 
 PLUGINID = os.environ.get("PLUGIN_CHANNEL_ID", None)
 # Plugin İçin

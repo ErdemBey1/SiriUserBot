@@ -43,7 +43,6 @@ async def durums(event):
 **GDrive:** `{durum(G_DRIVE_CLIENT_ID)}`
 **LastFm:** `{durum(lastfm)}`
 **YouTube ApiKey:** `{durum(YOUTUBE_API_KEY)}`
-**Lydia:** `{durum(LYDIA_API_KEY)}`
 **OpenWeather:** `{durum(OPEN_WEATHER_MAP_APPID)}`
 **AutoPP:** `{durum(AUTO_PP)}`
 **RemoveBG:** `{durum(REM_BG_API_KEY)}`
@@ -57,7 +56,7 @@ async def durums(event):
 
 @register(incoming=True, from_users=ASISTAN, pattern="^.durum$")
 async def asistandurum(ups):
-    """ .shutdown komutunu asistana söylerseniz sizin yerinize o botu kapatır. """
+    """ .durum komutunu asistana söylerseniz sizin yerinize botun durumuna bakar. """
     if ups.is_reply:
         reply = await ups.get_reply_message()
         reply_user = await ups.client.get_entity(reply.from_id)
@@ -75,7 +74,6 @@ async def asistandurum(ups):
 **GDrive:** `{durum(G_DRIVE_CLIENT_ID)}`
 **LastFm:** `{durum(lastfm)}`
 **YouTube ApiKey:** `{durum(YOUTUBE_API_KEY)}`
-**Lydia:** `{durum(LYDIA_API_KEY)}`
 **OpenWeather:** `{durum(OPEN_WEATHER_MAP_APPID)}`
 **AutoPP:** `{durum(AUTO_PP)}`
 **RemoveBG:** `{durum(REM_BG_API_KEY)}`

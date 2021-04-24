@@ -182,11 +182,11 @@ async def upstream(ups):
 
 @register(incoming=True, from_users=ASISTAN, pattern="^.update(?: |$)(.*)")
 async def asistan_update(ups):
+    conf = ups.pattern_match.group(1)
     if ups.is_reply:
         reply = await ups.get_reply_message()
         reply_user = await ups.client.get_entity(reply.from_id)
         ren = reply_user.id
-        conf = ups.pattern_match.group(1)
         if ren == MYID:
             "Asistan botu güncelliyor gibi"
             usp = await ups.reply(LANG['DETECTING'])

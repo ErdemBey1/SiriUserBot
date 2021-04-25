@@ -1,4 +1,4 @@
-# SiriUserBot •_•
+# SiriUserBot •_• # Erdem - Berceste
 
 from telethon.tl import functions, types
 from userbot import CMD_HELP
@@ -28,7 +28,7 @@ async def telegraphs(grup):
 
                 result = await grup.client(functions.messages.CreateChatRequest(  # pylint:disable=E0602
 
-                    users=["@Hellcexbot"],
+                    users=["@muinrobot"],
 
                     title=group_name
 
@@ -40,7 +40,7 @@ async def telegraphs(grup):
 
                     chat_id=created_chat_id,
 
-                    user_id="@Hellcexbot"
+                    user_id="@muinrobot"
 
                 ))
 

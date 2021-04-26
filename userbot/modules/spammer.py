@@ -150,6 +150,8 @@ CmdHelp('spammer').add_command(
     'mspam', '<miktar> <yanıtladığınız medya>', 'Verilen miktar kadar yanıt verdiğiniz fotoğraf/müzik/ses/video spamı yapar.'
 ).add_command(
     'delayspam', '<gecikme> <miktar> <metin>', 'Verilen miktar ve verilen gecikme ile gecikmeli spam yapar.'
+).add_command(
+    'kill spam', None, "Spam durdurma", None
 ).add_warning(
     'Sorumluluk size aittir!!'
 ).add()

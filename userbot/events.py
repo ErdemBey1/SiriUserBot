@@ -4,7 +4,7 @@
 # you may not use this file except in compliance with the License.
 #
 
-# SiriUserBot - ErdemBey - Midy - Berce
+# SiriUserBot - ErdemBey - Berce
 
 """ Olayları yönetmek için UserBot modülü.
  UserBot'un ana bileşenlerinden biri. """
@@ -15,7 +15,7 @@ from asyncio import subprocess as asyncsub
 from os import remove
 from time import gmtime, strftime
 from traceback import format_exc
-
+from . import SIRI_VERSION, ForceVer 
 from telethon import events
 
 from userbot import bot, BOTLOG_CHATID, LOGSPAMMER, PATTERNS, SIRI_VERSION
@@ -52,6 +52,11 @@ def register(**args):
 
     def decorator(func):
         async def wrapper(check):
+            SiriVer = int(SIRI_VERSION.split(".")[1])
+            if ForceVer > SiriVer:
+                await check.edit(f"`🌈 Botu acilen güncellemen lazım! Bu sürüm artık kullanılamıyor..`\n\n__🥺 Sorunu çözmek için__ `.update now` __yazmalısın!__")
+                return
+
             if not LOGSPAMMER:
                 send_to = check.chat_id
             else:

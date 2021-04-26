@@ -42,14 +42,17 @@ async def _(q):
 	a_=0
 	await q.delete()
 	async for i in bot.iter_participants(chat, filter=cp):
-		if a_ == 3000:
+		if a_ == 50:
 			break
 		a_+=1
 		await q.client.send_message(q.chat_id, "[{}](tg://user?id={}) {}".format(i.first_name, i.id, seasons))
 		sleep(2.3)
 
+
 CmdHelp("all").add_command(
-	"all", "<sebep>", "Gruptaki Üyeleri Etiketler En Fazla 3000 Kişi(Flood Wait Nedeniyle)"
+	"all", "<sebep>", "Gruptaki Üyeleri Etiketler.. En Fazla 3000 Kişi (Flood Wait Nedeniyle)"
 	).add_command(
-	"alladmin", "<sebep>", "Gruptaki Adninleri Etiketler "
+	"alladmin", "<sebep>", "Gruptaki Adminleri Etiketler "
+        ).add_command(
+        "killall", None, "Etiketleme işlemini durdurur.", None
 ).add()

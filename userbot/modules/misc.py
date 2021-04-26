@@ -99,6 +99,7 @@ async def asistanshutdown(ups):
                 pass
 
 
+@register(outgoing=True, pattern="^.kill (.*)")
 @register(outgoing=True, pattern="^.restart$")
 async def restart(event):
     await event.edit(LANG['RESTARTING'])
@@ -117,6 +118,7 @@ async def restart(event):
 async def bot_support(wannahelp):
     """ .support komutu destek grubumuzu verir. """
     await wannahelp.edit(LANG['SUPPORT_GROUP'])
+
 
 
 @register(outgoing=True, pattern="^.creator$")

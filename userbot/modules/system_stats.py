@@ -16,7 +16,7 @@ from platform import uname
 from shutil import which
 from requests import get
 import os
-from userbot import (CMD_HELP, SIRI_VERSION, DEFAULT_NAME, WHITELIST, MYID, ASISTAN, bot, ForceVer, SEVGILI) # Yakında
+from userbot import (CMD_HELP, SIRI_VERSION, DEFAULT_NAME, WHITELIST, MYID, ASISTAN, bot, SEVGILI) # Yakında
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
 from userbot.events import register
@@ -137,14 +137,7 @@ async def pipcheck(pip):
 
 @register(outgoing=True, pattern="^.alive$")
 async def amialive(e):
-    SiriVer = int(SIRI_VERSION.split(".")[1])
-    if str(ForceVer) > SiriVer:
-        await e.edit(f"`🌈 Botu acilen güncellemeniz lazım! Bu sürüm artık kullanılamıyor..`\n\n__🥺 Sorunu çözmek için__ `.update now` __yazmalısın!__")
-    else:
-        if DEFAULT_NAME:
-            sahipp = f"{DEFAULT_NAME}"
-        else:
-            sahipp = "Sir"
+        sahipp = f"{DEFAULT_NAME}" if DEFAULT_NAME else "Sir"
         me = await e.client.get_me()
         if type(PLUGIN_MESAJLAR['alive']) == str:
             await e.edit(PLUGIN_MESAJLAR['alive'].format(
@@ -195,10 +188,7 @@ async def asistanalive(ups):
             hitap = "❤️ 💪🏻(･–･) \(･◡･)/ Yöneticim"
         if ren == MYID:
             SiriVer = str(SIRI_VERSION.replace("v","")) 
-            if str(ForceVer) > SiriVer:
-                await ups.reply(f"**🥵 Botu acilen güncellemeniz lazım! Botun {ForceVer} sürümünde olması gerekirken sizin botunuz {SiriVer}!** \n\n__📻 Sorunu çözmek için__ `.update now` __yazın!__\n ")
-            else:
-                await ups.reply(f"__{hitap} seni seviyorum! Siri çalışıyor!__")
+            await ups.reply(f"__{hitap} seni seviyorum! Siri çalışıyor!__")
         else:
             return
     else:

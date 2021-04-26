@@ -54,5 +54,5 @@ CmdHelp("all").add_command(
 	).add_command(
 	"alladmin", "<sebep>", "Gruptaki Adminleri Etiketler "
         ).add_command(
-        "killall", None, "Etiketleme işlemini durdurur.", None
+        "kill all", None, "Etiketleme işlemini durdurur.", None
 ).add()

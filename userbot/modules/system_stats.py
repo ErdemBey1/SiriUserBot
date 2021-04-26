@@ -193,7 +193,7 @@ async def asistanalive(ups):
             hitap = "❤️ ʕっ•ᴥ•ʔっ Asistan"
         else:
             hitap = "❤️ 💪🏻(･–･) \(･◡･)/ Yöneticim"
-        if ren == MYID or MYID in replytext:
+        if ren == MYID:
             SiriVer = str(SIRI_VERSION.replace("v","")) 
             if str(ForceVer) > SiriVer:
                 await ups.reply(f"**🥵 Botu acilen güncellemeniz lazım! Botun {ForceVer} sürümünde olması gerekirken sizin botunuz {SiriVer}!** \n\n__📻 Sorunu çözmek için__ `.update now` __yazın!__\n ")

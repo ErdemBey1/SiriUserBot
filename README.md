@@ -11,7 +11,7 @@
         <a href="https://github.com/ErdemBey1/SiriUserBot/blob/master/README.md#kurulum">| Kurulum</a> |
         <a href="https://github.com/ErdemBey1/SiriUserBot/wiki/G%C3%BCncelleme">Güncelleme</a> |
         <a href="https://t.me/SiriUserBot">Telegram Kanalı</a> |
-        <a href="https://t.me/SiriSupport">~Support~</a>
+        <a href="https://t.me/SiriSupport">Support</a> |
     <br>
 </p>
 

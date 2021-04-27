@@ -15,10 +15,9 @@ from asyncio import subprocess as asyncsub
 from os import remove
 from time import gmtime, strftime
 from traceback import format_exc
-from . import SIRI_VERSION, ForceVer 
 from telethon import events
 
-from userbot import bot, BOTLOG_CHATID, LOGSPAMMER, PATTERNS, SIRI_VERSION
+from userbot import bot, BOTLOG_CHATID, LOGSPAMMER, PATTERNS, SIRI_VERSION, ForceVer
 
 
 def register(**args):

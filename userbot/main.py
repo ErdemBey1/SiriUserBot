@@ -265,6 +265,12 @@ async def FotoDegistir (foto):
 for module_name in ALL_MODULES:
     imported_module = import_module("userbot.modules." + module_name)
 
+os.system("clear")
+
+LOGS.info("+===========================================================+")
+LOGS.info("|                     ✨Siri Userbot✨                       |")
+LOGS.info("+==============+==============+==============+==============+")
+LOGS.info("|                                                            |")
 LOGS.info("Botunuz çalışıyor! Herhangi bir sohbete .alive yazarak Test edin."
           " Yardıma İhtiyacınız varsa, Destek grubumuza gelin t.me/SiriSupport")
 LOGS.info(f"Bot versiyonunuz: Siri {SIRI_VERSION}")

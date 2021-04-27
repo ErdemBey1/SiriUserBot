@@ -124,14 +124,14 @@ async def fetch_info(chat, event):
         for bot in bots_list:
             bots += 1
 
-    caption = "<b>Grup İstatistikleri:</b>\n"
-    caption += f"ID: <code>{chat_obj_info.id}</code>\n"
+    caption = "<b>📊Grup İstatistikleri:</b>\n"
+    caption += f"🆔ID: <code>{chat_obj_info.id}</code>\n"
     if messages_viewable is not None:
-        caption += f"Görünen mesajlar: <code>{messages_viewable}</code>\n"
+        caption += f"📈Görünen mesajlar: <code>{messages_viewable}</code>\n"
     if messages_sent:
-        caption += f"Gönderilen mesajlar: <code>{messages_sent}</code>\n"
+        caption += f"📉Gönderilen mesajlar: <code>{messages_sent}</code>\n"
     elif messages_sent_alt:
-        caption += f"Gönderilen mesajlar: <code>{messages_sent_alt}</code> {warn_emoji}\n"
+        caption += f"📮Gönderilen mesajlar: <code>{messages_sent_alt}</code> {warn_emoji}\n"
     return caption
     
-CmdHelp('combot').add_command('combot', None, 'Mesaj istatistikleri (combot gibi).').add()
+CmdHelp('combot').add_command('stats', None, 'Mesaj istatistikleri (combot gibi).').add()

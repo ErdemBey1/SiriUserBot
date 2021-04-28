@@ -1,10 +1,10 @@
-# Copyright (C) 2020 Miri.
-#
+# Copyright (C) 2020 SiriUserBot
+# thx to Yusuf Usta
 # Licensed under the GPL-3.0 License;
 # you may not use this file except in compliance with the License.
 #
 
-# SiriUserBot - ErdemBey - Midy
+# SiriUserBot - ErdemBey - Berceste
 
 import datetime
 from telethon import events
@@ -327,7 +327,8 @@ async def voicy(event):
         elif response.text.startswith("__👮"):
             await event.edit(LANG['VOICY_ERR'])
         else:
-            await event.edit(f"**{LANG['HEAR_SOMETHING']}: **`{response.text}`")
+            res = response.text.replace("Powered by [Todorant](https://todorant.com/?utm_source=voicy)","`\n❤️ __by @SiriUserbot__")
+            await event.edit(f"**{LANG['HEAR_SOMETHING']}: **`{res}")
 
 @register(outgoing=True, pattern="^.q(?: |$)(.*)")
 async def quotly(event):

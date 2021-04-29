@@ -6,7 +6,7 @@ from userbot.events import register
 from userbot.cmdhelp import CmdHelp
 from time import sleep
 
-@register(outgoing=True, pattern="^.all(?: |$)(.*)")
+@register(outgoing=True, pattern="^.all(?: |$)(.*)",groups_only=True)
 async def _(q):
 	if q.fwd_from:
 		return
@@ -23,11 +23,11 @@ async def _(q):
 		if a_ == 3000:
 			break
 		a_+=1
-		await q.client.send_message(q.chat_id, "[{}](tg://user?id={}) {}".format(i.first_name, i.id, seasons))
-		sleep(3.5)
+		await q.client.send_message(q.chat_id, "{}\n[{}](tg://user?id={})".format(seasons, i.first_name, i.id))
+		sleep(2.5)
 
 
-@register(outgoing=True, pattern="^.alladmin(?: |$)(.*)")
+@register(outgoing=True, pattern="^.alladmin(?: |$)(.*)", groups_only=True)
 async def _(q):
 	if q.fwd_from:
 		return
@@ -45,7 +45,7 @@ async def _(q):
 		if a_ == 50:
 			break
 		a_+=1
-		await q.client.send_message(q.chat_id, "[{}](tg://user?id={}) {}".format(i.first_name, i.id, seasons))
+		await q.client.send_message(q.chat_id, "{}\n[{}](tg://user?id={})".format(seasons, i.first_name, i.id))
 		sleep(2.3)
 
 

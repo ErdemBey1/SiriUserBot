@@ -77,7 +77,7 @@ Herhangi bir istek & şikâyet & öneri varsa [destek grubuna](https://t.me/Siri
     Siriyi kurarak bu sorumlulukları kabul etmiş sayılırsınız.
 ```
 ### Geliştiriciler / Developers
-[![Erdem Bey](https://github.com/erdembey1.png?size=100)](https://github.com/erdembey1/whatsSiri) | [![Midy](https://github.com/ribonney.png?size=100)](https://github.com/erdembey1/whatsSiri) | [![Berce](https://github.com/must4f.png?size=100)](https://github.com/erdembey1/whatsSiri)
+[![Erdem Bey](https://github.com/erdembey1.png?size=100)](https://github.com/erdembey1) | [![Midy](https://github.com/ribonney.png?size=100)](https://github.com/ribonney) | [![Berce](https://github.com/must4f.png?size=100)](https://github.com/must4f)
 ---|---|---|---|---
 [Erdem Bey](https://t.me/erdembey1) | [Midy](https://t.me/ixelizm) | [Berce](https://t.me/bberc) 
 Developer - Owner |  Developer - Owner | Developer - Owner

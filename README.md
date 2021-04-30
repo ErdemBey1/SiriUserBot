@@ -37,9 +37,6 @@
 
 [![Run on Repl.it](https://repl.it/badge/github/ErdemBey1/siriinstaller)](https://repl.it/@ErdemBey1/siriinstaller)
 
-**Windows 10:** Windows 10: [Python](https://www.microsoft.com/en-us/p/python-38/9mssztt1n39l?activetab=pivot:overviewtab) indirin ardından PowerShell bu kodu yapıştırın:
-`Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://bit.ly/3dEefrp')`
-
 ### 🇹🇷 Elle Kurulum / Manual Setup 🇺🇲
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/ErdemBey1/SiriUserBot)

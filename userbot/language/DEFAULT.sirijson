@@ -132,6 +132,23 @@
             "SETTED": "`Profil fotoğrafınız ayarlandı :)`"
         },
 
+
+        "botfather": {
+            "ERROR": "`⛔ Sirinin Bot Oluşturması İçin Eksik Bilgi Verme Lütfen!`"
+        },
+
+        "combot": {
+            "ERR": "`👨🏻‍🔧 Gerçekleşen Hata:`",
+            "ANALIZ": "`🔄 Grup analiz ediliyor...`",
+            "INVALID": "`⛔ Geçersiz Kanal/Grup!`",
+            "ERROR_BAN": "`⛔ Burası gizli grup ve ya buradan ban yedim!`",
+            "NOT_FOUND": "`⛔ Böyle bir süper grup ve ya kanal yok !`",
+            "IST": "`📊 Grup İstatistikleri:`",
+            "GOR": "`📈 Görünen mesajlar`",
+            "GOND": "`📉 Gönderilen mesajlar`"
+        },
+
+
         "blacklist": {
             "FORBIDDEN_KUFUR": "**Bu grupta mesaj silme yetkim yok. Küfür filtresi devre dışı.**",
             "HAVENT_PERMISSION": "Mesaj silme yetkim yok!",
@@ -297,7 +314,8 @@
         },
 
         "kyolla": {
-            "REPLY_MESSAGE": "`Lütfen bir mesaja yanıt verin.`"
+            "REPLY_MESSAGE": "`Lütfen bir mesaja yanıt verin.`",
+            "SUCCESSFUL": "`Siri Mesajı Kayıtlı Mesajlar Bölümüne Yolladı!`"
         },
 
         "lastfm": {
@@ -380,6 +398,16 @@
             "CANT_READ": "`Bunu okuyamadım.`\n`Sanırım yeni gözlüklere ihtiyacım var.`",
             "READ": "İşte okuyabildiğim şey:"
         },
+
+        "playstore": {
+            "SEARCH": "`🔎Siri Verdiğiniz Program Arıyor..`",
+            "EKS": "`⛔ Lütfen Program adı yazın.. Örnek`",
+            "NOT_FOUND": "`⛔ Verdiğiniz Programı Bulamadım..`",
+            "PUAN": "Puan :",
+            "SAHP": "Sahibi :",
+            "OZLLK": "Özellikler :"
+        },
+
 
         "pmpermit": {
             "BLOCKED": "`Sen benim sahibimin PM'ini spamlıyorsun, bu benim hoşuma gitmiyor.`\n`Şu an ENGELLENDIN ve SPAM olarak bildirildin, ileride değişiklik olmadığı sürece..`",

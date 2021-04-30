@@ -1,4 +1,4 @@
-# SiriUserBot - ErdemBey - Midy
+# SiriUserBot - ErdemBey - Berceste
 
 from telethon.errors import (ChannelInvalidError, ChannelPrivateError, ChannelPublicGroupNaError)
 from emoji import emojize
@@ -11,17 +11,25 @@ from telethon.tl.functions.channels import GetFullChannelRequest, GetParticipant
 from telethon.utils import get_input_location
 from userbot.cmdhelp import CmdHelp
 
+# ██████ LANGUAGE CONSTANTS ██████ #
+
+from userbot.language import get_value
+LANG = get_value("combot")
+
+# ████████████████████████████████ #
+
+
 # FORKED FROM https://github.com/alcyper/alcyper #
 @register(outgoing=True, pattern="^.stats(?: |$)(.*)")
 async def info(event):
-    await event.edit("`Grup analiz ediliyor...`")
+    await event.edit(LANG["ANALIZ"])
     chat = await get_chatinfo(event)
     caption = await fetch_info(chat, event)
     try:
         await event.edit(caption, parse_mode="html")
     except Exception as e:
         print("Exception:", e)
-        await event.edit(f"`Gerçekleşen Hata: {e}`")
+        await event.edit(f"`{LANG["ERR"]} {e}`")
     return
     
     
@@ -46,13 +54,13 @@ async def get_chatinfo(event):
         try:
             chat_info = await event.client(GetFullChannelRequest(chat))
         except ChannelInvalidError:
-            await event.reply("`Geçersiz Kanal/Grup`")
+            await event.reply(LANG["INVALID"])
             return None
         except ChannelPrivateError:
-            await event.reply("`Burası gizli grup ve ya Ben buradan ban yedim.`")
+            await event.reply(LANG["ERROR_BAN"])
             return None
         except ChannelPublicGroupNaError:
-            await event.reply("`Böyle bir süper grup ve ya kanal yok`")
+            await event.reply(LANG["NOT_FOUND"])
             return None
         except (TypeError, ValueError) as err:
             await event.reply(str(err))
@@ -124,14 +132,14 @@ async def fetch_info(chat, event):
         for bot in bots_list:
             bots += 1
 
-    caption = "<b>📊Grup İstatistikleri:</b>\n"
-    caption += f"🆔ID: <code>{chat_obj_info.id}</code>\n"
+    caption = f"<b>{LANG["IST"]}</b>\n"
+    caption += f"🆔: <code>{chat_obj_info.id}</code>\n"
     if messages_viewable is not None:
-        caption += f"📈Görünen mesajlar: <code>{messages_viewable}</code>\n"
+        caption += f"{LANG["GOR"]}: <code>{messages_viewable}</code>\n"
     if messages_sent:
-        caption += f"📉Gönderilen mesajlar: <code>{messages_sent}</code>\n"
+        caption += f"{LANG["GOND"]}: <code>{messages_sent}</code>\n"
     elif messages_sent_alt:
-        caption += f"📮Gönderilen mesajlar: <code>{messages_sent_alt}</code> {warn_emoji}\n"
+        caption += f"{LANG["GOND"]}: <code>{messages_sent_alt}</code> {warn_emoji}\n"
     return caption
     
 CmdHelp('combot').add_command('stats', None, 'Mesaj istatistikleri (combot gibi).').add()

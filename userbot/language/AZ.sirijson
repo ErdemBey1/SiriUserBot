@@ -295,6 +295,11 @@
             "NOT_FOUND": " tapılmadı`"
         },
 
+        "kyolla": {
+            "REPLY_MESSAGE": "`Zəhmət olmasa bir mesaja cavab verin.`"
+        },
+
+
         "lastfm": {
            "BIO_ENABLED": "```last.fm-də səslənən bir musiqinin bioya əlavə edilməsi aktivdir.```",
            "BIO_DISABLED": "```last.fm-də səslənən musiqinin bioya əlavə edilməsi deaktivdir. Bioqrafiya defolt halına gətirildi.```",
@@ -318,18 +323,6 @@
             "TOO_MANY_GMUTED": "`Vay! Vay! Bir çox insana susdurulma vermisiniz. Fayl kimi göndərirəm...`",
             "GMUTE_LIST": "**Qlobal olaraq səssizləşdirdiyiniz istifadəçilər:**\n%s\n\n**Kömək:** Susdurduğunuz istifadəçilər haqqında daha çox məlumat əldə etmək üçün `.whois id` istifadə edə bilərsiniz.",
             "GMUTE_TXT": "**Qlobal olaraq səssizləşdirdiyiniz istifadəçilər**\n\n**Kömək:** Susdurduğunuz istifadəçilər haqqında daha çox məlumat əldə etmək üçün `.whois id` istifadə edə bilərsiniz."
-        },
-
-        "lydia": {
-            "DATABASE_ERROR": "Lydia verilənlər bazası bağlantısı alınmadı",
-            "WORKING": "`Hazırlanır...`",
-            "LYDIA_SAYS": "**Lydia deyir ki**: {}",
-            "SQL_OFF": "Hazırda qeyri SQL rejimində işləyir...",
-            "REPLY_USER_ERR": "Yanlış istifadəçi növü.",
-            "LYDIA_ACTIVATED": "Lydia, {} istifadəçisi üçün {} çatında uğurla aktiv edildi!",
-            "REPLY_FOR_ACTIVATE": "Lydia AI-nı aktivləşdirmək üçün bir istifadəçiyə cavab verin",
-            "LYDIA_DEACTIVATED": "Lidiya, {} istifadəçi üçün {} çatında uğurla deaktiv edildi!",
-            "LYDIA_OFF_FOR_USER": "Lydia bu istifadəçidə aktiv deyil."
         },
 
         "lyrics": {

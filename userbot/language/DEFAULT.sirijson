@@ -296,6 +296,10 @@
             "NOT_FOUND": " bulunamadı`"
         },
 
+        "kyolla": {
+            "REPLY_MESSAGE": "`Lütfen bir mesaja yanıt verin.`"
+        },
+
         "lastfm": {
            "BIO_ENABLED": "```last.fm'de oynatılan müziği biyografiye ekleme aktif.```",
            "BIO_DISABLED": "```last.fm'de oynatılan müziği biyografiye ekleme devre dışı. Biyografi varsayılana çevrildi.```",
@@ -319,18 +323,6 @@
             "TOO_MANY_GMUTED": "`Wow! Baya bir kişi susturmuşsunuz. Dosya olarak gönderiyorum...`",
             "GMUTE_LIST": "**Küresel olarak susturduğunuz kullanıcılar:**\n%s\n\n**İpucu:** Susturduğunuz kullanıcılar hakkında daha fazla bilgi almak için `.whois id` kullanabilirsiniz.",
             "GMUTE_TXT": "**Küresel olarak susturduğunuz kullanıcılar**\n\n**İpucu:** Susturduğunuz kullanıcılar hakkında daha fazla bilgi almak için `.whois id` kullanabilirsiniz."
-        },
-
-        "lydia": {
-            "DATABASE_ERROR": "Lydia veritabanı bağlantısı başarısız oldu",
-            "WORKING": "`İşleniyor...`",
-            "LYDIA_SAYS": "**Lydia diyor ki**: {}",
-            "SQL_OFF": "Şimdilik SQL dışı modda çalışıyor...",
-            "REPLY_USER_ERR": "Geçersiz kullanıcı türü.",
-            "LYDIA_ACTIVATED": "Lydia, {} kullanıcısı için {} sohbetinde başarıyla etkinleştirildi!",
-            "REPLY_FOR_ACTIVATE": "Lydia AI'yı etkinleştirmek için bir kullanıcıyı yanıtlayın",
-            "LYDIA_DEACTIVATED": "Lydia, {} kullanıcısı için {} sohbetinde başarıyla devre dışı bırakıldı!",
-            "LYDIA_OFF_FOR_USER": "Bu kullanıcıda Lydia aktif değil."
         },
 
         "lyrics": {

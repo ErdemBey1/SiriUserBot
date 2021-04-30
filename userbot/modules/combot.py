@@ -29,7 +29,7 @@ async def info(event):
         await event.edit(caption, parse_mode="html")
     except Exception as e:
         print("Exception:", e)
-        await event.edit(f"`{LANG["ERR"]} {e}`")
+        await event.edit(f'`{LANG["ERR"]} {e}`')
     return
     
     
@@ -135,11 +135,11 @@ async def fetch_info(chat, event):
     caption = f"<b>{LANG["IST"]}</b>\n"
     caption += f"🆔: <code>{chat_obj_info.id}</code>\n"
     if messages_viewable is not None:
-        caption += f"{LANG["GOR"]}: <code>{messages_viewable}</code>\n"
+        caption += f'{LANG["GOR"]}: <code>{messages_viewable}</code>\n'
     if messages_sent:
-        caption += f"{LANG["GOND"]}: <code>{messages_sent}</code>\n"
+        caption += f'{LANG["GOND"]}: <code>{messages_sent}</code>\n'
     elif messages_sent_alt:
-        caption += f"{LANG["GOND"]}: <code>{messages_sent_alt}</code> {warn_emoji}\n"
+        caption += f'{LANG["GOND"]}: <code>{messages_sent_alt}</code> {warn_emoji}\n'
     return caption
     
 CmdHelp('combot').add_command('stats', None, 'Mesaj istatistikleri (combot gibi).').add()

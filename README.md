@@ -18,7 +18,7 @@
 
 ----
 
-## Otomatik Kurulum / Automatic Setup
+## 🇹🇷 Otomatik Kurulum / Automatic Setup 🇺🇲
 
 **Android:** 
 
@@ -33,18 +33,18 @@
 `Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://bit.ly/3dEefrp')`
 
 
-**Tarayıcı Kurulum / Online Setup**
+🇹🇷**Tarayıcı Kurulum / Online Setup**🇺🇲
 
 [![Run on Repl.it](https://repl.it/badge/github/ErdemBey1/siriinstaller)](https://repl.it/@ErdemBey1/siriinstaller)
 
 **Windows 10:** Windows 10: [Python](https://www.microsoft.com/en-us/p/python-38/9mssztt1n39l?activetab=pivot:overviewtab) indirin ardından PowerShell bu kodu yapıştırın:
 `Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://bit.ly/3dEefrp')`
 
-### Elle Kurulum / Manual Setup
+### 🇹🇷 Elle Kurulum / Manual Setup 🇺🇲
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/ErdemBey1/SiriUserBot)
 
-## Bilgilendirme / İnformation
+## 🇹🇷Bilgilendirme / İnformation🇹🇷
 Herhangi bir istek & şikâyet & öneri varsa [destek grubuna](https://t.me/SiriSupport) ulaşabilirsiniz.
 
 ```
@@ -58,5 +58,5 @@ Herhangi bir istek & şikâyet & öneri varsa [destek grubuna](https://t.me/Siri
     This is an open source project, you are responsible for everything you do. Absolutely, Siri administrators do not accept responsibility.
     By establishing Siri, you are deemed to have accepted these responsibilities.
 ```
-### Geliştiriciler / Developers
+### 🇹🇷 Geliştiriciler / Developers 🇺🇲
 [![Erdem Bey](https://github.com/erdembey1.png?size=100)](https://github.com/erdembey1)  [![Midy](https://github.com/ribonney.png?size=100)](https://github.com/ribonney)  [![Berce](https://github.com/must4f.png?size=100)](https://github.com/must4f)

@@ -76,12 +76,10 @@ Herhangi bir istek & şikâyet & öneri varsa [destek grubuna](https://t.me/Siri
     Bu bir açık kaynaklı projedir, yaptığınız her işlemden kendiniz sorumlusunuz. Kesinlikle Siri yöneticileri sorumluluk kabul etmemektedir.
     Siriyi kurarak bu sorumlulukları kabul etmiş sayılırsınız.
 ```
-
-## Credit
-Thanks for;
-
-[Asena UserBot](https://github.com/YusufUsta/AsenaUserBot)
-
-## ~Emeği Geçen Herkese Teşekkür Ederiz~
+### Geliştiriciler / Developers
+[![Erdem Bey](https://github.com/erdembey1.png?size=100)](https://github.com/erdembey1/whatsSiri) | [![Midy](https://github.com/ribonney.png?size=100)](https://github.com/erdembey1/whatsSiri) | [![Berce](https://github.com/must4f.png?size=100)](https://github.com/erdembey1/whatsSiri)
+---|---|---|---|---
+[Erdem Bey](https://t.me/erdembey1) | [Midy](https://t.me/ixelizm) | [Berce](https://t.me/bberc) 
+Developer - Owner |  Developer - Owner | Developer - Owner
 
 

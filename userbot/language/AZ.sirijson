@@ -145,6 +145,23 @@
             "REMOVED": "**Söz qara siyahıdan çıxardıldı.**"
         },
 
+        "botfather": {
+            "ERROR": "`Sirinin bot yaratması üçün əksik bilgi vermə qadan alım!`"
+        },
+
+
+        "combot": {
+            "ERR": "`👨🏻‍🔧 Gerçəkləşən xəta:`",
+            "ANALIZ": "`🔄 Qrup analiz edilir..`",
+            "INVALID": "`⛔ Keçərsiz kanal/qrup`",
+            "ERROR_BAN": "`⛔ Bu qrup ya gizlidir yada ban yemişəm`",
+            "NOT_FOUND": "`⛔ Belə super qrup ya da kanal yoxdur !`",
+            "IST": "`📊 Qrup statistikası:`",
+            "GOR": "`📈 Görünən mesajlar`",
+            "GOND": "`📉 Göndərilən mesajlar`"
+        },
+
+
         "cevir": {
             "INVALID_COMMAND": "**Bilinməyən komanda!** `İstifadəsi: .çevir foto/ses/gif`",
             "NEED_REPLY": "Zəhmət olmasa bir Sticker-ə cavab verin.",
@@ -296,7 +313,8 @@
         },
 
         "kyolla": {
-            "REPLY_MESSAGE": "`Zəhmət olmasa bir mesaja cavab verin.`"
+            "REPLY_MESSAGE": "`Zəhmət olmasa bir mesaja cavab verin.`",
+            "SUCCESSFUL": "`Siri mesajı Qeyd olunan mesajlar bölümünə yolladı!`"
         },
 
 
@@ -380,6 +398,18 @@
             "CANT_READ": "`Bunu oxuya bilmədim.`\n`Deyəsən yeni eynəklərə ehtiyacım var.`",
             "READ": "Əla bax budur oxuya bildiyim şey:"
         },
+
+
+        "playstore": {
+            "SEARCH": "`🔎 Siri verdiyiniz proqramı axtarır...`",
+            "EKS": "`⛔ Zəhmət olmasa proqram adı yazın. Örnək`",
+            "NOT_FOUND": "`⛔ Axtardığınız proqramı tapa bilmədim..`",
+            "PUAN": "Xal :",
+            "SAHP": "Sahibi :",
+            "OZLLK": "Özəlliklər :"
+        },
+
+
 
         "pmpermit": {
             "BLOCKED": "`Sən mənim Sahibimin PM-sını spamlayırsan, bu mənim heç xoşuma gəlmir.`\n`Hazırda BLOKLANDIN və SPAM olaraq bildirildin, gələcəkdə dəyişiklik olmadığı ərəfəyədək..`",

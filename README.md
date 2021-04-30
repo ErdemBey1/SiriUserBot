@@ -18,7 +18,7 @@
 
 ----
 
-## Kurulum / Setup
+## Otomatik Kurulum / Automatic Setup
 
 **Android:** 
 
@@ -27,6 +27,11 @@
 **iOS:**  
 
 `apk update && apk add bash && apk add curl && curl -L -o siri_installer.sh https://bit.ly/3ayPGdk && chmod +x siri_installer.sh && bash siri_installer.sh`
+
+**Windows 10:** 
+
+`Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://bit.ly/3dEefrp')`
+
 
 **Tarayıcı Kurulum / Online Setup**
 
@@ -39,7 +44,7 @@
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/ErdemBey1/SiriUserBot)
 
-## Bilgilendirme
+## Bilgilendirme / İnformation
 Herhangi bir istek & şikâyet & öneri varsa [destek grubuna](https://t.me/SiriSupport) ulaşabilirsiniz.
 
 ```
@@ -47,8 +52,11 @@ Herhangi bir istek & şikâyet & öneri varsa [destek grubuna](https://t.me/Siri
     Bu bir açık kaynaklı projedir, yaptığınız her işlemden kendiniz sorumlusunuz. Kesinlikle Siri yöneticileri sorumluluk kabul etmemektedir.
     Siriyi kurarak bu sorumlulukları kabul etmiş sayılırsınız.
 ```
+
+```
+     Due to Userbot; Your Telegram account may be banned.
+    This is an open source project, you are responsible for everything you do. Absolutely, Siri administrators do not accept responsibility.
+    By establishing Siri, you are deemed to have accepted these responsibilities.
+```
 ### Geliştiriciler / Developers
 [![Erdem Bey](https://github.com/erdembey1.png?size=100)](https://github.com/erdembey1)  [![Midy](https://github.com/ribonney.png?size=100)](https://github.com/ribonney)  [![Berce](https://github.com/must4f.png?size=100)](https://github.com/must4f)
-
-
-

@@ -1,4 +1,4 @@
-# SİRİ UserBot / ERDEM BEY - MİDY
+# SİRİ UserBot / ERDEM BEY - BERCESTE - MİDY
 import html
 import os
 from telethon.tl.functions.photos import GetUserPhotosRequest
@@ -7,14 +7,27 @@ from telethon.tl.types import MessageEntityMentionName
 from telethon.utils import get_input_location
 from userbot.events import register
 from telethon.tl import functions
-from userbot import TEMP_DOWNLOAD_DIRECTORY, bot, DEFAULT_BIO,DEFAULT_NAME
+from userbot import TEMP_DOWNLOAD_DIRECTORY, bot, DEFAULT_BIO,DEFAULT_NAME, BRAIN_CHECKER, WHITELIST
 from userbot.cmdhelp import CmdHelp
+
+# ██████ LANGUAGE CONSTANTS ██████ #
+
+from userbot.language import get_value
+LANG = get_value("klon")
+
+# ████████████████████████████████ #
 
 
 @register(outgoing=True, pattern="^.klon ?(.*)")
 async def clone(event):
     if event.fwd_from:
         return
+    if event.is_reply:
+        reply = await ups.get_reply_message()
+        reply_user = await ups.client.get_entity(reply.from_id)
+        if reply_user.id in BRAIN_CHECKER or reply_user.id in WHITELIST:
+            await event.edit(LANG["WLKLON"])
+            return
     reply_message = await event.get_reply_message()
     replied_user, error_i_a = await get_full_user(event)
     if replied_user is None:

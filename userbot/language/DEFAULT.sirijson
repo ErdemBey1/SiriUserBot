@@ -115,10 +115,10 @@
             "INVALID_TYPE": "Bilinmeyen tür. Var olan türler: `isim`, `bio`",
             "ALREADY": "`Görünüşe göre %s zaten otomatik olarak değişiyor.`",
             "SETTING": "`%s ayarlanıyor...`",
-            "BIO": "📅 Tarih: {tarih} | ⌚️ Saat: {saat} | ",
+            "BIO": "📆 Tarih: {tarih} | ⏰ Saat: {saat} | ",
             "NICK": "@SiriUserBot",
             "SETTED": "`%s ayarlandı :)`",
-            "NAME": "⏰%s"
+            "NAME": "⌚%s"
         },
 
         "autopp": {

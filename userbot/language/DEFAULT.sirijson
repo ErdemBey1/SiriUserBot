@@ -616,11 +616,11 @@
             "DO_UPDATE": "`Güncellemeyi yapmak için \".update now\" komutunu kullan.`",
             "FORCE_UPDATE": "`Güncel stabil userbot kodu zorla eşitleniyor...`",
             "UPDATING": "`Bot güncelleştiriliyor...`",
-            "INVALID_APPNAME": "✨ 𝚂𝚒𝚛𝚒 𝚄𝚜𝚎𝚛𝚋𝚘𝚝 𝚄𝚙𝚍𝚊𝚝𝚎✨\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n\n🛠️**Hata:** __Güncelleyiciyi kullanabilmek için HEROKU_APPNAME değişkenini tanımlamalısın.__",
+            "INVALID_APPNAME": "✨ 𝚂𝚒𝚛𝚒 𝚄𝚜𝚎𝚛𝚋𝚘𝚝 𝚄𝚙𝚍𝚊𝚝𝚎✨\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n\n🛠️**Hata:** __Güncelleyiciyi kullanabilmek için HEROKU_APPNAME değişkenini tanımlamalısın.__",
             "INVALID_HEROKU": "{}\n`Heroku değişkenleri yanlış veya eksik tanımlanmış.`",
-            "HEROKU_UPDATING": "✨ 𝚂𝚒𝚛𝚒 𝚄𝚜𝚎𝚛𝚋𝚘𝚝 𝚄𝚙𝚍𝚊𝚝𝚎✨\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n\n❤️**Durum**: __Güncelleniyor..\n💌 UserBot'unuz daha iyi olacağınıza emin olabilirsiniz :) Bu işlem maksimum 10 dakika sürmektedir.__",
+            "HEROKU_UPDATING": "✨ 𝚂𝚒𝚛𝚒 𝚄𝚜𝚎𝚛𝚋𝚘𝚝 𝚄𝚙𝚍𝚊𝚝𝚎✨\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n\n❤️**Durum**: __Güncelleniyor..\n\n💌 UserBot'unuz daha iyi olacağınıza emin olabilirsiniz :) Bu işlem maksimum 10 dakika sürmektedir.__",
             "ERRORS": "Karşılaşılan hatalar burada",
-            "SUCCESSFULLY": "✨ 𝚂𝚒𝚛𝚒 𝚄𝚜𝚎𝚛𝚋𝚘𝚝 𝚄𝚙𝚍𝚊𝚝𝚎✨\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n\n❤️**Durum:** __Güncelleme başarıyla tamamlandı!\nYeniden başlatılıyor...__"
+            "SUCCESSFULLY": "✨ 𝚂𝚒𝚛𝚒 𝚄𝚜𝚎𝚛𝚋𝚘𝚝 𝚄𝚙𝚍𝚊𝚝𝚎✨\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n\n❤️**Durum:** __Güncelleme başarıyla tamamlandı!\n\n🔄 Yeniden başlatılıyor...__"
         },
 
         "upload_download": {

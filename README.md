@@ -6,8 +6,8 @@
   <h1>🇹🇷Ⲋⲓⲅⲓ Ⳙ⳽ⲉⲅⲂⲟⲧ🇺🇲</h1>
 </div>
 <p align="center">
-    ***Siri UserBot, Telegram kullanmanızı kolaylaştıran bir bottur. Tamamen açık kaynaklı ve ücretsizdir.*** <br>
-    ***Siri UserBot is a bot that makes it easy to use Telegram. It is completely open source and free.***
+    𝑆𝑖𝑟𝑖 𝑈𝑠𝑒𝑟𝐵𝑜𝑡, 𝑇𝑒𝑙𝑒𝑔𝑟𝑎𝑚 𝑘𝑢𝑙𝑙𝑎𝑛𝑚𝑎𝑛ı𝑧ı 𝑘𝑜𝑙𝑎𝑦𝑙𝑎𝑠̧𝑡ı𝑟𝑎𝑛 𝑏𝑖𝑟 𝑏𝑜𝑡𝑡𝑢𝑟. 𝑇𝑎𝑚𝑎𝑚𝑒𝑛 𝑎𝑐̧ı𝑘 𝑘𝑎𝑦𝑛𝑎𝑘𝑙ı 𝑣𝑒 𝑢̈𝑐𝑟𝑒𝑡𝑠𝑖𝑧𝑑𝑖𝑟. <br>
+    𝑆𝑖𝑟𝑖 𝑈𝑠𝑒𝑟𝐵𝑜𝑡 𝑖𝑠 𝑎 𝑏𝑜𝑡 𝑡ℎ𝑎𝑡 𝑚𝑎𝑘𝑒𝑠 𝑖𝑡 𝑒𝑎𝑠𝑦 𝑡𝑜 𝑢𝑠𝑒 𝑇𝑒𝑙𝑒𝑔𝑟𝑎𝑚. 𝐼𝑡 𝑖𝑠 𝑐𝑜𝑚𝑝𝑙𝑒𝑡𝑒𝑙𝑦 𝑜𝑝𝑒𝑛 𝑠𝑜𝑢𝑟𝑐𝑒 𝑎𝑛𝑑 𝑓𝑟𝑒𝑒.
     <br>
         <a href="https://github.com/ErdemBey1/SiriUserBot/blob/master/README.md#kurulum">| Kurulum/Setup</a> |
         <a href="https://github.com/ErdemBey1/SiriUserBot/wiki/G%C3%BCncelleme">Güncelleme/Update</a> |

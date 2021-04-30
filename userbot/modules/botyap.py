@@ -7,6 +7,14 @@ from telethon.errors.rpcerrorlist import YouBlockedUserError
 from userbot.events import register
 from userbot.cmdhelp import CmdHelp
 
+# ██████ LANGUAGE CONSTANTS ██████ #
+
+from userbot.language import get_value
+LANG = get_value("botfather")
+
+# ████████████████████████████████ #
+
+
 chat = "@BotFather"
 
 @register(outgoing=True, pattern="^.newbot ?(.*)")
@@ -17,7 +25,7 @@ async def _(event):
         text, username= event.pattern_match.group(1).split()
         
     else:
-        await event.edit("`Sirinin Botu Oluşturması İçin Eksik Bilgi Verme Lütfen!!`")
+        await event.edit(LANG["ERROR"])
         return
 
     async with event.client.conversation(chat) as conv:

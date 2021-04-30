@@ -6,19 +6,19 @@
   <h1>Ⲋⲓⲅⲓ Ⳙ⳽ⲉⲅⲂⲟⲧ</h1>
 </div>
 <p align="center">
-    Siri UserBot, Telegram kullanmanızı kolaylaştıran bir bottur. Tamamen açık kaynaklı ve ücretsizdir.
+    Siri UserBot, Telegram kullanmanızı kolaylaştıran bir bottur. Tamamen açık kaynaklı ve ücretsizdir. <br>
+    Siri UserBot is a bot that makes it easy to use Telegram. It is completely open source and free.
     <br>
-        <a href="https://github.com/ErdemBey1/SiriUserBot/blob/master/README.md#kurulum">| Kurulum</a> |
-        <a href="https://github.com/ErdemBey1/SiriUserBot/wiki/G%C3%BCncelleme">Güncelleme</a> |
-        <a href="https://t.me/SiriUserBot">Telegram Kanalı</a> |
-        <a href="https://t.me/SiriSupport">Support</a> |
+        <a href="https://github.com/ErdemBey1/SiriUserBot/blob/master/README.md#kurulum">| Kurulum/Setup</a> |
+        <a href="https://github.com/ErdemBey1/SiriUserBot/wiki/G%C3%BCncelleme">Güncelleme/Update</a> |
+        <a href="https://t.me/SiriUserBot">Telegram </a> |
+        <a href="https://t.me/SiriSupport">Destek/Support</a> |
     <br>
 </p>
 
 ----
 
-## Kurulum
-### Çok Basit Yöntem
+## Kurulum / Setup
 
 **Android:** Termuxu açın ve bu kodu yapıştırın:
 

@@ -111,11 +111,11 @@ async def fetch_info(chat, event):
     username = chat_obj_info.username if hasattr(chat_obj_info, "username") else None
     bots_list = chat.full_chat.bot_info  # this is a list
     bots = 0
-    supergroup = "<b>Evet</b>" if hasattr(chat_obj_info, "megagroup") and chat_obj_info.megagroup else "No"
-    slowmode = "<b>Evet</b>" if hasattr(chat_obj_info, "slowmode_enabled") and chat_obj_info.slowmode_enabled else "No"
+    supergroup = "✅" if hasattr(chat_obj_info, "megagroup") and chat_obj_info.megagroup else "❎"
+    slowmode = "✅" if hasattr(chat_obj_info, "slowmode_enabled") and chat_obj_info.slowmode_enabled else "❎"
     slowmode_time = chat.full_chat.slowmode_seconds if hasattr(chat_obj_info, "slowmode_enabled") and chat_obj_info.slowmode_enabled else None
-    restricted = "<b>Evet</b>" if hasattr(chat_obj_info, "restricted") and chat_obj_info.restricted else "No"
-    verified = "<b>Evet</b>" if hasattr(chat_obj_info, "verified") and chat_obj_info.verified else "No"
+    restricted = "✅" if hasattr(chat_obj_info, "restricted") and chat_obj_info.restricted else "❎"
+    verified = "✅" if hasattr(chat_obj_info, "verified") and chat_obj_info.verified else "❎"
     username = "@{}".format(username) if username else None
     creator_username = "@{}".format(creator_username) if creator_username else None
     #end of spaghetti block
@@ -132,7 +132,7 @@ async def fetch_info(chat, event):
         for bot in bots_list:
             bots += 1
 
-    caption = f"<b>{LANG["IST"]}</b>\n"
+    caption = f'<b>{LANG["IST"]}</b>\n'
     caption += f"🆔: <code>{chat_obj_info.id}</code>\n"
     if messages_viewable is not None:
         caption += f'{LANG["GOR"]}: <code>{messages_viewable}</code>\n'

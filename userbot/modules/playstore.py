@@ -18,7 +18,7 @@ async def play_store(message):
         await message.edit(LANG["SEARCH"])
         app_name = message.pattern_match.group(1)
         if len(app_name) < 1:
-            await message.edit(f"`{LANG["EKS"]} : ``.playstore Telegram`")
+            await message.edit(f'`{LANG["EKS"]} : ``.playstore Telegram`')
             return
             
         remove_siri = app_name.split(' ')
@@ -37,12 +37,12 @@ async def play_store(message):
         app_icon = results[0].findNext('div', 'Vpfmgd').findNext('div', 'uzcko').img['data-src']
         app_details = "<a href='" + app_icon + "'>📲&#8203;</a>"
         app_details += " <b>" + app_name + "</b>"
-        app_details += f"\n\n<code>{LANG["SAHP"]}</code> <a href='" + app_dev_link + "'>"
+        app_details += f'\n\n<code>{LANG["SAHP"]}</code> <a href='" + app_dev_link + "'>'
         app_details += app_dev + "</a>"
-        app_details += f"\n<code>{LANG["PUAN"]}</code> " + app_rating.replace(
+        app_details += f'\n<code>{LANG["PUAN"]}</code> ' + app_rating.replace(
             "Rated ", "").replace(" out of ", "/").replace(
                 " stars", "", 1).replace(" stars", "⭐️").replace("five", "5")
-        app_details += f"\n<code>{LANG["OZLLK"]}</code> <a href='" + app_link + "'>Google Play'da göster</a>"
+        app_details += f"\n<code>{LANG['OZLLK']}</code> <a href='" + app_link + "'>Google Play'da göster</a>"
         await message.edit(app_details, parse_mode='html')
     except IndexError:
         await message.edit(LANG["NOT_FOUND"])

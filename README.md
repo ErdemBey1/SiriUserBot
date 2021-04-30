@@ -44,7 +44,7 @@
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/ErdemBey1/SiriUserBot)
 
-## 🇹🇷Bilgilendirme / İnformation🇹🇷
+## 🇹🇷 Bilgilendirme / İnformation 🇺🇲
 Herhangi bir istek & şikâyet & öneri varsa [destek grubuna](https://t.me/SiriSupport) ulaşabilirsiniz.
 
 ```

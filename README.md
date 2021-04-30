@@ -42,8 +42,9 @@
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/ErdemBey1/SiriUserBot)
 
 ## 🇹🇷 Bilgilendirme / İnformation 🇺🇲
-***Herhangi bir istek & şikâyet & öneri varsa [destek grubuna](https://t.me/SiriSupport) ulaşabilirsiniz.
-You can reach the [support group](https://t.me/SiriSupport) if there are any requests & complaints & suggestions.
+***Herhangi bir istek & şikâyet & öneri varsa [destek grubuna](https://t.me/SiriSupport) ulaşabilirsiniz.***
+
+***You can reach the [support group](https://t.me/SiriSupport) if there are any requests & complaints & suggestions.***
 ```
     Userbottan dolayı; Telegram hesabınız yasaklanabilir.
     Bu bir açık kaynaklı projedir, yaptığınız her işlemden kendiniz sorumlusunuz. Kesinlikle Siri yöneticileri sorumluluk kabul etmemektedir.

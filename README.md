@@ -2,7 +2,7 @@
 ----
 
 <div align="center">
-  <img src="https://gitlab.com/ErdemBey1/siri/raw/master/IMG_20210212_012609_969.jpg" width="300" height="300">
+  <img src="https://github.com/ErdemBey1/SiriNewInstaller/blob/main/SiriLogo.jpg" width="300" height="300">
   <h1>Siri UserBot</h1>
 </div>
 <p align="center">

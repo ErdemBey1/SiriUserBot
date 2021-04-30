@@ -114,10 +114,10 @@
             "INVALID_TYPE": "Naməlum növ. Mövcud növlər: `isim`, `bio`",
             "ALREADY": "`Hazırda %s onsuzda avtomatik olaraq dəyişir.`",
             "SETTING": "`%s nizamlanır...`",
-            "BIO": "📅 Tarix: {tarih} | ⌚️ Saat: {saat} | ",
+            "BIO": "📆 Tarix: {tarih} | ⏰ Saat: {saat} | ",
             "NICK": "@SiriUserBot",
             "SETTED": "`%s nizamlandı :)`",
-            "NAME": "⏰%s"
+            "NAME": "⌚%s"
         },
 
         "autopp": {
@@ -618,11 +618,11 @@
             "DO_UPDATE": "`Güncəllənməni etmək üçün \".update now\" komandasını istifadə edin.`",
             "FORCE_UPDATE": "`Cari sabit istifadəçi bot kodu zorla sinxronizasiya olunur...`",
             "UPDATING": "`Bot yenilənir...`",
-            "INVALID_APPNAME": "`[HEROKU UPDATER] Güncəlləmədən istifadə etmək üçün HEROKU_APPNAME dəyişənini təyin etməlisiniz.`",
+            "INVALID_APPNAME": "✨ 𝚂𝚒𝚛𝚒 𝚄𝚜𝚎𝚛𝚋𝚘𝚝 𝚄𝚙𝚍𝚊𝚝𝚎✨\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n\n🛠️**Xəta:** __Güncəlləmədən istifadə etmək üçün HEROKU_APPNAME dəyişənini təyin etməlisiniz.__",
             "INVALID_HEROKU": "{}\n`Heroku dəyişənləri səhv və ya müəyyənləşdirilmişdir.`",
-            "HEROKU_UPDATING": "`[HEROKU UPDATER]\nUserBot-unuzun daha yaxşı olacağına əmin ola bilərsiniz :) Bu müddət maksimum 10 dəqiqə çəkir.`",
+            "HEROKU_UPDATING": "✨ 𝚂𝚒𝚛𝚒 𝚄𝚜𝚎𝚛𝚋𝚘𝚝 𝚄𝚙𝚍𝚊𝚝𝚎✨\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n\n❤️**Durum:** __Yenilənir..\n💌 UserBot-unuzun daha yaxşı olacağına əmin ola bilərsiniz :) Bu müddət maksimum 10 dəqiqə çəkir.__",
             "ERRORS": "Qarşılaşdığımız səhflər bunlardır",
-            "SUCCESSFULLY": "`Yeniləmə uğurla başa çatdı! \n Yenidən yüklənir ...`"
+            "SUCCESSFULLY": "✨ 𝚂𝚒𝚛𝚒 𝚄𝚜𝚎𝚛𝚋𝚘𝚝 𝚄𝚙𝚍𝚊𝚝𝚎✨\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n\n❤️**Durum:** __Yeniləmə uğurla başa çatdı! \n Yenidən yüklənir ...__"
         },
 
         "upload_download": {

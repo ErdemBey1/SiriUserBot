@@ -3,7 +3,7 @@
 
 <div align="center">
   <img src="https://github.com/ErdemBey1/SiriNewInstaller/blob/main/SiriLogo.jpg" width="300" height="300">
-  <h1>🇹🇷Ⲋⲓⲅⲓ Ⳙ⳽ⲉⲅⲂⲟⲧ🇺🇲</h1>
+  <h1>🇹🇷 Ⲋⲓⲅⲓ Ⳙ⳽ⲉⲅⲂⲟⲧ 🇺🇲</h1>
 </div>
 <p align="center">
     𝑆𝑖𝑟𝑖 𝑈𝑠𝑒𝑟𝐵𝑜𝑡, 𝑇𝑒𝑙𝑒𝑔𝑟𝑎𝑚 𝑘𝑢𝑙𝑙𝑎𝑛𝑚𝑎𝑛ı𝑧ı 𝑘𝑜𝑙𝑎𝑦𝑙𝑎𝑠̧𝑡ı𝑟𝑎𝑛 𝑏𝑖𝑟 𝑏𝑜𝑡𝑡𝑢𝑟. 𝑇𝑎𝑚𝑎𝑚𝑒𝑛 𝑎𝑐̧ı𝑘 𝑘𝑎𝑦𝑛𝑎𝑘𝑙ı 𝑣𝑒 𝑢̈𝑐𝑟𝑒𝑡𝑠𝑖𝑧𝑑𝑖𝑟. <br>

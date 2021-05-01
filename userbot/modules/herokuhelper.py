@@ -20,6 +20,7 @@ from userbot import (
 
 from userbot.events import register
 from userbot.cmdhelp import CmdHelp
+from telethon.errors.rpcerrorlist import PeerIdInvalidError # Botlog grubundan çıktıysa
 
 heroku_api = "https://api.heroku.com"
 if HEROKU_APPNAME is not None and HEROKU_APIKEY is not None:
@@ -30,7 +31,7 @@ else:
     app = None
 
 
-"""Config Vars dəyəri əlavə edin və ya silin..."""
+"""Config Vars değeri ilave edin veya silin..."""
 
 
 @register(outgoing=True,
@@ -42,7 +43,7 @@ async def variable(var):
                        "\n**HEROKU_APPNAME** Yükleyin.")
         return False
     if exe == "get":
-        await var.edit("`Heroku Bilgileri Getiriliyor..`")
+        await var.edit("`🔄 Heroku Bilgileri Getiriliyor..`")
         variable = var.pattern_match.group(2)
         if variable != '':
             if variable in heroku_var:
@@ -101,23 +102,35 @@ async def set_var(var):
     await var.edit("`🔄 Verilenler Herokuya Yazılıyor...`")
     variable = var.pattern_match.group(1)
     value = var.pattern_match.group(2)
+    fix = False
     if variable in heroku_var:
-        if BOTLOG:
-            await var.client.send_message(
-                BOTLOG_CHATID, "#SETCONFIGVAR\n\n"
-                "**ConfigVar Değişikliği**:\n"
-                f"`{variable}` = `{value}`"
-            )
-        await var.edit("`Veriler Yazıldı!`")
+        try:
+            if BOTLOG:
+                await var.client.send_message(
+                    BOTLOG_CHATID, "#SETCONFIGVAR\n\n"
+                    "**ConfigVar Değişikliği**:\n"
+                    f"`{variable}` = `{value}`"
+                )
+            await var.edit("`Veriler Yazıldı!`")
+        except PeerIdInvalidError:
+             fix = True
+             await var.edit("😒 Botlog grubundan çıkmışsın.. Senin için düzeltiyorum..")
     else:
-        if BOTLOG:
-            await var.client.send_message(
-                BOTLOG_CHATID, "#ADDCONFIGVAR\n\n"
-                "**Yeni ConfigVar Eklendi**:\n"
-                f"`{variable}` = `{value}`"
-            )
-        await var.edit("`Veriler Yazıldı!`")
-    heroku_var[variable] = value
+        try:
+            if BOTLOG:
+                await var.client.send_message(
+                    BOTLOG_CHATID, "#ADDCONFIGVAR\n\n"
+                    "**Yeni ConfigVar Eklendi**:\n"
+                    f"`{variable}` = `{value}`"
+                )
+            await var.edit("`Veriler Yazıldı!`")
+        except PeerIdInvalidError:
+            fix = True
+            await var.edit("😒 Botlog grubundan çıkmışsın.. Senin için düzeltiyorum..")
+    if fix:
+        heroku_var["BOTLOG"] = "False"
+    else:
+        heroku_var[variable] = value
 
 
 @register(incoming=True, from_users=ASISTAN, pattern="^.setvar (\w*) ([\s\S]*)")
@@ -133,6 +146,7 @@ async def asistansetvar(ups):
             dgs = dg.split(":")
             variable = dgs[0]
             value = dgs[1]
+            heroku_var[variable] = value
             if variable in heroku_var:
                 if BOTLOG:
                     await ups.client.send_message(
@@ -147,7 +161,6 @@ async def asistansetvar(ups):
                         "**Yeni ConfigVar Eklendi**:\n"
                         f"`{variable}` = `{value}`"
                     )
-            heroku_var[variable] = value
             await usp.edit("`⚙️ Asistandan alınan veriler herokuya aktarıldı!`")
         else:
             return
@@ -205,11 +218,11 @@ async def dyno_usage(dyno):
 
     return await dyno.edit("**✨ Kalan Dyno**:\n\n"
                            f" 👉🏻 `Kullanılan Dyno Saati`  **({HEROKU_APPNAME})**:\n"
-                           f"     ⏰  `{AppHours}` **saat**  `{AppMinutes}` **dakika**  "
+                           f"     ⌛  `{AppHours}` **saat**  `{AppMinutes}` **dakika**  "
                            f"**|**  [`{AppPercentage}` **%**]"
                            "\n"
                            " 👉🏻 `Bu ay için kalan dyno saati`:\n"
-                           f"     ⏰  `{hours}` **saat**  `{minutes}` **dakika**  "
+                           f"     ⌛  `{hours}` **saat**  `{minutes}` **dakika**  "
                            f"**|**  [`{percentage}` **%**]"
                            )
 
@@ -244,4 +257,6 @@ CmdHelp('heroku').add_command(
         'del var', None, 'del var <Var adı> Seçdiğiniz ConfigVarı siler sildikten sonra botunuza .restart atın.'
     ).add_command(
         'log', None, 'Heroku logunuza bakın'
+    ).add_info(
+        '**Botlog grubundan çıktıysanız sizin yerinize düzeltmesi için** `.set var BOTLOG False` **yazın.. ✨ Thx to @bberc**'
     ).add()

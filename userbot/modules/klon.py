@@ -23,8 +23,8 @@ async def clone(event):
     if event.fwd_from:
         return
     if event.is_reply:
-        reply = await ups.get_reply_message()
-        reply_user = await ups.client.get_entity(reply.from_id)
+        reply = await event.get_reply_message()
+        reply_user = await event.client.get_entity(reply.from_id)
         if reply_user.id in BRAIN_CHECKER or reply_user.id in WHITELIST:
             await event.edit(LANG["WLKLON"])
             return

@@ -1,5 +1,4 @@
-# Faster & Secure & Special Container #
-# Thanks to mkaraniya & zakaryan2004
+# ÜÇ YAZILIMCI BİNDİK BİR GEMİYE GİDİYORUZ İLERİYE
 FROM siriuserbot/siriuserbot:latest
 RUN git clone https://github.com/ErdemBey1/SiriUserBot /root/SiriUserBot
 WORKDIR /root/SiriUserBot/

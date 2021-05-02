@@ -219,7 +219,7 @@
             "CANT_DEEPFRY":"`I can't deepfry this!`",
             "REPLY_PHOTO":"`Answer a picture or sticker for me to deepfry!`",
             "MEDIA_DOWNLOADING":"`Media downloading...`",
-			"APPLYING_DEEPFRY":"`Deepfry is applied to the media...`"
+	    "APPLYING_DEEPFRY":"`Deepfry is applied to the media...`"
         },
 
         "dogbin": {

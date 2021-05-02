@@ -26,9 +26,9 @@ async def _(event):
         spamdurumu = await conv.get_response()
         await event.delete()
         await event.client.send_read_acknowledge(conv.chat_id)
-        if response.text.startswith("Dear"):
+        if spamdurumu.text.startswith("Dear"):
             await event.client.forward_messages(event.chat_id, spamdurumu)
-        elif response.text.startswith("Good news"):
+        elif spamdurumu.text.startswith("Good news"):
             await event.edit(LANG["BIRD"])
         else:
             await event.client.forward_messages(event.chat_id, spamdurumu)

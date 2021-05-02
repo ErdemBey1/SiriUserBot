@@ -560,6 +560,11 @@
             "NOT_FOUND_PL": "`Aradığınız playlist bulunamadı! Üzgünüm.`"
         },
 
+        "spaminfo": {
+            "BIRD": "`✅ Bir kuş kadar özgürsün!`"
+        },
+
+
         "spotify": {
             "BIO_ENABLED": "`Spotify plugini aktif. Spotify'da dinlediğiniz şarkılar biyografinize yazılacak.`",
             "BIO_DISABLED": "`Spotify plugini devre dışı. Biyografi orijinal haline döndü.`",

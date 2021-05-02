@@ -161,6 +161,10 @@
             "GOND": "`📉 Göndərilən mesajlar`"
         },
 
+        "spaminfo": {
+            "BIRD": "`✅ Bir quş qədər azadsan!`"
+        },
+
 
         "cevir": {
             "INVALID_COMMAND": "**Bilinməyən komanda!** `İstifadəsi: .çevir foto/ses/gif`",

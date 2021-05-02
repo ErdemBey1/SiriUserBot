@@ -4,7 +4,7 @@
 # you may not use this file except in compliance with the License.
 #
 
-# SiriUserBot - ErdemBey - Midy
+# SiriUserBot - ErdemBey - Berceste - Midy
 
 
 import asyncio
@@ -30,11 +30,13 @@ async def tmeme(e):
                 "TSpam başarıyla gerçekleştirildi"
                 )
 
-@register(outgoing=True, pattern="^.spam(?: |$)(.*)")
+@register(outgoing=True, pattern="^.spam")
 async def spammer(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
-        counter = e.pattern_match.group(1)
-        spam_message = e.pattern_match.group(2)
+        message = e.text
+        messageSplit = message.split(" ", 2)
+        counter = int(messageSplit[1])
+        spam_message = str(messageSplit[2])
         await asyncio.wait([e.respond(spam_message) for i in range(counter)])
         await e.delete()
         if BOTLOG:

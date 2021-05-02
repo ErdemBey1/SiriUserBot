@@ -149,6 +149,14 @@
         },
 
 
+
+        "spaminfo": {
+            "BIRD": "`✅ Bir kuş kadar özgürsün!`"
+        },
+
+
+
+
         "blacklist": {
             "FORBIDDEN_KUFUR": "**Bu grupta mesaj silme yetkim yok. Küfür filtresi devre dışı.**",
             "HAVENT_PERMISSION": "Mesaj silme yetkim yok!",

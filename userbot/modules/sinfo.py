@@ -13,7 +13,7 @@ LANG = get_value("spaminfo")
 # ████████████████████████████████ #
 
 
-@register(outgoing=True, pattern=r"^.spaminfo")
+@register(outgoing=True, pattern=r"^.sinfo")
 async def _(event):
     await event.edit("🔄")
     chat = "@spambot"
@@ -24,14 +24,15 @@ async def _(event):
             await event.client(UnblockRequest(178220800))
             await conv.send_message("/start")
         spamdurumu = await conv.get_response()
-        await event.delete()
         await event.client.send_read_acknowledge(conv.chat_id)
         if spamdurumu.text.startswith("Dear"):
             await event.client.forward_messages(event.chat_id, spamdurumu)
+            await event.delete()
         elif spamdurumu.text.startswith("Good news"):
             await event.edit(LANG["BIRD"])
         else:
             await event.client.forward_messages(event.chat_id, spamdurumu)
+            await event.delete()
 
 
 

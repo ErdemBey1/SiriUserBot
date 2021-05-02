@@ -30,7 +30,7 @@ async def tmeme(e):
                 "TSpam başarıyla gerçekleştirildi"
                 )
 
-@register(outgoing=True, pattern="^.spam")
+@register(outgoing=True, pattern="^.spam$")
 async def spammer(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         message = e.text

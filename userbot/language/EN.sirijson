@@ -148,10 +148,6 @@
             "GOND": "`📉 Messages sent`"
         },
 
-        "spaminfo": {
-            "BIRD": "`✅ You’re free as a bird!`"
-        },
-
 
         "blacklist": {
             "FORBIDDEN_KUFUR": "**I am not authorized to delete messages in this group. Profanity filter disabled.**",
@@ -248,18 +244,18 @@
         "durum": {
             "VERSION": "Version",
             "PLUGIN_COUNT": "Number of Plugins",
-            "PERMAMENT": "Kalıcı",
+            "PERMAMENT": "Permanent",
             "PLUGINS": "Plugins",
             "OK": "Everything is normal"
         },
 
         "evaluators": {
-            "FORBIDDEN_IN_CHANNEL": "`Bu komut kanallarda izin verilmiyor`",
-            "NEED_CODE": "`Değerlendirmek için bir ifade verin.`",
-            "WARNING": "`Bu tehlikeli bir operasyon! Onaylanmadı!`",
-            "BIG_FILE": "`Çıktı çok büyük, dosya olarak gönderiliyor`",
-            "QUERY": "Sorgu",
-            "RESULT": "Sonuç",
+            "FORBIDDEN_IN_CHANNEL": "`This command is not allowed on channels`",
+            "NEED_CODE": "`Give a statement to evaluate.`",
+            "WARNING": "`This is a dangerous operation! Not approved!`",
+            "BIG_FILE": "`The output is too large, sending as a file`",
+            "QUERY": "Query",
+            "RESULT": "Result",
             "EMPTY_RESULT": "Sonuç döndürülemedi / Yanlış",
             "ERROR": "İstisna"
         },
@@ -318,8 +314,8 @@
         },
 
         "kyolla": {
-            "REPLY_MESSAGE": "`Lütfen bir mesaja yanıt verin.`",
-            "SUCCESSFUL": "`Siri Mesajı Kayıtlı Mesajlar Bölümüne Yolladı!`"
+            "REPLY_MESSAGE": "`Please respond to a message.`",
+            "SUCCESSFUL": "`Siri Sent Message to Recorded Messages Section!`"
         },
 
         "lastfm": {
@@ -361,46 +357,46 @@
         },
 
         "locks":{
-		    "EVERYTHING_LOCK": "`Hiçliği kilitleyemem dostum!`",
-			"INVALID_MEDIA_TYPE": "`Geçersiz medya tipi: %s`",
-			"LOCK": "`%s bu sohbet için kilitlendi`",
-			"INVALID_AUTHORITY": "`Bunun için gerekli haklara sahip olduğuna emin misin?`\n**Hata:**",
-			"EVERYTHING_UNLOCK": "`Hiçliği kilidini açamam!`",
-			"UNLOCK": "`Bu sohbet için %s kilidi açıldı`"
+		    "EVERYTHING_LOCK": "`I can't lock the nothing my friend!`",
+			"INVALID_MEDIA_TYPE": "`Invalid media type:: %s`",
+			"LOCK": "`%s locked for this chat `",
+			"INVALID_AUTHORITY": "`Are you sure you have the rights to do this?`\n**Error:**",
+			"EVERYTHING_UNLOCK": "`I can't unlock the void!`",
+			"UNLOCK": "`%s unlocked for this chat`"
         },
 
         "misc": {
-            "REPLY_TO_FILE": "`Bir dosyaya yanıt ver.`",
-            "QUERY": "Sorgu",
-            "RESULT": "Çıktı",
-            "NEED_MUCH_DATA_FOR_RANDOM": "`2 veya daha fazla eşya gerekli. Daha fazla bilgi için .siri random komutunu gir.`",
-            "SLEEP_DESC": "Kullanım Şekli: `.sleep [saniye]`",
-            "SLEEPING": "`Horlayarak uyuyorum...`",
-            "GOODMORNIN_YALL": "`Günaydın!`",
-            "GOODBYE_MFRS": "`Görüşürüz... *Windows XP kapanma sesi*`",
-            "RESTARTING": "`Bot yeniden başlatılıyor...`",
-            "SUPPORT_GROUP": "[Buradan](http://t.me/SiriSupport) destek grubumuza ulaşabilirsiniz.",
-            "CREATOR": "Bu bot \n @orgutsahibi , @ixelizm ve @bberc tarafından geliştirilmiştir. \n",
+            "REPLY_TO_FILE": "`Respond to a file.`",
+            "QUERY": "Query",
+            "RESULT": "Output",
+            "NEED_MUCH_DATA_FOR_RANDOM": "`2 or more items required. Enter the command .siri random for more information.`",
+            "SLEEP_DESC": "Usage: `.sleep [second]`",
+            "SLEEPING": "`I'm sleeping with snoring...`",
+            "GOODMORNIN_YALL": "`Good Morning!`",
+            "GOODBYE_MFRS": "`See you... *Windows XP closing sound *`",
+            "RESTARTING": "`Bot restarting...`",
+            "SUPPORT_GROUP": "[From here](http://t.me/SiriSupport) You can reach our support group.",
+            "CREATOR": "developed by \n @orgutsahibi , @ixelizm and @bberc. \n",
             "README": "[Siri README.md](https://github.com/ErdemBey1/SiriUserBot/blob/master/README.md)",
             "REPO": "[Siri Repo](https://github.com/ErdemBey1/siriuserbot)",
-            "CHECK_LOGS": "`Çözülmüş mesaj için userbot loglarını kontrol et!`"
+            "CHECK_LOGS": "`Check userbot logs for message solved!`"
         },
 
         "notes": {
-            "NOT_FOUND": "`Bu sohbette kaydedilmiş not bulunamadı`",
-            "NOTES": "Bu sohbette kayıtlı notlar",
-            "CLEAR_NOT_FOUND": "notu bulunamadı",
-            "CLEAR": "notu başarıyla silindi",
-            "SUCCESS": "Not başarıyla",
-            "UPDATED": "güncellendi",
-            "ADDED": "eklendi",
-            "CALL": "komutuyla notu çağırabilirsiniz"
+            "NOT_FOUND": "`No notes found in this chat`",
+            "NOTES": "Notes recorded in this chat",
+            "CLEAR_NOT_FOUND": "note not found",
+            "CLEAR": "note successfully deleted",
+            "SUCCESS": "Note successfully",
+            "UPDATED": "updated",
+            "ADDED": "added",
+            "CALL": "You can call the note with the command"
         },
 
         "ocr": {
             "READING": "`Reading...`",
             "CANT_READ": "`I couldn't read this.`\n`I think I need new glasses.`",
-            "READ": "İşte okuyabildiğim şey:"
+            "READ": "Here is what I can read:"
         },
 
         "playstore": {

@@ -216,37 +216,37 @@
         },
 
         "deepfry":{
-            "CANT_DEEPFRY":"`Bunu deepfry yapamam!`",
-            "REPLY_PHOTO":"`Deepfry yapmam için bir resme veya çıkartmaya cevap verin!`",
-            "MEDIA_DOWNLOADING":"`Medya indiriliyor...`",
-			"APPLYING_DEEPFRY":"`Medyaya deepfry uygulanıyor...`"
+            "CANT_DEEPFRY":"`I can't deepfry this!`",
+            "REPLY_PHOTO":"`Answer a picture or sticker for me to deepfry!`",
+            "MEDIA_DOWNLOADING":"`Media downloading...`",
+			"APPLYING_DEEPFRY":"`Deepfry is applied to the media...`"
         },
 
         "dogbin": {
-            "ELON_SAYS": "`Elon Musk boşluğu yapıştıramayacağımı söyledi.`",
-            "PASTING": "Metin yapıştırılıyor . . .",
-            "PASTED": "Başarıyla yapıştırıldı!",
-            "URL": "Kısaltılmış URL:",
-            "ORG_URL": "Orijinal (kısaltılmamış) URL",
+            "ELON_SAYS": "`Elon Musk said I can't glue the blank.`",
+            "PASTING": "Text pasting...",
+            "PASTED": "Successfully affixed!",
+            "URL": "Abbreviated URL:",
+            "ORG_URL": "Original (not abbreviated) URL",
             "DOGBIN_URL": "Dogbin URL",
             "URL_BUT_ENG": "Pasted successfully!",
-            "DOGBIN_NOT_RESPOND": "Dogbine ulaşılamadı",
-            "BOTLOG_SENDING": "Dogbine metin yapıştırma başarıyla yürütüldü",
-            "DATA_CHECKING": "`Dogbin içeriği alınıyor...`",
-            "UNSUPPORTED_URL": "`Bu bir dogbin adresi mi?`",
-            "HTTP_ERROR": "İstek başarısız bir durum kodu döndürdü.",
-            "TIMEOUT": "İstek zaman aşımına uğradı.",
-            "TOO_MANY_REDIRECTS": "İstek, yapılandırılmış en fazla yönlendirme sayısını aştı.",
-            "DOGBIN_DATA": "`Dogbin URL içeriği başarıyla getirildi!`\n\n`İçerik:`",
-            "DOGBIN_ENDED": "Dogbin içerik aktarma başarıyla yürütüldü"
+            "DOGBIN_NOT_RESPOND": "Dogbine could not be reached",
+            "BOTLOG_SENDING": "Dogbine text paste has been executed successfully",
+            "DATA_CHECKING": "`Getting Dogbin content...`",
+            "UNSUPPORTED_URL": "`Is this a dog's address?`",
+            "HTTP_ERROR": "The request returned a failed status code.",
+            "TIMEOUT": "The request timed out.",
+            "TOO_MANY_REDIRECTS": "Request exceeded the maximum configured redirects.",
+            "DOGBIN_DATA": "`Dogbin URL content fetched successfully!`\n\n`İçerik:`",
+            "DOGBIN_ENDED": "Dogbin content import executed successfully."
         },
 
         "durum": {
-            "VERSION": "Sürümü",
-            "PLUGIN_COUNT": "Plugin Sayısı",
+            "VERSION": "Version",
+            "PLUGIN_COUNT": "Number of Plugins",
             "PERMAMENT": "Kalıcı",
-            "PLUGINS": "Pluginler",
-            "OK": "Her Şey Normal"
+            "PLUGINS": "Plugins",
+            "OK": "Everything is normal"
         },
 
         "evaluators": {
@@ -394,60 +394,60 @@
         },
 
         "ocr": {
-            "READING": "`Okunuyor...`",
-            "CANT_READ": "`Bunu okuyamadım.`\n`Sanırım yeni gözlüklere ihtiyacım var.`",
+            "READING": "`Reading...`",
+            "CANT_READ": "`I couldn't read this.`\n`I think I need new glasses.`",
             "READ": "İşte okuyabildiğim şey:"
         },
 
         "playstore": {
-            "SEARCH": "`🔎Siri Verdiğiniz Program Arıyor..`",
-            "EKS": "`⛔ Lütfen Program adı yazın.. Örnek`",
-            "NOT_FOUND": "`⛔ Verdiğiniz Programı Bulamadım..`",
-            "PUAN": "Puan :",
-            "SAHP": "Sahibi :",
-            "OZLLK": "Özellikler :"
+            "SEARCH": "`🔎Siri Looking For Your Program...`",
+            "EKS": "`⛔ Please write program name... Example`",
+            "NOT_FOUND": "`⛔ I Could Not Find Your Program...`",
+            "PUAN": "Point :",
+            "SAHP": "Owner :",
+            "OZLLK": "Especially :"
         },
 
 
         "pmpermit": {
-            "BLOCKED": "`Sen benim sahibimin PM'ini spamlıyorsun, bu benim hoşuma gitmiyor.`\n`Şu an ENGELLENDIN ve SPAM olarak bildirildin, ileride değişiklik olmadığı sürece..`",
-            "ERROR": "PM sayacı kafayı yemiş gibi, botu lütfen yeniden başlatın.",
-            "BOTLOG_BLOCKED": " kişisi sadece bir hayal kırıklığı idi. PM'ni meşgul ettiği için engellendi.",
-            "NOTIFOFF": "`PM izni olmayan kullanıcıların bildirimleri sessize alındı!`",
-            "NOTIFON": "`PM izni olmayan kullanıcıarın bildirim göndermesine izin verildi!`",
-            "ALREADY": "`Kullanıcı halihazırda PM gönderebiliyor olmalıdır.`",
-            "DISAPPROVE": "kişisinin PM atma izni kaldırıldı.",
-            "UNBLOCKED": "Engelin kaldırıldı."
+            "BLOCKED": "`You spam my owner's PM, that I don't like..`\n`You are currently BLOCKED and reported as SPAM, unless there is a change in the future`",
+            "ERROR": "As the PM counter went nuts, please restart the bot.",
+            "BOTLOG_BLOCKED": " his person was just a disappointment. Blocked for keeping his PM busy.",
+            "NOTIFOFF": "`Notifications of users without PM permission are muted!`",
+            "NOTIFON": "`Users without PM permission allowed to send notifications!`",
+            "ALREADY": "`The user must already be able to send a PM.`",
+            "DISAPPROVE": "PM permission removed from.",
+            "UNBLOCKED": "Your barrier removed."
         },
 
         "profile": {
-            "INVALID_MEDIA": "```Medya geçerli değil.```",
-            "PP_CHANGED": "```Profil resmi başarıyla değiştirildi.```",
-            "PP_TOO_SMOL": "```Bu resim çok küçük, daha büyük bir resim kullanın.```",
-            "PP_ERROR": "```Resim işlenirken bir hata oluştu.```",
-            "BIO_SUCCESS": "```Biyografi başarıyla değiştirildi.```",
+            "INVALID_MEDIA": "```The media is not valid.```",
+            "PP_CHANGED": "```Profile picture has been changed successfully.```",
+            "PP_TOO_SMOL": "```This image is too small, use a larger image.```",
+            "PP_ERROR": "```An error occurred while processing the image.```",
+            "BIO_SUCCESS": "```Biography has been successfully changed.```",
             "NAME_OK": "```Adın başarıyla değiştirildi.```",
-            "USERNAME_SUCCESS": "```Kullanıcı adın başarıyla değiştirildi.```",
-            "USERNAME_TAKEN": "```Kullanıcı adı müsait değil.```",
-            "USERS": "Kullanıcılar",
-            "GROUPS": "Gruplar",
-            "SUPERGROUPS": "Süpergruplar",
-            "CHANNELS": "Kanallar",
-            "BOTS": "Botlar",
-            "DELPFP": "%s adet profil fotoğrafı silindi."
+            "USERNAME_SUCCESS": "```Your username has been successfully changed.```",
+            "USERNAME_TAKEN": "```Username not available.```",
+            "USERS": "Users",
+            "GROUPS": "Groups",
+            "SUPERGROUPS": "Supergroups",
+            "CHANNELS": "Channels",
+            "BOTS": "Bots",
+            "DELPFP": "%s profile pictures deleted."
         },
 
         "purge": {
-            "NEED_MSG": "`Temizlemeye başlamak için bir mesaja ihtiyacım var.`",
-            "PURGED": "`Hızlı temizlik tamamlandı!\n{} tane mesaj silindi.`",
-            "PURGED_ME": "`Temizlik tamamlandı {} tane mesaj silindi.`"
+            "NEED_MSG": "`I need a message to start cleaning.`",
+            "PURGED": "`Fast cleaning is complete!\n{} many messages have been deleted.`",
+            "PURGED_ME": "`Cleaning is complete {} many messages have been deleted.`"
         },
 
         "qrcode": {
-            "ERROR": "`Decode başarısız oldu.`",
-            "TRYING": "**İşleniyor...**",
-            "USAGE": "**Kullanım: **",
-            "TEXT": "eklenecek uzun metin"
+            "ERROR": "`Decode failed.`",
+            "TRYING": "**Processing...**",
+            "USAGE": "**Use: **",
+            "TEXT": "long text to add"
         },
 
         "remove_bg": {

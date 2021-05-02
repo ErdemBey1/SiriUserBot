@@ -105,114 +105,114 @@
         },
 
         "afk": {
-            "REASON": "Sebep",
-            "AFK": "Sahibim şu an AFK.",
-            "IM_AFK": "Artık AFK'yım.",
-            "IM_NOT_AFK": "Artık AFK değilim."
+            "REASON": "Reason",
+            "AFK": "I have now AFK.",
+            "IM_AFK": "I'm AFK now.",
+            "IM_NOT_AFK": "I'm no longer AFK."
         },
 
         "auto": {
-            "INVALID_TYPE": "Bilinmeyen tür. Var olan türler: `isim`, `bio`",
-            "ALREADY": "`Görünüşe göre %s zaten otomatik olarak değişiyor.`",
-            "SETTING": "`%s ayarlanıyor...`",
-            "BIO": "📆 Tarih: {tarih} | ⏰ Saat: {saat} | ",
+            "INVALID_TYPE": "Unknown species. Existing species: `isim`, `bio`",
+            "ALREADY": "`It looks like %s is already changing automatically.`",
+            "SETTING": "`%s adjusting...`",
+            "BIO": "📆 History: {tarih} | ⏰ Hour: {saat} | ",
             "NICK": "@SiriUserBot",
-            "SETTED": "`%s ayarlandı :)`",
+            "SETTED": "`%s has been set :)`",
             "NAME": "⌚%s"
         },
 
         "autopp": {
-            "VIDEO_ALREADY_CHANGING": "`Görünüşe göre profil videonuz zaten otomatik olarak değişiyor.`",
-            "NEED_VIDEO": "`Lütfen bir videoya yanıt verin!`",
-            "SETTING_VIDEO": "`Profil videonuz ayarlanıyor...`",
-            "INVALID_VIDEO": "`Verdiğiniz videoyu profil videosu olarak yükleyemem!`\n\n**İpucu: **`Telegram uygulamanızdan bir videoyu profil videosu yapın ardından onu indirip bana verirseniz autovideo plugini sorunsuz çalışacaktır!`",
-            "STARTED_VIDEO": "`Profil videosu değişmeye başladı :)!`",
-            "PHOTO_ALREADY_CHANGING": "`Görünüşe göre profil fotoğrafınız zaten otomatik olarak değişiyor.`",
-            "SETTING": "`Profil fotoğrafınız ayarlanıyor...`",
-            "SETTED": "`Profil fotoğrafınız ayarlandı :)`"
+            "VIDEO_ALREADY_CHANGING": "`It looks like your profile video is already changing automatically.`",
+            "NEED_VIDEO": "`Please reply to a video!`",
+            "SETTING_VIDEO": "`Setting up your profile video...`",
+            "INVALID_VIDEO": "`I cannot upload your given video as a profile video!`\n\n**Hint: **`Make a profile video from your Telegram app, then download it and give it to me, the autovideo plug-in will work fine.!`",
+            "STARTED_VIDEO": "`Profile video started to change :)!`",
+            "PHOTO_ALREADY_CHANGING": "`It looks like your profile photo is already changing automatically.`",
+            "SETTING": "`Your profile picture is set...`",
+            "SETTED": "`Your profile picture is set :)`"
         },
 
 
         "botfather": {
-            "ERROR": "`⛔ Sirinin Bot Oluşturması İçin Eksik Bilgi Verme Lütfen!`"
+            "ERROR": "`⛔ Please Provide Missing Information for Sirin to Create a Bot!`"
         },
 
         "combot": {
-            "ERR": "`👨🏻‍🔧 Gerçekleşen Hata:`",
-            "ANALIZ": "`🔄 Grup analiz ediliyor...`",
-            "INVALID": "`⛔ Geçersiz Kanal/Grup!`",
-            "ERROR_BAN": "`⛔ Burası gizli grup ve ya buradan ban yedim!`",
-            "NOT_FOUND": "`⛔ Böyle bir süper grup ve ya kanal yok !`",
-            "IST": "`📊 Grup İstatistikleri:`",
-            "GOR": "`📈 Görünen mesajlar`",
-            "GOND": "`📉 Gönderilen mesajlar`"
+            "ERR": "`👨🏻‍🔧 Actual Error:`",
+            "ANALIZ": "`🔄 The group is being analyzed...`",
+            "INVALID": "`⛔ Invalid Channel/Group!`",
+            "ERROR_BAN": "`⛔ This is a secret group or I got banned from here!`",
+            "NOT_FOUND": "`⛔ There is no such super group or channel!`",
+            "IST": "`📊 Group Statistics:`",
+            "GOR": "`📈 Display messages`",
+            "GOND": "`📉 Messages sent`"
         },
 
 
         "blacklist": {
-            "FORBIDDEN_KUFUR": "**Bu grupta mesaj silme yetkim yok. Küfür filtresi devre dışı.**",
-            "HAVENT_PERMISSION": "Mesaj silme yetkim yok!",
-            "USAGE_KUFUR": "`Kullanım: .küfür aç/kapa`",
-            "OPENED_KUFUR": "`Küfür filtresi bu grup için açıldı!`",
-            "CLOSED_KUFUR": "`Küfür filtresi bu grup için kapatıldı!`",
-            "ALREADY_CLOSED_KUFUR": "`Bu grup için küfür filtresi zaten kapalı!`",
-            "ADDED": "adet kelime bu sohbet için karalisteye alındı.",
-            "BLACKLIST": "Bu grup için ayarlanan karaliste:",
-            "NOT_FOUND": "**Karalisteye eklenmiş kelime bulunamadı...** `.addblacklist` **komutu ile ekleyebilirsin.**",
-            "BLACKLIST_FILE": "Bu grup için ayarlanan karaliste:",
-            "REMOVED": "**Kelime karalisteden kaldırıldı.**"
+            "FORBIDDEN_KUFUR": "**I am not authorized to delete messages in this group. Profanity filter disabled.**",
+            "HAVENT_PERMISSION": "I do not have permission to delete messages!",
+            "USAGE_KUFUR": "`Usage: .küfür on / off`",
+            "OPENED_KUFUR": "`Profanity filter turned on for this group!`",
+            "CLOSED_KUFUR": "`Profanity filter turned off for this group!`",
+            "ALREADY_CLOSED_KUFUR": "`The profanity filter is already turned off for this group!`",
+            "ADDED": "Each word has been blacklisted for this conversation.",
+            "BLACKLIST": "The blacklist set for this group:",
+            "NOT_FOUND": "**No words were found in the blacklist....** `.addblacklist` **You can add with the command.**",
+            "BLACKLIST_FILE": "The blacklist set for this group:",
+            "REMOVED": "**The word black has been removed from the list.**"
         },
 
         "cevir": {
-            "INVALID_COMMAND": "**Bilinmeyen komut!** `Kullanım: .çevir foto/ses/gif`",
-            "NEED_REPLY": "Lütfen bir Sticker'a yanıt verin.",
-            "CONVERTING_TO_PHOTO": "Fotoğraf'a çeviriliyor...",
-            "NEED_EFECT": "`Lütfen bir efekt belirtin. Kullanbilecek efektler: ``çocuk/robot/earrape/hızlı/parazit/yankı`",
-            "NEED_SOUND": "`Lütfen bir Ses'e yanıt verin.`",
-            "EFECTING": "`Efekt uygulanıyor...`",
-            "NOT_FOUND_EFECT": "**Belirttiğiniz efekt bulunamadı! **`Kullanılabileceğiniz efektler: ``çocuk/robot/earrape/hızlı/parazit/yankı`",
-            "NEED_VIDEO": "`Lütfen bir videoya yanıt verin!`",
-            "WITH_SIRI":"@SiriUserBot `ile efekt uygulandı.`",
-            "WITH_SIRI_GIF": "@SiriUserBot `ile Gif'e çevirildi.`",
-            "CONVERTING_TO_GIF": "Gif'e çeviriliyor...",
+            "INVALID_COMMAND": "**Unknown command!** `Usage: .çevir foto/ses/gif`",
+            "NEED_REPLY": "Please respond to a Sticker.",
+            "CONVERTING_TO_PHOTO": "Converting to photo...",
+            "NEED_EFECT": "`Please specify an effect. Effects you can use: ``çocuk/robot/earrape/hızlı/parazit/yankı`",
+            "NEED_SOUND": "Lütfen bir Ses'e yanıt verin`.`",
+            "EFECTING": "`The effect is applied...`",
+            "NOT_FOUND_EFECT": "**The effect you specified was not found! **`Effects you can use: ``çocuk/robot/earrape/hızlı/parazit/yankı`",
+            "NEED_VIDEO": "`Please reply to a video!`",
+            "WITH_SIRI":"`Effect applied with` @SiriUserBot .",
+            "WITH_SIRI_GIF": "@SiriUserBot `converted to Gif.`",
+            "CONVERTING_TO_GIF": "Converting to Gif...",
             "UPLOADING_GIF": "`Gif yükleniyor...`",
-            "ERROR": "Gif'e çeviremedim :/"
+            "ERROR": "Couldn't convert to gif :/"
         },
 
         "chat": {
-            "USERNAME": "Kullanıcı Adı:",
-            "ID": "Kullanıcı ID:",
-            "GROUP": "Grup ID:",
-            "NEED_LOG": "`Bu özellik etkin olması için günlük alma açık olmalıdır!`",
-            "UNMUTED": "`Sohbetin sesi açıldı`",
-            "MUTED": "`Sohbet susturuldu!`"
+            "USERNAME": "User name:",
+            "ID": "User ID:",
+            "GROUP": "Group ID:",
+            "NEED_LOG": "`Logging must be turned on for this feature to be enabled!`",
+            "UNMUTED": "`Chat unmuted`",
+            "MUTED": "`Chat is muted!`"
         },
 
         "degistir": {
-            "SETTED_MEDIA": "için medyanız ayarlandı.",
-            "SETTED_REPLY": "için mesajınız ayarlandı.",
-            "SUCCESS_DELETED": "`Plugin mesajı başarıyla silindi.`",
-            "ERROR_DELETED": "Plugin mesajı silinemedi.** Hata",
-            "NOT_FOUND": "**Bilinmeyen plugin.** Mesajını silebileceğiniz pluginler",
-            "USAGE": "**Değiştir, bottaki plugin-mesajlarını değiştirmenize yarar.**\nÖrnek Kullanım: `.değiştir afk \"Şu an burda değilim... Belki hiç gelmem\"`\nPlugin-mesajı silme: `.değiştir afk`\nDeğiştirebileceğiniz plugin-mesajları (şu anlık): `afk/alive/pm/kickme/dızcı/ban/mute/approve/disapprove/block`",
-            "CANNOT_EMPTY": "Plugin mesajı boş olamaz.",
-            "SETTED": "Plugin(`{plu}`) için mesajınız(`{msj}`) ayarlandı."
+            "SETTED_MEDIA": "Your Chinese media is set.",
+            "SETTED_REPLY": "Your message has been set for.",
+            "SUCCESS_DELETED": "`Plugin message has been deleted successfully.`",
+            "ERROR_DELETED": "Plugin mesajı silinemedi.** Error",
+            "NOT_FOUND": "**Unknown plugin.** Plugins you can delete your message",
+            "USAGE": "** Değiştir, Replace allows you to change plugin-messages in the bot.**\nExample Usage: `.değiştir afk \"I'm not here right now... Maybe I'll never come\"`\nPlugin-delete message: `.değiştir afk`\nPlugin-messages you can change (currently): `afk/alive/pm/kickme/dızcı/ban/mute/approve/disapprove/block`",
+            "CANNOT_EMPTY": "Plugin message cannot be blank.",
+            "SETTED": "Plugin(`{plu}`) your message for(`{msj}`) has been set."
         },
 
         "covid19": {
-            "SOME_ERRORS": "`Bir hata oluştu.`",
-            "DATA": "Koronavirüs Verileri",
-            "EARTH":"Dünya geneli",
-            "CASE": "🌎 Vaka:",
-            "DEATH": "🌎 Ölüm:",
-            "HEAL": "🌎 İyileşen:",
+            "SOME_ERRORS": "`Something went wrong.`",
+            "DATA": "Coronavirus Data",
+            "EARTH":"World wide",
+            "CASE": "🌎 Case:",
+            "DEATH": "🌎 Death:",
+            "HEAL": "🌎 Healing:",
             "TR": "Türkiye",
-            "TR_ALL_CASES": "Vaka (toplam):",
-            "TR_CASES": "Vaka (bugün):",
-            "TR_CASE": "Vaka (aktif):",
-            "TR_ALL_DEATHS": "Ölüm (toplam):",
-            "TR_DEATHS": "Ölüm (bugün):",
-            "TR_HEAL": "İyileşen:"
+            "TR_ALL_CASES": "Case (total):",
+            "TR_CASES": "Case (today):",
+            "TR_CASE": "Case (active):",
+            "TR_ALL_DEATHS": "Death (total):",
+            "TR_DEATHS": "Death (today):",
+            "TR_HEAL": "Healing:"
         },
 
         "deepfry":{

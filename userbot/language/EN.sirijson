@@ -148,6 +148,10 @@
             "GOND": "`📉 Messages sent`"
         },
 
+        "spaminfo": {
+            "BIRD": "`✅ You’re free as a bird!`"
+        },
+
 
         "blacklist": {
             "FORBIDDEN_KUFUR": "**I am not authorized to delete messages in this group. Profanity filter disabled.**",

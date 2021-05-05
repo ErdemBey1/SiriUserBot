@@ -8,22 +8,22 @@
 # SiriUserBot - Erdem By - Midy - Berceste
 """ UserBot hazırlanışı. """
 
-import os
-import time
-from re import compile
-from sys import version_info
-from logging import basicConfig, getLogger, INFO, DEBUG
-from distutils.util import strtobool as sb
-from pylast import LastFMNetwork, md5
-from pySmartDL import SmartDL
-from dotenv import load_dotenv
-from sqlite3 import connect
-from requests import get
+from telethon.events import callbackquery, InlineQuery, NewMessage
 from telethon.tl.functions.channels import JoinChannelRequest
+from logging import basicConfig, getLogger, INFO, DEBUG
 from telethon.sync import TelegramClient, custom
 from telethon.sessions import StringSession
-from telethon.events import callbackquery, InlineQuery, NewMessage
+from distutils.util import strtobool as sb
+from pylast import LastFMNetwork, md5
+from dotenv import load_dotenv
+from pySmartDL import SmartDL
+from sys import version_info
+from sqlite3 import connect
+from requests import get
+from re import compile
 from math import ceil
+import time
+import os
 
 load_dotenv("config.env")
 
@@ -58,26 +58,29 @@ if CONFIG_CHECK:
     )
     quit(1)
 
-# Bot'un dili
-LANGUAGE = os.environ.get("LANGUAGE", "DEFAULT").upper()
-
-if not LANGUAGE in ["EN", "TR", "AZ", "UZ", "DEFAULT"]:
-    LOGS.info("Bilinmeyen bir dil yazdınız. Bundan dolayı DEFAULT kullanılıyor.")
-    LANGUAGE = "DEFAULT"
     
 # Siri versiyon
-SIRI_VERSION = "v1.8"
+SIRI_VERSION = "v1.9"
 
 # Telegram API KEY ve HASH
 API_KEY = os.environ.get("API_KEY", None)
 API_HASH = os.environ.get("API_HASH", None)
 
 SILINEN_PLUGIN = {}
+
 # UserBot Session String
 STRING_SESSION = os.environ.get("STRING_SESSION", None)
 
 # Kanal / Grup ID yapılandırmasını günlüğe kaydetme.
 BOTLOG_CHATID = int(os.environ.get("BOTLOG_CHATID", None))
+
+# Bot'un dili
+LANGUAGE = os.environ.get("LANGUAGE", "DEFAULT").upper()
+
+if not LANGUAGE in ["EN", "TR", "AZ", "UZ", "DEFAULT"]:
+    LOGS.info("Bilinmeyen bir dil yazdınız. Bundan dolayı DEFAULT kullanılıyor.")
+    LANGUAGE = "DEFAULT"
+
 
 # UserBot günlükleme özelliği.
 BOTLOG = sb(os.environ.get("BOTLOG", "False"))
@@ -85,16 +88,6 @@ LOGSPAMMER = sb(os.environ.get("LOGSPAMMER", "False"))
 
 # Hey! Bu bir bot. Endişelenme ;)
 PM_AUTO_BAN = sb(os.environ.get("PM_AUTO_BAN", "False"))
-
-# Güncelleyici için Heroku hesap bilgileri.
-HEROKU_MEMEZ = sb(os.environ.get("HEROKU_MEMEZ", "False"))
-HEROKU_APPNAME = os.environ.get("HEROKU_APPNAME", None)
-HEROKU_APIKEY = os.environ.get("HEROKU_APIKEY", None)
-
-# Güncelleyici için özel (fork) repo linki.
-UPSTREAM_REPO_URL = os.environ.get(
-    "UPSTREAM_REPO_URL",
-    "https://github.com/ErdemBey1/SiriUserBot.git")
 
 # Ayrıntılı konsol günlügü
 CONSOLE_LOGGER_VERBOSE = sb(os.environ.get("CONSOLE_LOGGER_VERBOSE", "False"))
@@ -151,7 +144,7 @@ COUNTRY = str(os.environ.get("COUNTRY", ""))
 TZ_NUMBER = int(os.environ.get("TZ_NUMBER", 1))
 
 # Sevgili :)
-SEVGILI = int(os.environ.get("SEVGILI", 1687646994)) #K
+SEVGILI = os.environ.get("SEVGILI",None)
 
 # Temiz Karşılama
 CLEAN_WELCOME = sb(os.environ.get("CLEAN_WELCOME", "True"))
@@ -181,11 +174,8 @@ GDRIVE_FOLDER_ID = os.environ.get("GDRIVE_FOLDER_ID", None)
 TEMP_DOWNLOAD_DIRECTORY = os.environ.get("TMP_DOWNLOAD_DIRECTORY",
                                          "./downloads")
 
-#Revert yani Klondan Sonra hesabın eski haline dönmesi
+# Revert yani Klondan Sonra hesabın eski haline dönmesi
 DEFAULT_NAME = os.environ.get("DEFAULT_NAME", None)
-
-# Bazı pluginler için doğrulama
-USERBOT_ = True
 
 # Inline yardımın çalışması için
 BOT_TOKEN = os.environ.get("BOT_TOKEN", None)
@@ -193,9 +183,6 @@ BOT_USERNAME = os.environ.get("BOT_USERNAME", None)
 
 # Genius modülünün çalışması için buradan değeri alın https://genius.com/developers her ikisi de aynı değerlere sahiptir
 GENIUS = os.environ.get("GENIUS", None)
-
-CMD_HELP = {}
-CMD_HELP_BOT = {}
 
 PM_AUTO_BAN_LIMIT = int(os.environ.get("PM_AUTO_BAN_LIMIT", 4))
 
@@ -214,11 +201,23 @@ if not BLACKLIST_CHAT: #Eğer ayarlanmamışsa Siri Support grubu eklenir.
 OTOMATIK_KATILMA = sb(os.environ.get("OTOMATIK_KATILMA", "True"))
 AUTO_UPDATE =  sb(os.environ.get("AUTO_UPDATE", "True"))
 
+CMD_HELP = {}
+CMD_HELP_BOT = {}
 
 # Özel Pattern'ler
 PATTERNS = os.environ.get("PATTERNS", ".;!,")
 WHITELIST = get('http://gitlab.com/ErdemBey1/siri/-/raw/master/whitelist.json').json()
 
+
+# Güncelleyici için Heroku hesap bilgileri.
+HEROKU_MEMEZ = sb(os.environ.get("HEROKU_MEMEZ", "False"))
+HEROKU_APPNAME = os.environ.get("HEROKU_APPNAME", None)
+HEROKU_APIKEY = os.environ.get("HEROKU_APIKEY", None)
+
+# Güncelleyici için test (fork) repo linki.
+UPSTREAM_REPO_URL = os.environ.get(
+    "UPSTREAM_REPO_URL",
+    "https://github.com/must4f/SiriUserBot.git")
 
 # Bot versiyon kontrolü
 forceVer = []
@@ -265,6 +264,7 @@ else:
     bot = TelegramClient("userbot", API_KEY, API_HASH)
 
 ASISTAN = 1758581185 # Bot yardımcısı
+ASISTANUSERNAME = 'muinrobot'
 
 if os.path.exists("learning-data-root.check"):
     os.remove("learning-data-root.check")
@@ -282,8 +282,7 @@ async def check_botlog_chatid():
         quit(1)
 
     elif not BOTLOG_CHATID and BOTLOG:
-        LOGS.info(
-            "Günlüğe kaydetme özelliğinin çalışması için yapılandırmadan BOTLOG_CHATID değişkenini ayarlamanız gerekir.")
+        LOGS.info("Günlüğe kaydetme özelliğinin çalışması için yapılandırmadan BOTLOG_CHATID değişkenini ayarlamanız gerekir.")
         quit(1)
 
     elif not BOTLOG or not LOGSPAMMER:
@@ -318,25 +317,22 @@ def butonlastir(sayfa, moduller):
     butonlar = []
     for pairs in pairs[sayfa]:
         butonlar.append([
-            custom.Button.inline("🔸 " + pair, data=f"bilgi[{sayfa}]({pair})") for pair in pairs
+            custom.Button.inline("✨ " + pair, data=f"bilgi[{sayfa}]({pair})") for pair in pairs
         ])
 
     butonlar.append([custom.Button.inline("◀️ Geri", data=f"sayfa({(max_pages - 1) if sayfa == 0 else (sayfa - 1)})"), custom.Button.inline("İleri ▶️", data=f"sayfa({0 if sayfa == (max_pages - 1) else sayfa + 1})")])
     return [max_pages, butonlar]
 
-with bot:
-    if OTOMATIK_KATILMA:
-        try:
-            bot(JoinChannelRequest("@SiriUserBot"))
+with bot: #ü
+    try:
+        bot(JoinChannelRequest("@SiriUserBot"))
+        bot(JoinChannelRequest("@SiriSupport"))
+        if OTOMATIK_KATILMA:
             bot(JoinChannelRequest("@SiriOffical"))
-        except:
+        else:
             pass
-    else: # Bot güncellemelerini kaçırmamak için artık sadece support grubu isteğe bağlıdır.
-        try:
-            bot(JoinChannelRequest("@SiriUserBot"))
-            bot(JoinChannelRequest("@SiriSupport"))
-        except:
-            pass
+    except:
+        pass
 
     moduller = CMD_HELP
     me = bot.get_me()
@@ -377,7 +373,7 @@ with bot:
             else:
                 result = builder.article(
                     "@SiriUserBot",
-                    text="""@SiriUserBot'u kullanmayı deneyin!
+                    text="""🎉 @SiriUserBot'u kullanmayı deneyin!
 Hesabınızı bot'a çevirebilirsiniz ve bunları kullanabilirsiniz. Unutmayın, siz başkasının botunu yönetemezsiniz! Alttaki GitHub adresinden tüm kurulum detayları anlatılmıştır.""",
                     buttons=[
                         [custom.Button.url("Kanala Katıl", "https://t.me/SiriUserBot"), custom.Button.url(
@@ -430,7 +426,7 @@ Hesabınızı bot'a çevirebilirsiniz ve bunları kullanabilirsiniz. Unutmayın,
             sayfa = int(event.data_match.group(2).decode("UTF-8"))
             komut = event.data_match.group(3).decode("UTF-8")
 
-            result = f"**📗 Dosya:** `{cmd}`\n"
+            result = f"✨ `{cmd}` **Dosyası:**\n"
             if CMD_HELP_BOT[cmd]['info']['info'] == '':
                 if not CMD_HELP_BOT[cmd]['info']['warning'] == '':
                     result += f"**⬇️ Official:** {'✅' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n"
@@ -479,6 +475,8 @@ Hesabınızı bot'a çevirebilirsiniz ve bunları kullanabilirsiniz. Unutmayın,
 
 
 # Küresel Değişkenler
+
+USERBOT_ = True
 SON_GORULME = 0
 COUNT_MSG = 0
 USERS = {}

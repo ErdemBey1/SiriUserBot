@@ -35,8 +35,8 @@
         },
         
         "__siri": {
-            "NEED_PLUGIN": "✨ 𝚂𝚒𝚛𝚒 𝚄𝚜𝚎𝚛𝚋𝚘𝚝 𝙷𝚎𝚕𝚙𝚎𝚛✨\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n\n⚡ Lütfen bir Siri modülü adı belirtin.",
-            "NEED_MODULE": "Lütfen hangi Siri modülü için yardım istediğinizi belirtin !!\nKullanım: .siri <modül adı>"
+            "NEED_PLUGIN": "💻 Lütfen bir Siri modülü adı belirtin.",
+            "NEED_MODULE": "✨ 𝚂𝚒𝚛𝚒 𝚄𝚜𝚎𝚛𝚋𝚘𝚝 𝙷𝚎𝚕𝚙𝚎𝚛✨\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n\n⚡ Lütfen hangi Siri modülü için yardım istediğinizi belirtin !!\nKullanım: .siri <modül adı>"
         },
 
         "__helpme": {

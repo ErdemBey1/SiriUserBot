@@ -84,10 +84,10 @@ def register(**args):
                     date = strftime("%Y-%m-%d %H:%M:%S", gmtime())
 
                     eventtext = str(check.text)
-                    text = "**==USERBOT HATA RAPORU==**\n\n"
+                    text = "**==USERBOT HATA RAPORU==**\n"
                     link = "[Siri Destek Grubuna](https://t.me/SiriSupport)"
                     if len(eventtext)<10:
-                        text += f"**🗒️ Şu yüzden:** {eventtext}\n"
+                        text += f"\n**🗒️ Şu yüzden:** {eventtext}\n"
                     text += "\nℹ️ İsterseniz, bunu bildirebilirsiniz."
                     text += f"- sadece bu mesajı {link} gönderin.\n"
                     text += "Hata ve tarih haricinde hiçbir şey kayıt edilmez.\n"
@@ -132,9 +132,9 @@ def register(**args):
 
                     if LOGSPAMMER:
                         try:
-                            await check.reply("`❕ Üzgünüm, UserBot bir hatayla karşılaştı.\n ℹ️ Hata günlükleri UserBot günlük grubunda saklanır.`")
+                            await check.edit("`❕ Üzgünüm, UserBot bir hatayla karşılaştı.\n ℹ️ Hata günlükleri UserBot günlük grubunda saklanır.`")
                         except:
-                            await check.client.send_message(check.chat_id,"`❕ Üzgünüm, UserBot bir hatayla karşılaştı.\n ℹ️ Hata günlükleri UserBot günlük grubunda saklanır.`")
+                            pass
                     await check.client.send_file(send_to,
                                                  "error.log",
                                                  caption=text)

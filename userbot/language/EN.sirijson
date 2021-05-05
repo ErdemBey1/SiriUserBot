@@ -261,56 +261,56 @@
         },
 
         "ezanvakti": {
-            "NEED_CITY": "Lütfen komutun yanına bir şehir belirtin.",
-            "NOT_FOUND": "için bir bilgi bulunamadı.",
-            "DIYANET": "Diyanet Namaz Vakitleri",
-            "LOCATION": "Yer",
-            "IMSAK": "İmsak",
-            "GUNES": "Güneş",
-            "OGLE": "Öğle",
-            "IKINDI": "İkindi",
-            "AKSAM": "Akşam",
-            "YATSI": "Yatsı"
+            "NEED_CITY": "Please specify a city next to the command.",
+            "NOT_FOUND": "No information found for.",
+            "DIYANET": "Religious Prayer Times",
+            "LOCATION": "Location",
+            "IMSAK": "Imsak",
+            "GUNES": "Sun",
+            "OGLE": "Noon",
+            "IKINDI": "Late afternoon",
+            "AKSAM": "Evening",
+            "YATSI": "Night"
         },
 
         "filter": {
             "GENEL_USAGE": "`Kullanım: ``.genelfilter \"selamın aleyküm\" as` ya da `.genelfilter sa as`",
-            "GENEL_FILTER": "filtresi",
-            "ADDED": "eklendi",
-            "UPDATED": "güncellendi",
+            "GENEL_FILTER": "filter",
+            "ADDED": "added",
+            "UPDATED": "updated",
             "FILTER_USAGE": "`Kullanım: ``.filter \"selamın aleyküm\" as` ya da `.filter sa as`",
-            "NOT_FOUND": "filtresi mevcut değil.",
-            "DELETED": "filtresi başarıyla silindi",
-            "GENELFILTERS": "`Hiç genelfilter yok.`",
-            "GENEL_FILTERS": "Genel filtreler:",
-            "FILTERS": "`Bu sohbette hiç filtre yok.`",
-            "_FILTERS": "Sohbetteki filtreler:",
-            "NEED_BOTLOG": "`Bir medyanın filtreye karşılık olarak kaydedilebilmesi için BOTLOG_CHATID değerinin ayarlanması gerekli.`"
+            "NOT_FOUND": "filter is not available.",
+            "DELETED": "filter was deleted successfully",
+            "GENELFILTERS": "`There are no general filters.`",
+            "GENEL_FILTERS": "General filters:",
+            "FILTERS": "`There are no filters in this chat.`",
+            "_FILTERS": "Filters in chat:",
+            "NEED_BOTLOG": "`The BOTLOG_CHATID value must be set before a media can be saved in response to the filter..`"
         },
 
         "galeri": {
-            "ADDED_LIST": "`Fotoğraf sıraya alındı.`",
-            "INVALID_URL": "`Geçersiz bir resim URL'si girdiniz. Kullanım hakkında bir fikriniz yoksa, ` `.siri galeri` `yazınız.`",
-            "EXAMPLE": "`Lütfen bir resim adresi giriniz. Örnek olarak: ` `.galeri ekle https://i.resimyukle.xyz/7Qbbc9.jpeg`",
-            "LIST": "Sıraya Aldığınız Fotoğraflar",
-            "REMOVED": "**Sıradaki fotoğraf başarıyla kaldırıldı**",
-            "REMOVE_ERROR": "**Sıradaki fotoğraf kaldırılamadı** Hata",
-            "NEED_NUMBER": "Lütfen resmin sırasını belirtiniz. Örnek:",
-            "WORKING": "`Hali hazırda galeri çalışıyor.`",
-            "STARTED": "`Galeri çalışmaya başladı.`",
-            "NEED_PHOTO": "Galeri çalışması için fotoğraf eklemeniz gerekmektedir. Eklemeyi bilmiyorsanız .siri galeri ile kullanım hakkında bilgi sahibi olabilirsiniz.",
-            "STOPPED": "`Galeri durduruldu!`",
-            "ALREADY_STOP": "`Galeri zaten çalışmıyor.`",
-            "INVALID": "**Bilinmeyen komut** Kullanım:\n\nGaleri'ye fotoğraf ekleme: `.galeri ekle https://i.resimyukle.xyz/7Qbbc9.jpeg`\nGaleri listesini görme: `.galeri liste`\nSıradan bir fotoğrafı silme: `.galeri sil <sıra sayısı>`"
+            "ADDED_LIST": "`The photo has been queued.`",
+            "INVALID_URL": "`You entered an invalid image URL. If you have no idea how to use it, ` `.siri galeri` `write.`",
+            "EXAMPLE": "`Please enter an image address. For example: ` `.galeri ekle https://i.resimyukle.xyz/7Qbbc9.jpeg`",
+            "LIST": "Photos You Have Queued",
+            "REMOVED": "**The next photo has been successfully removed**",
+            "REMOVE_ERROR": "**Next photo could not be removed** Error",
+            "NEED_NUMBER": "Please indicate the order of the picture. Sample:",
+            "WORKING": "`The gallery is currently running.`",
+            "STARTED": "`The gallery has started.`",
+            "NEED_PHOTO": "You need to add photos for gallery work. If you don't know how to add, you can learn about usage with .siri galeri.",
+            "STOPPED": "`Gallery stopped!`",
+            "ALREADY_STOP": "`Gallery is not working already.`",
+            "INVALID": "**Unknown command** Use:\n\nGaleri'ye fotoğraf ekleme: `.galeri ekle https://i.resimyukle.xyz/7Qbbc9.jpeg`\nGaleri listesini görme: `.galeri liste`\nSıradan bir fotoğrafı silme: `.galeri sil <sıra sayısı>`"
         },
 
         "github": {
-            "INFO": "'s github info",
-            "NAME": "Name",
-            "COMPANY": "Company",
-            "CREATED": "Account Creation Date",
-            "REPOS": "Repos:",
-            "NOT_FOUND": " not found`"
+            "INFO": "adlı kullanıcının GitHub bilgileri",
+            "NAME": "İsim",
+            "COMPANY": "Şirket",
+            "CREATED": "Hesap oluşturulma tarihi",
+            "REPOS": "Repolar:",
+            "NOT_FOUND": " bulunamadı`"
         },
 
         "kyolla": {
@@ -356,13 +356,13 @@
             "SINGER_ENDED": "🎙Çok güzel söyledim, değil mi?"
         },
 
-        "lock": {
-            "EVERYTHING_LOCK": "`I can't lock the nothing my friend!`",
-            "INVALID_MEDIA_TYPE": "`Invalid media type:: %s`",
-            "LOCK": "`%s locked for this chat `",
-            "INVALID_AUTHORITY": "`Are you sure you have the rights to do this?`\n**Error:**",
-            "EVERYTHING_UNLOCK": "`I can't unlock the void!`",
-            "UNLOCK": "`%s unlocked for this chat`"
+        "locks":{
+		    "EVERYTHING_LOCK": "`I can't lock the nothing my friend!`",
+			"INVALID_MEDIA_TYPE": "`Invalid media type:: %s`",
+			"LOCK": "`%s locked for this chat `",
+			"INVALID_AUTHORITY": "`Are you sure you have the rights to do this?`\n**Error:**",
+			"EVERYTHING_UNLOCK": "`I can't unlock the void!`",
+			"UNLOCK": "`%s unlocked for this chat`"
         },
 
         "misc": {

@@ -304,13 +304,13 @@
             "INVALID": "**Unknown command** Use:\n\nGaleri'ye fotoğraf ekleme: `.galeri ekle https://i.resimyukle.xyz/7Qbbc9.jpeg`\nGaleri listesini görme: `.galeri liste`\nSıradan bir fotoğrafı silme: `.galeri sil <sıra sayısı>`"
         },
 
-        "github": {
-            "INFO": "adlı kullanıcının GitHub bilgileri",
-            "NAME": "İsim",
-            "COMPANY": "Şirket",
-            "CREATED": "Hesap oluşturulma tarihi",
-            "REPOS": "Repolar:",
-            "NOT_FOUND": " bulunamadı`"
+         "github": {
+            "INFO": "'s github info",
+            "NAME": "Name",
+            "COMPANY": "Company",
+            "CREATED": "Account Creation Date",
+            "REPOS": "Repos:",
+            "NOT_FOUND": " not found`"
         },
 
         "kyolla": {

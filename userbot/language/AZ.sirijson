@@ -2,7 +2,7 @@
     "__SIRIJSON__": true,
     "LANGUAGE": "Azərbaycanca",
     "LANGCODE": "az",
-    "AUTHOR": "Sahil",
+    "AUTHOR": "Salih",
     "STRINGS": {
         "__plugin": {
             "REPLY_FOR_PORT": "`Zəhmət olmasa Plugin-Port üçün bir fayla cavab yazın`",
@@ -34,8 +34,8 @@
         },
         
         "__siri": {
-            "NEED_PLUGIN": "Zəhmət olmasa bir Siri modulu adı yazın.",
-            "NEED_MODULE": "Zəhmət olmasa hansı Siri modulu üçün kömək istədiyinizi qeyd edin !!\nİstifadəsi: .siri <modul adı>"
+            "NEED_PLUGIN": "💻 Zəhmət olmasa bir Siri modulu adı yazın.",
+            "NEED_MODULE": "✨ 𝚂𝚒𝚛𝚒 𝚄𝚜𝚎𝚛𝚋𝚘𝚝 𝙷𝚎𝚕𝚙𝚎𝚛✨\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n\n⚡ Zəhmət olmasa hansı Siri modulu üçün kömək istədiyinizi qeyd edin !!\nİstifadəsi: .siri <modul adı>"
         },
 
         "__helpme": {

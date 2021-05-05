@@ -27,7 +27,7 @@ aylar = {
   "Dec": "Aralık"
   
 }
-@register(outgoing=True, pattern=r"^.veri")
+@register(outgoing=True, pattern=r"^.sinfo")
 async def sinfos(event):
     await event.edit("🔄")
     chat = "@spambot"
@@ -49,7 +49,7 @@ async def sinfos(event):
         elif spamdurumu.text.startswith("Good news"):
             await event.edit(LANG["BIRD"])
         else:
-            await event.client.send_message(event.chat_id, toparla)
+            await event.client.forward_messages(event.chat_id, spamdurumu)
             await event.delete()
 
 

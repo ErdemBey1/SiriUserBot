@@ -23,8 +23,8 @@ async def _(q):
 		if a_ == 5000:
 			break
 		a_+=1
-		await q.client.send_message(q.chat_id, "{}\n[{}](tg://user?id={})".format(seasons, i.first_name, i.id))
-		sleep(2)
+		await q.client.send_message(q.chat_id, "**{}**\n[{}](tg://user?id={})".format(seasons, i.first_name, i.id))
+		sleep(2.5)
 
 
 @register(outgoing=True, pattern="^.alladmin(?: |$)(.*)", groups_only=True)
@@ -45,8 +45,8 @@ async def _(q):
 		if a_ == 50:
 			break
 		a_+=1
-		await q.client.send_message(q.chat_id, "{}\n[{}](tg://user?id={})".format(seasons, i.first_name, i.id))
-		sleep(1)
+		await q.client.send_message(q.chat_id, "**{}**\n[{}](tg://user?id={})".format(seasons, i.first_name, i.id))
+		sleep(1.74)
 
 
 CmdHelp("all").add_command(

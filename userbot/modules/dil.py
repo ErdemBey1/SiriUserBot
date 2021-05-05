@@ -4,7 +4,7 @@
 # you may not use this file except in compliance with the License.
 #
 
-# SiriUserBot - ErdemBey - Midy
+# SiriUserBot - ErdemBey - Berceste - Midy
 
 from userbot.cmdhelp import CmdHelp
 from userbot import PLUGIN_CHANNEL_ID, CMD_HELP
@@ -70,11 +70,9 @@ async def dil(event):
             await event.edit("**Lütfen bir dil dosyasına yanıt verin!**")
     else:
         await event.edit(
-            f"**Dil: **`{LANGUAGE_JSON['LANGUAGE']}`\n"
-            f"**Dil Kodu: **`{LANGUAGE_JSON['LANGCODE']}`\n"
-            f"**Çeviren: **`{LANGUAGE_JSON ['AUTHOR']}`\n"
-
-            f"\n\nDiğer diller üçün @SiriLanguage kanalına bakın"
+            f"**🪙 Dil: **`{LANGUAGE_JSON['LANGUAGE']}`\n"
+            f"**🔋 Dil Kodu: **`{LANGUAGE_JSON['LANGCODE']}`\n"
+            f"**⌨️ Çeviren: **`{LANGUAGE_JSON ['AUTHOR']}`\n"
         )
 
 CmdHelp('dil').add_command(

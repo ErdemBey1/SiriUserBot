@@ -305,12 +305,12 @@
         },
 
         "github": {
-            "INFO": "adlı kullanıcının GitHub bilgileri",
-            "NAME": "İsim",
-            "COMPANY": "Şirket",
-            "CREATED": "Hesap oluşturulma tarihi",
-            "REPOS": "Repolar:",
-            "NOT_FOUND": " bulunamadı`"
+            "INFO": "'s github info",
+            "NAME": "Name",
+            "COMPANY": "Company",
+            "CREATED": "Account Creation Date",
+            "REPOS": "Repos:",
+            "NOT_FOUND": " not found`"
         },
 
         "kyolla": {
@@ -356,13 +356,13 @@
             "SINGER_ENDED": "🎙Çok güzel söyledim, değil mi?"
         },
 
-        "locks":{
-		    "EVERYTHING_LOCK": "`I can't lock the nothing my friend!`",
-			"INVALID_MEDIA_TYPE": "`Invalid media type:: %s`",
-			"LOCK": "`%s locked for this chat `",
-			"INVALID_AUTHORITY": "`Are you sure you have the rights to do this?`\n**Error:**",
-			"EVERYTHING_UNLOCK": "`I can't unlock the void!`",
-			"UNLOCK": "`%s unlocked for this chat`"
+        "lock": {
+            "EVERYTHING_LOCK": "`I can't lock the nothing my friend!`",
+            "INVALID_MEDIA_TYPE": "`Invalid media type:: %s`",
+            "LOCK": "`%s locked for this chat `",
+            "INVALID_AUTHORITY": "`Are you sure you have the rights to do this?`\n**Error:**",
+            "EVERYTHING_UNLOCK": "`I can't unlock the void!`",
+            "UNLOCK": "`%s unlocked for this chat`"
         },
 
         "misc": {

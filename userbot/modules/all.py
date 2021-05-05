@@ -20,11 +20,11 @@ async def _(q):
 	a_=0
 	await q.delete()
 	async for i in bot.iter_participants(chat):
-		if a_ == 3000:
+		if a_ == 5000:
 			break
 		a_+=1
 		await q.client.send_message(q.chat_id, "{}\n[{}](tg://user?id={})".format(seasons, i.first_name, i.id))
-		sleep(2.5)
+		sleep(2)
 
 
 @register(outgoing=True, pattern="^.alladmin(?: |$)(.*)", groups_only=True)
@@ -46,7 +46,7 @@ async def _(q):
 			break
 		a_+=1
 		await q.client.send_message(q.chat_id, "{}\n[{}](tg://user?id={})".format(seasons, i.first_name, i.id))
-		sleep(2.3)
+		sleep(1)
 
 
 CmdHelp("all").add_command(

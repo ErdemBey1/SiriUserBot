@@ -36,7 +36,7 @@
         
         "__siri": {
             "NEED_PLUGIN": "Please provide a Siri module name.",
-            "NEED_MODULE": "Please specify which Siri module you want help for !!\nUsage: .siri <module name>"
+            "NEED_MODULE": "✨ 𝚂𝚒𝚛𝚒 𝚄𝚜𝚎𝚛𝚋𝚘𝚝 𝙷𝚎𝚕𝚙𝚎𝚛✨\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n\n⚡ Please specify which Siri module you want help for !!\nUsage: .siri <module name>"
         },
 
         "__helpme": {

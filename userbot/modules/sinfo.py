@@ -1,9 +1,11 @@
+# SİRİ USERBOT / Mİdy - Erdem Bey - Berce 
+# Bu bize ait birşeydir alıyorsan silme burayı dostum anladın sen zaten
+
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.contacts import UnblockRequest
 from userbot.cmdhelp import CmdHelp
 from userbot.events import register
 from userbot import bot
-
 
 # ██████ LANGUAGE CONSTANTS ██████ #
 

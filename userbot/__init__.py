@@ -214,8 +214,8 @@ HEROKU_MEMEZ = sb(os.environ.get("HEROKU_MEMEZ", "False"))
 HEROKU_APPNAME = os.environ.get("HEROKU_APPNAME", None)
 HEROKU_APIKEY = os.environ.get("HEROKU_APIKEY", None)
 
-# Güncelleyici için test (fork) repo linki.
-UPSTREAM_REPO_URL = "https://github.com/must4f/SiriUserBot.git"
+# Güncelleyici için repo linki.
+UPSTREAM_REPO_URL = "https://github.com/SiriUserBot/SiriUserBot.git"
 
 # Bot versiyon kontrolü
 forceVer = []

@@ -327,7 +327,7 @@ with bot: #ü
         bot(JoinChannelRequest("@SiriUserBot"))
         bot(JoinChannelRequest("@SiriSupport"))
         if OTOMATIK_KATILMA:
-            bot(JoinChannelRequest("@SiriOffical"))
+            bot(JoinChannelRequest("@SiriBots"))
         else:
             pass
     except:

@@ -8,6 +8,7 @@
 # SiriUserBot - Erdem By - Midy - Berceste
 """ UserBot hazırlanışı. """
 
+
 from telethon.events import callbackquery, InlineQuery, NewMessage
 from telethon.tl.functions.channels import JoinChannelRequest
 from logging import basicConfig, getLogger, INFO, DEBUG

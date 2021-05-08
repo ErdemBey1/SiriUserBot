@@ -216,7 +216,7 @@ HEROKU_APPNAME = os.environ.get("HEROKU_APPNAME", None)
 HEROKU_APIKEY = os.environ.get("HEROKU_APIKEY", None)
 
 # Güncelleyici için repo linki.
-UPSTREAM_REPO_URL = "https://github.com/SiriUserBot/SiriUserBot.git"
+UPSTREAM_REPO_URL = "https://github.com/ErdemBey1/SiriUserBot.git"
 
 # Bot versiyon kontrolü
 forceVer = []

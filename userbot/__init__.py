@@ -61,7 +61,7 @@ if CONFIG_CHECK:
 
     
 # Siri versiyon
-SIRI_VERSION = "v1.9"
+SIRI_VERSION = "v1.9.5"
 
 # Telegram API KEY ve HASH
 API_KEY = os.environ.get("API_KEY", None)

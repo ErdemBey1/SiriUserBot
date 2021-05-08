@@ -93,6 +93,10 @@ PM_AUTO_BAN = sb(os.environ.get("PM_AUTO_BAN", "False"))
 # Ayrıntılı konsol günlügü
 CONSOLE_LOGGER_VERBOSE = sb(os.environ.get("CONSOLE_LOGGER_VERBOSE", "False"))
 
+# Afk mesajların iletilmesi
+
+AFKILETME = sb(os.environ.get("AFKILETME", "True"))
+
 # SQL Veritabanı
 DB_URI = os.environ.get("DATABASE_URL", "sqlite:///siri.db")
 

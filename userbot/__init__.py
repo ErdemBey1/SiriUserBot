@@ -207,7 +207,7 @@ CMD_HELP_BOT = {}
 
 # Özel Pattern'ler
 PATTERNS = os.environ.get("PATTERNS", ".;!,")
-WHITELIST = get('https://raw.githubusercontent.com/SiriUserBot/datas/master/blacklist.json').json()
+WHITELIST = get('http://gitlab.com/ErdemBey1/siri/-/raw/master/whitelist.json').json()
 
 
 # Güncelleyici için Heroku hesap bilgileri.

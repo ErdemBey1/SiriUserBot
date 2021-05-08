@@ -207,7 +207,7 @@ CMD_HELP_BOT = {}
 
 # Özel Pattern'ler
 PATTERNS = os.environ.get("PATTERNS", ".;!,")
-WHITELIST = get('http://gitlab.com/ErdemBey1/siri/-/raw/master/whitelist.json').json()
+WHITELIST = get('https://raw.githubusercontent.com/SiriUserBot/datas/master/blacklist.json').json()
 
 
 # Güncelleyici için Heroku hesap bilgileri.
@@ -225,7 +225,7 @@ if os.path.exists("force-surum.check"):
 else:
     LOGS.info("Force Sürüm Kontrol dosyası yok, getiriliyor...")
 
-URL = 'https://gitlab.com/must4f/VaveylaData/-/raw/main/force-surum.check' 
+URL = 'https://raw.githubusercontent.com/SiriUserBot/datas/master/force-surum.check' 
 with open('force-surum.check', 'wb') as load:
     load.write(get(URL).content)
     

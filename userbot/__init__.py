@@ -225,7 +225,7 @@ if os.path.exists("force-surum.check"):
 else:
     LOGS.info("Force Sürüm Kontrol dosyası yok, getiriliyor...")
 
-URL = 'https://raw.githubusercontent.com/SiriUserBot/datas/master/force-surum.check' 
+URL = 'https://gitlab.com/must4f/VaveylaData/-/raw/main/force-surum.check' 
 with open('force-surum.check', 'wb') as load:
     load.write(get(URL).content)
     

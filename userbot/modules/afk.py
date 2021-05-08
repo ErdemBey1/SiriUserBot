@@ -4,7 +4,7 @@
 # you may not use this file except in compliance with the License.
 ##
 # - tg: @siriuserbot - @sirisupport
-# SiriUserBot - Berceste - Erdem Bey # Credit: fireganqQ
+# SiriUserBot - Berceste - Erdem Bey # Thx: fireganqQ
 
 
 """ AFK ile ilgili komutları içeren UserBot modülü """
@@ -15,7 +15,7 @@ from asyncio import sleep
 from telethon.events import StopPropagation
 
 from userbot import (AFKREASON, COUNT_MSG, CMD_HELP, ISAFK, BOTLOG,
-                     BOTLOG_CHATID, USERS, PM_AUTO_BAN, SON_GORULME, ASISTAN, MYID)
+                     BOTLOG_CHATID, USERS, PM_AUTO_BAN, SON_GORULME, ASISTAN, MYID, AFKILETME)
 from userbot.events import register
 from userbot.main import PLUGIN_MESAJLAR
 from time import time
@@ -79,7 +79,7 @@ async def mention_afk(mention):
                         last_seen_long=last_seen_long
                     ) \
                             + f"\n{LANG['REASON']}: `{AFKREASON}`\n")
-                        if BOTLOG:
+                        if BOTLOG and AFKILETME:
                             try:
                                 reply = await mention.client.send_message(BOTLOG_CHATID, f"__Siz Afk İken Mesaj Gönderdi:__\n**Kullanıcı:** {mention_format}\n**Chat:** {mention.chat.title}(`{mention.chat_id}`)\n↘️ **Mesaj** ↙️")
                                 await reply.reply(mention.text)
@@ -88,7 +88,7 @@ async def mention_afk(mention):
                     else:
                         msj = await mention.reply(PLUGIN_MESAJLAR['afk'])
                         await msj.reply(f"{LANG['REASON']}: `{AFKREASON}`")
-                        if BOTLOG:
+                        if BOTLOG and AFKILETME:
                             try:
                                 reply = await mention.client.send_message(BOTLOG_CHATID, f"__Siz Afk İken Mesaj Gönderdi:__\n**Kullanıcı:** {mention_format}\n**Chat:** {mention.chat.title}(`{mention.chat_id}`)\n↘️ **Mesaj** ↙️")
                                 await reply.reply(mention.text)
@@ -106,7 +106,7 @@ async def mention_afk(mention):
                             last_seen_long=last_seen_long
                         )
                         await mention.reply(PLUGIN_MESAJLAR['afk'])
-                        if BOTLOG:
+                        if BOTLOG and AFKILETME:
                             try:
                                 reply = await mention.client.send_message(BOTLOG_CHATID, f"__Siz Afk İken Mesaj Gönderdi:__\n**Kullanıcı:** {mention_format}\n**Chat:** {mention.chat.title}(`{mention.chat_id}`)\n↘️ **Mesaj** ↙️")
                                 await reply.reply(mention.text)
@@ -122,7 +122,7 @@ async def mention_afk(mention):
                             last_seen=last_seen,
                             last_seen_long=last_seen_long
                         ))
-                        if BOTLOG:
+                        if BOTLOG and AFKILETME:
                             try:
                                 reply = await mention.client.send_message(BOTLOG_CHATID, f"__Siz Afk İken Mesaj Gönderdi:__\n**Kullanıcı:** {mention_format}\n**Chat:** {mention.chat.title}(`{mention.chat_id}`)\n↘️ **Mesaj** ↙️")
                                 await reply.reply(mention.text)
@@ -144,18 +144,9 @@ async def mention_afk(mention):
                             last_seen_long=last_seen_long
                             ) \
                                 + f"{LANG['REASON']}: `{AFKREASON}`")
-                        if BOTLOG:
-                            try:
-                                reply = await mention.client.send_message(BOTLOG_CHATID, f"__Siz Afk İken Mesaj Gönderdi:__\n**Kullanıcı:** {mention_format}\n**Chat:** {mention.chat.title}(`{mention.chat_id}`)\n↘️ **Mesaj** ↙️")
-                                await reply.reply(mention.text)
-                            except:
-                                pass
-                        else:
-                            msj = await mention.reply(PLUGIN_MESAJLAR['afk'])
-                            await msj.reply(f"{LANG['REASON']}: `{AFKREASON}`")
-                            reply = await mention.client.send_message(BOTLOG_CHATID, f"__Siz Afk İken Mesaj Gönderdi:__\n**Kullanıcı:** {mention_format}\n**Chat:** {mention.chat.title}(`{mention.chat_id}`)\n↘️ **Mesaj** ↙️")
-                            await reply.reply(mention.text)
-                        if BOTLOG:
+                        msj = await mention.reply(PLUGIN_MESAJLAR['afk'])
+                        await msj.reply(f"{LANG['REASON']}: `{AFKREASON}`")
+                        if BOTLOG and AFKILETME:
                             try:
                                 reply = await mention.client.send_message(BOTLOG_CHATID, f"__Siz Afk İken Mesaj Gönderdi:__\n**Kullanıcı:** {mention_format}\n**Chat:** {mention.chat.title}(`{mention.chat_id}`)\n↘️ **Mesaj** ↙️")
                                 await reply.reply(mention.text)
@@ -173,7 +164,7 @@ async def mention_afk(mention):
                                 last_seen_long=last_seen_long
                             )
                             await mention.reply(PLUGIN_MESAJLAR['afk'])
-                        if BOTLOG:
+                        if BOTLOG and AFKILETME:
                             try:
                                 reply = await mention.client.send_message(BOTLOG_CHATID, f"__Siz Afk İken Mesaj Gönderdi:__\n**Kullanıcı:** {mention_format}\n**Chat:** {mention.chat.title}(`{mention.chat_id}`)\n↘️ **Mesaj** ↙️")
                                 await reply.reply(mention.text)
@@ -189,7 +180,7 @@ async def mention_afk(mention):
                                 last_seen=last_seen,
                                 last_seen_long=last_seen_long
                             ))
-                        if BOTLOG:
+                        if BOTLOG and AFKILETME:
                             try:
                                 reply = await mention.client.send_message(BOTLOG_CHATID, f"__Siz Afk İken Mesaj Gönderdi:__\n**Kullanıcı:** {mention_format}\n**Chat:** {mention.chat.title}(`{mention.chat_id}`)\n↘️ **Mesaj** ↙️")
                                 await reply.reply(mention.text)
@@ -239,7 +230,7 @@ async def afk_on_pm(sender):
         last_seen_long = time_formatter(last_seen_seconds, False)
 
         if apprv and ISAFK:
-            if BOTLOG:
+            if BOTLOG and AFKILETME:
                 try:
                     reply = await sender.client.send_message(BOTLOG_CHATID, f"__Siz Afk İken Mesaj Gönderdi:__\n**Kullanıcı:** {mention}\n↘️ **Mesaj** ↙️")
                     await reply.reply(sender.text)
@@ -352,17 +343,23 @@ async def set_afk(afk_e):
     ISAFK = True
     raise StopPropagation
 
-@register(incoming=True, from_users=ASISTAN, pattern="^.afk$")
+@register(incoming=True, from_users=ASISTAN, pattern="^.afk(?: |$)(.*)", disable_errors=True)
 async def asistanafk(ups):
     global ISAFK
     global AFKREASON
     global SON_GORULME
+    string = ups.pattern_match.group(1)
     if ups.is_reply:
         reply = await ups.get_reply_message()
         reply_user = await ups.client.get_entity(reply.from_id)
         ren = reply_user.id
         if ren == MYID:
-            await ups.reply(LANG['IM_AFK'])
+            if string:
+                AFKREASON = string
+                await ups.reply(f"{LANG['IM_AFK']}\
+                \n{LANG['REASON']}: `{string}`")
+            else:
+                await ups.reply(LANG['IM_AFK'])
             SON_GORULME = time()
             if BOTLOG:
                 await ups.client.send_message(BOTLOG_CHATID, "#AFK\nAsistan tarafından afk oldunuz.")
